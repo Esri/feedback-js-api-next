@@ -27,7 +27,12 @@ Support for popups on PointCloudLayers. Popups can be configured directly in cod
 
 ## Breaking changes
 
-The StretchRenderer is removed and replaced by the RasterStretchRenderer.
+* The StretchRenderer is removed and replaced by the RasterStretchRenderer.
+* The Geoprocessor class has been modernized, which required several changes:
+  - Removed the `updateDelay` property.
+  - Removed the `cancelJobStatusUpdates()` method.
+  - The submitJob method now immediately returns with a JobInfo. Previously, a promise was returned, which when resolved, returned a `JobInfo`. Now you can use the waitForJobCompletion method to get notified of job completion and optionally of job status.
+  - The getResultMapImageLayer method now returns a promise, which when resolved, returns a MapImageLayer. Previously, a `MapImageLayer` was returned.
 
 ## Bug fixes and enhancements
 
@@ -38,7 +43,12 @@ The StretchRenderer is removed and replaced by the RasterStretchRenderer.
 * BUG-000121530: Fixed an issue where setting methods on Array.prototype would freeze the SceneView.
 * BUG-000123917: Fixed an issue where changing the visibility of a layer with labels enabled throws an error in the console.
 * BUG-000123726: Fixed an issue where features would intermittently fail to render after filters were applied to a LayerView.
+* BUG-000124012: Fixed an issue where normalizeUtils.normalizeCentralMeridian did not work as expected.
 * GEONET-237319: Fixed an issue where the Search widget would not work in an offline environment.
 * Fixed an issue where SceneView.updating wasn't always reliable.
 * Fixed an issue where the Search widget was unable to search for the GlobalID field from a FeatureLayer using the custom source.
 * Fixed an issue where the state of the AreaMeasurement2D and the DistanceMeasurement2D widgets were not reporting correctly.
+* Fixed an issue where using the scroll bar to scroll through results from the Search widget did not work with embedded apps in Safari web browser.
+* In 3D, there are a number of transparency fixes:
+  * Render edges that are behind or part of a transparent 3D object.
+  * Adjacent polygons sharing extruded faces no longer flicker.
