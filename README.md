@@ -13,6 +13,11 @@ To read all about the current version of the JavaScript API at https://developer
 
 Try the next version at https://js.arcgis.com/next or with npm using `npm install --save arcgis-js-api@next`.
 
+Note, if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load the library, you can specify this url as [an option](https://github.com/Esri/esri-loader#from-a-specific-version):
+```javascript
+const [Map] = await loadModules(['esri/map'], {url: 'https://js.arcgis.com/next'});
+```
+
 ## Issues
 
 Report issues with next version at https://github.com/Esri/feedback-js-api-next/issues/new/choose
