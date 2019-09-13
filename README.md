@@ -23,7 +23,7 @@ You can use the typings included with `arcgis-js-api@next` two ways.
 /// <reference types="arcgis-js-api"  />
 ```
 
-### Or add to the `includes` of your `tsconfig.json`.
+### Or add to the `include` of your `tsconfig.json`.
 ```json
 // tsconfig.json
 {
