@@ -20,7 +20,7 @@ You can use the typings included with `arcgis-js-api@next` two ways.
 ### Include a `///` directive in your main TypeScript file.
 ```ts
 // main.ts
-/// <reference path="../node_modules/arcgis-js-api/index.d.ts" />
+/// <reference types="arcgis-js-api"  />
 ```
 
 ### Or add to the `includes` of your `tsconfig.json`.
