@@ -13,6 +13,30 @@ To read all about the current version of the JavaScript API at https://developer
 
 Try the next version at https://js.arcgis.com/next or with npm using `npm install --save arcgis-js-api@next`.
 
+## TypeScript Typings
+
+You can use the typings included with `arcgis-js-api@next` two ways.
+
+### Include a `///` directive in your main TypeScript file.
+```ts
+// main.ts
+/// <reference path="../node_modules/arcgis-js-api/index.d.ts" />
+```
+
+### Or add to the `includes` of your `tsconfig.json`.
+```json
+// tsconfig.json
+{
+  "compilerOptions": {...},
+  "include": [
+    "node_modules/arcgis-js-api/index.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
+}
+
+```
+
 ## Issues
 
 Report issues with next version at https://github.com/Esri/feedback-js-api-next/issues/new/choose
