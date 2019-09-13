@@ -27,7 +27,7 @@ You can use the typings included with `arcgis-js-api@next` two ways.
 ```json
 // tsconfig.json
 {
-  "compilerOptions": {...},
+  "compilerOptions": {},
   "include": [
     "node_modules/arcgis-js-api/index.d.ts",
     "src/**/*.ts",
