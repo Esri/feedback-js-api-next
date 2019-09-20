@@ -16,6 +16,7 @@ Try the next version at https://js.arcgis.com/next or with npm using `npm instal
 Or, if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load the library, you can specify this url as [an option](https://github.com/Esri/esri-loader#from-a-specific-version):
 ```javascript
 const [Map] = await loadModules(['esri/map'], {url: 'https://js.arcgis.com/next'});
+```
 
 ## TypeScript Typings
 
