@@ -13,11 +13,29 @@ Read the [CHANGELOG.md](CHANGELOG.md) to find about new functionality, bug fixes
 
 ## Instructions
 
-Try the next version at https://js.arcgis.com/next or with npm using `npm install --save arcgis-js-api@next`.
+Use CDN or npm to try the next version.
 
-Or, if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load the library, you can specify this url as [an option](https://github.com/Esri/esri-loader#from-a-specific-version):
+### CDN
+
+Add references to the CDN and you are ready to get started.
+
+    <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/next/"></script>
+
+### npm 
+
+Install using `npm install --save arcgis-js-api@next`.
+
+### esri-loader
+
+Or if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load the library, use [options](https://github.com/Esri/esri-loader#from-a-specific-version).
+
 ```javascript
-const [Map] = await loadModules(['esri/map'], {url: 'https://js.arcgis.com/next'});
+const options = {
+  css: 'https://js.arcgis.com/next/esri/css/main.css',
+  url: 'https://js.arcgis.com/next'
+};
+const [Map] = await loadModules(['esri/map'], options);
 ```
 
 ## TypeScript Typings
