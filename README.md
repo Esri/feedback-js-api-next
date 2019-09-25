@@ -9,6 +9,8 @@ Please note: ArcGIS API for JavaScript release management is dynamic. Some new f
 
 To read all about the current version of the JavaScript API at https://developers.arcgis.com/javascript/.
 
+Read the [CHANGELOG.md](CHANGELOG.md) to find about new functionality, bug fixes and any breaking changes in the `next` version.
+
 ## Instructions
 
 Try the next version at https://js.arcgis.com/next or with npm using `npm install --save arcgis-js-api@next`.
