@@ -32,7 +32,7 @@ Or if you're using [esri-loader](https://github.com/Esri/esri-loader) to help lo
 
 ```javascript
 const options = {
-  css: 'https://js.arcgis.com/next/esri/css/main.css',
+  css: 'https://js.arcgis.com/next/esri/themes/light/main.css',
   url: 'https://js.arcgis.com/next'
 };
 const [Map] = await loadModules(['esri/map'], options);
