@@ -7,7 +7,7 @@ This version of the API is currently in development and will be updated frequent
 
 Please note: ArcGIS API for JavaScript release management is dynamic. Some new features and updates that appear in js.arcgis.com/next might not be present in the final production release due to a variety of factors (but will likely be present in an upcoming release).
 
-To read all about the current version of the JavaScript API at https://developers.arcgis.com/javascript/.
+Read all about the current version of the JavaScript API at https://developers.arcgis.com/javascript/.
 
 Read the [CHANGELOG.md](CHANGELOG.md) to find about new functionality, bug fixes and any breaking changes in the `next` version.
 
