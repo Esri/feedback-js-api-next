@@ -28,12 +28,11 @@ Install using `npm install --save arcgis-js-api@next`.
 
 ### esri-loader
 
-Or if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load the library, use [options](https://github.com/Esri/esri-loader#from-a-specific-version).
+Or if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load the library, use [options.version](https://github.com/Esri/esri-loader#from-a-specific-version) and specify `next` as the value.
 
 ```javascript
 const options = {
-  css: 'https://js.arcgis.com/next/esri/themes/light/main.css',
-  url: 'https://js.arcgis.com/next'
+  version: 'next'
 };
 const [Map] = await loadModules(['esri/map'], options);
 ```
