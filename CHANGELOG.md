@@ -2,11 +2,11 @@
 
 ## Breaking changes
 
-* None yet
+* Classes related to [ArcGIS Workflow Manager](http://server.arcgis.com/en/workflow-manager) have been removed. They were marked as deprecated starting with version 4.13.
 
 ## Deprecation
 
-* Classes related to [ArcGIS Workflow Manager](http://server.arcgis.com/en/workflow-manager) have been removed. They were marked as deprecated starting with version 4.13.
+* None yet
 
 ## Bug fixes and enhancements
 
