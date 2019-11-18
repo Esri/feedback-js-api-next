@@ -5,6 +5,8 @@
 * Classes related to [ArcGIS Workflow Manager](http://server.arcgis.com/en/workflow-manager) have been removed. They were marked as deprecated starting with version 4.13.
 * To select or unselect multiple vertices during a graphic update operation using the Sketch widget, we now use `Shift + Left-click` combination instead of `Ctrl + Left-click` on vertices.
 * 2D measurement widgets changed the base class from `esri-area-measurement-3d` to `esri-area-measurement-2d` and from `esri-direct-line-measurement-3d` to `esri-distance-measurement-2d`.
+* Removed the `getImageUrl()` method from MapImageLayer. This method was deprecated since version 4.11. We recommend extending BaseDynamicLayer instead.
+* Removed the `value-change` and `values-change` events from HistogramRangeSlider. These events were deprecated since version 4.13. We recommend watching the values property or using the other widget events instead.
 
 ## Deprecation
 
@@ -21,6 +23,8 @@
 * BUG-000124720: Fixed an issue where conversions could not removed in the CoordinateConversion widget.
 * ENH-000115553: Requests are now made on basemap tiles while calling MapView goTo().
 * GEONET-241397: Fixed an issue where TextSymbol with Arabic characters are not displayed.
+* GEONET-241160: Fixed an issue in 3D where sketching graphics that cross the dateline would get clipped.
+* Fixed an issue where the results of getResultData() sometimes did not contain m or z values.
 * Fixed an issue where the listMode property inconsistently honors a hide-children value.
 * Fixed an issue where a selected polyline graphic of a route segment would persist after clearing with the Directions widget.
 * Fixed an issue with printing ImageryLayers with an assigned renderer.
@@ -29,3 +33,4 @@
 * The Print widget prints a localized date in the printout by default.
 * Added support for printing customParameters and customLayerParameters properties of OGC layers.
 * Added the origin and final destination to the detailed turn-by-turn instructions of the Directions widget.
+* The Swipe widget now works with VectorTileLayers in the leadingLayers or trailingLayers.
