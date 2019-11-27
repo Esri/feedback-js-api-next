@@ -1,5 +1,17 @@
 # Change log
 
+### Saving webmaps
+
+WebMaps now can be saved with `save()` and `saveAs()` methods. Properties of the WebMap related to the view can be saved by calling `updateFrom()` method before saving a webmap. 
+
+### Daylight Widget
+
+Perform shadow analysis with the new Daylight widget. Position the sun at specific dates and time of day to see the shadows casted by the 3D objects in your scene. The new widget also allows you to animate the sunlight throughout the day.
+
+### Projection Engine: Spilhaus projection
+
+The [Spilhaus world ocean map in a square](https://storymaps.arcgis.com/stories/756bcae18d304a1eac140f19f4d5cb3d) or "Spilhaus projection" (WKID 54099) is now available in the Projection Engine.
+
 ## Breaking changes
 
 * Classes related to [ArcGIS Workflow Manager](http://server.arcgis.com/en/workflow-manager) have been removed. They were marked as deprecated starting with version 4.13.
@@ -15,6 +27,7 @@
 ## Bug fixes and enhancements
 
 * Swipe widget works with VectorTileLayer.
+* BUG-000125649: Fixed several issues related to crashes on iOS devices.
 * BUG-000124674: Fixed an issue where right-clicking and pasting an address into the Search widget did not give address suggestions.
 * BUG-000124032: Fixed an issue where feature collections using visual variables and/or Arcade based renderers printed "Override" in Legend in printout.
 * BUG-000125359: Fixed an issue where the listMode property of KMLLayer did not accept a hide-children value.
