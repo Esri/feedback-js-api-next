@@ -45,4 +45,4 @@ If applicable, add screenshots to help explain your problem.
  - Version: [e.g. ArcGIS API for JavaScript 4.13-next.YYYYMMDD [Revision: d8d62578]]
 
 **Additional context**
-Add any other context about the problem here.
+Add any other context about the problem here. Please note if this issue has been reported elsewhere.
