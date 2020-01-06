@@ -3,7 +3,6 @@
 ## Performance enhancements
 
 * Significantly improved GPU performance by reducing number of polygon vertices drawn.
-* When rendering vector tiles, we generate 20-25% fewer WebGL calls, and much fewer JavaScript calls, which results in a smoother interaction experience.
 * Improved mesh strategy reduced the number of geometries that needed to be tessellated.
 * Optimized the Basemap Gallery widget data loading behavior in 2D MapViews.
 * Switching to/from DotDensityRenderer or HeatmapRenderer is much faster.
