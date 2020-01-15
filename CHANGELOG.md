@@ -29,6 +29,7 @@
 
 ## Bug fixes and enhancements
 
-* BUG-000115337: Popups now properly display coded values for [MapImageLayer.sublayers](../../api-reference/esri-layers-MapImageLayer.html#sublayers).
+* BUG-000115337: Popups now properly display coded values for MapImageLayer.sublayers.
 * BUG-000127024: Fixed an issue where a WebMap would not load if it contained a MapImageLayer with a group layer and `Supports Dynamic Layers: false`.
 * Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
+- [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
