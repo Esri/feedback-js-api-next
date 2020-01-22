@@ -2,7 +2,7 @@
 
 ## Breaking changes
 
-* Native promises are now the default. For app developers, this means that any promise you receive from the API is now a standard JavaScript promise (aka “native promise”). They are nearly identical to Dojo Deferred/Promise, with the following differences:
+* Native promises are now the default. Read more in the [announcement in 4.14 release notes](https://developers.arcgis.com/javascript/latest/guide/release-notes/#api-modernization). For app developers, this means that any promise you receive from the API is now a standard JavaScript promise (aka “native promise”). They are nearly identical to Dojo Deferred/Promise, with the following differences:
   * No otherwise() method. Use catch() instead.
   * No always() method. Use the following code instead: .catch(function() {}).then(function() { /* this function is always executed */ })
   * No isFulfilled()/isResolved()/isRejected() methods (and no suitable replacement).
