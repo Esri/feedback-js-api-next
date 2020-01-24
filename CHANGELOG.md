@@ -55,4 +55,5 @@ To opt out, use
 * BUG-000127657: Fixed an issue where the TimeSlider widget displays November twice in its labels.
 * Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
 * Fixed an issue with how numbers display in Popup charts to maintain consistency across chart types.
+* Fixed an issue where a Popup would break after panning left (when popup goes off the screen and comes back) in IE11.
 * [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
