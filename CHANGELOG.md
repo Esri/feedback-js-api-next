@@ -53,7 +53,11 @@ To opt out, use
 * BUG-000127024: Fixed an issue where a WebMap would not load if it contained a MapImageLayer with a group layer and Supports Dynamic Layers: false.
 * BUG-000127435: Popups now display related field values saved within webmaps.
 * BUG-000127657: Fixed an issue where the TimeSlider widget displays November twice in its labels.
+* BUG-000126782: Charts within a Popup now dispose properly.
+* BUG-000128088: Fixed an issue in the Bookmarks widget where the bookmarks couldn't be reordered after switching between a 2D MapView and 3D SceneView.
 * Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
 * Fixed an issue with how numbers display in Popup charts to maintain consistency across chart types.
+* Added support to the defaultPopupTemplateEnabled property for automatic creation of a popup template for MapImageLayer.sublayers.
 * Fixed an issue where a Popup would break after panning left (when popup goes off the screen and comes back) in IE11.
 * [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
+* The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
