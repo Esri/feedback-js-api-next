@@ -25,10 +25,7 @@ To opt out, use
 
 ## Performance enhancements
 
-* Significantly improved GPU performance by reducing number of polygon vertices drawn.
-* Improved mesh strategy reduced the number of geometries that needed to be tessellated.
-* Optimized the Basemap Gallery widget data loading behavior in 2D MapViews.
-* Switching to/from DotDensityRenderer or HeatmapRenderer is much faster.
+* VectorTileLayer: Improved performance and stability on older iOS devices when MapView.constraints.rotationEnabled is set to false, especially if using more than one vector tile layer.
 
 ## Deprecation
 
