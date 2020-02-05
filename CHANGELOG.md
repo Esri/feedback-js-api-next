@@ -19,17 +19,40 @@ To opt out, use
      };
     </script>
 ```
-* Removed requireUtils.when, which has been deprecated since version 4.10. Use promiseUtils.create() instead.
-* Removed ImageMeshColor, which was deprecated since version 4.11. Set MeshTexture on MeshMaterial.colorTexture instead.
-* Removed ValueMeshColor, which was deprecated since version 4.11. Use MeshMaterial.color instead.
+* Removed `requireUtils.when`, which has been deprecated since version 4.10. Use promiseUtils.create() instead.
+* Removed `ImageMeshColor`, which was deprecated since version 4.11. Set MeshTexture on MeshMaterial.colorTexture instead.
+* Removed `ValueMeshColor`, which was deprecated since version 4.11. Use MeshMaterial.color instead.
+* The `dgrid` styles are no longer globally included. If using dgrid in your web application, you will need to reference the stylesheet separately.
 
 ## Performance enhancements
 
 * VectorTileLayer: Improved performance and stability on older iOS devices when MapView.constraints.rotationEnabled is set to false, especially if using more than one vector tile layer.
 
+## Bug fixes and enhancements
+
+* BUG-000113923: Fixed an issue where popups with coded value domains were not being properly displayed for MapImageLayer.
+* BUG-000115337: Popups now properly display coded values for MapImageLayer.sublayers.
+* BUG-000123604: Fixed an issue where the UniqueValueRenderer is unable to display a feature layer with more than 1000 values.
+* BUG-000127024: Fixed an issue where a WebMap would not load if it contained a MapImageLayer with a group layer and Supports Dynamic Layers: false.
+* BUG-000127435: Popups now display related field values saved within webmaps.
+* BUG-000127657: Fixed an issue where the TimeSlider widget displays November twice in its labels.
+* BUG-000126782: Charts within a Popup now dispose properly.
+* BUG-000128088: Fixed an issue in the Bookmarks widget where the bookmarks couldn't be reordered after switching between a 2D MapView and 3D SceneView.
+* BUG-000118097: A grouped layer's title now displays properly in the Legend widget.
+* [GEONET-245841](https://community.esri.com/thread/245841-directions-widget-414-wbr-in-view): Fixed an issue where `<wbr>` would appear in the directions list of the Directions widget.
+* [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
+* Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
+* Fixed an issue with how numbers display in Popup charts to maintain consistency across chart types.
+* Added support to the defaultPopupTemplateEnabled property for automatic creation of a popup template for MapImageLayer.sublayers.
+* Fixed an issue where a Popup would break after panning left (when popup goes off the screen and comes back) in IE11.
+* Fixed an issue where the basemap thumbnail in the BasemapToggle widget would not load until the corresponding Basemap was loaded.
+* Fixed an issue where the LayerList widget affected MapImageLayer.sublayers visibility.
+* The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
+
 ## Deprecation
 
-* decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
+The following are deprecated and will be removed in a future release:
+
 * Dojo promises deprecated since version 4.6. We are planning to make the API return native promises by default at 4.15, then completely remove Dojo promises at 4.16.
 * ElevationLayer.fetchTile.noDataValue deprecated since version 4.13. Use {noDataValue} options object instead.
 * Extending multiple classes deprecated since version 4.13. Create mixins with TypeScript and JavaScript instead.
@@ -42,20 +65,3 @@ To opt out, use
 * SmartMapping.params.basemap deprecated since version 4.13. Use view instead.
 * symbolPreview deprecated since version 4.11. Use symbolUtils instead.
 * ValueMeshColor deprecated since version 4.11. Use MeshMaterial.color instead.
-
-## Bug fixes and enhancements
-
-* BUG-000115337: Popups now properly display coded values for MapImageLayer.sublayers.
-* BUG-000123604: Fixed an issue where the UniqueValueRenderer is unable to display a feature layer with more than 1000 values.
-* BUG-000127024: Fixed an issue where a WebMap would not load if it contained a MapImageLayer with a group layer and Supports Dynamic Layers: false.
-* BUG-000127435: Popups now display related field values saved within webmaps.
-* BUG-000127657: Fixed an issue where the TimeSlider widget displays November twice in its labels.
-* BUG-000126782: Charts within a Popup now dispose properly.
-* BUG-000128088: Fixed an issue in the Bookmarks widget where the bookmarks couldn't be reordered after switching between a 2D MapView and 3D SceneView.
-* Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
-* Fixed an issue with how numbers display in Popup charts to maintain consistency across chart types.
-* Added support to the defaultPopupTemplateEnabled property for automatic creation of a popup template for MapImageLayer.sublayers.
-* Fixed an issue where a Popup would break after panning left (when popup goes off the screen and comes back) in IE11.
-* [GEONET-245841](https://community.esri.com/thread/245841-directions-widget-414-wbr-in-view): Fixed an issue where `<wbr>` would appear in the directions list of the Directions widget.
-* [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
-* The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
