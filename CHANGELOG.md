@@ -39,6 +39,7 @@ To opt out, use
 * BUG-000126782: Charts within a Popup now dispose properly.
 * BUG-000128088: Fixed an issue in the Bookmarks widget where the bookmarks couldn't be reordered after switching between a 2D MapView and 3D SceneView.
 * BUG-000118097: A grouped layer's title now displays properly in the Legend widget.
+* BUG-000127800: Fixed an issue where the ScaleBar would not update properly when the view's zoom level was manually changed.
 * [GEONET-245841](https://community.esri.com/thread/245841-directions-widget-414-wbr-in-view): Fixed an issue where `<wbr>` would appear in the directions list of the Directions widget.
 * [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
 * Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
@@ -48,6 +49,8 @@ To opt out, use
 * Fixed an issue where the basemap thumbnail in the BasemapToggle widget would not load until the corresponding Basemap was loaded.
 * Fixed an issue where the LayerList widget affected MapImageLayer.sublayers visibility.
 * The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
+* Fixed an issue click, double-click, immediate-click and hold events on SceneView would not intersect 3D objects and only return a `mapPoint` representing the intersection with the ground.
+* Fixed an issue with the fileName and title properties for saving printed maps with the Print widget.
 
 ## Deprecation
 
