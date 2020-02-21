@@ -31,7 +31,13 @@ The MapImageLayer and it's Sublayer classes were refactored and modernized.
 
 Visualization saw improvements with smart mapping for dynamic layers support, and fixing some layer visibility bugs. Several issues with the popup behavior were fixed, such as being able to display descriptions when using coded domain values. We also added support for the defaultPopupTemplateEnabled property for automatic creation of popup templates.
 
-Lastly, we added many new methods and properties to both MapImageLayer (e.g. MapImageLayer.loadAll() and Sublayer (e.g. Sublayer.fields, Sublayer.fieldsIndex, Sublayer.fullExtent, Sublayer.objectIdField, Sublayer.typeIdField, Sublayer.type, Sublayer.cancelLoad(), Sublayer.createPopupTemplate(), Sublayer.getFeatureType(), Sublayer.getFieldDomain(), Sublayer.load()) to make the development experience easier and more intuitive. More details about these updates will be available in an upcoming blog post.
+Lastly, we added the ability to load the sublayer metadata by adding `Sublayer.load()`, as well as `MapImageLayer.loadAll()` to load all the sublayers. After loading a sublayer you get access to below new properties and methods:
+
+* `fields` and `fieldsIndex`
+* `fullExtent`
+* `objectIdField` and `typeIdField`
+* `getFeatureType()` and `getFieldDomain()`
+* `renderer` and `labelingInfo` as configured on the service
 
 ## HTML sanitizer updated
 
