@@ -1,15 +1,21 @@
 # Change log
 
-## Breaking changes
+## API Modernization
 
-* Native promises are now the default. Read more in the [announcement in 4.14 release notes](https://developers.arcgis.com/javascript/latest/guide/release-notes/#api-modernization). For app developers, this means that any promise you receive from the API is now a standard JavaScript promise (aka “native promise”). They are nearly identical to Dojo Deferred/Promise, with the following differences:
+_Note: this will require code changes in your app._
+
+Read more in the [announcement in 4.14 release notes](https://developers.arcgis.com/javascript/latest/guide/release-notes/#api-modernization). 
+
+For app developers, this means that any promise you receive from the API is now a standard JavaScript promise (aka “native promise”). They are nearly identical to Dojo Deferred/Promise, with the following differences:
   * No otherwise() method. Use catch() instead.
-  * No always() method. Use the following code instead: .catch(function() {}).then(function() { /* this function is always executed */ })
   * No isFulfilled()/isResolved()/isRejected() methods (and no suitable replacement).
+  * No always() method. Use the following code instead: `.catch(function() { /* do something with the error */ }).then(function() { /* this function is always executed */ })`.
   * With Dojo promises, the then/catch functions used to be called synchronously when the promise is resolved/rejected. With standard promises, they are called asynchronously (in a future microtask). This can lead to bugs in code that relies (usually inadvertently) on synchronous execution.
 
+A `has` flag was made available to enable native JavaScript promises in 4.12. Now it can also be used to disable native Promise, but this flag will be removed in the next release.
 
-To opt out, use
+To opt out in 4.15, use:
+
 ```
     <script>
      var dojoConfig = {
@@ -19,6 +25,21 @@ To opt out, use
      };
     </script>
 ```
+## HTML sanitizer updated
+
+In version 4.14, an HTML sanitizer was added to all widgets. This removed some HTML for security purposes. This caused HTML set in PopupTemplate.content or in other widgets to be removed. In this version, we relaxed some of the sanitizing. Although there is still HTML sanitizing performed within the widgets, basic HTML that was previously affected should no longer be an issue.
+
+## Updated Sign-in UI
+
+The sign-in and OAuth popup confirmation dialog used to access secure services is no longer implemented as a Dijit in a Dojo dialog. This dialog is specific to secure services that do not utilize OAuth on the ArcGIS platform. The UI has been redesigned to account for this change.
+
+## Changes to Popup
+
+The title and caption of chart media elements now display above the chart. In addition, the y-axis now starts at zero if there are no negative values when using a chart media element within a Popup
+
+## Breaking changes
+
+* The API returns native `Promise` by default as of 4.15. See above for more information. 
 * Removed `requireUtils.when`, which has been deprecated since version 4.10. Use promiseUtils.create() instead.
 * Removed `ImageMeshColor`, which was deprecated since version 4.11. Set MeshTexture on MeshMaterial.colorTexture instead.
 * Removed `ValueMeshColor`, which was deprecated since version 4.11. Use MeshMaterial.color instead.
@@ -33,6 +54,8 @@ To opt out, use
 * BUG-000113923: Fixed an issue where popups with coded value domains were not being properly displayed for MapImageLayer.
 * BUG-000115337: Popups now properly display coded values for MapImageLayer.sublayers.
 * BUG-000123604: Fixed an issue where the UniqueValueRenderer is unable to display a feature layer with more than 1000 values.
+* BUG-000124184: Fixed an issue where popups authored in a webmap weren't being read properly for nested sublayers of a MapImageLayer.
+* BUG-000126322: Fixed an issue where features are cut off at the poles in SceneView.
 * BUG-000127024: Fixed an issue where a WebMap would not load if it contained a MapImageLayer with a group layer and Supports Dynamic Layers: false.
 * BUG-000127435: Popups now display related field values saved within webmaps.
 * BUG-000127657: Fixed an issue where the TimeSlider widget displays November twice in its labels.
@@ -40,6 +63,7 @@ To opt out, use
 * BUG-000128088: Fixed an issue in the Bookmarks widget where the bookmarks couldn't be reordered after switching between a 2D MapView and 3D SceneView.
 * BUG-000118097: A grouped layer's title now displays properly in the Legend widget.
 * BUG-000127800: Fixed an issue where the ScaleBar would not update properly when the view's zoom level was manually changed.
+* BUG-000127870: Fixed an issue with how SVG image symbols displayed.
 * [GEONET-245841](https://community.esri.com/thread/245841-directions-widget-414-wbr-in-view): Fixed an issue where `<wbr>` would appear in the directions list of the Directions widget.
 * [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
 * Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
@@ -51,6 +75,9 @@ To opt out, use
 * The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
 * Fixed an issue click, double-click, immediate-click and hold events on SceneView would not intersect 3D objects and only return a `mapPoint` representing the intersection with the ground.
 * Fixed an issue with the fileName and title properties for saving printed maps with the Print widget.
+* Support for animated gif.
+* Fixed an issue where MapImageLayer with dynamic layers enabled and using smartMapping renderer did not behave properly.
+* Fixed an issue where setting opacity on a FeatureLayer would apply the transparency value to each feature and not the whole layer.
 
 ## Deprecation
 
