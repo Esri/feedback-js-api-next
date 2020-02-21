@@ -25,6 +25,14 @@ To opt out in 4.15, use:
      };
     </script>
 ```
+## Better Stronger MapImageLayer
+
+The MapImageLayer and it's Sublayer classes were refactored and modernized.
+
+Visualization saw improvements with smart mapping for dynamic layers support, and fixing some layer visibility bugs. Several issues with the popup behavior were fixed, such as being able to display descriptions when using coded domain values. We also added support for the defaultPopupTemplateEnabled property for automatic creation of popup templates.
+
+Lastly, we added many new methods and properties to both MapImageLayer (e.g. MapImageLayer.loadAll() and Sublayer (e.g. Sublayer.fields, Sublayer.fieldsIndex, Sublayer.fullExtent, Sublayer.objectIdField, Sublayer.typeIdField, Sublayer.type, Sublayer.cancelLoad(), Sublayer.createPopupTemplate(), Sublayer.getFeatureType(), Sublayer.getFieldDomain(), Sublayer.load()) to make the development experience easier and more intuitive. More details about these updates will be available in an upcoming blog post.
+
 ## HTML sanitizer updated
 
 In version 4.14, an HTML sanitizer was added to all widgets. This removed some HTML for security purposes. This caused HTML set in PopupTemplate.content or in other widgets to be removed. In this version, we relaxed some of the sanitizing. Although there is still HTML sanitizing performed within the widgets, basic HTML that was previously affected should no longer be an issue.
