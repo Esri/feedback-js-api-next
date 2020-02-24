@@ -80,6 +80,7 @@ The title and caption of chart media elements now display above the chart. In ad
 * BUG-000127870: Fixed an issue with how SVG image symbols displayed.
 * [GEONET-245841](https://community.esri.com/thread/245841-directions-widget-414-wbr-in-view): Fixed an issue where `<wbr>` would appear in the directions list of the Directions widget.
 * [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
+* [GEONET-245932](https://community.esri.com/thread/245932-graphics-layer-item-limit-rendering-problem-in-api-version-412): Fixed an issue where GraphicsLayer was not displaying all added graphics.
 * Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
 * Fixed an issue with how numbers display in Popup charts to maintain consistency across chart types.
 * Added support to the defaultPopupTemplateEnabled property for automatic creation of a popup template for MapImageLayer.sublayers.
