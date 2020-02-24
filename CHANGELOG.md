@@ -78,6 +78,7 @@ The title and caption of chart media elements now display above the chart. In ad
 * BUG-000118097: A grouped layer's title now displays properly in the Legend widget.
 * BUG-000127800: Fixed an issue where the ScaleBar would not update properly when the view's zoom level was manually changed.
 * BUG-000127870: Fixed an issue with how SVG image symbols displayed.
+* [GEONET-245706](https://community.esri.com/thread/245706-calcite-maps-layerlist-issue): Fixed an issue where the LayerList widget did not work properly on Android devices.
 * [GEONET-245841](https://community.esri.com/thread/245841-directions-widget-414-wbr-in-view): Fixed an issue where `<wbr>` would appear in the directions list of the Directions widget.
 * [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
 * [GEONET-245932](https://community.esri.com/thread/245932-graphics-layer-item-limit-rendering-problem-in-api-version-412): Fixed an issue where GraphicsLayer was not displaying all added graphics.
