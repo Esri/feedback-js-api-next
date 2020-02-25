@@ -97,7 +97,7 @@ The title and caption of chart media elements now display above the chart. In ad
 * Added support to the defaultPopupTemplateEnabled property for automatic creation of a popup template for MapImageLayer.sublayers.
 * Enhanced the LayerList widget by updating the UX/UI of showing and hiding layers so that there are fewer 👁s. Now the 👁 will disappear when a layer is visible, and the hidden icon will show when the layer is not visible.
 * The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
-* Support for animated gif.
+* Support for animated gif - see sample at https://codepen.io/U_B_U/pen/VwLpYPm.
 
 ## Deprecation
 
