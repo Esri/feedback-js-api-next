@@ -67,33 +67,37 @@ The title and caption of chart media elements now display above the chart. In ad
 
 * BUG-000113923: Fixed an issue where popups with coded value domains were not being properly displayed for MapImageLayer.
 * BUG-000115337: Popups now properly display coded values for MapImageLayer.sublayers.
+* BUG-000118097: A grouped layer's title now displays properly in the Legend widget.
 * BUG-000123604: Fixed an issue where the UniqueValueRenderer is unable to display a feature layer with more than 1000 values.
 * BUG-000124184: Fixed an issue where popups authored in a webmap weren't being read properly for nested sublayers of a MapImageLayer.
 * BUG-000126322: Fixed an issue where features are cut off at the poles in SceneView.
+* BUG-000126782: Charts within a Popup now dispose properly.
 * BUG-000127024: Fixed an issue where a WebMap would not load if it contained a MapImageLayer with a group layer and Supports Dynamic Layers: false.
 * BUG-000127435: Popups now display related field values saved within webmaps.
 * BUG-000127657: Fixed an issue where the TimeSlider widget displays November twice in its labels.
-* BUG-000126782: Charts within a Popup now dispose properly.
-* BUG-000128088: Fixed an issue in the Bookmarks widget where the bookmarks couldn't be reordered after switching between a 2D MapView and 3D SceneView.
-* BUG-000118097: A grouped layer's title now displays properly in the Legend widget.
+* BUG-000127777 - Removed documentation for an unsupported calculation isRightSide in the NearestPointResult result object, which is returned in the GeometryEngine.nearestCoordinate(), GeometryEngine.nearestVertex(), and GeometryEngine.nearestVertices() methods.
 * BUG-000127800: Fixed an issue where the ScaleBar would not update properly when the view's zoom level was manually changed.
 * BUG-000127870: Fixed an issue with how SVG image symbols displayed.
+* BUG-000128088: Fixed an issue in the Bookmarks widget where the bookmarks couldn't be reordered after switching between a 2D MapView and 3D SceneView.
+* [GEONET-217197](https://community.esri.com/thread/217197-js-api-47-webmap-layers-visibility-defined-in-agol-not-respected): Fixed an issue where MapImageLayer.sublayers visibility defined in a portal were not being honored in an application.
 * [GEONET-245706](https://community.esri.com/thread/245706-calcite-maps-layerlist-issue): Fixed an issue where the LayerList widget did not work properly on Android devices.
 * [GEONET-245841](https://community.esri.com/thread/245841-directions-widget-414-wbr-in-view): Fixed an issue where `<wbr>` would appear in the directions list of the Directions widget.
 * [GEONET-245879](https://community.esri.com/thread/245879-vector-tiles-opacitybackground-color-issue-414): Fixed an issue where the background style-layer ignores VectorTileLayer's visibility.
 * [GEONET-245932](https://community.esri.com/thread/245932-graphics-layer-item-limit-rendering-problem-in-api-version-412): Fixed an issue where GraphicsLayer was not displaying all added graphics.
-* Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
-* Fixed an issue with how numbers display in Popup charts to maintain consistency across chart types.
-* Added support to the defaultPopupTemplateEnabled property for automatic creation of a popup template for MapImageLayer.sublayers.
-* Fixed an issue where a Popup would break after panning left (when popup goes off the screen and comes back) in IE11.
-* Fixed an issue where the basemap thumbnail in the BasemapToggle widget would not load until the corresponding Basemap was loaded.
-* Fixed an issue where the LayerList widget affected MapImageLayer.sublayers visibility.
-* The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
-* Fixed an issue click, double-click, immediate-click and hold events on SceneView would not intersect 3D objects and only return a `mapPoint` representing the intersection with the ground.
-* Fixed an issue with the fileName and title properties for saving printed maps with the Print widget.
-* Support for animated gif.
+* Fixed an issue where GeometryEngine.geodesicDensify() did not return a result when the input geometry's spatial reference was WGS-84.
 * Fixed an issue where MapImageLayer with dynamic layers enabled and using smartMapping renderer did not behave properly.
+* Fixed an issue where click, double-click, immediate-click and hold events on SceneView would not intersect 3D objects and only return a mapPoint representing the intersection with the ground.
+* Fixed an issue where a Popup would break after panning left (when popup goes off the screen and comes back) in IE11.
+* Fixed an issue where an incorrect title was returned for sublayers of TileLayer when loaded as an item from a portal.
 * Fixed an issue where setting opacity on a FeatureLayer would apply the transparency value to each feature and not the whole layer.
+* Fixed an issue where the LayerList widget affected MapImageLayer.sublayers visibility.
+* Fixed an issue where the basemap thumbnail in the BasemapToggle widget would not load until the corresponding Basemap was loaded.
+* Fixed an issue with how numbers display in Popup charts to maintain consistency across chart types.
+* Fixed an issue with the fileName and title properties for saving printed maps with the Print widget.
+* Added support to the defaultPopupTemplateEnabled property for automatic creation of a popup template for MapImageLayer.sublayers.
+* Enhanced the LayerList widget by updating the UX/UI of showing and hiding layers so that there are fewer 👁s. Now the 👁 will disappear when a layer is visible, and the hidden icon will show when the layer is not visible.
+* The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
+* Support for animated gif.
 
 ## Deprecation
 
