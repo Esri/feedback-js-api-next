@@ -54,10 +54,10 @@ The title and caption of chart media elements now display above the chart. In ad
 ## Breaking changes
 
 * The API returns native `Promise` by default as of 4.15. See above for more information. 
-* Removed `requireUtils.when`, which has been deprecated since version 4.10. Use promiseUtils.create() instead.
-* Removed `ImageMeshColor`, which was deprecated since version 4.11. Set MeshTexture on MeshMaterial.colorTexture instead.
-* Removed `ValueMeshColor`, which was deprecated since version 4.11. Use MeshMaterial.color instead.
 * The `dgrid` styles are no longer globally included. If using dgrid in your web application, you will need to reference the stylesheet separately.
+* Removed `ImageMeshColor`, which was deprecated since version 4.11. Set MeshTexture on MeshMaterial.colorTexture instead.
+* Removed `requireUtils.when`, which has been deprecated since version 4.10. Use promiseUtils.create() instead.
+* Removed `ValueMeshColor`, which was deprecated since version 4.11. Use MeshMaterial.color instead.
 
 ## Performance enhancements
 
@@ -97,6 +97,7 @@ The title and caption of chart media elements now display above the chart. In ad
 * Added support to the defaultPopupTemplateEnabled property for automatic creation of a popup template for MapImageLayer.sublayers.
 * Enhanced the LayerList widget by updating the UX/UI of showing and hiding layers so that there are fewer 👁s. Now the 👁 will disappear when a layer is visible, and the hidden icon will show when the layer is not visible.
 * The `percentile-continuous` and `percentile-discrete` types have been added to statisticType. The percentile statistic indicates the value below or above which a given percentage of values in a group of data values falls.
+* Enhanced the relative-to-scene elevation mode to account for z-values.
 * Support for animated gif - see sample at https://codepen.io/U_B_U/pen/VwLpYPm.
 
 ## Deprecation
