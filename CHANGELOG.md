@@ -4,6 +4,16 @@
 
 The FeatureTable widget provides an interactive tabular view of each feature's attributes and attachments contained in a feature layer. When working with a large dataset, the table loads additional features as the user scrolls. Users can select rows (features) within the table, sort them based on an attribute, and show/hide attribute columns.
 
+## Attachments: editing and viewing
+
+### Editing attachments
+
+The Editor widget was updated to support attachment editing. You can add, update, or delete attachments associated with a feature. It does so by making use of the Attachments widget. Nothing specific needs to be explicitely configured within the Editor to make this work. If the feature service to be edited is enabled with attachments, the option to add, update, and delete them will be made available within the widget.
+
+### Viewing attachments
+
+4.15 introduces a new Attachments widget which allows users to view attachments associated with a feature. Along with a thumbnail of the attachment, the file format and size are displayed. The pop-up now uses this widget under the hood to display attachments (note that it was possible to view attachments from within the pop-up prior to 4.15). Since the attachment experience is packaged as a standalone widget, you can also integrate attachment viewing into your own custom workflows. You can also view attachments from within the new feature table widget.
+
 ## API Modernization
 
 _Note: this will require code changes in your app._
