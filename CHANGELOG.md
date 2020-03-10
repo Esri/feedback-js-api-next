@@ -2,7 +2,7 @@
 
 ## FeatureTable
 
-The FeatureTable widget provides an interactive tabular view of each feature's attributes and attachments contained in a feature layer. When working with a large dataset, the table loads additional features as the user scrolls. Users can select rows (features) within the table, sort them based on an attribute, and show/hide attribute columns.
+The FeatureTable widget provides an interactive tabular view of each feature's attributes and attachments contained in a feature layer. When working with a large dataset, the table loads additional features as the user scrolls. Users can select rows (features) within the table, sort them based on an attribute, and show/hide attribute columns. See sample at https://codepen.io/bsvensson/pen/yLNppjJ.
 
 ## Attachments: editing and viewing
 
