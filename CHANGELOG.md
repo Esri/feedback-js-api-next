@@ -74,6 +74,9 @@ The title and caption of chart media elements now display above the chart. In ad
 * Removed `ImageMeshColor`, which was deprecated since version 4.11. Set MeshTexture on MeshMaterial.colorTexture instead.
 * Removed `requireUtils.when`, which has been deprecated since version 4.10. Use promiseUtils.create() instead.
 * Removed `ValueMeshColor`, which was deprecated since version 4.11. Use MeshMaterial.color instead.
+* Removed capabilities and version properties from StreamLayer.
+* The update event on Sketch widget and SketchViewModel no longer have cancel state. The parameter aborted on update events indicates that the process got cancelled.
+* The attachmentInfos property has been removed from AttachmentsContent. It is now handled via the Attachments widget and can be accessed via its viewModel.
 
 ## Performance enhancements
 
@@ -84,6 +87,8 @@ The title and caption of chart media elements now display above the chart. In ad
 * BUG-000113923: Fixed an issue where popups with coded value domains were not being properly displayed for MapImageLayer.
 * BUG-000115337: Popups now properly display coded values for MapImageLayer.sublayers.
 * BUG-000118097: A grouped layer's title now displays properly in the Legend widget.
+* BUG-000120921: Fixed an issue with label placement for FeatureLayers in 2D MapViews.
+* BUG-000123521: Fixed an issue where TextSymbol did not properly respect Font.decoration property values.
 * BUG-000123604: Fixed an issue where the UniqueValueRenderer is unable to display a feature layer with more than 1000 values.
 * BUG-000124184: Fixed an issue where popups authored in a webmap weren't being read properly for nested sublayers of a MapImageLayer.
 * BUG-000126322: Fixed an issue where features are cut off at the poles in SceneView.
@@ -95,6 +100,7 @@ The title and caption of chart media elements now display above the chart. In ad
 * BUG-000127800: Fixed an issue where the ScaleBar would not update properly when the view's zoom level was manually changed.
 * BUG-000127870: Fixed an issue with how SVG image symbols displayed.
 * BUG-000128088: Fixed an issue in the Bookmarks widget where the bookmarks couldn't be reordered after switching between a 2D MapView and 3D SceneView.
+* BUG-000128344: Fixed an issue where Multipoint.setPoint threw errors if z/m values were not set.
 * [GEONET-217197](https://community.esri.com/thread/217197-js-api-47-webmap-layers-visibility-defined-in-agol-not-respected): Fixed an issue where MapImageLayer.sublayers visibility defined in a portal were not being honored in an application.
 * [GEONET-245706](https://community.esri.com/thread/245706-calcite-maps-layerlist-issue): Fixed an issue where the LayerList widget did not work properly on Android devices.
 * [GEONET-245841](https://community.esri.com/thread/245841-directions-widget-414-wbr-in-view): Fixed an issue where `<wbr>` would appear in the directions list of the Directions widget.
@@ -120,15 +126,23 @@ The title and caption of chart media elements now display above the chart. In ad
 
 The following are deprecated and will be removed in a future release:
 
-* Dojo promises deprecated since version 4.6. We are planning to make the API return native promises by default at 4.15, then completely remove Dojo promises at 4.16.
-* ElevationLayer.fetchTile.noDataValue deprecated since version 4.13. Use {noDataValue} options object instead.
+* BasemapToggle.titleVisible deprecated since version 4.15. Use BasemapToggle.visibleElements.title instead.
+* decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
+* Dojo promises deprecated since version 4.6. The API returns native promises by default at 4.15, then we will completely remove Dojo promises at 4.16.
 * Extending multiple classes deprecated since version 4.13. Create mixins with TypeScript and JavaScript instead.
-* ImageMeshColor deprecated since version 4.11. Set MeshTexture on MeshMaterial.colorTexture instead.
+* FeatureTemplates.filterEnabled deprecated since version 4.15. Use FeatureTemplates.visibleElements.filter instead.
 * LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
-* PathSymbol3DLayer.size deprecated since version 4.12. Use width or height instead.
-* ProjectParameters.outSR deprecated since version 4.4. Use outSpatialReference instead.
+* LayerList.statusIndicatorsVisible deprecated since version 4.15. Use LayerList.visibleElements.statusIndicators instead.
+* PathSymbol3DLayer.size deprecated since version 4.12. Use PathSymbol3DLayer.width or PathSymbol3DLayer.height instead.
+* Popup.featureNavigationEnabled deprecated since version 4.15. Use Popup.visibleElements.featureNavigation instead.
+* ProjectParameters.outSR deprecated since version 4.4. Use ProjectParameters.outSpatialReference instead.
 * RouteParameters.barriers deprecated since version 4.11. Use pointBarriers, polygonBarriers, and/or polylineBarriers instead.
 * SceneView.constraints.collision deprecated since version 4.8. Use Ground.navigationConstraint instead.
+* SizeVariable.expression deprecated since version 4.2. Use SizeVariable.valueExpression instead.
+* Slider.labelsVisible deprecated since version 4.15. Use Slider.visibleElements.labels instead.
+* Slider.rangeLabelsVisible deprecated since version 4.15. Use Slider.visibleElements.rangeLabels instead.
 * SmartMapping.params.basemap deprecated since version 4.13. Use view instead.
+* StreamLayer.maximumTrackPoints deprecated since version 4.15. Use StreamLayer.purgeOptions.maxObservations instead.
+* symbolPreview.renderPreviewHTML deprecated since version 4.11. Use symbolUtils.renderPreviewHTML instead.
 * symbolPreview deprecated since version 4.11. Use symbolUtils instead.
-* ValueMeshColor deprecated since version 4.11. Use MeshMaterial.color instead.
+* widget.join deprecated since version 4.7. Use classes instead.
