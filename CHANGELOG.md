@@ -4,7 +4,46 @@ The `next` version of 4.16 is now available.  Planned release date is July 2020.
 
 ## Breaking changes
 
-* TBD
+### Modernization
+
+* Native Promise has been activated by default. The `has` flag `"esri-native-promise"` is no longer supported.
+* Classes are now using native class syntax instead of `dojo/_base/declare`. If you built classes like custom widgets, some upgrade can be done.
+  * Multiple class inheritance is no longer supported.
+  * The current class syntax still works but will be deprecated. To update your TS classes:
+    * Remove the `amd-dependency` comments, no longer necessary
+    * add `importHelpers: true` to you tsconfig.json compiler options. See [TypeScript documentation](https://www.typescriptlang.org/v2/en/tsconfig#importHelpers) for more details.
+    * remove use of `declared`.
+    
+Here is an example of before and after the update
+  
+**Previous syntax**
+  
+```ts
+/// <amd-dependency path="esri/core/tsSupport/declareExtendsHelper" name="__extends" />
+/// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
+
+import Accessor = require("esri/core/Accessor");
+
+import { subclass, declared } from "esri/core/accessorSupport/decorators";
+
+@subclass("esri.guide.Color")
+class Color extends declared(Accessor) {
+
+}
+```
+
+**New syntax**
+  
+```ts
+import Accessor = require("esri/core/Accessor");
+
+import { subclass } from "esri/core/accessorSupport/decorators";
+
+@subclass("esri.guide.Color")
+class Color extends Accessor {
+
+}
+```
 
 ## Bug fixes and enhancements
 
