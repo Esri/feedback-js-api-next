@@ -53,6 +53,7 @@ class Color extends Accessor {
 
 The following are deprecated and will be removed in a future release:
 
+* Support for IE11 is deprecated since version 4.16. Please use a modern browser.
 * BasemapToggle.titleVisible deprecated since version 4.15. Use BasemapToggle.visibleElements.title instead.
 * decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
 * Dojo promises deprecated since version 4.6. The API returns native promises by default at 4.15, then we will completely remove Dojo promises at 4.16.
