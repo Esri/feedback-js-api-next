@@ -17,8 +17,8 @@ New properties on `FeatureReductionCluster`:
 
 Samples:
 
-- [CodePen: Basic labels with count in center of cluster](https://codepen.io/kekenes/pen/qBOyENR?editors=1000)
-- [CodePen: Advanced labels with summary information in cluster](https://codepen.io/kekenes/pen/oNjMgzW?editable=true&editors=100)
+- [CodePen: Basic labels with count in center of cluster](https://codepen.io/kekenes/pen/qBOyENR)
+- [CodePen: Advanced labels with summary information in cluster](https://codepen.io/kekenes/pen/oNjMgzW)
 
 ## Breaking changes
 
