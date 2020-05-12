@@ -2,6 +2,13 @@
 
 The `next` version of 4.16 is now available.  Planned release date is July 2020.
 
+## Point cluster labels
+
+You can now label clusters with the count of points represented by the cluster.
+Or any summary statistics used by the cluster popup, such as average, and predominant value.
+Labeling is configured on the labelingInfo property of FeatureReductionCluster. 
+You can take advantage of all LabelClass functionality when labeling clusters.
+
 ## Breaking changes
 
 ### Modernization
@@ -47,7 +54,15 @@ class Color extends Accessor {
 
 ## Bug fixes and enhancements
 
-* TBD
+* BUG-000125118: Fixed an issue where SVG symbols were unable to be printed if added as a PictureMarkerSymbol.
+* BUG-000128672: Fixed an issue where the FeatureForm would not validate text fields for NULL values if the field did not allow this.
+* BUG-000129390: Fixed an issue where the LayerSearchSource.zoomScale property fails to set zoom scale for the selected search result.
+* BUG-000129738: Fixed an issue in LayerList where actions with the visible property set to false are still visible.
+* GEONET-251354: Fixed an issue where the PrintTemplate did not support custom print templates, which affected both the PrintTask and Print widget.
+* Fixed an issue where the Map and widgets stop rendering when the View container div visibility is set to hidden.
+* Fixed an issue where the printed legend was styled incorrectly when using a RelationshipRenderer or a DotDensityRenderer. Requires a print service from version 10.8.1 or higher.
+* Enhanced the Sublayer.createFeatureLayer() method to include the MapImageLayer.refreshInterval property value (if defined) for the created FeatureLayer.
+* Enhanced the Directions widget and Search widget to display a notification when a user selects Use current location and the current location cannot be retrieved due to current browser restictions or settings.
 
 ## Deprecation
 
