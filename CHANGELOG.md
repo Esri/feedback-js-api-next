@@ -4,10 +4,21 @@ The `next` version of 4.16 is now available.  Planned release date is July 2020.
 
 ## Point cluster labels
 
-You can now label clusters with the count of points represented by the cluster.
-Or any summary statistics used by the cluster popup, such as average, and predominant value.
-Labeling is configured on the labelingInfo property of FeatureReductionCluster. 
-You can take advantage of all LabelClass functionality when labeling clusters.
+You can now label clusters with the count of points represented by the cluster, or any summary statistics used by the cluster popup, such as average, and predominant value. Labeling is configured on the labelingInfo property of `FeatureReductionCluster`. 
+You can take advantage of all `LabelClass` functionality when labeling clusters.
+
+New properties on `FeatureReductionCluster`:
+
+- `labelingInfo` - An array of `LabelClass` defining labels for clusters.
+- `labelsVisible` - `true` by default. Displays labels defined in `labelingInfo`.
+- `clusterMinSize` - Sets the size in points for the smallest cluster. It may be necessary to make small clusters larger to properly fit some labels.
+- `clusterMaxSize` - Sets the size in points for the largest cluster. All other sizes are linearly interpolated.
+- `LabelClass.deconflictionStrategy = 'none'` - displays all labels in the LabelClass. This ensures all clusters have a label.
+
+Samples:
+
+- [CodePen: Basic labels with count in center of cluster](https://codepen.io/kekenes/pen/qBOyENR)
+- [CodePen: Advanced labels with summary information in cluster](https://codepen.io/kekenes/pen/oNjMgzW)
 
 ## Breaking changes
 
