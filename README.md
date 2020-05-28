@@ -1,5 +1,7 @@
 # ArcGIS API for JavaScript - next
 
+![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
+
 **https://js.arcgis.com/next**
 
 Welcome to the next version of the ArcGIS API for JavaScript (4.16).
