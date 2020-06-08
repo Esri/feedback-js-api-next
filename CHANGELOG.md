@@ -2,6 +2,8 @@
 
 The `next` version of 4.16 is now available.  Planned release date is July 2020.
 
+![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
+
 ## Point cluster labels
 
 You can now label clusters with the count of points represented by the cluster, or any summary statistics used by the cluster popup, such as average, and predominant value. Labeling is configured on the labelingInfo property of `FeatureReductionCluster`. 
@@ -62,6 +64,8 @@ class Color extends Accessor {
 
 }
 ```
+* The TileImageryLayer is removed and replaced by the ImageryTileLayer.
+* The TimeExtent's intersect method now returns an instance of TimeExtent with undefined values for start and end properties if the two time extents do not intersect.
 
 ## Bug fixes and enhancements
 
