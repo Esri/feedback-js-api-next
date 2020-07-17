@@ -1,83 +1,16 @@
 # Change log
 
-The `next` version of 4.16 is now available.  Planned release date is July 2020.
+The `next` version of 4.17 is now available.  Planned release date is October 2020.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
-## Point cluster labels
-
-You can now label clusters with the count of points represented by the cluster, or any summary statistics used by the cluster popup, such as average, and predominant value. Labeling is configured on the labelingInfo property of `FeatureReductionCluster`. 
-You can take advantage of all `LabelClass` functionality when labeling clusters.
-
-New properties on `FeatureReductionCluster`:
-
-- `labelingInfo` - An array of `LabelClass` defining labels for clusters.
-- `labelsVisible` - `true` by default. Displays labels defined in `labelingInfo`.
-- `clusterMinSize` - Sets the size in points for the smallest cluster. It may be necessary to make small clusters larger to properly fit some labels.
-- `clusterMaxSize` - Sets the size in points for the largest cluster. All other sizes are linearly interpolated.
-- `LabelClass.deconflictionStrategy = 'none'` - displays all labels in the LabelClass. This ensures all clusters have a label.
-
-Samples:
-
-- [CodePen: Basic labels with count in center of cluster](https://codepen.io/kekenes/pen/qBOyENR)
-- [CodePen: Advanced labels with summary information in cluster](https://codepen.io/kekenes/pen/oNjMgzW)
-
 ## Breaking changes
 
-### Modernization
-
-* Native Promise has been activated by default. The `has` flag `"esri-native-promise"` is no longer supported.
-* Classes are now using native class syntax instead of `dojo/_base/declare`. If you built classes like custom widgets, some upgrade can be done.
-  * Multiple class inheritance is no longer supported.
-  * The current class syntax still works but will be deprecated. To update your TS classes:
-    * Remove the `amd-dependency` comments, no longer necessary
-    * add `importHelpers: true` to you tsconfig.json compiler options. See [TypeScript documentation](https://www.typescriptlang.org/v2/en/tsconfig#importHelpers) for more details.
-    * remove use of `declared`.
-    
-Here is an example of before and after the update
-  
-**Previous syntax**
-  
-```ts
-/// <amd-dependency path="esri/core/tsSupport/declareExtendsHelper" name="__extends" />
-/// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
-
-import Accessor = require("esri/core/Accessor");
-
-import { subclass, declared } from "esri/core/accessorSupport/decorators";
-
-@subclass("esri.guide.Color")
-class Color extends declared(Accessor) {
-
-}
-```
-
-**New syntax**
-  
-```ts
-import Accessor = require("esri/core/Accessor");
-
-import { subclass } from "esri/core/accessorSupport/decorators";
-
-@subclass("esri.guide.Color")
-class Color extends Accessor {
-
-}
-```
-* The TileImageryLayer is removed and replaced by the ImageryTileLayer.
-* The TimeExtent's intersect method now returns an instance of TimeExtent with undefined values for start and end properties if the two time extents do not intersect.
+* None yet
 
 ## Bug fixes and enhancements
 
-* BUG-000125118: Fixed an issue where SVG symbols were unable to be printed if added as a PictureMarkerSymbol.
-* BUG-000128672: Fixed an issue where the FeatureForm would not validate text fields for NULL values if the field did not allow this.
-* BUG-000129390: Fixed an issue where the LayerSearchSource.zoomScale property fails to set zoom scale for the selected search result.
-* BUG-000129738: Fixed an issue in LayerList where actions with the visible property set to false are still visible.
-* GEONET-251354: Fixed an issue where the PrintTemplate did not support custom print templates, which affected both the PrintTask and Print widget.
-* Fixed an issue where the Map and widgets stop rendering when the View container div visibility is set to hidden.
-* Fixed an issue where the printed legend was styled incorrectly when using a RelationshipRenderer or a DotDensityRenderer. Requires a print service from version 10.8.1 or higher.
-* Enhanced the Sublayer.createFeatureLayer() method to include the MapImageLayer.refreshInterval property value (if defined) for the created FeatureLayer.
-* Enhanced the Directions widget and Search widget to display a notification when a user selects Use current location and the current location cannot be retrieved due to current browser restictions or settings.
+* None yet
 
 ## Deprecation
 
