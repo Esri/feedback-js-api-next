@@ -10,7 +10,14 @@ The `next` version of 4.17 is now available.  Planned release date is October 20
 
 ## Bug fixes and enhancements
 
-* None yet
+* BUG-000129741: Popup and ListItem actions no longer fire the trigger-action event when disabled.
+* BUG-000129959: Fixed an issue with WMSLayer where some sublayers were not able to be turned off from the LayerList widget.
+* BUG-000131053: Fixed an issue where individual point features did not highlight on selection when clustering is enabled.
+* BUG-000131400: It is not possible to create client-side feature layers with a period in the field name.
+* GEONET-257326: Fixed an issue where the ScaleBar widget labels would display on top of other widgets.
+* GEONET-257043: Fixed an issue where the Bookmarks widget would not allow new bookmarks to be added if view.map was not a WebMap.
+* Fixed an issue where the ClosestFacilitySolveResult.directions had the incorrect property type. The property is now an array of DirectionsFeatureSet instances.
+* Enhanced the behavior of the Print widget so that if the end-user modifies the dpi value in the MAP_ONLY layout, then the height and width are automaticlly adjusted. See exportOptions to learn more.
 
 ## Deprecation
 
