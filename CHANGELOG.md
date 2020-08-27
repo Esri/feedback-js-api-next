@@ -6,7 +6,7 @@ The `next` version of 4.17 is now available.  Planned release date is October 20
 
 ## Breaking changes
 
-* None yet
+* View.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
 
 ## Bug fixes and enhancements
 
