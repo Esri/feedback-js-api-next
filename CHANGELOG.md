@@ -30,7 +30,6 @@ The following are deprecated and will be removed in a future release:
 
 * Use of Internet Explorer 11 is deprecated as of version 4.16. Users are highly encouraged to move to a modern browser such as Mozilla Firefox, Google Chrome, Apple Safari, or Microsoft Edge. While Internet Explorer 11 continues to be supported, use of Internet Explorer 11 is  discouraged, and support will be discontinued in version 4.18.
 * decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
-* Dojo promises deprecated since version 4.6. The API returns native promises by default at 4.15, then we will completely remove Dojo promises at 4.16.
 * Extending multiple classes deprecated since version 4.13. Create mixins with TypeScript and JavaScript instead.
 * LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
 * SceneView.constraints.collision deprecated since version 4.8. Use Ground.navigationConstraint instead.
