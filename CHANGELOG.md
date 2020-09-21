@@ -4,6 +4,12 @@ The `next` version of 4.17 is now available.  Planned release date is October 20
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## ES modules
+
+Consuming the API with [@arcgis/core ES modules](https://www.npmjs.com/package/@arcgis/core) will be an additional option alongside the existing AMD modules. We are looking for your help to ensure that the new modules work seamlessly with modern web developer tooling.
+
+As opposed to most `next` features, this is NOT planned for release at 4.17.
+
 ## Breaking changes
 
 * View.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
