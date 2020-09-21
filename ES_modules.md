@@ -1,15 +1,15 @@
-## Overview
+## ES modules
 
 This is currently in development and is not intended for use in production applications.
 
-Consuming the API with [@arcgis/core ES modules](https://www.npmjs.com/package/@arcgis/core) will be an additional option alongside the existing AMD modules. We are looking for your help to ensure that the new modules work seamlessly with modern web developer tooling.
+Consuming the API with [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) ES modules will be an additional option alongside the existing AMD modules. We are looking for your help to ensure that the new modules work seamlessly with modern web developer tooling.
  
 ## Installation and usage
 
 See https://www.npmjs.com/package/@arcgis/core
 
 ```
-npm install @arcgis/core
+// Step 1. npm install @arcgis/core
 
 // Example:
 import WebMap from '@arcgis/core/WebMap';
