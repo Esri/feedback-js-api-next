@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: ES modules bug report
 about: Create a bug report for ES modules with @arcgis/core
 title: '@arcgis/core: '
 labels: 'ESM'
