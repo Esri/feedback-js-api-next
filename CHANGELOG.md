@@ -10,9 +10,62 @@ Consuming the API with [@arcgis/core ES modules](https://www.npmjs.com/package/@
 
 As opposed to most `next` features, this is NOT planned for release at 4.17.
 
+## StreamLayer updates
+
+### Performance and stability updates
+
+The StreamLayer can now handle faster websocket streams. When a client encounters a stream that is emitting events faster than it can handle, the API will down-throttle service updates accordingly. This along with other changes under the hood should improve overall stability, and allow clients to work with much faster stream services than they could in the past.
+
+We added an update-rate event on the StreamLayerView, which can be used to check the websocket and client update rates. You can also can take advantage of maxReconnectionAttempts and maxReconnectionInterval properties on the StreamLayer. These properties can be used to specify how many times, and how long, to wait between attempts when the StreamLayer tries to reconnect to the server in case of lost connections.
+
+### Consuming custom stream services
+
+The StreamLayer can now consume custom stream services that are pushed via websocket. To do this, set the webSocketUrl property of the StreamLayer to point to your custom service. Please check out this repo for creating custom stream services to get started.
+
+## VectorTileLayer updates
+
+At 4.17, VectorTileLayer has been updated in many areas. Here are updates that will visually affect the VectorTileLayer for the better. Labels will no longer overlap near tile boundaries. You will also notice that labels will not be cut-off near tile boundaries while you are zooming in and out. We also fade symbols in and out when you interact with map instead of abruptly turning visibility of symbols on and off.
+
+## Client-side layer updates
+
+CSVLayer, GeoJSONLayer, and FeatureLayer created from client-side graphics are now taking advantage of a worker to store the data. This means you can perform more queries on your client-side layers in a background thread without interfering with the user interface.
+
+## Raster updates
+
+* At this release, we are introducing VectorFieldRenderer class that can used for visualizing flow direction and magnitude information in meteorology and oceanography raster data.
+* WCSLayer is also new at this release and presents raster data from a OGC Web Coverage Service. 
+
+## Widget updates
+
+### Bookmarks - Advanced editing
+
+The 4.17 release brings advanced editing capabilities to the Bookmarks widget - allowing the user to update the bookmark's extent and add thumbnails to their bookmarks. To enable editing on the Bookmarks widget, set the Bookmarks.editingEnabled property to true.
+
+* __Adding and editing thumbnails__: To add or edit a bookmark thumbnail, use the ... button on the thumbnail to access the thumbnail menu. From here, you will have the option to refresh the thumbnail (take a screenshot of the current extent), add a thumbnail from a URL (HTTPS protocol required), or to delete the thumbnail.
+* __Editing a bookmark's viewpoint__: When editing a bookmark, the view will update to show the viewpoint of the bookmark. The user can then pan, zoom, or rotate the view, and when they hit Save, the viewpoint of the bookmark will be updated to match the current scale, rotation, and extent of the view.
+
+### Print
+
+The Print widget was enhanced to make working with it easier. First, we added a new exportedLinks property that allows you to access the collection of links exported from a print request. The specifications of the collection is described in the FileLink type definition. We also added two events, complete and submit, to give developers an easier way to manage printing results and behavior.
+
+## WebTileLayer updates
+
+At this release, we updated the urlTemplate property of WebTileLayer to accept {z}/{x}/{y} patterns where z corresponds to a zoom level, and x and y represent a tile location along x and y axis.
+
+## Time support for WMSLayers
+
+You can use the TimeSlider widget to animate your layers over a period of time, or you can set a timeExtent on the layer to only request data that falls within the given time extent. The timeInfo property is set at WMSLayer initialization if the layer has one or more time dimensions.
+
+## LayerView transitions
+
+We enhanced the LayerView in 2D MapViews by adding a fade-in and out transition to the LayerView when we turn the layer's visibility on and off.
+
 ## Breaking changes
 
-* View.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
+* For better memory management, view.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
+* StreamLayer.maximumTrackPoints was deprecated at version 4.15 and is now removed. Use StreamLayer.purgeOptions.maxObservations instead.
+* The ActionButton and ActionToggle classes now correctly implement their types as either button or toggle. Prior to this, it was set as string.
+* The TimeSlider.loop property now has a default value of false instead of true.
 
 ## Bug fixes and enhancements
 
