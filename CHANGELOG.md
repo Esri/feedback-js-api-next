@@ -69,32 +69,50 @@ We enhanced the LayerView in 2D MapViews by adding a fade-in and out transition 
 
 ## Bug fixes and enhancements
 
+* BUG-000124122: The labels for a VectorTileLayer now correctly overlap when needed.
+* BUG-000126549: Fixed an issue where setting NULL field values in the Editor widget would not work as expected.
+* BUG-000127825: Fixed an issue where Query.parameterValues were getting dropped from query requests.
+* BUG-000128004: Fixed an issue where labels did not print for client-side feature layers.
+* BUG-000128560: Fixed an issue where a 3D GLTF model loaded as ObjectSymbol3DLayer would disappear at certain camera angles.
 * BUG-000129741: Popup and ListItem actions no longer fire thetrigger-action event when disabled.
 * BUG-000129959: Fixed an issue with WMSLayer where some sublayers were not able to be turned off from the LayerList widget.
+* BUG-000131005: Fixed an issue where the symbology of the features changes in the Legend when clicking on the map.
 * BUG-000131053: Fixed an issue where individual point features did not highlight on selection when clustering is enabled.
 * BUG-000131400: It is not possible to create client-side feature layers with a period in the field name.
+* BUG-000132100: Fixed a printing isue where Sublayer.title was not honored in the legend.
+* BUG-000132263: Fixed the behavior of the CoordinateConversion widget by always displaying a png for the graphic used in capture mode (previously was png or svg depending on the browser).
 * BUG-000132335: Clarified documentation for Slider, HistogramRangeSlider, and TimeSlider to indicate the containers for these widgets need a width specified in CSS to render properly in the Expand widget.
+* BUG-000133131: Fixed an issue where the TimeSlider would not handle features with infinite start of end times (e.g. startDate: 1/1/2020, endDate: null).
+* BUG-000133234: Fixed an issue where the Legend symbols and widget panel size change after clicking on the map when MapImageLayer has sublayers configured with pop-ups.
+* BUG-000133521: Fixed an issue where the LayerList widget would not remove layers from a collection.
 * GEONET-257043: Fixed an issue where the Bookmarks widget would not allow new bookmarks to be added if view.map was not a WebMap.
 * GEONET-257326: Fixed an issue where the ScaleBar widget labels would display on top of other widgets.
+* GEONET-947024: Fixed an issue where some widget buttons were missing a type=button property. This only affects button elements when wrapped in a form.
+* Fixed an issue where maximumNumberOfFeatures wouldn't be correctly applied in a SceneView.
 * Fixed an issue where the ClosestFacilitySolveResult.directions had the incorrect property type. The property is now an array of DirectionsFeatureSet instances.
-* Enhanced the behavior of the Print widget so that if the end-user modifies the dpi value in the MAP_ONLY layout, then the height and width are automaticlly adjusted. See exportOptions to learn more.
+* Fixed an issue where the WMSLayer was not parsed correctly when the service contained only a root layer, but no nested layers.
 * Fixed an issue with popup alignment and docking positions.
-* Integrated mesh modifications are applied without reloading layer, allowing for smoother transitions between different versions and scenarios.
-* The evaluation of visibility of ObjectSymbol3DLayer is based on the entire shape of the symbol and not the point only (Frustum Culling).
-* CIMSymbolReference typings were added for CIMSymbol.data to help users write correct CIM.
+* Fixed an issue with the Search widget where the focus remained on the search field instead of the resulting popup after selecting a location.
+* ENH-000117307: The ability to load all of the sublayers to a feature service can now be achieved by using the Layer.fromArcGISServerUrl function and pass in the URL to the feature service.
+* ENH-000123446: Much work has been done to help speed up general processing and improving symbology update speeds.
+* ENH-000123854: The TimeSlider now works with WMSLayers that have time dimensions.
+* ENH-000125859: Implemented spatial client-side queries for BuildingSceneLayer.
+* Enhanced the printing logic to send GeoJSONLayer as a feature collections instead of a screenshot to the print service.
+* Enhanced the CIMSymbolReference typings by adding CIMSymbol.data to help users write correct CIM.
+* Enhanced the IntegratedMeshLayer so that modifications are applied without reloading the layer; allowing for smoother transitions between different versions and scenarios.
+* Enhanced the ObjectSymbol3DLayer so that the evaluation of visibility is based on the entire shape of the symbol and not just the point (Frustum Culling).
+* Enhanced the behavior of the Print widget so that if the end-user modifies the dpi value in the MAP_ONLY layout, then the height and width are automaticlly adjusted. See exportOptions to learn more.
+* Enhanced the behavior of the SliceViewModel.tiltEnabled, so that it doesn't automatically start the widget when set.
+* Enhanced the behavior of how StreamLayers work when resumed from a suspended browser tab. When a tab is refocused, the StreamLayer resumes and is updated.
 
 ## Deprecation
 
 The following are deprecated and will be removed in a future release:
 
 * Use of Internet Explorer 11 is deprecated as of version 4.16. Users are highly encouraged to move to a modern browser such as Mozilla Firefox, Google Chrome, Apple Safari, or Microsoft Edge. While Internet Explorer 11 continues to be supported, use of Internet Explorer 11 is  discouraged, and support will be discontinued in version 4.18.
-* decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
-* Extending multiple classes deprecated since version 4.13. Create mixins with TypeScript and JavaScript instead.
-* LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
-* SceneView.constraints.collision deprecated since version 4.8. Use Ground.navigationConstraint instead.
-* SmartMapping.params.basemap deprecated since version 4.13. Use view instead.
 * decorators.declared deprecated since version 4.16. declared() is not needed to extend Accessor anymore. See Implementing Accessor for updated information.
-* StreamLayer.maximumTrackPoints deprecated since version 4.15. Use StreamLayer.purgeOptions.maxObservations instead.
+* ChartMediaInfoValueSeries.x deprecated since version 4.17. Use 'value' instead.
+* ChartMediaInfoValueSeries.y deprecated since version 4.17. Use 'tooltip' instead.
 * SizeVariable.expression deprecated since version 4.2. Use SizeVariable.valueExpression instead.
 * PathSymbol3DLayer.size deprecated since version 4.12. Use PathSymbol3DLayer.width or PathSymbol3DLayer.height instead.
 * symbolPreview deprecated since version 4.11. Use symbolUtils instead.
@@ -102,12 +120,14 @@ The following are deprecated and will be removed in a future release:
 * PrintTemplate.preserveScale deprecated since version 4.16. Use PrintTemplate.scalePreserved instead.
 * ProjectParameters.outSR deprecated since version 4.4. Use ProjectParameters.outSpatialReference instead.
 * RouteParameters.barriers deprecated since version 4.11. Use pointBarriers, polygonBarriers, and/or polylineBarriers instead.
+* Bookmark.extent deprecated since 4.17. Use viewpoint instead.
 * AreaMeasurement2DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
 * AreaMeasurement2DViewModel.newMeasurement deprecated since version 4.16. Use start instead.
 * AreaMeasurement3DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
 * AreaMeasurement3DViewModel.newMeasurement deprecated since version 4.16. Use start instead.
 * BasemapLayerList.statusIndicatorsVisible deprecated since version 4.15. Use BasemapLayerList.visibleElements.statusIndicators instead.
 * BasemapToggle.titleVisible deprecated since version 4.15. Use BasemapToggle.visibleElements.title instead.
+* Bookmarks.select-bookmark deprecated since version 4.17. Use bookmark-select instead.
 * DirectLineMeasurement3DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
 * DirectLineMeasurement3DViewModel.newMeasurement deprecated since version 4.16. Use start instead.
 * DistanceMeasurement2DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
@@ -121,3 +141,8 @@ The following are deprecated and will be removed in a future release:
 * SliceViewModel.newSlice deprecated since version 4.16. Use start instead.
 * Slider.labelsVisible deprecated since version 4.15. Use Slider.visibleElements.labels instead.
 * Slider.rangeLabelsVisible deprecated since version 4.15. Use Slider.visibleElements.rangeLabels instead.
+* decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
+* Extending multiple classes deprecated since version 4.13. Create mixins with TypeScript and JavaScript instead.
+* LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
+* SceneView.constraints.collision deprecated since version 4.8. Use Ground.navigationConstraint instead.
+* SmartMapping.params.basemap deprecated since version 4.13. Use view instead.
