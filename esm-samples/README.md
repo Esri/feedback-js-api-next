@@ -1,6 +1,6 @@
 # @arcgis/core
 
-The [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core) is currently in development and will be released in `beta` at 4.18.
+The [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core) is currently in development and will be released in `beta` at 4.18. It is not currently supported as there are still some issues to work out, and should not be used in production applications yet.
 
 The projects in this directory are samples on how to integrate `@arcgis/core` with various build tools and framework tooling.
 
