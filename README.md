@@ -63,14 +63,6 @@ You can use the typings included with `arcgis-js-api@next` two ways.
 }
 ```
 
-## Using Webpack
-
-If you are using `arcgis-js-api@next` in a webpack application, you will also need to install the `next` version of the [`@arcgis/webpack-plugin`](https://github.com/Esri/arcgis-webpack-plugin).
-
-```sh
-npm install --save-dev @arcgis/webpack-plugin@next
-```
-
 ## Issues
 
 Report issues with next version at https://github.com/Esri/feedback-js-api-next/issues/new/choose
