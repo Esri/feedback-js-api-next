@@ -1,28 +1,30 @@
 {
-  "name": "cra-app",
+  "name": "jsapi-create-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@arcgis/core": "^4.17.0-next.20201003",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "@arcgis/core": "^4.17.0-next.20201008",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "bundle:report": "source-map-explorer build/**/*.js",
-    "serve": "serve build -p 3001",
+    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets",
     "postinstall": "npm run copy"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -37,16 +39,6 @@
     ]
   },
   "devDependencies": {
-    "closure-webpack-plugin": "^2.3.0",
-    "copy-webpack-plugin": "^6.0.3",
-    "google-closure-compiler": "^20200830.0.0",
-    "moment-locales-webpack-plugin": "^1.2.0",
-    "ncp": "^2.0.0",
-    "react-app-rewired": "^2.1.6",
-    "serve": "^11.3.2",
-    "source-map-explorer": "^2.5.0",
-    "terser-webpack-plugin": "^4.1.0",
-    "webpack-bundle-analyzer": "^3.8.0",
-    "webpack-cli": "^3.3.12"
+    "ncp": "^2.0.0"
   }
 }

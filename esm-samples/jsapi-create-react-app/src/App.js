@@ -109,7 +109,7 @@ function App() {
             fuel_type: "Fuel_Type_Code",
             connector_types: "EV_Connector_Types",
             network: "EV_Network",
-            name: "Station_Name",
+            name  : "Station_Name",
           },
           config: {
             show_label: "true",
@@ -123,7 +123,7 @@ function App() {
     }
   }, []);
 
-  return <div className="App" ref={mapDiv}></div>;
+  return <div className="mapDiv" ref={mapDiv}></div>;
 }
 
 export default App;
