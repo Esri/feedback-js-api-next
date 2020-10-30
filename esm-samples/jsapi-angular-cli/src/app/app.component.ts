@@ -3,10 +3,8 @@ import {
   OnInit,
   ViewChild,
   ElementRef,
-  Input,
-  Output,
-  EventEmitter,
   OnDestroy,
+  NgZone
 } from '@angular/core';
 
 import WebMap from '@arcgis/core/WebMap';
@@ -20,7 +18,7 @@ import config from "@arcgis/core/config.js";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy {
   private view: any = null;
 
   // The <div> where we will place the map
@@ -28,7 +26,9 @@ export class AppComponent implements OnInit{
 
   title = 'ng-cli';
 
-  async initializeMap(): Promise<any> {
+  constructor(private zone: NgZone) { }
+
+  initializeMap(): Promise<any> {
     const container = this.mapViewEl.nativeElement;
 
     const webmap = new WebMap({
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit{
 
     const view = new MapView({
       container,
-      map: webmap,
+      map: webmap
     });
 
     const bookmarks = new Bookmarks({
@@ -72,12 +72,20 @@ export class AppComponent implements OnInit{
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit(): any {
-    console.log('ngOnInit');
+
+    // Set this property when using routes in order to resolve the /assets correctly.
+    // IMPORTANT: the directory path may be different between your product app and your dev app
     (config as any).baseUrl = "/";
-    // Initialize MapView and return an instance of MapView
-    this.initializeMap().then((mapView) => {
-      // The map has been initialized
-      console.log('mapView ready: ');
+
+    this.zone.runOutsideAngular(() => {
+      // Initialize MapView and return an instance of MapView
+      this.initializeMap().then((mapView) => {
+        // The map has been initialized
+        this.zone.run(() => {
+          console.log('mapView ready: ');
+        })
+      });
+
     });
   }
 
