@@ -1,6 +1,6 @@
 # ArcGIS API for JavaScript in Node
 
-Integrating Node with [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core) requires that you use tooling such as Rollup build commonjs wrappers for the ArcGIS API for JavaScript.
+Integrating Node with [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core) requires that you use tooling such as Rollup to build commonjs wrappers for the ArcGIS API for JavaScript.
 
 ```js
 // rollup.config.js
@@ -27,7 +27,7 @@ Because Node does not have a native `fetch`, you will need to load a polyfill.
 require("cross-fetch/polyfill");
 ```
 
-You will also want to disable to the [`IdentityManager`](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#request) so it doesn't attempt to load DOM related JavaScript.
+You will also want to disable the [`IdentityManager`](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#request) so it doesn't attempt to load DOM related JavaScript.
 
 ```js
 import esriConfig from "@arcgis/core/config.js";
