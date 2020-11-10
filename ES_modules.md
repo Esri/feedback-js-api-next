@@ -43,7 +43,7 @@ We are looking for feedback on these types of issues with 3rd party frameworks, 
 ## FAQ
 
 * What browsers are supported by the ES Modules? 
-  - Edge/Chrome/Firefox/Safari latest. No support for IE 11 or Edge Legacy 
+  - The same browsers as the API: Edge/Chrome/Firefox/Safari. 
 * Will the AMD modules continue to be supported and made available with each release?
   - Yes, it will be updated and made available with each release for the foreseeable future. 
 * How will the ES Modules be made available to customers? 
