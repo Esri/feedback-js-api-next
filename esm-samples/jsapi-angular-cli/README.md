@@ -45,7 +45,7 @@ import config from "@arcgis/core/config.js";
   . . .
 
   ngOnInit(): any {
-    (config as any).baseUrl = "/"; //assuming assets are in /assets
+    config.assetsPath = "/assets"; //assuming assets are in /assets
   }
 ```
 
