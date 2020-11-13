@@ -11,19 +11,23 @@ Consuming the API with [@arcgis/core ES modules](https://www.npmjs.com/package/@
 ## Breaking changes
 
 * IE11 is no longer supported.
-* The format for the takeScreenshot() method on MapView and SceneView now defaults to png instead of jpg.
+* The default format for the takeScreenshot() method on MapView and SceneView has changed to png instead of jpg.
 * The mediaType property was removed from OGCFeatureLayer. All requests for metadata and data content will now be made with the "f=json" url parameter.
 
 ## Bug fixes and enhancements
 
 * BUG-000126854: Fixed an issue where the MapView is panned when trying to move a selected graphic with the Sketch widget.
 * BUG-000132412: Fixed an issue where a WMTSLayer was rendered with incorrect levels of detail (LOD) after zooming in and out multiple times.
+* BUG-000132880: Fixed an issue where some layout property values of a VectorTileLayer were not honored when zooming in and out.
+* BUG-000133609: Fixed an issue where a WMTSLayer failed to load if the serviceMode was "KVP", but was not defined in the constructor.
 * BUG-000134238: Fixed an issue where a WMSLayer would get slightly offset if the screen resolution was higher the maxWidth or maxHeight of the layer.
 * BUG-000134595: Fixed an issue where HeatmapStatistics fail when using a spatial reference other than Web Mercator (102100).
 * GEONET-261976: Fixed an issue where near simultaneous calls to FeatureLayer.applyEdits were not working as expected.
+* GEONET-622683: Fixed an issue FeatureLayerView.queryExtent is returning 0,0 for xmin and ymin values.
 * GEONET-958751: Fixed an issue where the Search widget would throw an error message in the browser console when Search.locationEnabled is set to false.
 * GEONET-959033: Fixed the Invalid time value error message that gets thrown when there is a date FieldInfo specified at the PopupTemplate and rendered within the popup.
-* ENH-000124689 - The request class is now used for legend graphic requests on WMSLayers to allow for request interception.
+* ENH-000124689: The request class is now used for legend graphic requests on WMSLayers to allow for request interception.
+* Enhanced Popup so that the focus shifts to the first focusable element of the popup.
 * Enhanced UniqueValueInfo.value to accept number values as unique values in addition to strings. Previously, numbers were autocasted to strings.
 * Added additional options to the symbolConfig property of symbolUtils.renderPreviewHTML()
 * Enhanced accessibility on the LayerList widget when actions are defined.
