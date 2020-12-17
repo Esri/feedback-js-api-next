@@ -26,7 +26,7 @@ Add references to the CDN and you are ready to get started.
 
 ### npm
 
-Install using `npm install --save arcgis-js-api@next`.
+For ES modules, use `npm install @arcgis/core`. For AMD modules, use `npm install arcgis-js-api@next`.
 
 ### esri-loader
 
