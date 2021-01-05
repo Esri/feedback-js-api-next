@@ -1,36 +1,19 @@
 # Change log
 
-The `next` version of 4.18 is now available.  Planned release date is December 2020.
+The `next` version of 4.19 is now available.  Planned release date is April 2021.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
-## ES modules
-
-Consuming the API with [@arcgis/core ES modules](https://www.npmjs.com/package/@arcgis/core) will be an additional option alongside the existing AMD modules. We are looking for your help to ensure that the new modules work seamlessly with modern web developer tooling.  See https://www.esri.com/arcgis-blog/products/js-api-arcgis/announcements/es-modules-are-coming-soon-in-the-arcgis-api-for-javascript/
-
 ## Breaking changes
 
-* IE11 is no longer supported.
-* The default format for the takeScreenshot() method on MapView and SceneView has changed to png instead of jpg.
-* The mediaType property was removed from OGCFeatureLayer. All requests for metadata and data content will now be made with the "f=json" url parameter.
+* n/a 
 
 ## Bug fixes and enhancements
 
-* BUG-000126854: Fixed an issue where the MapView is panned when trying to move a selected graphic with the Sketch widget.
-* BUG-000132412: Fixed an issue where a WMTSLayer was rendered with incorrect levels of detail (LOD) after zooming in and out multiple times.
-* BUG-000132880: Fixed an issue where some layout property values of a VectorTileLayer were not honored when zooming in and out.
-* BUG-000133609: Fixed an issue where a WMTSLayer failed to load if the serviceMode was "KVP", but was not defined in the constructor.
-* BUG-000134238: Fixed an issue where a WMSLayer would get slightly offset if the screen resolution was higher the maxWidth or maxHeight of the layer.
-* BUG-000134595: Fixed an issue where HeatmapStatistics fail when using a spatial reference other than Web Mercator (102100).
-* GEONET-261976: Fixed an issue where near simultaneous calls to FeatureLayer.applyEdits were not working as expected.
-* GEONET-622683: Fixed an issue FeatureLayerView.queryExtent is returning 0,0 for xmin and ymin values.
-* GEONET-958751: Fixed an issue where the Search widget would throw an error message in the browser console when Search.locationEnabled is set to false.
-* GEONET-959033: Fixed the Invalid time value error message that gets thrown when there is a date FieldInfo specified at the PopupTemplate and rendered within the popup.
-* ENH-000124689: The request class is now used for legend graphic requests on WMSLayers to allow for request interception.
-* Enhanced Popup so that the focus shifts to the first focusable element of the popup.
-* Enhanced UniqueValueInfo.value to accept number values as unique values in addition to strings. Previously, numbers were autocasted to strings.
-* Added additional options to the symbolConfig property of symbolUtils.renderPreviewHTML()
-* Enhanced accessibility on the LayerList widget when actions are defined.
+* BUG-000134522: Fixed an issue where the UniqueValueRenderer failed to display PictureMarkerSymbol graphics when attempting to load over a thousand images.
+* BUG-000135733: Fixed an issue where a Graphic with an Extent geometry containing a TextSymbol disappeared from the map at certain zoom levels.
+* BUG-000136086: Fixed an issue where the return type of the added and coordinates properties of the Sketch widget's VertexAddEventInfo were documented to return Graphic[] instead of Number[].
+* Fixed an issue with printing layers from a MapServer if the map service supports dynamic layers.
 
 ## Deprecation
 
@@ -46,16 +29,19 @@ The following are deprecated and will be removed in a future release:
 and
 
 * decorators.declared deprecated since version 4.16. declared() is not needed to extend Accessor anymore. See Implementing Accessor for updated information.
-* projection.isSupported deprecated since version 4.18. IE11 is not supported and all modern browsers support the projection engine.
+* projection.isSupported deprecated since version 4.18.
 * ChartMediaInfoValueSeries.x deprecated since version 4.17. Use value instead.
 * ChartMediaInfoValueSeries.y deprecated since version 4.17. Use tooltip instead.
 * SizeVariable.expression deprecated since version 4.2. Use SizeVariable.valueExpression instead.
 * PathSymbol3DLayer.size deprecated since version 4.12. Use PathSymbol3DLayer.width or PathSymbol3DLayer.height instead.
 * symbolPreview deprecated since version 4.11. Use symbolUtils instead.
 * symbolPreview.renderPreviewHTML deprecated since version 4.11. Use symbolUtils.renderPreviewHTML instead.
+* ImageServiceIdentifyTask deprecated since version 4.18. Use ImageIdentifyTask instead.
+* ImageServiceIdentifyParameters deprecated since version 4.18. Use ImageIdentifyParameters instead.
+* ImageServiceIdentifyResult deprecated since version 4.18. Use ImageIdentifyResult instead.
 * PrintTemplate.preserveScale deprecated since version 4.16. Use PrintTemplate.scalePreserved instead.
 * ProjectParameters.outSR deprecated since version 4.4. Use ProjectParameters.outSpatialReference instead.
-* RouteParameters.barriers deprecated since version 4.11. Use pointBarriers, polygonBarriers, and/or polylineBarriers instead.
+* PointDrawAction.coordinates deprecated
 * Bookmark.extent deprecated since 4.17. Use viewpoint instead.
 * AreaMeasurement2DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
 * AreaMeasurement2DViewModel.newMeasurement deprecated since version 4.16. Use start instead.
@@ -78,3 +64,4 @@ and
 * SliceViewModel.newSlice deprecated since version 4.16. Use start instead.
 * Slider.labelsVisible deprecated since version 4.15. Use Slider.visibleElements.labels instead.
 * Slider.rangeLabelsVisible deprecated since version 4.15. Use Slider.visibleElements.rangeLabels instead.
+* widget.renderable deprecated since version 4.19. All properties are automatically tracked now and don't need to be decorated with this decorator.
