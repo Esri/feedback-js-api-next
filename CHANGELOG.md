@@ -6,7 +6,7 @@ The `next` version of 4.19 is now available.  Planned release date is April 2021
 
 ## Breaking changes
 
-* n/a 
+* Local NPM installs of `@arcgis/core` and `arcgis-js-api` are now required to set `config.assetsPath`, the default value has been removed. Errors will be thrown if this property is not manually set. 
 
 ## Bug fixes and enhancements
 
