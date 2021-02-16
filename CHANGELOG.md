@@ -17,6 +17,7 @@ The `next` version of 4.19 is now available.  Planned release date is April 2021
 
 ## Bug fixes and enhancements
 
+* Fixed critical dependency warnings that occurred when building the API with ES modules and webpack. 
 * BUG-000134522: Fixed an issue where the UniqueValueRenderer failed to display PictureMarkerSymbol graphics when attempting to load over a thousand images.
 * BUG-000135733: Fixed an issue where a Graphic with an Extent geometry containing a TextSymbol disappeared from the map at certain zoom levels.
 * BUG-000136086: Fixed an issue where the return type of the added and coordinates properties of the Sketch widget's VertexAddEventInfo were documented to return Graphic[] instead of Number[].
