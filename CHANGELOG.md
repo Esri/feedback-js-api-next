@@ -10,6 +10,22 @@ The `next` version of 4.19 is now available.  Planned release date is April 2021
 
 * The InputField and FieldElement hint property has been updated to display a temporary placeholder for text and number inputs for both TextAreaInput and TextBoxInput. Prior to this, whatever was set in the FieldElement's hint would display as a tooltip while hovering over the input field.
 
+* The following classes, properties, methods, and events were previously deprecated and have now been removed at 4.19:
+
+| Class/Property/Method/Event | Alternate option | Version deprecated |
+|----------|-------------|--------------------|
+| `ProjectParameters.outSR` | `ProjectParameters.outSpatialReference` | 4.4 |
+| `BasemapToggle.titleVisible` | `BasemapToggle.visibleElements.title` | 4.15 |
+| `AreaMeasurement2DViewModel.clearMeasurement()` | `AreaMeasurement2DViewModel.clear()` | 4.16 |
+| `AreaMeasurement2DViewModel.newMeasurement()` | `AreaMeasurement2DViewModel.start()` | 4.16 |
+| `AreaMeasurement3DViewModel.clearMeasurement()` | `AreaMeasurement3DViewModel.clear()` | 4.16 |
+| `AreaMeasurement3DViewModel.newMeasurement()` | `AreaMeasurement3DViewModel.start()` | 4.16 |
+| `DirectLineMeasurement2DViewModel.clearMeasurement()` | `DirectLineMeasurement2DViewModel.clear()` | 4.16 |
+| `DirectLineMeasurement2DViewModel.newMeasurement()` | `DirectLineMeasurement2DViewModel.start()` | 4.16 |
+| `DirectLineMeasurement3DViewModel.clearMeasurement()` | `DirectLineMeasurement3DViewModel.clear()` | 4.16 |
+| `DirectLineMeasurement3DViewModel.newMeasurement()` | `DirectLineMeasurement3DViewModel.start()` | 4.16 |
+| `PrintTemplate.preserveScale` | `PrintTemplate.scalePreserved` | 4.16 |
+
 ## Bug fixes and enhancements
 
 - BUG-000131546: Fixed an issue where selecting features using the Editor widget would fail at large scales if the service's spatial reference does not match the map's spatial reference.
@@ -37,21 +53,42 @@ The `next` version of 4.19 is now available.  Planned release date is April 2021
 - Enhanced the Directions widget by adding a Time Unspecified departure option.
 - Enhanced the Gamepad so that navigation will only work over https.
 
-## Deprecated classes, properties, methods, and events
+## Deprecations
 
-The following are deprecated and will be removed in a future release:
-
-| Class/Property/Method/Event | Alternate option | Version deprecated |
-|----------|-------------|--------------------|
-| `ProjectParameters.outSR` | [ProjectParameters.outSpatialReference](../api-reference/esri-tasks-support-ProjectParameters.html#outSpatialReference) | 4.4 |
-| `BasemapToggle.titleVisible` | [BasemapToggle.visibleElements.title](../api-reference/esri-widgets-BasemapToggle.html#visibleElements) | 4.15 |
-| `AreaMeasurement2DViewModel.clearMeasurement()` | [AreaMeasurement2DViewModel.clear()](/api-reference/esri-widgets-AreaMeasurement2D-AreaMeasurement2DViewModel.html#clear) | 4.16 |
-| `AreaMeasurement2DViewModel.newMeasurement()` | [AreaMeasurement2DViewModel.start()](/api-reference/esri-widgets-AreaMeasurement2D-AreaMeasurement2DViewModel.html#start) | 4.16 |
-| `AreaMeasurement3DViewModel.clearMeasurement()` | [AreaMeasurement3DViewModel.clear()](/api-reference/esri-widgets-AreaMeasurement3D-AreaMeasurement3DViewModel.html#clear) | 4.16 |
-| `AreaMeasurement3DViewModel.newMeasurement()` | [AreaMeasurement3DViewModel.start()](/api-reference/esri-widgets-AreaMeasurement3D-AreaMeasurement3DViewModel.html#start) | 4.16 |
-| `DirectLineMeasurement2DViewModel.clearMeasurement()` | [DirectLineMeasurement2DViewModel.clear()](/api-reference/esri-widgets-DirectLineMeasurement2D-DirectLineMeasurement2DViewModel.html#clear) | 4.16 |
-| `DirectLineMeasurement2DViewModel.newMeasurement()` | [DirectLineMeasurement2DViewModel.start()](/api-reference/esri-widgets-DirectLineMeasurement2D-DirectLineMeasurement2DViewModel.html#start) | 4.16 |
-| `DirectLineMeasurement3DViewModel.clearMeasurement()` | [DirectLineMeasurement3DViewModel.clear()](/api-reference/esri-widgets-DirectLineMeasurement3D-DirectLineMeasurement3DViewModel.html#clear) | 4.16 |
-| `DirectLineMeasurement3DViewModel.newMeasurement()` | [DirectLineMeasurement3DViewModel.start()](/api-reference/esri-widgets-DirectLineMeasurement3D-DirectLineMeasurement3DViewModel.html#start) | 4.16 |
-| `PrintTemplate.preserveScale` | [PrintTemplate.scalePreserved](../api-reference/esri-tasks-support-PrintTemplate.html#scalePreserved) | 4.16 |
-
+* decorators.declared deprecated since version 4.16. declared() is not needed to extend Accessor anymore. See Implementing Accessor for updated information.
+* projection.isSupported deprecated since version 4.18.
+* ChartMediaInfoValueSeries.x deprecated since version 4.17. Use value instead.
+* ChartMediaInfoValueSeries.y deprecated since version 4.17. Use tooltip instead.
+* SizeVariable.expression deprecated since version 4.2. Use SizeVariable.valueExpression instead.
+* PathSymbol3DLayer.size deprecated since version 4.12. Use PathSymbol3DLayer.width or PathSymbol3DLayer.height instead.
+* symbolPreview deprecated since version 4.11. Use symbolUtils instead.
+* symbolPreview.renderPreviewHTML deprecated since version 4.11. Use symbolUtils.renderPreviewHTML instead.
+* ImageServiceIdentifyTask deprecated since version 4.18. Use ImageIdentifyTask instead.
+* ImageServiceIdentifyParameters deprecated since version 4.18. Use ImageIdentifyParameters instead.
+* ImageServiceIdentifyResult deprecated since version 4.18. Use ImageIdentifyResult instead.
+* PrintTemplate.preserveScale deprecated since version 4.16. Use PrintTemplate.scalePreserved instead.
+* ProjectParameters.outSR deprecated since version 4.4. Use ProjectParameters.outSpatialReference instead.
+* PointDrawAction.coordinates deprecated
+* Bookmark.extent deprecated since 4.17. Use viewpoint instead.
+* AreaMeasurement2DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
+* AreaMeasurement2DViewModel.newMeasurement deprecated since version 4.16. Use start instead.
+* AreaMeasurement3DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
+* AreaMeasurement3DViewModel.newMeasurement deprecated since version 4.16. Use start instead.
+* BasemapLayerList.statusIndicatorsVisible deprecated since version 4.15. Use BasemapLayerList.visibleElements.statusIndicators instead.
+* BasemapToggle.titleVisible deprecated since version 4.15. Use BasemapToggle.visibleElements.title instead.
+* Bookmarks.bookmarkCreationOptions deprecated since 4.18. Use defaultCreateOptions instead.
+* Bookmarks.select-bookmark deprecated since version 4.17. Use bookmark-select instead.
+* DirectLineMeasurement3DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
+* DirectLineMeasurement3DViewModel.newMeasurement deprecated since version 4.16. Use start instead.
+* DistanceMeasurement2DViewModel.clearMeasurement deprecated since version 4.16. Use clear instead.
+* DistanceMeasurement2DViewModel.newMeasurement deprecated since version 4.16. Use start instead.
+* FeatureForm.fieldConfig deprecated since version 4.16. Use FieldElement and/or GroupElement instead.
+* FeatureFormViewModel.fieldConfig deprecated since version 4.16. Use FieldElement and/or GroupElement instead.
+* FeatureTemplates.filterEnabled deprecated since version 4.15. Use FeatureTemplates.visibleElements.filter instead.
+* LayerList.statusIndicatorsVisible deprecated since version 4.15. Use LayerList.visibleElements.statusIndicators instead.
+* Popup.featureNavigationEnabled deprecated since version 4.15. Use Popup.visibleElements.featureNavigation instead.
+* SliceViewModel.clearSlice deprecated since version 4.16. Use clear instead.
+* SliceViewModel.newSlice deprecated since version 4.16. Use start instead.
+* Slider.labelsVisible deprecated since version 4.15. Use Slider.visibleElements.labels instead.
+* Slider.rangeLabelsVisible deprecated since version 4.15. Use Slider.visibleElements.rangeLabels instead.
+* widget.renderable deprecated since version 4.19. All properties are automatically tracked now and don't need to be decorated with this decorator.
