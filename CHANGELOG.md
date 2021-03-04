@@ -55,6 +55,8 @@ The `next` version of 4.19 is now available.  Planned release date is April 2021
 
 ## Deprecations
 
+The following are deprecated and will be removed in a future release:
+
 - BookmarksViewModel.BookmarkCreationOptions.captureExtent deprecated since version 4.17. Use captureViewpoint instead.
 - decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
 - Extending multiple classes deprecated since version 4.13. Create mixins with TypeScript and JavaScript instead.
