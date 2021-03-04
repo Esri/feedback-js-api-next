@@ -55,6 +55,12 @@ The `next` version of 4.19 is now available.  Planned release date is April 2021
 
 ## Deprecations
 
+- BookmarksViewModel.BookmarkCreationOptions.captureExtent deprecated since version 4.17. Use captureViewpoint instead.
+- decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
+- Extending multiple classes deprecated since version 4.13. Create mixins with TypeScript and JavaScript instead.
+- LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
+- SceneView.constraints.collision deprecated since version 4.8. Use Ground.navigationConstraint instead.
+- SmartMapping.params.basemap deprecated since version 4.13. Use view instead.
 * decorators.declared deprecated since version 4.16. declared() is not needed to extend Accessor anymore. See Implementing Accessor for updated information.
 * projection.isSupported deprecated since version 4.18.
 * ChartMediaInfoValueSeries.x deprecated since version 4.17. Use value instead.
