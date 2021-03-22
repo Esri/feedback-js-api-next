@@ -28,7 +28,7 @@ The `next` version of 4.19 is now available.  Planned release date is April 2021
 
 ## Bug fixes and enhancements
 
-- NPM installs of `@arcgis/core` and `arcgis-js-api` now use a CDN as the default way to retrieve assets for local builds. The assets include styles, images, fonts, and localization files. The new default setting will make initial installs and configuration much easier. Production releases of the API now default to `https://js.arcgis.com/4.<version>/@arcgis/core/assets` and next builds default to `https://cdn.jsdelivr.net/npm/@arcgis/core@<version>/assets/`.
+- NPM installs of `@arcgis/core` and `arcgis-js-api` for local builds now use a CDN as the default way to retrieve assets at runtime. The assets include styles, images, fonts, web workers and localization files. The new default setting will make initial installs and configuration much easier, and the default setting can still be overriden using `config.assetsPath` when working with local assets. Production releases of the API now default to `https://js.arcgis.com/4.<version>/@arcgis/core/assets` and `next` builds default to `https://cdn.jsdelivr.net/npm/@arcgis/core@<version>/assets/`. 
 - BUG-000131546: Fixed an issue where selecting features using the Editor widget would fail at large scales if the service's spatial reference does not match the map's spatial reference.
 - BUG-000134522: Fixed an issue where the UniqueValueRenderer would fail to display PictureMarkerSymbol graphics when attempting to load over a thousand images.
 - BUG-000135733: Fixed an issue where a Graphic with an Extent geometry containing a TextSymbol would disappear from the map at certain zoom levels.
