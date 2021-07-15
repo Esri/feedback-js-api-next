@@ -4,8 +4,8 @@
 
 **https://js.arcgis.com/next**
 
-Welcome to the next version of the ArcGIS API for JavaScript (4.20).
-This version of the API is currently in development and will be updated frequently until the production release in June 2021. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bugs and enhancement requests are specific to https://js.arcgis.com/next and not applicable to a released version.
+Welcome to the next version of the ArcGIS API for JavaScript (4.21).
+This version of the API is currently in development and will be updated frequently until the production release in September 2021. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bugs and enhancement requests are specific to https://js.arcgis.com/next and not applicable to a released version.
 
 Please note: ArcGIS API for JavaScript release management is dynamic. Some new features and updates that appear in js.arcgis.com/next might not be present in the final production release due to a variety of factors (but will likely be present in an upcoming release).
 
@@ -72,7 +72,7 @@ Report issues with next version at https://github.com/Esri/feedback-js-api-next/
 
 ## Licensing
 
-Copyright 2020 Esri
+Copyright 2021 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
