@@ -17,6 +17,8 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000141284: Fixed an issue with [WMSLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WMSLayer.html) where custom parameters would be added to the GetLegendGraphic request with a `?` instead of an `&`, causing the request to fail.
+- Fixed an issue where layer effects were not being applied to ImageryLayer.
+- Fixed an issue where VectorFieldRenderer would not update when used with the TimeSlider widget.
 
 ## Deprecations
 
