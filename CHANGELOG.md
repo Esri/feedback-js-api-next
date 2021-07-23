@@ -21,12 +21,11 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - Fixed an issue where VectorFieldRenderer would not update when used with the TimeSlider widget.
 
 ## Deprecations
+The following are deprecated and will be removed in a future release. For anything deprecated in 4.20 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Click to expand!</summary>  
   
-The following are deprecated and will be removed in a future release:
-
 *	decorators.declared deprecated since version 4.16. declared() is not needed to extend Accessor anymore. See Implementing Accessor for updated information.
 *	promiseUtils.reject deprecated since version 4.19. Use the native Promise.reject() method instead.
 *	promiseUtils.resolve deprecated since version 4.19. Use the native Promise.resolve() method instead.
