@@ -24,7 +24,7 @@ jobs:
           only-labels: null
           days-before-stale: 365          
           days-before-close: 31
-          delete-branch: true
+          delete-branch: false
           
           # Run the processor in debug mode without actually performing any operations on live issues.
           # debug-only: true # optional, default is false
