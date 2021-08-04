@@ -21,7 +21,6 @@ jobs:
           close-issue-message: "This issue has been automatically closed due to inactivity. If you need additional assistance please contact Esri Technical Support."
           stale-pr-message: "This PR has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. If you need additional assistance please contact Esri Technical Support. Thank you for your contributions."
           close-pr-message: "This PR has been automatically closed due to inactivity. If you need additional assistance please contact Esri Technical Support."          
-          only-labels: null
           days-before-stale: 365          
           days-before-close: 31
           delete-branch: false
