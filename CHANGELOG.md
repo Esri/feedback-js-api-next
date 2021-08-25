@@ -4,6 +4,9 @@ The `next` version of 4.21 is now available.  Planned release date is September 
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## Updates to Sketch widget UI
+The [Sketch](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch.html) widget's snapping UI has been updated to include the ability to toggle specific snapping abilities on/off. Currently in 4.20, if snapping is enabled on the widget, both [selfEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-interactive-snapping-SnappingOptions.html#selfEnabled) and [featureEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-interactive-snapping-SnappingOptions.html#featureEnabled) snapping occurs. This new UI update allows the user to specify whether they wish to have both enabled or to constrain it to only one type. If [featureEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-interactive-snapping-SnappingOptions.html#featureEnabled) snapping is needed, a list of graphic layers now display within a dropdown. This allows the end user to specify which layer they wish to snap the sketch geometries.
+
 ## Breaking changes
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
