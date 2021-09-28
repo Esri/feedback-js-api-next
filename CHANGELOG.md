@@ -105,15 +105,15 @@ The following are deprecated and will be removed in a future release. For anythi
 *    SizeVariable.expression deprecated since version 4.2. Use SizeVariable.valueExpression instead.
 *    Slider.labelsVisible deprecated since version 4.15. Use Slider.visibleElements.labels instead.
 *    Slider.rangeLabelsVisible deprecated since version 4.15. Use Slider.visibleElements.rangeLabels instead.
+*    `SmartMapping.params.basemap` deprecated since version 4.13. Use `view` instead.
 *    StatisticDefinition deprecated since version 4.20. Use StatisticDefinition instead.
 *    symbolPreview.renderPreviewHTML deprecated since version 4.11. Use symbolUtils.renderPreviewHTML instead.
 *    symbolPreview deprecated since version 4.11. Use symbolUtils instead.
 *    Task deprecated since version 4.20.
+*    Themes: The light-blue, dark-blue, light-green, dark-green, light-purple, dark-purple, light-red, dark-red are deprecated since 4.19. Please use `light` or `dark` instead, or create your own theme.
 *    TimeSlider.values deprecated since version 4.20. Use timeExtent instead.
 *    TimeSliderViewModel.values deprecated since version 4.20. Use timeExtent instead.
 *    TrimExtendParameters deprecated since version 4.20. Use TrimExtendParameters instead.
 *    widget.renderable deprecated since version 4.19. All properties are automatically tracked now and don't need to be decorated with this decorator.
-*    `SmartMapping.params.basemap` deprecated since version 4.13. Use `view` instead.
-*    The light-blue, dark-blue, light-green, dark-green, light-purple, dark-purple, light-red, dark-red are deprecated since 4.19. Please use `light` or `dark` instead, or create your own theme.
 
 </details>
