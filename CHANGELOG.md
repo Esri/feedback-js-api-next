@@ -10,23 +10,17 @@ The following classes, methods, properties and events have been deprecated for a
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
-| `BasemapLayerList.statusIndicatorsVisible` | `BasemapLayerList.visibleElements.statusIndicators` | 4.15 |
-| `Bookmarks.bookmarkCreationOptions` | `Bookmarks.defaultCreateOptions` | 4.18 |
-| `esri/tasks/ImageServiceIdentifyTask` | `imageService.identify` | 4.18 |
-| `esri/tasks/support/ImageServiceIdentifyResult` | `ImageIdentifyResult` | 4.18 |
-| `esri/tasks/support/ImageServiceIdentifyParameters` | `ImageIdentifyParameters` | 4.18 |
-| `FeatureForm.description` and `FeatureFormViewModel.description`  | `FormTemplate.description` set either on the `FeatureForm` or `FeatureLayer.formTemplate` | 4.18 |
-| `FeatureForm.fieldConfig` and `FeatureFormViewModel.fieldConfig` | `FieldElement/GroupElement` set in the `FormTemplate.elements` | 4.16 |
-| `FeatureForm.title` and `FeatureFormViewModel.title` | `FormTemplate.title` set either on the `FeatureForm` or `FeatureLayer.formTemplate`  | 4.18 |
+| `TBD` | `TBD` | TBD |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4x API.
 
 ## Bug fixes and enhancements
 
-* TBD
+* BUG-000135727: Fixed an issue with WMSLayer where the layer would not load if the spatial reference was not defined on the root layer in the service.
+* BUG-000143043: Fixed an issue with WMTSLayer where duplicate parameters were being included in requests to the service.
 
 ## Deprecations
-The following are deprecated and will be removed in a future release. For anything deprecated in 4.20 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
+The following are deprecated and will be removed in a future release. For anything deprecated in 4.21 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
 <details>
   <summary>Click to expand!</summary>  
@@ -121,10 +115,5 @@ The following are deprecated and will be removed in a future release. For anythi
 *    widget.renderable deprecated since version 4.19. All properties are automatically tracked now and don't need to be decorated with this decorator.
 *    `SmartMapping.params.basemap` deprecated since version 4.13. Use `view` instead.
 *    The light-blue, dark-blue, light-green, dark-green, light-purple, dark-purple, light-red, dark-red are deprecated since 4.19. Please use `light` or `dark` instead, or create your own theme.
-
-
-BELOW ARE THE MANUALLY ADDED DEPRECATED CLASSES, PROPERTIES, METHODS, EVENTS
-
-* TBD
 
 </details>
