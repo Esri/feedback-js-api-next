@@ -24,7 +24,7 @@ const streamLayer = new StreamLayer({
   customParameters: {
     foo: "bar",
     baz: "bat"
-  })
+});
 ```
 
 * BUG-000135727: Fixed an issue with WMSLayer where the layer would not load if the spatial reference was not defined on the root layer in the service.
