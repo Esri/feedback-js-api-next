@@ -4,13 +4,30 @@ The `next` version of 4.22 is now available.  Planned release date is December 2
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## API keys
+
+When a global API key is set, the default basemaps displayed in BasemapGallery widget will default to the basemaps for use with API keys (as defined by the Portal.devBasemapGalleryGroupQuery property).
+
+## CSVLayer and GeoJSONLayer
+
+We've added the following enhancements and improvements to the CSVLayer and GeoJSONLayer.
+
+* CSVLayer and GeoJSONLayer can be refreshed, meaning that you can fetch new data after those layers are initialized and loaded to the map.
+* The customParameters property supported in CSVLayer and GeoJSONLayer. You can set the customParameters property for additional query parameters when the layer is initialized or refreshed.
+* GeoJSONLayer now supports string and number feature ids.
+
 ## Breaking changes
+
+* Updated the request flow of workers so that an after interceptor receives the expected data type. This means after interceptors that were expecting array-buffers for client-side layers such as GeoJSONLayer and CSVLayer will now receive the expected data types json or text.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
-|----------|-------------|--------------------|
-| `TBD` | `TBD` | TBD |
+|-----------------------------|------------------|--------------------|
+| decorators.declared() | declared is no longer needed to extend Accessor anymore | 4.16 |
+| esri/layers/support/AttachmentInfo | esri/rest/query/support/AttachmentInfo |	4.19 |
+| ChartMediaInfoValueSeries.x | esri/popup/content/support/ChartMediaInfoValueSeries.value | 4.17 |
+| ChartMediaInfoValueSeries.y | esri/popup/content/support/ChartMediaInfoValueSeries.tooltip | 4.17 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4x API.
 
@@ -27,8 +44,14 @@ const streamLayer = new StreamLayer({
 });
 ```
 
+* BUG-000127497: Fixed an issue where PictureMarkerSymbol in a feature service had slight blurry texture when displayed in map.
 * BUG-000135727: Fixed an issue with WMSLayer where the layer would not load if the spatial reference was not defined on the root layer in the service.
 * BUG-000143043: Fixed an issue with WMTSLayer where duplicate parameters were being included in requests to the service.
+* BUG-000135884: Fixed an issue where FeatureTemplate.drawingTool would return the wrong string value if derived from a layer's subtypes.
+* BUG-000141133: Fixed an issue where workers were returning array-buffers in an after interceptor for GeoJSONLayer.
+* BUG-000141451: Fixed an issue where ImageryTileLayer could be cropped when printed, depending on the browser window size or the #viewDiv dimensions.
+* Fixed an issue where the DirectionsFeatureSet.mergedGeometry had incorrect hasM and hasZ values.
+* Enhanced the polygon labelPlacement behavior to better place labels in the center of a polygon.
 
 ## Deprecations
 
