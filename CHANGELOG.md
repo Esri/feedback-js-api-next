@@ -19,6 +19,8 @@ We've added the following enhancements and improvements to the CSVLayer and GeoJ
 ## Breaking changes
 
 * Updated the request flow of workers so that an after interceptor receives the expected data type. This means after interceptors that were expecting array-buffers for client-side layers such as GeoJSONLayer and CSVLayer will now receive the expected data types json or text.
+* The `basemap` parameter in all smartMapping methods within the `esri/smartMapping/renderers` folder was deprecated at version 4.13 and is now replaced by the `view` parameter.
+* Attachment elements within popups no longer display `list` as the default `displayType`. Instead of `list`, it defaults to `auto`. This means that if the feature layer supports attachment resizing, it will automatically set the `displayType` as `preview`, otherwise it will display as `list`.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
