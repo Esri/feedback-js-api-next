@@ -4,6 +4,13 @@ The `next` version of 4.22 is now available.  Planned release date is December 2
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+
+## Editor widget
+
+As we stated in the 4.21 [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#an-updated-and-improved-editor-widget-is-coming), the Editor widget is getting an overhaul for version 4.22. We anticipate having something to test against come mid-November. As stated in the release notes, the widget updates are planned to occur incrementally in a phased approach over the course of multiple releases. The initial version of the updated widget will include UI updates including snapping controls and selection tools. In addition to this UI update, the initial Editor panel will be replaced with a panel consolidating much of the create/update workflows. This will include the ability to perform continuous and batch editing. 
+
+We will keep everyone abrest of any updates/changes as we move forward in this release. Thank you all for your patience. We are looking forward to this new and improved widget and hope that it can bring additional functionality to your editing workflows.
+
 ## API keys
 
 When a global API key is set, the default basemaps displayed in BasemapGallery widget will default to the basemaps for use with API keys (as defined by the Portal.devBasemapGalleryGroupQuery property).
