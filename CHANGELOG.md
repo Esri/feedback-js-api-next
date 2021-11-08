@@ -23,6 +23,21 @@ We've added the following enhancements and improvements to the CSVLayer and GeoJ
 * The customParameters property supported in CSVLayer and GeoJSONLayer. You can set the customParameters property for additional query parameters when the layer is initialized or refreshed.
 * GeoJSONLayer now supports string and number feature ids.
 
+## Content Security Policy
+
+It is no longer necessary to set Dojo's [`"csp-restrictions"`](https://github.com/dojo/docs/blob/d30563d6b5c039e12bd91028c362e7caff1d0573/releasenotes/1.11.rst#csp) `has` flag to `true` when CSP support is needed. Although this flag is no longer necessary, please be aware that there are still limitations when using the JavaScript API with CSP. Please refer to our [FAQ](https://developers.arcgis.com/javascript/latest/faq/#does-the-arcgis-api-for-javascript-support-all-content-security-policy-directives) section for additional information regarding this.
+
+```js
+// No longer needed
+<script>
+  var dojoConfig = {
+    has: {
+      "csp-restrictions": true
+    }
+  };
+</script>
+```
+
 ## Breaking changes
 
 * Updated the request flow of workers so that an after interceptor receives the expected data type. This means after interceptors that were expecting array-buffers for client-side layers such as GeoJSONLayer and CSVLayer will now receive the expected data types json or text.
@@ -59,6 +74,7 @@ const streamLayer = new StreamLayer({
 * BUG-000135884: Fixed an issue where FeatureTemplate.drawingTool would return the wrong string value if derived from a layer's subtypes.
 * BUG-000141133: Fixed an issue where workers were returning array-buffers in an after interceptor for GeoJSONLayer.
 * BUG-000141451: Fixed an issue where ImageryTileLayer could be cropped when printed, depending on the browser window size or the #viewDiv dimensions.
+* BUG-000142291: Content Security Policy issue addressed and a few instances of global `eval()` functions were removed from the API.
 * Fixed an issue where the DirectionsFeatureSet.mergedGeometry had incorrect hasM and hasZ values.
 * Enhanced the polygon labelPlacement behavior to better place labels in the center of a polygon.
 
