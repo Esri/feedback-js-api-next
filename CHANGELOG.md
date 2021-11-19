@@ -7,7 +7,11 @@ The `next` version of 4.22 is now available.  Planned release date is December 2
 
 ## Editor widget
 
-As we stated in the 4.21 [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#an-updated-and-improved-editor-widget-is-coming), the Editor widget is getting an overhaul for version 4.22. We anticipate having something to test against come mid-to-late November. As stated in the release notes, the widget updates are planned to occur incrementally in a phased approach over the course of multiple releases. The initial version of the updated widget will include an updated UI with SnappingControls. In addition to this UI update, the initial Editor panel will be replaced with a panel consolidating much of the create workflow that will include the ability to perform continuous feature editing. 
+_Revised Nov. 18, 2021_
+
+The release of the new Editor update has been postponed from its original expected 4.22 release. We are now aiming to release this at version 4.23 (March 2022). We apologize for any inconvenience this may cause. Developer builds will be made available for those that wish to test these updates. Please keep posted to this repo for updates.
+
+~~As we stated in the 4.21 [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#an-updated-and-improved-editor-widget-is-coming), the Editor widget is getting an overhaul for version 4.22. We anticipate having something to test against come mid-to-late November. As stated in the release notes, the widget updates are planned to occur incrementally in a phased approach over the course of multiple releases. The initial version of the updated widget will include an updated UI with SnappingControls. In addition to this UI update, the initial Editor panel will be replaced with a panel consolidating much of the create workflow that will include the ability to perform continuous feature editing.~~
 
 We will keep everyone abreast of any updates/changes as we move forward in this release. Thank you all for your patience. We are looking forward to this new and improved widget and hope that it can bring additional functionality to your editing workflows.
 
