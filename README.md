@@ -4,8 +4,7 @@
 
 **https://js.arcgis.com/next**
 
-Welcome to the next version of the ArcGIS API for JavaScript (4.22).
-This version of the API is currently in development and will be updated frequently until the production release in December 2021. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bugs and enhancement requests are specific to https://js.arcgis.com/next and not applicable to a released version.
+Welcome to the next version of the ArcGIS API for JavaScript (4.23). This version of the API is currently in development and will be updated frequently until the production release in April 2022. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bugs and enhancement requests are specific to https://js.arcgis.com/next and not applicable to a released version.
 
 Please note: ArcGIS API for JavaScript release management is dynamic. Some new features and updates that appear in js.arcgis.com/next might not be present in the final production release due to a variety of factors (but will likely be present in an upcoming release).
 
@@ -28,9 +27,9 @@ Add references to the CDN and you are ready to get started.
 
 For ES modules, use `npm install @arcgis/core@next`. For AMD modules, use `npm install arcgis-js-api@next`.
 
-### esri-loader
+### esri-loader 
 
-Or if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load the library, use [options.version](https://github.com/Esri/esri-loader#from-a-specific-version) and specify `next` as the value. You can also lazy-load [js.arcgis.com/next/esri/themes/light/main.css](js.arcgis.com/next/esri/themes/light/main.css) by adding the `css: true` option, or you can use [any of the other methods supported by esri-loader](https://github.com/Esri/esri-loader#loading-styles) instead.
+Or if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load AMD modules, use [options.version](https://github.com/Esri/esri-loader#from-a-specific-version) and specify `next` as the value. You can also lazy-load [js.arcgis.com/next/esri/themes/light/main.css](js.arcgis.com/next/esri/themes/light/main.css) by adding the `css: true` option, or you can use [any of the other methods supported by esri-loader](https://github.com/Esri/esri-loader#loading-styles) instead.
 
 ```javascript
 const options = {
@@ -42,17 +41,21 @@ const [Map] = await loadModules(['esri/map'], options);
 
 ## TypeScript Typings
 
-You can use the typings included with `arcgis-js-api@next` two ways.
+If you are using an npm install of `@arcgis/core` the typings are included. If you are using an npm insall of `arcgis-js-api`, you can use the typings included with `arcgis-js-api@next` two ways.
 
 ### Include a `///` directive in your main TypeScript file.
+
+*main.ts*
+
 ```ts
-// main.ts
 /// <reference types="arcgis-js-api" />
 ```
 
 ### Or add to the `include` of your `tsconfig.json`.
+
+*tsconfig.json*
+
 ```json
-// tsconfig.json
 {
   "compilerOptions": {},
   "include": [
@@ -72,7 +75,7 @@ Report issues with next version at https://github.com/Esri/feedback-js-api-next/
 
 ## Licensing
 
-Copyright 2021 Esri
+Copyright 2022 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
