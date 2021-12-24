@@ -1,6 +1,6 @@
 # Change log
 
-The `next` version of 4.23 is now available.  Planned release date is April 2022.
+The `next` version of 4.23 is now available.  Planned release date is March 2022.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
