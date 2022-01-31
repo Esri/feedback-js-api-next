@@ -35,14 +35,14 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Browser (check https://whatismybrowser.com/)** 
- - Browser: [e.g. "Edge 78 on Windows 10"]
+ - Browser: [e.g. "Edge 99 on Windows 10"]
  
 **What's your OS? (check https://whatsmyos.com):**
- - OS: [e.g. "Apple iOS 12.4" or "Windows 10* 64-bit"]
- - Device: [e.g. "Windows desktop PC" or "iPhone 11"]
+ - OS: [e.g. "Apple iOS 13.5" or "Windows 11* 64-bit"]
+ - Device: [e.g. "Windows desktop PC" or "iPhone 13"]
 
 **API version (check your console)**
- - Version: [e.g. ArcGIS API for JavaScript 4.13-next.YYYYMMDD [Revision: d8d62578]]
+ - Version: [e.g. ArcGIS API for JavaScript 4.23-next [Date: 20220131, Revision: a737470f]]
 
 **Additional context**
 Add any other context about the problem here. Please note if this issue has been reported elsewhere.
