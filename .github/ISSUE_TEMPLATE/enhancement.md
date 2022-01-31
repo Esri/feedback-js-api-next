@@ -32,7 +32,7 @@ How important is this enhancement and why? High  |  Medium  |  Low
 If applicable, add screenshots to help explain the enhancement or suggestion.
 
 **API version (check your console)**
- - Version: [e.g. ArcGIS API for JavaScript 4.13-next.YYYYMMDD [Revision: d8d62578]]
+ - Version: [e.g. ArcGIS API for JavaScript 4.23-next [Date: 20220131, Revision: a737470f]]
 
 **Additional context**
 Add any other context about the enhancement or suggestion here.
