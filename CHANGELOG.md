@@ -4,10 +4,14 @@ The `next` version of 4.23 is now available.  Planned release date is March 2022
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## Updates to OAuth Authentication
+
+OAuth authentication now defaults to automatically use short-lived access tokens generated via two-step with [Proof Key for Code Exchange (PKCE)](https://oauth.net/2/pkce/) flow. This will be the default behavior for applications using the default page redirection for OAuth sign-in. This update follows the recommendations suggested in the [OAuth 2.0 Security Best Current Practices](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-19#section-2.1.2) specifications. 
+
 
 ## Breaking changes
 
-* TBD
+* Applications that make use of [popup windows](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popup) for signing in will have to opt in by setting [`flowType = "authentication-code"`](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#flowType). In addition, any existing [callback page](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popupCallbackUrl) should be updated to work with this. The default [oauth-callback.html](https://github.com/Esri/jsapi-resources/blob/master/oauth/oauth-callback.html) will be updated to allow for the two-step approach.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
