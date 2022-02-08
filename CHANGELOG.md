@@ -16,8 +16,6 @@ OAuth authentication now defaults to automatically use short-lived access tokens
 
 ## Breaking changes
 
-* Applications that make use of [popup windows](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popup) should update any existing [callback page](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popupCallbackUrl) to work with two-step authentication. The [oauth-callback.html](https://github.com/Esri/jsapi-resources/blob/master/oauth/oauth-callback.html) will be updated to allow for the two-step approach. No update is needed if continuing to use the one-step approach.
-
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
