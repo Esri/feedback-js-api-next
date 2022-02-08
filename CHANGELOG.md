@@ -4,6 +4,11 @@ The `next` version of 4.23 is now available.  Planned release date is March 2022
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## New and improved Editor
+
+Version 4.23 of the API includes a significant changes to the Editor widget. The initial version of the updated widget will include an updated UI that contains snapping controls and a selection tool. In addition to this UI update, it will also include the ability to perform batch creates. The initial startup dialog will be replaced with one panel consolidating much of the create/update workflows. Changes to the Editor can now be seen directly if accessing the 4.23 API on `/next`. These updates are just a few of improvements on the Editor roadmap. As future versions are releases, we expect to add more.
+
+
 ## Updates to OAuth Authentication
 
 OAuth authentication now defaults to automatically use short-lived access tokens generated via two-step with [Proof Key for Code Exchange (PKCE)](https://oauth.net/2/pkce/) flow. This will be the default behavior for applications using the default page redirection for OAuth sign-in. This update follows the recommendations suggested in the [OAuth 2.0 Security Best Current Practices](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-19#section-2.1.2) specifications. 
