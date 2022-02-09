@@ -6,7 +6,7 @@ The `next` version of 4.23 is now available.  Planned release date is March 2022
 
 ## New and improved Editor
 
-Version 4.23 of the API includes a significant changes to the Editor widget. The initial version of the updated widget will include an updated UI that contains snapping controls and a selection tool. In addition to this UI update, it will also include the ability to perform batch creates. The initial startup dialog will be replaced with one panel consolidating much of the create/update workflows. Changes to the Editor can now be seen directly if accessing the 4.23 API on `/next`. These updates are just a few of improvements on the Editor roadmap. As future versions are releases, we expect to add more.
+Version 4.23 of the API includes significant changes to the Editor widget. The initial version of the updated widget will include an updated UI that contains snapping controls and a selection tool. In addition to this UI update, it will also include the ability to perform batch creates. The initial startup dialog will be replaced with one panel consolidating much of the create/update workflows. Changes to the Editor can now be seen directly if accessing the 4.23 API on `/next`. These updates are just a few of improvements on the Editor roadmap. As future versions are releases, we expect to add more.
 
 
 ## Updates to OAuth Authentication
