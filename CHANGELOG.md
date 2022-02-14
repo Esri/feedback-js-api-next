@@ -13,6 +13,18 @@ Version 4.23 of the API includes significant changes to the Editor widget. The i
 
 OAuth authentication now defaults to automatically use short-lived access tokens generated via two-step with [Proof Key for Code Exchange (PKCE)](https://oauth.net/2/pkce/) flow. This will be the default behavior for applications using the default page redirection for OAuth sign-in. This update follows the recommendations suggested in the [OAuth 2.0 Security Best Current Practices](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-19#section-2.1.2) specifications. 
 
+## Widgets
+
+### FeatureTable
+
+The FeatureTable widget had a few updates this past release. We've outlined them below:
+
+* The FeatureTable widget now supports displaying only selected rows within the table. A new menu item has been added to easily allow toggling selected records to display on their own or show as selected with the remaining unselected rows. 
+* Added the ability to hide the menu items for columns. This is handled via an introduced `columnMenus` visibleElement.
+
+### Popup
+
+Popups using a default template will now display attachments as thumbnail images instead of listed links.
 
 ## Breaking changes
 
