@@ -26,6 +26,10 @@ The FeatureTable widget had a few updates this past release. We've outlined them
 
 Popups using a default template will now display attachments as thumbnail images instead of listed links.
 
+### FeatureForm
+
+The [FeatureForm.expressionInfo](/api-reference/esri-widgets-FeatureForm.html#expressionInfo) now returns three additional [returnTypes](/api-reference/esri-form-ExpressionInfo.html#returnType). In addition to `boolean`, it now returns `string`, `date`, and `number` values.
+
 ## Breaking changes
 
 - [Popups](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) using a [default template](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#defaultPopupTemplateEnabled) will now display [attachments](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-AttachmentsContent.html) as thumbnail images instead of listed links.
