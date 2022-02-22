@@ -17,10 +17,13 @@ OAuth authentication now defaults to automatically use short-lived access tokens
 
 ### FeatureTable
 
-The FeatureTable widget had a few updates this past release. We've outlined them below:
+The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget had a few updates this past release. We've outlined them below:
 
-* The FeatureTable widget now supports displaying only selected rows within the table. A new menu item has been added to easily allow toggling selected records to display on their own or show as selected with the remaining unselected rows. 
-* Added the ability to hide the menu items for columns. This is handled via an introduced `columnMenus` visibleElement.
+* It is now possible to sort multiple fields. This is handled by setting the FeatureTable's [multiSortEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#multiSortEnabled) property to `true`. This can be done in combination with setting the sort priority using the [initialSortPriority](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable-FieldColumnConfig.html#initialSortPriority) property. This gives control over what column gets prioritized over others. Columns with lower numbers take a higher priority. If this property isn't set, the priority defaults to the most recently-sorted column.
+* The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget now supports displaying only selected rows within the table. A new `Show selected records` [menu item](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#VisibleElements) has been added to easily allow toggling selected records to display on their own or show as selected with the remaining unselected rows. This can also be called programatically using the the FeatureTable's new [filterBySelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#filterBySelection) method.
+* [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget now supports zooming to selected features within the table. A new `Zoom to selection` [menu item](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#VisibleElements) has been added to easily allow zooming to feature(s). This can also be called programatically using the the FeatureTable's new [zoomToSelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#zoomToSelection) method.
+* Added the ability to hide the menu items for columns. This is handled via an introduced `columnMenus` [visibleElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#visibleElements).
+* Support has been added to automatically refresh the [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) when its associated layer has been updated. This is especially important for instances where the data could potentially be edited while displayed in a table. If this occurs, the table gets refreshed with this update and that row is removed. This behavior can be turned off by setting the table's [autoRefreshEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#autoRefreshEnabled) property to `false`.
 
 ### Popup
 
@@ -45,6 +48,8 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 * Calling [`GroupLayer.loadAll()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html#loadAll) will now return layers in addition to tables. Prior to this release, it only returned layers.
+* BUG-000139261: The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets/FeatureTable.html) now supports zooming to selected features within the table. 
+* ENH-000135083: The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets/FeatureTable.html) widget now supports displaying only selected rows.
 
 ## Deprecations
 
