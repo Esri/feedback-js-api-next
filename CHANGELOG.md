@@ -20,18 +20,24 @@ OAuth authentication now defaults to automatically use short-lived access tokens
 The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget had a few updates this past release. We've outlined them below:
 
 * It is now possible to sort multiple fields. This is handled by setting the FeatureTable's [multiSortEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#multiSortEnabled) property to `true`. This can be done in combination with setting the sort priority using the [initialSortPriority](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable-FieldColumnConfig.html#initialSortPriority) property. This gives control over what column gets prioritized over others. Columns with lower numbers take a higher priority. If this property isn't set, the priority defaults to the most recently-sorted column.
-* The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget now supports displaying only selected rows within the table. A new `Show selected records` [menu item](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#VisibleElements) has been added to easily allow toggling selected records to display on their own or show as selected with the remaining unselected rows. This can also be called programatically using the the FeatureTable's new [filterBySelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#filterBySelection) method.
-* [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget now supports zooming to selected features within the table. A new `Zoom to selection` [menu item](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#VisibleElements) has been added to easily allow zooming to feature(s). This can also be called programatically using the the FeatureTable's new [zoomToSelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#zoomToSelection) method.
+* The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget now supports displaying only selected rows within the table. A new `Show selected records` [menu item](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#VisibleElements) has been added to easily allow toggling selected records to display on their own or show as selected with the remaining unselected rows. This can also be called programmatically using the the FeatureTable's new [filterBySelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#filterBySelection) method.
+* [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget now supports zooming to selected features within the table. A new `Zoom to selection` [menu item](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#VisibleElements) has been added to easily allow zooming to feature(s). This can also be called programmatically using the the FeatureTable's new [zoomToSelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#zoomToSelection) method.
 * Added the ability to hide the menu items for columns. This is handled via an introduced `columnMenus` [visibleElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#visibleElements).
 * Support has been added to automatically refresh the [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) when its associated layer has been updated. This is especially important for instances where the data could potentially be edited while displayed in a table. If this occurs, the table gets refreshed with this update and that row is removed. This behavior can be turned off by setting the table's [autoRefreshEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#autoRefreshEnabled) property to `false`.
 
 ### Popup
 
-Popups using a default template will now display attachments as thumbnail images instead of listed links.
+[Popups](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) using a [default template](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#defaultPopupTemplateEnabled) will now display [attachments](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature-FeatureViewModel.html) as thumbnail images instead of listed links.
+
+In addition, some updates were made for controlling the behavior of popups. The new `chartAnimation` [ability](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature-FeatureViewModel.html#Abilities) has been added to the 
+[FeatureViewModel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature-FeatureViewModel.html) to control the animation of charts residing in [media content elements](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) 
+within [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Feature](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature.html) widgets. 
+
+The `shouldFocus` option for the Popup [`open` method](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#open) has been added as an accessibility enhancement to provide a way to set focus to the popup automatically as it opens.
 
 ### FeatureForm
 
-The [FeatureForm.expressionInfo](/api-reference/esri-widgets-FeatureForm.html#expressionInfo) now returns three additional [returnTypes](/api-reference/esri-form-ExpressionInfo.html#returnType). In addition to `boolean`, it now returns `string`, `date`, and `number` values.
+The [FeatureForm.expressionInfo](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html#expressionInfo) now returns three additional [returnTypes](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-ExpressionInfo.html#returnType). In addition to `boolean`, it now returns `string`, `date`, and `number` values.
 
 ## Breaking changes
 
@@ -122,7 +128,7 @@ The following are deprecated and will be removed in a future release. For anythi
 * PrintTask deprecated since version 4.20. Use print instead.
 * PrintTemplate deprecated since version 4.20. Use PrintTemplate instead.
 * PrintViewModel.scaleEnabled deprecated since version 4.22. Instead, use TemplateOptions if using the Print widget, or PrintTemplate if calling print() directly.
-* ProjectParameters deprecated since version 4.20. Use ProjectParameters inste
+* ProjectParameters deprecated since version 4.20. Use ProjectParameters instead.
 * promiseUtils.reject deprecated since version 4.19. Use the native Promise.reject method instead.
 * promiseUtils.resolve deprecated since version 4.19. Use the native Promise.resolve method instead.
 * Query deprecated since version 4.20. Use Query instead.
