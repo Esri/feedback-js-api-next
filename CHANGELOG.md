@@ -41,6 +41,7 @@ The [FeatureForm.expressionInfo](https://developers.arcgis.com/javascript/latest
 
 ## Breaking changes
 
+- Accessing edits from `CreateWorkflowData` was removed. To get the underlying edits, please use the newly-added CreateWorkflow.pendingFeatures property.
 - [Popups](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) using a [default template](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#defaultPopupTemplateEnabled) will now display [attachments](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-AttachmentsContent.html) as thumbnail images instead of listed links.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
