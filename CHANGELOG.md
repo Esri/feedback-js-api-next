@@ -39,6 +39,35 @@ The `shouldFocus` option for the Popup [`open` method](https://developers.arcgis
 
 The [FeatureForm.expressionInfo](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html#expressionInfo) now returns three additional [returnTypes](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-ExpressionInfo.html#returnType). In addition to `boolean`, it now returns `string`, `date`, and `number` values.
 
+## 3D updates
+
+### Line style marker
+Add markers to your line features to emphasize a direction or other cartographic information. The new LineStyleMarker3D class provides a variety of styles compatible with existing 2D capabilities. Markers can be driven by attribute values and combined with VisualVariable.
+Values for style: "arrow"|"circle"|"square"|"diamond"|"cross"|"x".
+```
+new LineSymbol3DLayer({
+  material: {
+    color: [121, 72, 0]
+  },
+  size: "3px",
+  pattern: new LineStylePattern3D({
+    style: "long-dash"
+  }),
+  marker: new LineStyleMarker3D({
+    style: "arrow",
+    placement: "end"
+  })
+})
+ ```
+
+
+### Label alignment and styles
+Improve the appearance of labels and text in your 3D scenes using the new styling options on [TextSymbol3DLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-TextSymbol3DLayer.html). Load custom [fonts](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Font.html), add [decorations](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Font.html#decoration) such as underlines and control the layout of text by
+adjusting line spacing and alignment. To further improve the readability of labels and text, [backgrounds](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-TextSymbol3DLayer.html#background) can now also be added to any text symbol layer.
+```
+symbolLayer.background = { color: [0, 0, 0, 0.75] };
+```
+
 ## Breaking changes
 
 - Accessing edits from `CreateWorkflowData` was removed. To get the underlying edits, please use the newly-added CreateWorkflow.pendingFeatures property.
