@@ -18,7 +18,7 @@ Use CDN or npm to try the next version.
 
 ### CDN
 
-For applications using the ArcGIS CDN, use these references for the modules and CSS:
+To test the 'next' version using the hosted version, simply reference the API and CSS from our CDN to start using the API in your app.
 
     <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/next/"></script>
