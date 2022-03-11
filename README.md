@@ -27,7 +27,7 @@ The `next` version of the CDN is not available for download.
 
 ### npm
 
-The `next` version is available for testing with local builds. For all new applications, use the ES modules: `npm install @arcgis/core@next`. For existing AMD applications, use `npm install arcgis-js-api@next` or consider upgrading to `@arcgis/core`. More information is available in the SDK's [Introduction to tooling guide topic](https://developers.arcgis.com/javascript/latest/tooling-intro/).
+The `next` version is available for testing with local builds. For all new applications, use the ES modules: `npm install @arcgis/core@next`. For existing AMD applications, use `npm install arcgis-js-api@next` or consider upgrading to `@arcgis/core`. More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
 
 ### esri-loader 
 
