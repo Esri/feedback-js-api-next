@@ -18,7 +18,7 @@ Use CDN or npm to try the next version.
 
 ### CDN
 
-For applications using the ArcGIS CDN, use these references for the modules and CSS and you are ready to get started.
+For applications using the ArcGIS CDN, use these references for the modules and CSS:
 
     <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/next/"></script>
@@ -27,7 +27,7 @@ The `next` version of the CDN is not available for download.
 
 ### npm
 
-The `next` version is also available for testing with local builds. For all new applications, use the ES modules: `npm install @arcgis/core@next`. For existing AMD applications, use `npm install arcgis-js-api@next` or consider upgrading to `@arcgis/core`.
+The `next` version is available for testing with local builds. For all new applications, use the ES modules: `npm install @arcgis/core@next`. For existing AMD applications, use `npm install arcgis-js-api@next` or consider upgrading to `@arcgis/core`. More information is available in the SDK's [Introduction to tooling guide topic](https://developers.arcgis.com/javascript/latest/tooling-intro/).
 
 ### esri-loader 
 
