@@ -18,14 +18,16 @@ Use CDN or npm to try the next version.
 
 ### CDN
 
-Add references to the CDN and you are ready to get started.
+To test the 'next' version using the hosted version, simply reference the API and CSS from our CDN to start using the API in your app.
 
     <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/next/"></script>
 
+The `next` version of the CDN is not available for download.
+
 ### npm
 
-For ES modules, use `npm install @arcgis/core@next`. For AMD modules, use `npm install arcgis-js-api@next`.
+The `next` version is available for testing with local builds. For all new applications, use the ES modules: `npm install @arcgis/core@next`. Existing applications using AMD modules can run `npm install arcgis-js-api@next` or consider upgrading to `@arcgis/core`. More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
 
 ### esri-loader 
 
@@ -39,9 +41,13 @@ const options = {
 const [Map] = await loadModules(['esri/map'], options);
 ```
 
-## TypeScript Typings
+## TypeScript typings for ES modules
 
-If you are using an npm install of `@arcgis/core` the typings are included. If you are using an npm insall of `arcgis-js-api`, you can use the typings included with `arcgis-js-api@next` two ways.
+Typings are included with the npm install of `@arcgis/core@next` ES modules. For most use cases, no special TypeScript configurations are required by the API.
+
+## TypeScript typings for AMD modules
+
+The typings are also included with `arcgis-js-api@next` AMD modules, and they can be used in two ways.
 
 ### Include a `///` directive in your main TypeScript file.
 
