@@ -1,77 +1,12 @@
 # Change log
 
-The `next` version of 4.23 is now available.  Planned release date is March 2022.
+The `next` version of 4.24 is now available.  Planned release date is July 2022.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
-## New and improved Editor
-
-Version 4.23 of the API includes significant changes to the Editor widget. The initial version of the updated widget will include an updated UI that contains snapping controls and a selection tool. In addition to this UI update, it will also include the ability to perform batch creates. The initial startup dialog will be replaced with one panel consolidating much of the create/update workflows. Changes to the Editor can now be seen directly if accessing the 4.23 API on `/next`. These updates are just a few of improvements on the Editor roadmap. As future versions are releases, we expect to add more.
-
-
-## Updates to OAuth Authentication
-
-OAuth authentication now defaults to automatically use short-lived access tokens generated via two-step with [Proof Key for Code Exchange (PKCE)](https://oauth.net/2/pkce/) flow. This will be the default behavior for applications using the default page redirection for OAuth sign-in. This update follows the recommendations suggested in the [OAuth 2.0 Security Best Current Practices](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-19#section-2.1.2) specifications. 
-
-## Widgets
-
-### FeatureTable
-
-The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget had a few updates this past release. We've outlined them below:
-
-* It is now possible to sort multiple fields. This is handled by setting the FeatureTable's [multiSortEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#multiSortEnabled) property to `true`. This can be done in combination with setting the sort priority using the [initialSortPriority](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable-FieldColumnConfig.html#initialSortPriority) property. This gives control over what column gets prioritized over others. Columns with lower numbers take a higher priority. If this property isn't set, the priority defaults to the most recently-sorted column.
-* The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget now supports displaying only selected rows within the table. A new `Show selected records` [menu item](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#VisibleElements) has been added to easily allow toggling selected records to display on their own or show as selected with the remaining unselected rows. This can also be called programmatically using the the FeatureTable's new [filterBySelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#filterBySelection) method.
-* [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget now supports zooming to selected features within the table. A new `Zoom to selection` [menu item](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#VisibleElements) has been added to easily allow zooming to feature(s). This can also be called programmatically using the the FeatureTable's new [zoomToSelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#zoomToSelection) method.
-* Added the ability to hide the menu items for columns. This is handled via an introduced `columnMenus` [visibleElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#visibleElements).
-* Support has been added to automatically refresh the [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) when its associated layer has been updated. This is especially important for instances where the data could potentially be edited while displayed in a table. If this occurs, the table gets refreshed with this update and that row is removed. This behavior can be turned off by setting the table's [autoRefreshEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#autoRefreshEnabled) property to `false`.
-
-### Popup
-
-[Popups](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) using a [default template](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#defaultPopupTemplateEnabled) will now display [attachments](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature-FeatureViewModel.html) as thumbnail images instead of listed links.
-
-In addition, some updates were made for controlling the behavior of popups. The new `chartAnimation` [ability](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature-FeatureViewModel.html#Abilities) has been added to the 
-[FeatureViewModel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature-FeatureViewModel.html) to control the animation of charts residing in [media content elements](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) 
-within [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Feature](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature.html) widgets. 
-
-The `shouldFocus` option for the Popup [`open` method](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#open) has been added as an accessibility enhancement to provide a way to set focus to the popup automatically as it opens.
-
-### FeatureForm
-
-The [FeatureForm.expressionInfo](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html#expressionInfo) now returns three additional [returnTypes](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-ExpressionInfo.html#returnType). In addition to `boolean`, it now returns `string`, `date`, and `number` values.
-
-## 3D updates
-
-### Line style marker
-Add markers to your line features to emphasize a direction or other cartographic information. The new LineStyleMarker3D class provides a variety of styles compatible with existing 2D capabilities. Markers can be driven by attribute values and combined with VisualVariable.
-Values for style: "arrow"|"circle"|"square"|"diamond"|"cross"|"x".
-```
-new LineSymbol3DLayer({
-  material: {
-    color: [121, 72, 0]
-  },
-  size: "3px",
-  pattern: new LineStylePattern3D({
-    style: "long-dash"
-  }),
-  marker: new LineStyleMarker3D({
-    style: "arrow",
-    placement: "end"
-  })
-})
- ```
-
-
-### Label alignment and styles
-Improve the appearance of labels and text in your 3D scenes using the new styling options on [TextSymbol3DLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-TextSymbol3DLayer.html). Load custom [fonts](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Font.html), add [decorations](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-Font.html#decoration) such as underlines and control the layout of text by
-adjusting line spacing and alignment. To further improve the readability of labels and text, [backgrounds](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-TextSymbol3DLayer.html#background) can now also be added to any text symbol layer.
-```
-symbolLayer.background = { color: [0, 0, 0, 0.75] };
-```
-
 ## Breaking changes
 
-- Accessing edits from `CreateWorkflowData` was removed. To get the underlying edits, please use the newly-added CreateWorkflow.pendingFeatures property.
-- [Popups](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) using a [default template](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#defaultPopupTemplateEnabled) will now display [attachments](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-AttachmentsContent.html) as thumbnail images instead of listed links.
+* TBD
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
@@ -83,13 +18,11 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 ## Bug fixes and enhancements
 
-* Calling [`GroupLayer.loadAll()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html#loadAll) will now return layers in addition to tables. Prior to this release, it only returned layers.
-* BUG-000139261: The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets/FeatureTable.html) now supports zooming to selected features within the table. 
-* ENH-000135083: The [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets/FeatureTable.html) widget now supports displaying only selected rows.
+* TBD
 
 ## Deprecations
 
-The following are deprecated and will be removed in a future release. For anything deprecated in 4.22 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
+The following are deprecated and will be removed in a future release. For anything deprecated in 4.23 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
 <details>
   <summary>Click to expand!</summary>  
@@ -99,13 +32,16 @@ The following are deprecated and will be removed in a future release. For anythi
 * AlgorithmicColorRamp deprecated since version 4.20. Use AlgorithmicColorRamp instead.
 * AreasAndLengthsParameters deprecated since version 4.20. Use AreasAndLengthsParameters instead.
 * AttachmentQuery deprecated since version 4.20. Use AttachmentQuery instead.
-* BasemapToggle.toggle deprecated since version 4.22. Use BasemapToggle instead.
+* BasemapToggle.toggle deprecated since version 4.22. Watch the activeBasemap property instead.
 * Bookmark.extent deprecated since 4.17. Use viewpoint instead.
 * BufferParameters deprecated since version 4.20. Use BufferParameters instead.
 * ClosestFacilityParameters deprecated since version 4.20. Use ClosestFacilityParameters instead.
 * ClosestFacilitySolveResult deprecated since version 4.20. Use ClosestFacilitySolveResult instead.
 * ClosestFacilityTask deprecated since version 4.20. Use closestFacility instead.
 * ColorRamp deprecated since version 4.20. Use ColorRamp instead.
+* CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
+* CreateWorkflowData deprecated since version 4.23. Use CreateFeaturesWorkflowData instead.
+* CreateWorkflowData.edits deprecated since version 4.23. Use CreateFeaturesWorkflow.pendingFeatures instead.
 * CSVLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * DataFile deprecated since version 4.20. Use DataFile instead.
 * DataLayer deprecated since version 4.20. Use DataLayer instead.
@@ -113,20 +49,28 @@ The following are deprecated and will be removed in a future release. For anythi
 * DensifyParameters deprecated since version 4.20. Use DensifyParameters instead.
 * DirectionsFeatureSet deprecated since version 4.20. Use DirectionsFeatureSet instead.
 * DistanceParameters deprecated since version 4.20. Use DistanceParameters instead.
-* Editor.layerInfos.fieldConfig deprecated since version 4.22. Set the Editor's editable fields via layerInfo.formTemplate.elements and pass in either a FieldElement or GroupElement instead.
-* Editor.supportingWidgetDefaults.featureForm.fieldConfig deprecated since version 4.22. Set the Editor's editable fields via layerInfos.formTemplate.elements and pass in either a FieldElement or GroupElement instead.
+* Editor.startCreateWorkflowAtFeatureCreation deprecated since 4.23. Use Editor.startCreateFeaturesWorkflowAtFeatureCreation instead.
+* Editor.startCreateWorkflowAtFeatureEdit deprecated since 4.23.
+* Editor.startCreateWorkflowAtFeatureTypeSelection deprecated since 4.23. Use Editor.startCreateFeaturesWorkflowAtFeatureTypeSelection instead.
+* EditorViewModel.startCreateWorkflowAtFeatureCreation deprecated since 4.23. Use EditorViewModel.startCreateFeaturesWorkflowAtFeatureCreation instead.
+* EditorViewModel.startCreateWorkflowAtFeatureEdit deprecated since 4.23.
+* EditorViewModel.startCreateWorkflowAtFeatureTypeSelection deprecated since 4.23. Use EditorViewModel.startCreateFeaturesWorkflowAtFeatureTypeSelection instead.
 * Effect.Effect deprecated since version 4.21. Use Effect instead.
 * FeatureEffect deprecated since version 4.22. Use esri/layers/support/FeatureEffect instead.
 * FeatureFilter deprecated since version 4.22. Use esri/layers/support/FeatureFilter instead.
-* FeatureFormViewModel.fieldConfig deprecated since version 4.16. Use FieldElement and/or GroupElement instead.
 * FeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * FeatureSet deprecated since version 4.20. Use FeatureSet instead.
 * FieldConfig.editorType deprecated since version 4.16
+* FieldGroupConfig.description deprecated since version 4.23. Set field grouping description via the GroupElement.description.
+* FieldGroupConfig.fieldConfig deprecated since version 4.23. Set fields via the FieldElement.
+* FieldGroupConfig.label deprecated since version 4.23. Set label grouped fields via the GroupElement.label.
+* FieldGroupConfig.visibilityExpression deprecated since version 4.23. Set fields via the GroupElement.visibilityExpression.
+* FieldGroupConfig deprecated since version 4.23. Set field groupings via the GroupElement.
 * FindParameters deprecated since version 4.20. Use FindParameters instead.
 * FindResult deprecated since version 4.20. Use FindResult instead.
 * FindTask deprecated since version 4.20. Use find instead.
 * GeneralizeParameters deprecated since version 4.20. Use GeneralizeParameters instead.
-* GeoJSONLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* GeoJSONLayerView.effect deprecated since version 4.22. Use [featureEffect]/api-reference/esri-views-layers-GeoJSONLayerView.html(#featureEffect) instead.
 * GeometryService deprecated since version 4.20. Use geometryService instead.
 * Geoprocessor deprecated since version 4.20. Use geoprocessor instead.
 * GPMessage deprecated since version 4.20. Use GPMessage instead.
@@ -137,18 +81,19 @@ The following are deprecated and will be removed in a future release. For anythi
 * ImageIdentifyParameters deprecated since version 4.20. Use ImageIdentifyParameters instead.
 * ImageIdentifyResult deprecated since version 4.20. Use ImageIdentifyResult instead.
 * ImageIdentifyTask deprecated since version 4.20. Use imageService instead.
+* InputFieldGroup.visibilityExpression deprecated since version 4.23. Use GroupElement.visibilityExpression instead.
 * JobInfo deprecated since version 4.20. Use JobInfo instead.
 * LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
 * LegendLayer deprecated since version 4.20. Use LegendLayer instead.
 * LengthsParameters deprecated since version 4.20. Use LengthsParameters instead.
 * LinearUnit deprecated since version 4.20. Use LinearUnit instead.
 * Locator deprecated since version 4.20. Use locator instead.
+* LocatorSearchSource.locator deprecated since version 4.22. Use url instead.
 * MultipartColorRamp deprecated since version 4.20. Use MultipartColorRamp instead.
 * NAMessage deprecated since version 4.20. Use NAMessage instead.
 * OffsetParameters deprecated since version 4.20. Use OffsetParameters instead.
 * OGCFeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * ParameterValue deprecated since version 4.20. Use ParameterValue instead.
-* PointDrawAction.coordinates deprecated since version 4.19. Use vertices instead.
 * Portal.createClosestFacilityTask deprecated since version 4.21.
 * Portal.createGeometryService deprecated since version 4.21.
 * Portal.createPrintTask deprecated since version 4.21.
@@ -159,8 +104,8 @@ The following are deprecated and will be removed in a future release. For anythi
 * PrintTemplate deprecated since version 4.20. Use PrintTemplate instead.
 * PrintViewModel.scaleEnabled deprecated since version 4.22. Instead, use TemplateOptions if using the Print widget, or PrintTemplate if calling print() directly.
 * ProjectParameters deprecated since version 4.20. Use ProjectParameters instead.
-* promiseUtils.reject deprecated since version 4.19. Use the native Promise.reject method instead.
-* promiseUtils.resolve deprecated since version 4.19. Use the native Promise.resolve method instead.
+* promiseUtils.reject deprecated since version 4.19. Use the native Promise.reject() method instead.
+* promiseUtils.resolve deprecated since version 4.19. Use the native Promise.resolve() method instead.
 * Query deprecated since version 4.20. Use Query instead.
 * QueryTask deprecated since version 4.20. Use query instead.
 * RasterData deprecated since version 4.20. Use RasterData instead.
@@ -168,20 +113,21 @@ The following are deprecated and will be removed in a future release. For anythi
 * RelationshipQuery deprecated since version 4.20. Use RelationshipQuery instead.
 * RouteParameters deprecated since version 4.20. Use RouteParameters instead.
 * RouteResult deprecated since version 4.20. Use RouteResult instead.
+* RouteSolveResult deprecated since version 4.20. Use RouteSolveResult instead.
 * RouteTask deprecated since version 4.20. Use route instead.
 * SceneView.constraints.collision deprecated since version 4.8. Use Ground.navigationConstraint instead.
-* SearchViewModel.defaultSymbol deprecated Use defaultSymbols instead.
+* SearchViewModel.defaultSymbol deprecated since version 4.22. Use defaultSymbols instead.
 * ServiceAreaParameters deprecated since version 4.20. Use ServiceAreaParameters instead.
 * ServiceAreaSolveResult deprecated since version 4.20. Use ServiceAreaSolveResult instead.
 * ServiceAreaTask deprecated since version 4.20. Use serviceArea instead.
+* SlicePlane deprecated This module was moved in 4.23. Use SlicePlane instead.
 * StatisticDefinition deprecated since version 4.20. Use StatisticDefinition instead.
 * StreamLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * Task deprecated since version 4.20.
-* Theme: the light-blue, dark-blue, light-green, dark-green, light-purple, dark-purple, light-red, dark-red are deprecated since 4.19. Please use light or dark instead, or create your own theme.
-* TimeSlider.values deprecated since version 4.20. Use timeExtent instead.
-* TimeSliderViewModel.values deprecated since version 4.20. Use timeExtent instead.
 * TrimExtendParameters deprecated since version 4.20. Use TrimExtendParameters instead.
 * WFSLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * widget.renderable deprecated since version 4.19. All properties are automatically tracked now and don't need to be decorated with this decorator.
+* SmartMapping.params.basemap deprecated since version 4.13. Use view instead.
+* The light-blue, dark-blue, light-green, dark-green, light-purple, dark-purple, light-red, dark-red themes are deprecated since 4.19. Please use light or dark instead, or create your own theme.
 
 </details>
