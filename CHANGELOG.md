@@ -4,9 +4,23 @@ The `next` version of 4.24 is now available.  Planned release date is July 2022.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## Task removal
+
+At version 4.20 of the ArcGIS API for JavaScript, we deprecated Tasks in favor of using more modular classes and objects found inside the `esri/rest` folder. At version 4.24, we removed support for Tasks inside the `esri/tasks` and `esri/tasks/support` folders. We removed the five task-based Portal helper methods (which were deprecated since version 4.21) as well. 
+
+You can test this today using `next` via CDN or NPM to see how this breaking change affects your apps before the official release.
+
+There’s a good blog available that goes into more detail here:
+[Rest it up to the task](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/rest-is-up-to-the-task/)
+
+And there’s a great video from René Rubalcava that clearly explains the story here:
+[Migrate off Tasks in the ArcGIS API for JavaScript TODAY!](https://www.youtube.com/watch?v=vVZkUdmia3w&t=2s)
+
 ## Breaking changes
 
-* TBD
+* Popups using a default template will now display attachments as thumbnail images instead of listed links.
+* `LocatorSearchSource.locator`, which was deprecated at version 4.22, is now removed. Use `LocatorSearchSource.url` instead.
+* Removed support for all Tasks and the deprecated task-based Portal helper methods.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
@@ -18,7 +32,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 ## Bug fixes and enhancements
 
-* TBD
+* Fixed an issue with the BasemapGallery when changing the `activeBasemap` programmatically to a named basemap id.
 
 ## Deprecations
 
