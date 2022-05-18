@@ -18,21 +18,103 @@ And there’s a great video from René Rubalcava that clearly explains the story
 
 ## Breaking changes
 
-* Popups using a default template will now display attachments as thumbnail images instead of listed links.
-* `LocatorSearchSource.locator`, which was deprecated at version 4.22, is now removed. Use `LocatorSearchSource.url` instead.
-* Removed support for all Tasks and the deprecated task-based Portal helper methods.
-
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
-|-----------------------------|------------------|--------------------|
-| `TBD` | `TBD` | `TBD` |
+|----------|-------------|--------------------|
+| `LocatorSearchSource.locator` | [LocatorSearchSource.url](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search-LocatorSearchSource.html#url) | 4.22 |
+| `Bookmark.extent` | [Bookmark.viewpoint](https://developers.arcgis.com/javascript/latest/api-reference/esri-webmap-Bookmark.html#viewpoint) | 4.17 |
+
+The following tasks have been deprecated for at least 3 releases and have now been removed from the API (expand to read more):
+
+<details>
+<summary>Complete list of removed tasks</summary>
+
+| Task removed | Alternate option | Version deprecated |
+|--------------|------------------|--------------------|
+| `esri/portal/Portal/createClosestFacilityTask` | Use [closestFacility](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-closestFacility.html) with [helperServices](https://developers.arcgis.com/javascript/latest/api-reference/esri-portal-Portal.html#helperServices) | 4.21 |
+| `esri/portal/Portal/createGeometryService` | Use [geometryService](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-geometryService.html) with [helperServices](https://developers.arcgis.com/javascript/latest/api-reference/esri-portal-Portal.html#helperServices) | 4.21 |
+| `esri/portal/Portal/createPrintTask` | Use [print](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-print.html) with [helperServices](https://developers.arcgis.com/javascript/latest/api-reference/esri-portal-Portal.html#helperServices) | 4.21 |
+| `esri/portal/Portal/createRouteTask` | Use [route](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-route.html) with [helperServices](https://developers.arcgis.com/javascript/latest/api-reference/esri-portal-Portal.html#helperServices) | 4.21 |
+| `esri/portal/Portal/createServiceAreaTask` | Use [serviceArea](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-serviceArea.html) with [helperServices](https://developers.arcgis.com/javascript/latest/api-reference/esri-portal-Portal.html#helperServices) | 4.21 |
+| `esri/tasks/ClosestFacilityTask`  | [closestFacility](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-closestFacility.html) | 4.20 |
+| `esri/tasks/FindTask`  | [find](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-find.html) | 4.20 |
+| `esri/tasks/GeometryService` | [geometryService](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-geometryService.html) | 4.20 |
+| `esri/tasks/Geoprocessor` | [geoprcessor](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-geoprocessor.html) | 4.20 |
+| `esri/tasks/IdentifyTask`  | [identify](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-identify.html) | 4.20 |
+| `esri/tasks/ImageIdentifyTask` | [imageService](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-imageService.html) | 4.20 |
+| `esri/tasks/ImageServiceIdentifyTask` | [imageService.identify](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-imageService.html#identify) | 4.18 |
+| `esri/tasks/Locator` | [locator](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-locator.html) | 4.20 |
+| `esri/tasks/PrintTask` | [print](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-print.html) | 4.20 |
+| `esri/tasks/QueryTask` | [query](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-query.html) | 4.20 |
+| `esri/tasks/RouteTask` | [route](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-route.html) | 4.20 |
+| `esri/tasks/ServiceAreaTask` | [serviceArea](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-serviceArea.html) | 4.20 |
+| `esri/tasks/Task` | n/a | 4.20 |
+| `esri/tasks/supportAddressCandidate` | [AddressCandidate](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-AddressCandidate.html) | 4.20 |
+| `esri/tasks/supportAlgorithmicColorRamp` | [AlgorithmicColorRamp](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-AlgorithmicColorRamp.html) | 4.20 |
+| `esri/tasks/supportAreasAndLengthsParameters` | [AreasAndLengthsParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-AreasAndLengthsParameters.html) | 4.20 |
+| `esri/tasks/supportAttachmentQuery` | [AttachmentQuery](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-AttachmentQuery.html) | 4.20 |
+| `esri/tasks/supportBufferParameters` | [BufferParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-BufferParameters.html) | 4.20 |
+| `esri/tasks/supportClosestFacilityParameters` | [ClosestFacilityParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ClosestFacilityParameters.html) | 4.20 |
+| `esri/tasks/supportClosestFacilitySolveResult` | [ClosestFacilitySolveResult](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ClosestFacilitySolveResult.html) | 4.20 |
+| `esri/tasks/supportColorRamp` | [ColorRamp](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ColorRamp.html) | 4.20 |
+| `esri/tasks/supportDataFile` | [DataFile](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-DataFile.html) | 4.20 |
+| `esri/tasks/supportDataLayer` | [DataLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-DataLayer.html) | 4.20 |
+| `esri/tasks/supportDensifyParameters` | [DensifyParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-DensifyParameters.html) | 4.20 |
+| `esri/tasks/supportDirectionsFeatureSet` | [DirectionsFeatureSet](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-DirectionsFeatureSet.html) | 4.20 |
+| `esri/tasks/supportDistanceParameters` | [DistanceParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-DistanceParameters.html) | 4.20 |
+| `esri/tasks/supportFeatureSet` | [FeatureSet](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-FeatureSet.html) | 4.20 |
+| `esri/tasks/supportFindParameters` | [FindParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-FindParameters.html) | 4.20 |
+| `esri/tasks/supportFindResult` | [FindResult](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-FindResult.html) | 4.20 |
+| `esri/tasks/supportGeneralizeParameters` | [GeneralizeParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-GeneralizeParameters.html) | 4.20 |
+| `esri/tasks/supportGPMessage` | [GPMessage](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-GPMessage.html) | 4.20 |
+| `esri/tasks/supportIdentifyParameters` | [IdentifyParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-IdentifyParameters.html) | 4.20 |
+| `esri/tasks/supportIdentifyResult` | [IdentifyResult](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-IdentifyResult.html) | 4.20 |
+| `esri/tasks/supportImageIdentifyParameters` | [ImageIdentifyParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ImageIdentifyParameters.html) | 4.20 |
+| `esri/tasks/supportImageIdentifyResult` |[ ImageIdentifyResult](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ImageIdentifyResult.html) | 4.20 |
+| `esri/tasks/supportImageHistogramParameters` | [ImageHistogramParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ImageHistogramParameters.html) | 4.20 |
+| `esri/tasks/supportImageServiceIdentifyParameters` | [ImageServiceIdentifyParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ImageIdentifyParameters.html) | 4.18 |
+| `esri/tasks/supportImageServiceIdentifyResult` | [ImageServiceIdentifyResult](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ImageIdentifyResult.html) | 4.18 |
+| `esri/tasks/supportJobInfo` | [JobInfo](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-JobInfo.html) | 4.20 |
+| `esri/tasks/supportLegendLayer` | [LegendLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-LegendLayer.html) | 4.20 |
+| `esri/tasks/supportLengthsParameters` | [LengthsParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-LengthsParameters.html) | 4.20 |
+| `esri/tasks/supportLinearUnit` | [LinearUnit](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-LinearUnit.html) | 4.20 |
+| `esri/tasks/supportMultipartColorRamp` | [MultipartColorRamp](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-MultipartColorRamp.html) | 4.20 |
+| `esri/tasks/supportNAMessage` | [NAMessage](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-NAMessage.html) | 4.20 |
+| `esri/tasks/supportOffsetParameters` | [OffsetParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-OffsetParameters.html) | 4.20 |
+| `esri/tasks/supportParameterValue` | [ParameterValue](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ParameterValue.html) | 4.20 |
+| `esri/tasks/supportPrintParameters` | [PrintParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PrintParameters.html) | 4.20 |
+| `esri/tasks/supportPrintTemplate` | [PrintTemplate](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PrintTemplate.html) | 4.20 |
+| `esri/tasks/supportProjectParameters` | [ProjectParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ProjectParameters.html) | 4.20 |
+| `esri/tasks/supportQuery` | [Query](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-Query.html) | 4.20 |
+| `esri/tasks/supportRasterData` | [RasterData](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-RasterData.html) | 4.20 |
+| `esri/tasks/supportRelationParameters` | [RelationParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-RelationParameters.html) | 4.20 |
+| `esri/tasks/supportRelationshipQuery` | [RelationshipQuery](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-RelationshipQuery.html) | 4.20 |
+| `esri/tasks/supportRouteParameters` | [RouteParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-RouteParameters.html) | 4.20 |
+| `esri/tasks/supportRouteResult` | [RouteResult](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-RouteResult.html) | 4.20 |
+| `esri/tasks/supportServiceAreaParameters` | [ServiceAreaParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ServiceAreaParameters.html) | 4.20 |
+| `esri/tasks/supportServiceAreaSolveResult` | [ServiceAreaSolveResult](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ServiceAreaSolveResult.html) | 4.20 |
+| `esri/tasks/supportStatisticDefinition` | [StatisticDefinition](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-StatisticDefinition.html) | 4.20 |
+| `esri/tasks/supportTrimExtendParameters` | [TrimExtendParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-TrimExtendParameters.html) | 4.20 |
+
+</details>
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4x API.
 
 ## Bug fixes and enhancements
 
-* Fixed an issue with the BasemapGallery when changing the `activeBasemap` programmatically to a named basemap id.
+- BUG-000119268: Fixed an issue in SceneView where [hitTest](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html#hitTest) now returns multiple results for non-draped icons and shows multiple results in popups.
+- BUG-000127344: Fixed an issue where the shape of the [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html) was changed to a square instead of a circle as the layer was zoomed out to a smaller scale.
+- BUG-000130727: Fixed an issue where layers rendered with [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html) would not display labels.
+- BUG-000147907 - Fixed an issue where [LayerList.listItemCreatedFunction](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html#listItemCreatedFunction) was called multiple times causing performance degradation. However, the fix introduces a breaking change; if you need to know something about the ListItem's title or layer (e.g. `layer.type`) then you must watch the listItem for `updating` to be `false` before checking these properties.
+- Fixed an issue where layers rendered with [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html) would not display popups.
+- [Esri Community - 1161336](https://community.esri.com/t5/arcgis-api-for-javascript-questions/changing-basemaps-using-activebasemap-lt-basemapid/m-p/1161336): Fixed an issue with the [BasemapGallery](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery.html) when changing the `activeBasemap` programmatically to a named basemap id.
+- [Esri Community - 1166552](https://community.esri.com/t5/arcgis-api-for-javascript-questions/arabic-characters-in-textsymbol-not-being/m-p/1166552): Fixed an issue with [TextSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-TextSymbol.html) and displaying right-to-left (RTL) languages.
+- Attribution widget no longer mirrors for right-to-left (RTL).
+- [Esri Community - 1137736](https://community.esri.com/t5/arcgis-api-for-javascript-questions/hover-on-popup-list/m-p/1137736): When hovering over an item in a [popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) feature menu, the corresponding feature will be highlighted in the map.
+- Enhanced [FeatureFilter](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-FeatureFilter.html)/[FeatureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-FeatureEffect.html) to work for layers with [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html).
+- Enhanced [Layer.fromPortalItem()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-Layer.html#fromPortalItem) to handle existing KML items uploaded by file instead of by URL.
+- Enhanced the [Attribution Widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Attribution.html) to not be clickable when all the attribution text fits and is not expandable.
 
 ## Deprecations
 
@@ -40,108 +122,43 @@ The following are deprecated and will be removed in a future release. For anythi
 
 <details>
   <summary>Click to expand!</summary>  
-  
-* **Widget view source code:**   Starting at 4.21, the `.tsx` widget view source code is being deprecated for all widgets. This will be removed in a future release. Many of these files contain references to modules that are not open sourced or for internal-use only. This change does not affect the ability to build custom widgets, extend the ViewModel or customize widget CSS.
-* AddressCandidate deprecated since version 4.20. Use AddressCandidate instead.
-* AlgorithmicColorRamp deprecated since version 4.20. Use AlgorithmicColorRamp instead.
-* AreasAndLengthsParameters deprecated since version 4.20. Use AreasAndLengthsParameters instead.
-* AttachmentQuery deprecated since version 4.20. Use AttachmentQuery instead.
+
+* CSVLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* FeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* GeoJSONLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* OGCFeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* StreamLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* FeatureEffect deprecated since version 4.22. Use esri/layers/support/FeatureEffect instead.
+* Effect.Effect deprecated since version 4.21. Use Effect instead.
+* FeatureFilter deprecated since version 4.22. Use esri/layers/support/FeatureFilter instead.
+* WFSLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * BasemapToggle.toggle deprecated since version 4.22. Watch the activeBasemap property instead.
-* Bookmark.extent deprecated since 4.17. Use viewpoint instead.
-* BufferParameters deprecated since version 4.20. Use BufferParameters instead.
-* ClosestFacilityParameters deprecated since version 4.20. Use ClosestFacilityParameters instead.
-* ClosestFacilitySolveResult deprecated since version 4.20. Use ClosestFacilitySolveResult instead.
-* ClosestFacilityTask deprecated since version 4.20. Use closestFacility instead.
-* ColorRamp deprecated since version 4.20. Use ColorRamp instead.
+* Directions.routeServiceUrl deprecated since version 4.24. Use {link: module:esri/layers/RouteLayer#url} from layer instead.
+* Directions.routeSymbol deprecated since version 4.24. Use {link: module:esri/layers/support/RouteSymbols#directionLines} from layer instead.
+* Directions.stopSymbols deprecated since version 4.24. Use {link: module:esri/layers/support/RouteStopSymbols} from layer instead.
+* DirectionsViewModel.routeServiceUrl deprecated since version 4.24. Use {link: module:esri/layers/RouteLayer#url} from layer instead.
+* DirectionsViewModel.routeSymbol deprecated since version 4.24. Use {link: module:esri/layers/support/RouteSymbols#directionLines} from layer instead.
+* DirectionsViewModel.stops deprecated since version 4.24. Use {link: module:esri/layers/RouteLayer#stops} from layer instead.
+* DirectionsViewModel.stopSymbols deprecated since version 4.24. Use {link: module:esri/layers/support/RouteStopSymbols} from layer instead.
+* Editor.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureCreation
+* Editor.startCreateWorkflowAtFeatureEdit deprecated since 4.23
+* Editor.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection instead.
+* Editor.useDeprecatedCreateWorkflow deprecated since version 4.23. Although new at 4.23, this property was introduced to help migrate from the legacy CreateWorkflow to the updated CreateFeaturesWorkflow. Once CreateWorkflow is fully removed, this property will no longer be necessary.
 * CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
 * CreateWorkflowData deprecated since version 4.23. Use CreateFeaturesWorkflowData instead.
-* CreateWorkflowData.edits deprecated since version 4.23. Use CreateFeaturesWorkflow.pendingFeatures instead.
-* CSVLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* DataFile deprecated since version 4.20. Use DataFile instead.
-* DataLayer deprecated since version 4.20. Use DataLayer instead.
-* decorators.cast(classFunction) deprecated since version 4.14. Parameter decorators won't be supported by JavaScript decorators.
-* DensifyParameters deprecated since version 4.20. Use DensifyParameters instead.
-* DirectionsFeatureSet deprecated since version 4.20. Use DirectionsFeatureSet instead.
-* DistanceParameters deprecated since version 4.20. Use DistanceParameters instead.
-* Editor.startCreateWorkflowAtFeatureCreation deprecated since 4.23. Use Editor.startCreateFeaturesWorkflowAtFeatureCreation instead.
-* Editor.startCreateWorkflowAtFeatureEdit deprecated since 4.23.
-* Editor.startCreateWorkflowAtFeatureTypeSelection deprecated since 4.23. Use Editor.startCreateFeaturesWorkflowAtFeatureTypeSelection instead.
-* EditorViewModel.startCreateWorkflowAtFeatureCreation deprecated since 4.23. Use EditorViewModel.startCreateFeaturesWorkflowAtFeatureCreation instead.
-* EditorViewModel.startCreateWorkflowAtFeatureEdit deprecated since 4.23.
-* EditorViewModel.startCreateWorkflowAtFeatureTypeSelection deprecated since 4.23. Use EditorViewModel.startCreateFeaturesWorkflowAtFeatureTypeSelection instead.
-* Effect.Effect deprecated since version 4.21. Use Effect instead.
-* FeatureEffect deprecated since version 4.22. Use esri/layers/support/FeatureEffect instead.
-* FeatureFilter deprecated since version 4.22. Use esri/layers/support/FeatureFilter instead.
-* FeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* FeatureSet deprecated since version 4.20. Use FeatureSet instead.
-* FieldConfig.editorType deprecated since version 4.16
+* CreateWorkflowData.edits deprecated since 4.23. Use CreateFeaturesWorkflow.pendingFeatures to access edits made to the workflow data.
+* EditorViewModel.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureCreation.
+* EditorViewModel.startCreateWorkflowAtFeatureEdit deprecated since 4.23
+* EditorViewModel.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection.
+* FieldGroupConfig deprecated since version 4.23. Set field groupings via the GroupElement.
 * FieldGroupConfig.description deprecated since version 4.23. Set field grouping description via the GroupElement.description.
 * FieldGroupConfig.fieldConfig deprecated since version 4.23. Set fields via the FieldElement.
 * FieldGroupConfig.label deprecated since version 4.23. Set label grouped fields via the GroupElement.label.
 * FieldGroupConfig.visibilityExpression deprecated since version 4.23. Set fields via the GroupElement.visibilityExpression.
-* FieldGroupConfig deprecated since version 4.23. Set field groupings via the GroupElement.
-* FindParameters deprecated since version 4.20. Use FindParameters instead.
-* FindResult deprecated since version 4.20. Use FindResult instead.
-* FindTask deprecated since version 4.20. Use find instead.
-* GeneralizeParameters deprecated since version 4.20. Use GeneralizeParameters instead.
-* GeoJSONLayerView.effect deprecated since version 4.22. Use [featureEffect]/api-reference/esri-views-layers-GeoJSONLayerView.html(#featureEffect) instead.
-* GeometryService deprecated since version 4.20. Use geometryService instead.
-* Geoprocessor deprecated since version 4.20. Use geoprocessor instead.
-* GPMessage deprecated since version 4.20. Use GPMessage instead.
-* IdentifyParameters deprecated since version 4.20. Use IdentifyParameters instead.
-* IdentifyResult deprecated since version 4.20. Use IdentifyResult instead.
-* IdentifyTask deprecated since version 4.20. Use identify instead.
-* ImageHistogramParameters deprecated since version 4.20. Use ImageHistogramParameters instead.
-* ImageIdentifyParameters deprecated since version 4.20. Use ImageIdentifyParameters instead.
-* ImageIdentifyResult deprecated since version 4.20. Use ImageIdentifyResult instead.
-* ImageIdentifyTask deprecated since version 4.20. Use imageService instead.
-* InputFieldGroup.visibilityExpression deprecated since version 4.23. Use GroupElement.visibilityExpression instead.
-* JobInfo deprecated since version 4.20. Use JobInfo instead.
-* LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
-* LegendLayer deprecated since version 4.20. Use LegendLayer instead.
-* LengthsParameters deprecated since version 4.20. Use LengthsParameters instead.
-* LinearUnit deprecated since version 4.20. Use LinearUnit instead.
-* Locator deprecated since version 4.20. Use locator instead.
-* LocatorSearchSource.locator deprecated since version 4.22. Use url instead.
-* MultipartColorRamp deprecated since version 4.20. Use MultipartColorRamp instead.
-* NAMessage deprecated since version 4.20. Use NAMessage instead.
-* OffsetParameters deprecated since version 4.20. Use OffsetParameters instead.
-* OGCFeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* ParameterValue deprecated since version 4.20. Use ParameterValue instead.
-* Portal.createClosestFacilityTask deprecated since version 4.21.
-* Portal.createGeometryService deprecated since version 4.21.
-* Portal.createPrintTask deprecated since version 4.21.
-* Portal.createRouteTask deprecated since version 4.21.
-* Portal.createServiceAreaTask deprecated since version 4.21.
-* PrintParameters deprecated since version 4.20. Use PrintParameters instead.
-* PrintTask deprecated since version 4.20. Use print instead.
-* PrintTemplate deprecated since version 4.20. Use PrintTemplate instead.
+* InputFieldGroup.visibilityExpression deprecated Since 4.23. Use groupElement.visibilityExpression
 * PrintViewModel.scaleEnabled deprecated since version 4.22. Instead, use TemplateOptions if using the Print widget, or PrintTemplate if calling print() directly.
-* ProjectParameters deprecated since version 4.20. Use ProjectParameters instead.
-* promiseUtils.reject deprecated since version 4.19. Use the native Promise.reject() method instead.
-* promiseUtils.resolve deprecated since version 4.19. Use the native Promise.resolve() method instead.
-* Query deprecated since version 4.20. Use Query instead.
-* QueryTask deprecated since version 4.20. Use query instead.
-* RasterData deprecated since version 4.20. Use RasterData instead.
-* RelationParameters deprecated since version 4.20. Use RelationParameters instead.
-* RelationshipQuery deprecated since version 4.20. Use RelationshipQuery instead.
-* RouteParameters deprecated since version 4.20. Use RouteParameters instead.
-* RouteResult deprecated since version 4.20. Use RouteResult instead.
-* RouteSolveResult deprecated since version 4.20. Use RouteSolveResult instead.
-* RouteTask deprecated since version 4.20. Use route instead.
-* SceneView.constraints.collision deprecated since version 4.8. Use Ground.navigationConstraint instead.
 * SearchViewModel.defaultSymbol deprecated since version 4.22. Use defaultSymbols instead.
-* ServiceAreaParameters deprecated since version 4.20. Use ServiceAreaParameters instead.
-* ServiceAreaSolveResult deprecated since version 4.20. Use ServiceAreaSolveResult instead.
-* ServiceAreaTask deprecated since version 4.20. Use serviceArea instead.
 * SlicePlane deprecated This module was moved in 4.23. Use SlicePlane instead.
-* StatisticDefinition deprecated since version 4.20. Use StatisticDefinition instead.
-* StreamLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* Task deprecated since version 4.20.
-* TrimExtendParameters deprecated since version 4.20. Use TrimExtendParameters instead.
-* WFSLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* widget.renderable deprecated since version 4.19. All properties are automatically tracked now and don't need to be decorated with this decorator.
-* SmartMapping.params.basemap deprecated since version 4.13. Use view instead.
-* The light-blue, dark-blue, light-green, dark-green, light-purple, dark-purple, light-red, dark-red themes are deprecated since 4.19. Please use light or dark instead, or create your own theme.
+* LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
 
 </details>
