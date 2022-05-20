@@ -4,11 +4,23 @@ The `next` version of 4.24 is now available.  Planned release date is July 2022.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## Task removal
+
+At version 4.20 of the ArcGIS API for JavaScript, we deprecated Tasks in favor of using the modular methods found inside the `esri/rest` folder. At version 4.24, we removed support for Tasks inside the `esri/tasks` and `esri/tasks/support` folders. We removed the five task-based Portal helper methods (which were deprecated since version 4.21) as well. 
+
+You can test this today using `next` via CDN or NPM to see how this breaking change affects your apps before the official release.
+
+There’s a good blog available that goes into more detail here:
+[Rest is up to the task](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/rest-is-up-to-the-task/)
+
+And there’s a great video from René Rubalcava that clearly explains the story here:
+[Migrate off Tasks in the ArcGIS API for JavaScript TODAY!](https://www.youtube.com/watch?v=vVZkUdmia3w&t=2s)
+
 ## WebGL2 update
 
-The API now uses WebGL2 by default, and it will fallback to WebGL1 depending on the browser. WebGL2 support is integrated into modern browsers and is nearly 100% backwards compatible with WebGL1. It provides improved support for the capabilities of modern GPUs, and will be enabled automtically subject to the [System Requirements](/system-requirements/). 
+The API now uses WebGL2 by default, and it will fallback to WebGL1 depending on the browser. WebGL2 support is integrated into modern browsers and is nearly 100% backwards compatible with WebGL1. It provides improved support for the capabilities of modern GPUs, and will be enabled automtically subject to the [System Requirements]([/system-requirements/](https://developers.arcgis.com/javascript/latest/system-requirements/)). 
 
-Custom WebGL layers using WebGL1-only extensions will need to be updated to detect which context is present and use the correct extension/native WebGL2 feature. Examples of WebGL1-only extensions include [`WEBGL_color_buffer_float`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_color_buffer_float) as well as the ones listed in [https://webgl2fundamentals.org](https://webgl2fundamentals.org/webgl/lessons/webgl1-to-webgl2.html#:~:text=In%20WebGL1%20many%20features%20were%20optional%20extensions).
+The majority of applications won't require any changes. However, custom WebGL layers using WebGL1-only extensions will need to be updated to detect which context is present and use the correct extension/native WebGL2 feature. Examples of WebGL1-only extensions include [`WEBGL_color_buffer_float`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_color_buffer_float) as well as the ones listed in [https://webgl2fundamentals.org](https://webgl2fundamentals.org/webgl/lessons/webgl1-to-webgl2.html#:~:text=In%20WebGL1%20many%20features%20were%20optional%20extensions).
 
 Here is a `WEBGL_color_buffer_float` snippet showing support for both WebGL1 and WebGL2:
 
@@ -22,18 +34,6 @@ if (isWebGL1) {
   gl.renderbufferStorage(gl.RENDERBUFFER, gl.RGBA32F, 256, 256);
 }
 ```
-
-## Task removal
-
-At version 4.20 of the ArcGIS API for JavaScript, we deprecated Tasks in favor of using the modular methods found inside the `esri/rest` folder. At version 4.24, we removed support for Tasks inside the `esri/tasks` and `esri/tasks/support` folders. We removed the five task-based Portal helper methods (which were deprecated since version 4.21) as well. 
-
-You can test this today using `next` via CDN or NPM to see how this breaking change affects your apps before the official release.
-
-There’s a good blog available that goes into more detail here:
-[Rest is up to the task](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/rest-is-up-to-the-task/)
-
-And there’s a great video from René Rubalcava that clearly explains the story here:
-[Migrate off Tasks in the ArcGIS API for JavaScript TODAY!](https://www.youtube.com/watch?v=vVZkUdmia3w&t=2s)
 
 ## Breaking changes
 
