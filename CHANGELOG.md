@@ -4,6 +4,14 @@ The `next` version of 4.24 is now available.  Planned release date is July 2022.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## MediaLayer 
+
+At version 4.24, we added a new layer - MediaLayer. This layer is known as MapImageLayer in 3.x API. You will be able to add static images and videos.
+You can add array of image elements or video elements to the MediaLayer by setting its `source` property.
+Please check out these to codepen apps to see MedialLayer in action:
+1. [MediaLayer with image elements](https://codepen.io/U_B_U/pen/MWQVNvE?editors=1000)
+2. [MediaLayer with video elements](https://codepen.io/U_B_U/pen/MWQGWdb?editors=1000)
+
 ## Task removal
 
 At version 4.20 of the ArcGIS API for JavaScript, we deprecated Tasks in favor of using the modular methods found inside the `esri/rest` folder. At version 4.24, we removed support for Tasks inside the `esri/tasks` and `esri/tasks/support` folders. We removed the five task-based Portal helper methods (which were deprecated since version 4.21) as well. 
