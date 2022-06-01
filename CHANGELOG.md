@@ -6,11 +6,12 @@ The `next` version of 4.24 is now available.  Planned release date is July 2022.
 
 ## MediaLayer 
 
-At version 4.24, we added a new layer - MediaLayer. This layer is known as MapImageLayer in 3.x API. You will be able to add static images and videos.
+At version 4.24, we added a new layer - MediaLayer. This layer is known as MapImageLayer in 3.x API. You will be able to add static images and videos to this layer. MediaLayer is supported both in 2D MapView and 3D SceneView.
 You can add array of image elements or video elements to the MediaLayer by setting its `source` property.
 Please check out these to codepen apps to see MedialLayer in action:
-1. [MediaLayer with video elements](https://codepen.io/U_B_U/pen/MWQVNvE?editors=1000)
-2. [MediaLayer with image elements](https://codepen.io/U_B_U/pen/MWQGWdb?editors=1000)
+1. [2D MediaLayer with video elements](https://codepen.io/U_B_U/pen/MWQVNvE?editors=1000)
+2. [2D MediaLayer with image elements](https://codepen.io/U_B_U/pen/MWQGWdb?editors=1000)
+3. [3D MediaLayer with video elements](https://codepen.io/ycabon/pen/WNMJzeY?editors=0010)
 
 ## Task removal
 
