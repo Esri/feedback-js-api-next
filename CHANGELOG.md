@@ -12,12 +12,7 @@ The following classes, methods, properties and events have been deprecated for a
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
-| `FieldConfig.editorType` | Set the editor type via [TextAreaInput](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-inputs-TextAreaInput.html) or [TextBoxInput](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-inputs-TextBoxInput.html) classes set within the [field element](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-FieldElement.html) of a FeatureForm's [template](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html#formTemplate). | 4.16 |
-| `promiseUtils.reject` | [Promise.reject()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject) | 4.19 |
-| `promiseUtils.resolve` | [Promise.resolve()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) | 4.19 |
-| `widget.renderable` | All properties are automatically tracked now and don't need to be decorated with this decorator. | 4.19 |
-| `LocatorSearchSource.locator` | [LocatorSearchSource.url](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search-LocatorSearchSource.html#url) | 4.22 |
-| `Bookmark.extent` | [Bookmark.viewpoint](https://developers.arcgis.com/javascript/latest/api-reference/esri-webmap-Bookmark.html#viewpoint) | 4.17 |
+TBD
 
 The following tasks have been deprecated for at least 3 releases and have now been removed from the API (expand to read more):
 
