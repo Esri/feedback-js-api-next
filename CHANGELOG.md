@@ -1,48 +1,10 @@
 # Change log
 
-The `next` version of 4.24 is now available.  Planned release date is July 2022.
+The `next` version of 4.25 is now available.  Planned release date is October 2022.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
-## MediaLayer 
-
-At version 4.24, we added a new layer - MediaLayer. This layer is known as MapImageLayer in 3.x API. You will be able to add static images and videos to this layer. MediaLayer is supported both in 2D MapView and 3D SceneView.
-You can add array of image elements or video elements to the MediaLayer by setting its `source` property.
-Please check out these to codepen apps to see MedialLayer in action:
-1. [2D MediaLayer with video elements](https://codepen.io/U_B_U/pen/MWQVNvE?editors=1000)
-2. [2D MediaLayer with image elements](https://codepen.io/U_B_U/pen/MWQGWdb?editors=1000)
-3. [3D MediaLayer with video elements](https://codepen.io/ycabon/pen/WNMJzeY?editors=0010)
-
-## Task removal
-
-At version 4.20 of the ArcGIS API for JavaScript, we deprecated Tasks in favor of using the modular methods found inside the `esri/rest` folder. At version 4.24, we removed support for Tasks inside the `esri/tasks` and `esri/tasks/support` folders. We removed the five task-based Portal helper methods (which were deprecated since version 4.21) as well. 
-
-You can test this today using `next` via CDN or NPM to see how this breaking change affects your apps before the official release.
-
-There’s a good blog available that goes into more detail here:
-[Rest is up to the task](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/rest-is-up-to-the-task/)
-
-And there’s a great video from René Rubalcava that clearly explains the story here:
-[Migrate off Tasks in the ArcGIS API for JavaScript TODAY!](https://www.youtube.com/watch?v=vVZkUdmia3w&t=2s)
-
-## WebGL2 update
-
-The API now uses WebGL2 by default, and it will fallback to WebGL1 depending on the browser. WebGL2 support is integrated into modern browsers and is nearly 100% backwards compatible with WebGL1. It provides improved support for the capabilities of modern GPUs, and will be enabled automtically subject to the [System Requirements]([/system-requirements/](https://developers.arcgis.com/javascript/latest/system-requirements/)). 
-
-The majority of applications won't require any changes. However, custom WebGL layers using WebGL1-only extensions will need to be updated to detect which context is present and use the correct extension/native WebGL2 feature. Examples of WebGL1-only extensions include [`WEBGL_color_buffer_float`](https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_color_buffer_float) as well as the ones listed in [https://webgl2fundamentals.org](https://webgl2fundamentals.org/webgl/lessons/webgl1-to-webgl2.html#:~:text=In%20WebGL1%20many%20features%20were%20optional%20extensions).
-
-Here is a `WEBGL_color_buffer_float` snippet showing support for both WebGL1 and WebGL2:
-
-```js
-if (isWebGL1) {
-  const floatBufExt = gl.getExtension("WEBGL_color_buffer_float");
-  gl.renderbufferStorage(gl.RENDERBUFFER, floatBufExt.RGBA32F_EXT, 256, 256);
-} else {
-  // Float render targets use different extension
-  const floatBufExt2 = gl.getExtension("EXT_color_buffer_float");
-  gl.renderbufferStorage(gl.RENDERBUFFER, gl.RGBA32F, 256, 256);
-}
-```
+## TBD
 
 ## Breaking changes
 
@@ -50,8 +12,7 @@ The following classes, methods, properties and events have been deprecated for a
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
-| `LocatorSearchSource.locator` | [LocatorSearchSource.url](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search-LocatorSearchSource.html#url) | 4.22 |
-| `Bookmark.extent` | [Bookmark.viewpoint](https://developers.arcgis.com/javascript/latest/api-reference/esri-webmap-Bookmark.html#viewpoint) | 4.17 |
+TBD
 
 The following tasks have been deprecated for at least 3 releases and have now been removed from the API (expand to read more):
 
@@ -131,62 +92,82 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 ## Bug fixes and enhancements
 
-- BUG-000119268: Fixed an issue in SceneView where [hitTest](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html#hitTest) now returns multiple results for non-draped icons and shows multiple results in popups.
-- BUG-000127344: Fixed an issue where the shape of the [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html) was changed to a square instead of a circle as the layer was zoomed out to a smaller scale.
-- BUG-000130727: Fixed an issue where layers rendered with [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html) would not display labels.
-- BUG-000147907 - Fixed an issue where [LayerList.listItemCreatedFunction](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html#listItemCreatedFunction) was called multiple times causing performance degradation. However, the fix introduces a breaking change; if you need to know something about the ListItem's title or layer (e.g. `layer.type`) then you must watch the listItem for `updating` to be `false` before checking these properties.
-- Fixed an issue where layers rendered with [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html) would not display popups.
-- [Esri Community - 1161336](https://community.esri.com/t5/arcgis-api-for-javascript-questions/changing-basemaps-using-activebasemap-lt-basemapid/m-p/1161336): Fixed an issue with the [BasemapGallery](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery.html) when changing the `activeBasemap` programmatically to a named basemap id.
-- [Esri Community - 1166552](https://community.esri.com/t5/arcgis-api-for-javascript-questions/arabic-characters-in-textsymbol-not-being/m-p/1166552): Fixed an issue with [TextSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-TextSymbol.html) and displaying right-to-left (RTL) languages.
-- Attribution widget no longer mirrors for right-to-left (RTL).
-- [Esri Community - 1137736](https://community.esri.com/t5/arcgis-api-for-javascript-questions/hover-on-popup-list/m-p/1137736): When hovering over an item in a [popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) feature menu, the corresponding feature will be highlighted in the map.
-- Enhanced [FeatureFilter](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-FeatureFilter.html)/[FeatureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-FeatureEffect.html) to work for layers with [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html).
-- Enhanced [Layer.fromPortalItem()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-Layer.html#fromPortalItem) to handle existing KML items uploaded by file instead of by URL.
-- Enhanced the [Attribution Widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Attribution.html) to not be clickable when all the attribution text fits and is not expandable.
+- TBD
 
 ## Deprecations
 
-The following are deprecated and will be removed in a future release. For anything deprecated in 4.23 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
+The following are deprecated and will be removed in a future release. For anything deprecated in 4.24 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
 <details>
   <summary>Click to expand!</summary>  
 
-* CSVLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* FeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* GeoJSONLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* OGCFeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* StreamLayerView.effect deprecated since version 4.22. Use featureEffect instead.
-* FeatureEffect deprecated since version 4.22. Use esri/layers/support/FeatureEffect instead.
-* Effect.Effect deprecated since version 4.21. Use Effect instead.
-* FeatureFilter deprecated since version 4.22. Use esri/layers/support/FeatureFilter instead.
-* WFSLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * BasemapToggle.toggle deprecated since version 4.22. Watch the activeBasemap property instead.
-* Directions.routeServiceUrl deprecated since version 4.24. Use {link: module:esri/layers/RouteLayer#url} from layer instead.
-* Directions.routeSymbol deprecated since version 4.24. Use {link: module:esri/layers/support/RouteSymbols#directionLines} from layer instead.
-* Directions.stopSymbols deprecated since version 4.24. Use {link: module:esri/layers/support/RouteStopSymbols} from layer instead.
-* DirectionsViewModel.routeServiceUrl deprecated since version 4.24. Use {link: module:esri/layers/RouteLayer#url} from layer instead.
-* DirectionsViewModel.routeSymbol deprecated since version 4.24. Use {link: module:esri/layers/support/RouteSymbols#directionLines} from layer instead.
-* DirectionsViewModel.stops deprecated since version 4.24. Use {link: module:esri/layers/RouteLayer#stops} from layer instead.
-* DirectionsViewModel.stopSymbols deprecated since version 4.24. Use {link: module:esri/layers/support/RouteStopSymbols} from layer instead.
+* CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
+* CreateWorkflowData.edits deprecated since 4.23. Use CreateFeaturesWorkflow.pendingFeatures to access edits made to the workflow data.
+* CreateWorkflowData deprecated since version 4.23. Use CreateFeaturesWorkflowData instead.
+* CSVLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* Directions.routeServiceUrl deprecated since version 4.24. Use url from layer instead.
+* Directions.routeSymbol deprecated since version 4.24. Use directionLines from layer instead.
+* Directions.stopSymbols deprecated since version 4.24. Use RouteStopSymbols from layer instead.
+* DirectionsViewModel.highlightSegment deprecated since version 4.24. Use highlight instead.
+* DirectionsViewModel.routeServiceUrl deprecated since version 4.24. Use url from layer instead.
+* DirectionsViewModel.routeSymbol deprecated since version 4.24. Use directionLines from layer instead.
+* DirectionsViewModel.stops deprecated since version 4.24. Use stops from layer instead.
+* DirectionsViewModel.stopSymbols deprecated since version 4.24. Use RouteStopSymbols from layer instead.
 * Editor.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureCreation
 * Editor.startCreateWorkflowAtFeatureEdit deprecated since 4.23
 * Editor.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection instead.
 * Editor.useDeprecatedCreateWorkflow deprecated since version 4.23. Although new at 4.23, this property was introduced to help migrate from the legacy CreateWorkflow to the updated CreateFeaturesWorkflow. Once CreateWorkflow is fully removed, this property will no longer be necessary.
-* CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
-* CreateWorkflowData deprecated since version 4.23. Use CreateFeaturesWorkflowData instead.
-* CreateWorkflowData.edits deprecated since 4.23. Use CreateFeaturesWorkflow.pendingFeatures to access edits made to the workflow data.
 * EditorViewModel.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureCreation.
 * EditorViewModel.startCreateWorkflowAtFeatureEdit deprecated since 4.23
 * EditorViewModel.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection.
+* Effect.Effect deprecated since version 4.21. Use Effect instead.
+* EventAttachedCallback.EventAttachedCallback deprecated since version 4.24. Use reactiveUtils.ReactiveListenerChangeCallback() instead.
+* FeatureEffect deprecated since version 4.22. Use esri/layers/support/FeatureEffect instead.
+* FeatureFilter deprecated since version 4.22. Use FeatureFilter instead.
+* FeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* FeatureTable.fieldConfigs deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
+* FeatureTableViewModel.fieldConfigs deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
+* FieldColumn.config deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
+* FieldColumnConfig deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
+* FieldGroupConfig.visibilityExpression deprecated since version 4.23. Set fields via the GroupElement.visibilityExpression
 * FieldGroupConfig deprecated since version 4.23. Set field groupings via the GroupElement.
-* FieldGroupConfig.description deprecated since version 4.23. Set field grouping description via the GroupElement.description.
-* FieldGroupConfig.fieldConfig deprecated since version 4.23. Set fields via the FieldElement.
-* FieldGroupConfig.label deprecated since version 4.23. Set label grouped fields via the GroupElement.label.
-* FieldGroupConfig.visibilityExpression deprecated since version 4.23. Set fields via the GroupElement.visibilityExpression.
+* GeoJSONLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* HeatmapRenderer.blurRadius is deprecated since version 4.24. Use radius instead.
+* HeatmapRenderer.maxPixelIntensity is deprecated since version 4.24. Use maxDensity instead.
+* HeatmapRenderer.minPixelIntensity is deprecated since version 4.24. Use minDensity instead.
+* ImageParameters deprecated since version 4.24. Use ImageParameters instead.
 * InputFieldGroup.visibilityExpression deprecated Since 4.23. Use groupElement.visibilityExpression
+* LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
+* Lighting deprecated since version 4.24. Use SunLighting instead.
+* OGCFeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* PausableWatchHandle.PausableWatchHandle deprecated since version 4.24.
 * PrintViewModel.scaleEnabled deprecated since version 4.22. Instead, use TemplateOptions if using the Print widget, or PrintTemplate if calling print() directly.
+* PromisedWatchHandle.PromisedWatchHandle deprecated since version 4.24. Use Promise instead.
+* promiseUtils.create deprecated since version 4.24. Use Promise instead.
 * SearchViewModel.defaultSymbol deprecated since version 4.22. Use defaultSymbols instead.
 * SlicePlane deprecated This module was moved in 4.23. Use SlicePlane instead.
-* LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
+* StreamLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* watchUtils.init deprecated since 4.24. Use reactiveUtils.watch() instead.
+* watchUtils.on deprecated since 4.24. Use reactiveUtils.on() instead.
+* watchUtils.once deprecated since 4.24. Use reactiveUtils.once() instead.
+* watchUtils.pausable deprecated Since 4.24.
+* watchUtils.watch deprecated since 4.24. Use reactiveUtils.watch() instead.
+* watchUtils.when deprecated since 4.24. Use reactiveUtils.when() instead.
+* watchUtils.whenDefined deprecated since 4.24. Use reactiveUtils.when() instead.
+* watchUtils.whenDefinedOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
+* watchUtils.whenEqual deprecated since 4.24. Use reactiveUtils.when() instead
+* watchUtils.whenEqualOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
+* watchUtils.whenFalse deprecated since 4.24. Use reactiveUtils.when() instead.
+* watchUtils.whenFalseOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
+* watchUtils.whenNot deprecated since 4.24. Use reactiveUtils.when() instead.
+* watchUtils.whenNotOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
+* watchUtils.whenOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
+* watchUtils.whenTrue deprecated since 4.24. Use reactiveUtils.when() instead.
+* watchUtils.whenTrueOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
+* watchUtils.whenUndefined deprecated since 4.24. Use reactiveUtils.when() instead.
+* watchUtils.whenUndefinedOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
+* watchUtils deprecated since version 4.24. Use reactiveUtils instead.
+* WFSLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 
 </details>
