@@ -53,12 +53,13 @@ body:
     validations:
       required: true
   - type: textarea
-    id: operatingsystem
+    id: version
     attributes:
       label: API version (check your console)
       description: Provide the full version string from your console.
-      placeholder: 
-    validations: e.g. ArcGIS API for JavaScript 4.25-next [Date: 20220725, Revision: 144c0342]
+      placeholder: |
+        e.g. ArcGIS API for JavaScript 4.25-next [Date: 20220725, Revision: 144c0342]
+    validations: 
       required: true      
   - type: textarea
     id: operatingsystem
@@ -73,3 +74,4 @@ body:
         ...
     validations:
       required: true
+      
