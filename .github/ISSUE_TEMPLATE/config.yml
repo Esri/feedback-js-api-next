@@ -1,0 +1,4 @@
+contact_links:
+  - name: Esri Support
+    url: https://support.esri.com/
+    about: Bugs in released versions of the API.
