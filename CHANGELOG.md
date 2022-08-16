@@ -171,3 +171,13 @@ The following are deprecated and will be removed in a future release. For anythi
 * WFSLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 
 </details>
+
+The following are deprecations to the API's TypeScript type definitions, and will be removed in a future release (expand to read more). 
+
+<details>
+<summary>Click to expand</summary>
+
+* `IPromise` deprecated since version 4.25. Use native `Promise` instead.
+* Instances of `*Constructor` deprecated since 4.25. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`.
+
+</details>
