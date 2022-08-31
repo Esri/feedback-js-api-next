@@ -6,6 +6,38 @@ The `next` version of 4.25 is now available.  Planned release date is November 2
 
 ## TBD
 
+## Widget updates
+
+### Editor
+
+- The Editor widget added better support for handling a feature service's operation restrictions. These can include operations such as `create` (add), `read` (query), `update` (update), and `delete` (delete). The Editor UI will update based on the service-level permissions and apply a more intuitive interface to provide or limit what types of edits can be handled within the widget.
+
+- New updates to workflows involving attachment editing. Prior to this release, creating and editing attachments were somewhat limited.
+
+- 2d support was added for `tooltipOptions` in both the Editor widget and its viewModel. Similar to 3d, this feedback allows the visual feedback of line segment and polygon information.
+
+### Sketch
+
+- 2d support was added for `tooltipOptions` in both the Sketch widget and its viewModel. Similar to 3d, this feedback allows the visual feedback of line segment and polygon information. 
+
+
+### SnappingControls
+
+It is now possible to toggle visibility for sections of the SnappingControls. This is handled via its visibleElements property.
+
+### FeatureTable
+
+
+- It is now possible to _delete_ records within the FeatureTable widget. 
+
+- Application-level queries can now control sort order better via a new `activeSortOrders` property added to both the FeatureTable widget and its viewModel.
+
+
+### FeatureForm
+
+Asynchronous support has been added to the FeatureForm's field elements. 
+
+
 ## Breaking changes
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
