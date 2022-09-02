@@ -65,7 +65,8 @@ The following classes, methods, properties and events have been deprecated for a
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
-TBD
+| `BasemapToggle.toggle` and `BasemapToggleViewModel.toggle` events | Watch the [activeBasemap](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html#activeBasemap) property instead | 4.22 |
+
 
 The following tasks have been deprecated for at least 3 releases and have now been removed from the API (expand to read more):
 
