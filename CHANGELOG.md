@@ -55,6 +55,7 @@ Asynchronous support has been added to the FeatureForm's field elements.
 ## Layer updates
 
 - Added support for configurable `maxRecordCount` on OGCFeatureLayer to define maximum paging size. This will override the max record count in the service, if defined.
+- Added extensibility support for WMSLayer popups. You can now use the fetchFeatureInfoFunction to override the default popup behavior on WMSLayer, as shown in this [example](https://codepen.io/annefitz/pen/abGbVyv).
 
 ## Breaking changes
 
