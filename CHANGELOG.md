@@ -55,6 +55,7 @@ Asynchronous support has been added to the FeatureForm's field elements.
 ## Layer updates
 
 - Added support for configurable `maxRecordCount` on OGCFeatureLayer to define maximum paging size. This will override the max record count in the service, if defined.
+- Added extensibility support for WMSLayer popups. You can now use the `fetchFeatureInfoFunction` to override the default popup behavior on WMSLayer, as shown in this [example](https://codepen.io/annefitz/pen/abGbVyv).
 
 ## Breaking changes
 
@@ -64,7 +65,8 @@ The following classes, methods, properties and events have been deprecated for a
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
-TBD
+| `BasemapToggle.toggle` and `BasemapToggleViewModel.toggle` events | Watch the [activeBasemap](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html#activeBasemap) property instead | 4.22 |
+
 
 The following tasks have been deprecated for at least 3 releases and have now been removed from the API (expand to read more):
 
