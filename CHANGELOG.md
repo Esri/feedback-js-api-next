@@ -81,11 +81,12 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000136723: Fixed an issue where MapImageLayer popup queries didn't contain time parameters.
 - BUG-000149598: Fixed an issue where popup was not returning all attributes for ImageryLayer's pixel values that equal 0.
 - BUG-000150976: Fixed an issue where the subtype coded value was displaying in popups for MapImageLayers rather than the subtype description.
-- ArcGIS Ideas - 940733: Attachment content file names are automatically hidden when the displayType is preview in Popups.
 - Esri Community - 1196642: Fixed an issue where MediaLayer was not displaying 24 and 32 bit PNGs with transparent background correctly.
 - Fixed an issue where WMSLayer sublayers were being displayed in reverse order in the LayerList widget.
-- Updated CustomContent documentation to allow an optional `PopupTemplateCreatorEvent` parameter for the `PopupTemplateContentCreator` and the `PopupTemplateContentDesroyer` to reference the graphic used to represent the feature.
+- Fixed an issue where PopupTemplate content defined with a function was not able to access the feature's geometry even though returnGeometry was set to true.
+- ArcGIS Ideas - 940733: Attachment content file names are automatically hidden when the displayType is preview in Popups.
 - Enhanced the behavior of MapNotesLayer.listMode to have a default value of hide-children instead of show.
+- Updated CustomContent documentation to allow an optional `PopupTemplateCreatorEvent` parameter for the `PopupTemplateContentCreator` and the `PopupTemplateContentDesroyer` to reference the graphic used to represent the feature.
 - When embedding a video in a popup using the HTML `<video>` tag, the video will automatically resize to fit inside the popup if it is larger than the popup window.
 
 ## Deprecations
