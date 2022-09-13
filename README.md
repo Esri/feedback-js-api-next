@@ -27,11 +27,11 @@ The `next` version of the CDN is not available for download.
 
 ### npm
 
-The `next` version is available for testing with local builds. For all new applications, use the ES modules: `npm install @arcgis/core@next`. Existing applications using AMD modules can run `npm install arcgis-js-api@next` or consider upgrading to `@arcgis/core`. More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
+To test the `next` version using npm use `npm install @arcgis/core@next`. More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
 
 ### esri-loader 
 
-Or if you're using [esri-loader](https://github.com/Esri/esri-loader) to help load AMD modules, use [options.version](https://github.com/Esri/esri-loader#from-a-specific-version) and specify `next` as the value. You can also lazy-load [js.arcgis.com/next/esri/themes/light/main.css](js.arcgis.com/next/esri/themes/light/main.css) by adding the `css: true` option, or you can use [any of the other methods supported by esri-loader](https://github.com/Esri/esri-loader#loading-styles) instead.
+If you are using [esri-loader](https://github.com/Esri/esri-loader) to load AMD modules, use [options.version](https://github.com/Esri/esri-loader#from-a-specific-version) and specify `next` as the value. You can also lazy-load [js.arcgis.com/next/esri/themes/light/main.css](js.arcgis.com/next/esri/themes/light/main.css) by adding the `css: true` option, or you can use [any of the other methods supported by esri-loader](https://github.com/Esri/esri-loader#loading-styles) instead.
 
 ```javascript
 const options = {
@@ -49,7 +49,11 @@ Typings are included with the npm install of `@arcgis/core@next` ES modules. For
 
 The typings are also included with `arcgis-js-api@next` AMD modules, and they can be used in two ways.
 
+To install the AMD typings run `npm install --save @types/arcgis-js-api`.
+
 ### Include a `///` directive in your main TypeScript file.
+
+For more information on using the triple-slash directive refer to the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html).
 
 *main.ts*
 
@@ -59,11 +63,12 @@ The typings are also included with `arcgis-js-api@next` AMD modules, and they ca
 
 ### Or add to the `include` of your `tsconfig.json`.
 
+For more information on using `tsconfig.json` refer to the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#handbook-content).
+
 *tsconfig.json*
 
 ```json
 {
-  "compilerOptions": {},
   "include": [
     "node_modules/arcgis-js-api/index.d.ts",
     "src/**/*.ts",
@@ -76,7 +81,7 @@ The typings are also included with `arcgis-js-api@next` AMD modules, and they ca
 
 Report issues with next version at https://github.com/Esri/feedback-js-api-next/issues/new/choose
 
-* Bugs: Bug reports should be specific to js.arcgis.com/next and not present in the current release.
+* Bugs: Bug reports should be specific to js.arcgis.com/next and not present in the current API release.
 * Enhancements: For this initiative, enhancement requests should be specific to a feature in js.arcgis.com/next.
 
 ## Licensing
