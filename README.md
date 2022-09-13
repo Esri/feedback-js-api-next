@@ -27,7 +27,7 @@ The `next` version of the CDN is not available for download.
 
 ### npm
 
-To test the `next` version using npm use `npm install @arcgis/core@next`. More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
+To test the `next` version with npm, use `npm install @arcgis/core@next`. More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
 
 ### esri-loader 
 
