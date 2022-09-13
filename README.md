@@ -49,8 +49,6 @@ Typings are included with the npm install of `@arcgis/core@next` ES modules. For
 
 The typings are also included with `arcgis-js-api@next` AMD modules, and they can be used in two ways.
 
-To install the AMD typings run `npm install --save @types/arcgis-js-api`.
-
 ### Include a `///` directive in your main TypeScript file.
 
 For more information on using the triple-slash directive refer to the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html).
