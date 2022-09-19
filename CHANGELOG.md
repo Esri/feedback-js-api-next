@@ -4,6 +4,10 @@ The `next` version of 4.25 is now available.  Planned release date is November 2
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## No CDN hosting of non-esri packages
+
+As of version 4.25, the CDN on js.arcgis.com will no longer host AMD packages not used by ArcGIS API for JavaScript. For historic reasons, this included dgrid, dijit, dojo, dojox, dstore, and tslib.
+
 ## Convert SVG to CIM Symbol
 
 - Added support for `generateSymbol()` on `esri/rest/symbolService`, which connects to the [REST API](https://developers.arcgis.com/rest/services-reference/enterprise/generate-symbol.htm) to convert an SVG to a CIMSymbol.
