@@ -58,7 +58,9 @@ Asynchronous support has been added to the FeatureForm's field elements.
 
 ### Popups
 
-Displaying AttachmentsContent with `displayType.preview` automatically hides the attachment's file name.
+- `RelationshipContent` has been added as a new [content](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content.html) type for [PopupTemplates](https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html) which allows you to represent a relationship element associated with a feature within a popup. When configuring `RelationshipContent`, the related layer or table must be added to the map. Editing related records is currently not supported and will be added in a later release. See the following example on how to configure `RelationshipContent` within a popup and browse a feature's related records: https://codepen.io/laurenb14/pen/MWGoqRW
+
+- Displaying AttachmentsContent with `displayType.preview` automatically hides the attachment's file name.
 
 ## Layer updates
 
