@@ -85,6 +85,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000136723: Fixed an issue where MapImageLayer popup queries didn't contain time parameters.
 - BUG-000149598: Fixed an issue where popup was not returning all attributes for ImageryLayer's pixel values that equal 0.
 - BUG-000150976: Fixed an issue where the subtype coded value was displaying in popups for MapImageLayers rather than the subtype description.
+- BUG-000152279: Fixed an issue where a GraphicsLayer would flash and then disappear when added to the map at a scale less than the layer's `minScale`.
 - Esri Community - 1196642: Fixed an issue where MediaLayer was not displaying 24 and 32 bit PNGs with transparent background correctly.
 - Fixed an issue where WMSLayer sublayers were being displayed in reverse order in the LayerList widget.
 - Fixed an issue where PopupTemplate content defined with a function was not able to access the feature's geometry even though returnGeometry was set to true.
