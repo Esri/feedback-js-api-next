@@ -91,6 +91,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - Esri Community - 1196642: Fixed an issue where MediaLayer was not displaying 24 and 32 bit PNGs with transparent background correctly.
 - Fixed an issue where WMSLayer sublayers were being displayed in reverse order in the LayerList widget.
 - Fixed an issue where PopupTemplate content defined with a function was not able to access the feature's geometry even though returnGeometry was set to true.
+- ENH-000116507 - Enhanced MapImageLayer to highlight the selected feature when displaying it's Popup.
 - ArcGIS Ideas - 940733: Attachment content file names are automatically hidden when the displayType is preview in Popups.
 - Enhanced the behavior of MapNotesLayer.listMode to have a default value of hide-children instead of show.
 - Updated CustomContent documentation to allow an optional `PopupTemplateCreatorEvent` parameter for the `PopupTemplateContentCreator` and the `PopupTemplateContentDesroyer` to reference the graphic used to represent the feature.
