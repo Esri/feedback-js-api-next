@@ -66,6 +66,7 @@ Asynchronous support has been added to the FeatureForm's field elements.
 
 - Added support for configurable `maxRecordCount` on OGCFeatureLayer to define maximum paging size. This will override the max record count in the service, if defined.
 - Added extensibility support for WMSLayer popups. You can now use the `fetchFeatureInfoFunction` to override the default popup behavior on WMSLayer, as shown in this [example](https://codepen.io/annefitz/pen/abGbVyv).
+- Added support for `ControlPointsGeoreference` MediaLayer. An image or video can now be positioned, scaled, and rotated with two control points. Additionally, it will be skewed with three control points. With four control points, a perspective transformation is applied to the element.
 
 ## Breaking changes
 
