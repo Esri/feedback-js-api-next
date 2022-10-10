@@ -66,6 +66,55 @@ Asynchronous support has been added to the FeatureForm's field elements.
 
 - Added support for configurable `maxRecordCount` on OGCFeatureLayer to define maximum paging size. This will override the max record count in the service, if defined.
 - Added extensibility support for WMSLayer popups. You can now use the `fetchFeatureInfoFunction` to override the default popup behavior on WMSLayer, as shown in this [example](https://codepen.io/annefitz/pen/abGbVyv).
+- Added support for `ControlPointsGeoreference` MediaLayer. An image or video can now be positioned, scaled, and rotated with two control points. Additionally, it will be skewed with three control points. With four control points, a perspective transformation is applied to the element.
+
+  ```js
+  // the spatial reference for the MediaLayer, North American Datum 1927
+  const spatialReference = new SpatialReference({ wkid: 4267 });
+
+  // create an array of four control points composed of a sourcePoint, a point
+  // on the image element in pixels, and a mapPoint which is the location of the
+  // sourcePoint in map space
+  const swCorner = {
+      sourcePoint: { x: 80, y: 1732 },
+      mapPoint: new Point({ x: -107.875, y: 37.875, spatialReference })
+  };
+
+  const nwCorner = {
+      sourcePoint: { x: 75, y: 102 },
+      mapPoint: new Point({ x: -107.875, y: 38, spatialReference })
+  };
+
+  const neCorner = {
+      sourcePoint: { x: 1353, y: 99 },
+      mapPoint: new Point({ x: -107.75, y: 38, spatialReference })
+  };
+
+  const seCorner = {
+      sourcePoint: { x: 1361, y: 1721 },
+      mapPoint: new Point({ x: -107.75, y: 37.875, spatialReference })
+  };
+
+  const controlPoints = [swCorner, nwCorner, neCorner, seCorner];
+
+  // georeference for the imageElement using the control points,
+  // image width, and image height
+  const georeference = new ControlPointsGeoreference({ controlPoints, width: 1991, height: 2500 });
+
+  const imageElement = new ImageElement({
+      image: "https://jsapi.maps.arcgis.com/sharing/rest/content/items/1a3df04e7d734535a3a6a09dfec5a6b2/data",
+      georeference
+  });
+
+  // create a MediaLayer using the georeferenced ImageElement
+  const mediaLayer = new MediaLayer({
+      source: [imageElement],
+      title: "Geologic Map of the Telluride Quadrangle, Southwestern Colorado",
+      copyright: "Wilbur S Burbank and Robert G. Luedke, 1966",
+      opacity: 0.5,
+      spatialReference
+  });
+  ```
 
 ## Breaking changes
 
