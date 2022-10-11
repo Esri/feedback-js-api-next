@@ -28,7 +28,7 @@ symbolService.generateSymbol(symbolServiceUrl, params).then({symbol} => {
 ## MapImageLayer
 
 We enhanced MapImageLayer to highlight the selected feature when displaying its popup.
-This was a largely requested enhancement.
+This was a highly requested enhancement.
 
 Additionally, we overhauled how we render MapImageLayer to take advantage of new browser
 APIs and WebGL2 features (where supported). With these changes, maps using multiple
