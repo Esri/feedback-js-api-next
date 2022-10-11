@@ -25,6 +25,18 @@ symbolService.generateSymbol(symbolServiceUrl, params).then({symbol} => {
 });
 ```
 
+## MapImageLayer
+
+We enhanced MapImageLayer to highlight the selected feature when displaying its popup.
+This was a highly requested enhancement.
+
+Additionally, we overhauled how we render MapImageLayer to take advantage of new browser
+APIs and WebGL2 features (where supported). With these changes, maps using multiple
+MapImageLayers will feel more responsive and have higher framerates when panning. Image
+decoding is now threaded and asynchronous. We're also using texture immutability to
+speed uploads, and chunking to partially upload textures over multiple frames without
+blocking the main thread. 
+
 ## Widget updates
 
 ### Editor
