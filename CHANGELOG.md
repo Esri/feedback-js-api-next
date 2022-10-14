@@ -127,6 +127,26 @@ Asynchronous support has been added to the FeatureForm's field elements.
       spatialReference
   });
   ```
+  There are also a couple methods on `ControlPointGeoreference` to convert between map coordinates and image coordinates.
+  ```js
+  // A sourcePoint represents a point in terms of pixels relative
+  // to the top-left corner of the element.  A mapPoint represents
+  // a point in map coordinates using a known spatial reference.
+
+  // toMap() - Converts the given sourcePoint to a mapPoint
+  const mapPoint = controlPointGeoreference.toMap({x: 100, y: 250})
+
+  // toSource() - Converts the given mapPoint to a sourcePoint
+  view.on("click", async (event) => {
+    const hits = await view.hitTest(event);
+    const mediaHit = hits.results.find((hit) => hit.type === "media");
+    if (mediaHit) {
+      const mapPoint = mediaHit.mapPoint;
+      const sourcePoint = mediaHit.element.georeference.toSource(mapPoint);
+      console.log("mapPoint:", mapPoint, "sourcePoint:", sourcePoint);
+    }
+  });
+  ```
 
 ## Breaking changes
 
