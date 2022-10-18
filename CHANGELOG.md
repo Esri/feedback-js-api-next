@@ -170,6 +170,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000150976: Fixed an issue where the subtype coded value was displaying in popups for MapImageLayers rather than the subtype description.
 - BUG-000152279: Fixed an issue where a GraphicsLayer would flash and then disappear when added to the map at a scale less than the layer's `minScale`.
 - Esri Community - 1196642: Fixed an issue where MediaLayer was not displaying 24 and 32 bit PNGs with transparent background correctly.
+- Esri Community - 1221122: Fixed an issue where multiple color primitive overrides were not being honored on a CIMPolygonSymbol.
 - Fixed an issue where WMSLayer sublayers were being displayed in reverse order in the LayerList widget.
 - Fixed an issue where PopupTemplate content defined with a function was not able to access the feature's geometry even though returnGeometry was set to true.
 - Fixed an issue where the [Legend](/api-reference/esri-widgets-Legend.html) was missing the field alias for field-based heatmap symbology.
