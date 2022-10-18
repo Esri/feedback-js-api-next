@@ -151,6 +151,20 @@ Asynchronous support has been added to the FeatureForm's field elements.
 ## Breaking changes
 
 - The default value of MapNotesLayer.listMode changed from show to hide-children.
+- The VectorTileLayer.setSpriteSource() method now accepts either a SpriteSourceUrlInfo or SpriteSourceImageInfo object instead of a URL string to the sprite source.
+- ClosestFacilitySolveResult.facilities changed from type Point[] to type FeatureSet.
+- ClosestFacilitySolveResult.incidents changed from type Point[] to type FeatureSet.
+- ClosestFacilitySolveResult.pointBarriers changed from type Point[] to type FeatureSet.
+- ClosestFacilitySolveResult.polygonBarriers changed from type Polygon[] to type FeatureSet.
+- ClosestFacilitySolveResult.polylineBarriers changed from type Polyline[] to type FeatureSet.
+- ClosestFacilitySolveResult.routes changed from type Graphic[] to type FeatureSet.
+- ServiceAreaSolveResult.facilities changed from type Point[] to type FeatureSet.
+- ServiceAreaSolveResult.pointBarriers changed from type Point[] to type FeatureSet.
+- ServiceAreaSolveResult.polygonBarriers changed from type Polygon[] to type FeatureSet.
+- ServiceAreaSolveResult.polylineBarriers changed from type Polyline[] to type FeatureSet.
+- ServiceAreaSolveResult.serviceAreaPolygons changed from type Graphic[] to type FeatureSet.
+- ServiceAreaSolveResult.serviceAreaPolylines changed from type Graphic[] to type FeatureSet.
+- The PopupTemplate.relatedRecordsInfo property has been removed. Use the RelationshipContent.orderByFields property to control the sorting options when working with related records in a popup.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
