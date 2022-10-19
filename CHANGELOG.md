@@ -204,6 +204,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - Fixed an issue where WMSLayer sublayers were being displayed in reverse order in the LayerList widget.
 - Fixed an issue where PopupTemplate content defined with a function was not able to access the feature's geometry even though returnGeometry was set to true.
 - Fixed an issue where the [Legend](/api-reference/esri-widgets-Legend.html) was missing the field alias for field-based heatmap symbology.
+- Fixed an issue where the MapView.hitTest was failing on individual features configured with feature reduction and a large cluster radius.
 - ENH-000085856: Enhanced KMLLayer so it can now display large extent image overlays properly.
 - ENH-000116507 - Enhanced MapImageLayer to highlight the selected feature when displaying its Popup.
 - ENH-000127792: Enhanced the Directions widget with a unit property to easily support different distance units.
