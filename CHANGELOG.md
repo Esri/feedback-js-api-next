@@ -39,6 +39,10 @@ blocking the main thread.
 
 ## Widget updates
 
+### BasemapLayerList
+
+- We changed the loading indicator from a blue line to a less distracting blue circle that will display while the layer is loading.
+
 ### Editor
 
 - The Editor widget added better support for handling a feature service's operation restrictions. These can include operations such as `create` (add), `read` (query), `update` (update), and `delete` (delete). The Editor UI will update based on the service-level permissions and apply a more intuitive interface to provide or limit what types of edits can be handled within the widget.
@@ -46,6 +50,10 @@ blocking the main thread.
 - New updates to workflows involving attachment editing. Prior to this release, creating and editing attachments were somewhat limited.
 
 - 2d support was added for `tooltipOptions` in both the Editor widget and its viewModel. Similar to 3d, this feedback allows the visual feedback of line segment and polygon information.
+
+### LayerList
+
+- At this release, we modified the indicators for stream layer connection status.  We also changed the loading indicator from a blue line to a less distracting blue circle that will display while the layer is loading.
 
 ### Sketch
 
