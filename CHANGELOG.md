@@ -80,7 +80,7 @@ Asynchronous support has been added to the FeatureForm's field elements.
 
 - `RelationshipContent` has been added as a new [content](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content.html) type for [PopupTemplates](https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html) which allows you to represent a relationship element associated with a feature within a popup. When configuring `RelationshipContent`, the related layer or table must be added to the map. Editing related records is currently not supported and will be added in a later release. See the following example on how to configure `RelationshipContent` within a popup and browse a feature's related records: https://codepen.io/laurenb14/pen/MWGoqRW
 
-- Displaying AttachmentsContent with `displayType.preview` automatically hides the attachment's file name.
+- Displaying AttachmentsContent with `displayType.preview` automatically hides the attachment's file name when displaying images..
 
 ## Layer updates
 
@@ -159,12 +159,36 @@ Asynchronous support has been added to the FeatureForm's field elements.
 ## Breaking changes
 
 - The default value of MapNotesLayer.listMode changed from show to hide-children.
+- The VectorTileLayer.setSpriteSource() method now accepts either a SpriteSourceUrlInfo or SpriteSourceImageInfo object instead of a URL string to the sprite source.
+- ClosestFacilitySolveResult.facilities changed from type Point[] to type FeatureSet.
+- ClosestFacilitySolveResult.incidents changed from type Point[] to type FeatureSet.
+- ClosestFacilitySolveResult.pointBarriers changed from type Point[] to type FeatureSet.
+- ClosestFacilitySolveResult.polygonBarriers changed from type Polygon[] to type FeatureSet.
+- ClosestFacilitySolveResult.polylineBarriers changed from type Polyline[] to type FeatureSet.
+- ClosestFacilitySolveResult.routes changed from type Graphic[] to type FeatureSet.
+- ServiceAreaSolveResult.facilities changed from type Point[] to type FeatureSet.
+- ServiceAreaSolveResult.pointBarriers changed from type Point[] to type FeatureSet.
+- ServiceAreaSolveResult.polygonBarriers changed from type Polygon[] to type FeatureSet.
+- ServiceAreaSolveResult.polylineBarriers changed from type Polyline[] to type FeatureSet.
+- ServiceAreaSolveResult.serviceAreaPolygons changed from type Graphic[] to type FeatureSet.
+- ServiceAreaSolveResult.serviceAreaPolylines changed from type Graphic[] to type FeatureSet.
+- The PopupTemplate.relatedRecordsInfo property has been removed. Use the RelationshipContent.orderByFields property to control the sorting options when working with related records in a popup.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
+| `esri/views/layers/support/FeatureEffect` | Use [esri/layers/support/FeatureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-FeatureEffect.html) instead | 4.22 |
+| `esri/views/layers/support/FeatureFilter` | Use [esri/layers/support/FeatureFilter](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-FeatureFilter.html) instead | 4.22 |
 | `BasemapToggle.toggle` and `BasemapToggleViewModel.toggle` events | Watch the [activeBasemap](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle.html#activeBasemap) property instead | 4.22 |
+| `CSVLayerView.effect` | Use [CSVLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-CSVLayerView.html#featureEffect) instead | 4.22 |
+| `FeatureLayerView.effect` | Use [FeatureLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-FeatureLayerView.html#featureEffect) instead | 4.22 |
+| `GeoJSONLayerView.effect` | Use [GeoJSONLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-GeoJSONLayerView.html#featureEffect) instead | 4.22 |
+| `OGCFeatureLayerView.effect` | Use [OGCFeatureLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-OGCFeatureLayerView.html#featureEffect) instead | 4.22 |
+| `PrintViewModel.scaleEnabled` | Use [TemplateOptions.scaleEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Print-TemplateOptions.html#scaleEnabled) or [PrintTemplate.scalePreserved](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PrintTemplate.html#scalePreserved) instead | 4.22 |
+| `SearchViewModel.defaultSymbol	` | Use [SearchViewModel.defaultSymbols](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search-SearchViewModel.html#defaultSymbols) instead | 4.22 |
+| `StreamLayerView.effect` | Use [StreamLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-StreamLayerView.html#featureEffect) instead | 4.22 |
+| `WFSLayerView.effect` | Use [WFSLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-WFSLayerView.html#featureEffect) instead | 4.22 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4x API.
 
@@ -172,19 +196,35 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 - BUG-000116539: Fixed an issue where the miles unit provided to Geometry Engine operations referred to US survey mile. Now miles refers to the International Mile since the U.S. foot was recently deprecated.
 - BUG-000117009: Fixed an issue where Legend shows multiple entries for grouped UniqueValueRenderer unique value infos.
+- BUG-000128116: Fixed an issue where KMLLayer polygons that crossed the International Date Line were not displayed properly.
 - BUG-000145323: Fixed an issue where numeric custom expressions formatted with a digit separator failed to display in a pie chart configured in a Popup.
+- BUG-000132559: Fixed an issue where loading a MapImageLayer consumed an elevated amount of CPU processor memory.
 - BUG-000136723: Fixed an issue where MapImageLayer popup queries didn't contain time parameters.
+- BUG-000144640: Fixed an issue where very small polygons (smaller than the view resolution in screen space) were not rendered.
 - BUG-000149598: Fixed an issue where popup was not returning all attributes for ImageryLayer's pixel values that equal 0.
+- BUG-000150044: Fixed an issue where the start point of a Measurement widget was not being displayed on mobile devices.
 - BUG-000150976: Fixed an issue where the subtype coded value was displaying in popups for MapImageLayers rather than the subtype description.
+- BUG-000151996: Fixed an issue where blendMode was not being applied to WMSLayer.
+- BUG-000152200: Fixed an issue where ImageryLayer was not refreshing correctly when refreshInterval is set or refresh method is called.
 - BUG-000152279: Fixed an issue where a GraphicsLayer would flash and then disappear when added to the map at a scale less than the layer's `minScale`.
 - Esri Community - 1196642: Fixed an issue where MediaLayer was not displaying 24 and 32 bit PNGs with transparent background correctly.
+- Fixed an issue where the CoordinateConversion.mode property was not honored in the CoordinateConversion widget constructor.
 - Fixed an issue where WMSLayer sublayers were being displayed in reverse order in the LayerList widget.
 - Fixed an issue where PopupTemplate content defined with a function was not able to access the feature's geometry even though returnGeometry was set to true.
 - Fixed an issue where the [Legend](/api-reference/esri-widgets-Legend.html) was missing the field alias for field-based heatmap symbology.
+- Fixed an issue where the MapView.hitTest was failing on individual features configured with feature reduction and a large cluster radius.
+- ENH-000085856: Enhanced KMLLayer so it can now display large extent image overlays properly.
 - ENH-000116507 - Enhanced MapImageLayer to highlight the selected feature when displaying its Popup.
+- ENH-000127792: Enhanced the Directions widget with a unit property to easily support different distance units.
+- ENH-000139599: Enhanced KMLLayer to project raster layers as KML files using GCS WGS84 as appropriate.
+- ENH-000146060: Enhanced FeatureReductionCluster to work in any projection supported in the JS API.
+- ENH-000149214: Enhanced View to throw an error in the console if an invalid ID for the view's HTML element is set in the container property.
 - ArcGIS Ideas - 940733: Attachment content file names are automatically hidden when the displayType is preview in Popups.
 - Enhanced the behavior of MapNotesLayer.listMode to have a default value of hide-children instead of show.
+- Added support for feature collections with type markup using MapNotesLayer.
 - Updated CustomContent documentation to allow an optional `PopupTemplateCreatorEvent` parameter for the `PopupTemplateContentCreator` and the `PopupTemplateContentDesroyer` to reference the graphic used to represent the feature.
+- Updated RouteLayer so the resulting feature collection will use ObjectID as the object ID field when saved in a webmap or to a new or existing portal item. Previously the field was named __OBJECTID.
+- Better handling of errors when a layer fails to load.
 - When embedding a video in a popup using the HTML `<video>` tag, the video will automatically resize to fit inside the popup if it is larger than the popup window.
 
 ## Deprecations
