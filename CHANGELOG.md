@@ -38,12 +38,10 @@ The following are deprecated and will be removed in a future release. For anythi
 <details>
   <summary>Click to expand!</summary>  
 
-* Compatibility with implementations that don't support [async/await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises#async_and_await) at runtime, within AMD modules, is deprecated since version 4.25. For example, Angular applications using [esri-loader](https://github.com/Esri/esri-loader) will need to migrate from AMD modules to using [@arcgis/core ES modules](https://developers.arcgis.com/javascript/latest/es-modules/).
-* BasemapToggle.toggle deprecated since version 4.22. Watch the activeBasemap property instead.
+* Compatibility with implementations that don't support async/await at runtime, within AMD modules, is deprecated since version 4.25. For example, Angular applications using esri-loader will need to migrate from AMD modules to using @arcgis/core ES modules.
 * CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
 * CreateWorkflowData.edits deprecated since 4.23. Use CreateFeaturesWorkflow.pendingFeatures to access edits made to the workflow data.
 * CreateWorkflowData deprecated since version 4.23. Use CreateFeaturesWorkflowData instead.
-* CSVLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * Directions.routeServiceUrl deprecated since version 4.24. Use url from layer instead.
 * Directions.routeSymbol deprecated since version 4.24. Use directionLines from layer instead.
 * Directions.stopSymbols deprecated since version 4.24. Use RouteStopSymbols from layer instead.
@@ -59,33 +57,35 @@ The following are deprecated and will be removed in a future release. For anythi
 * EditorViewModel.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureCreation.
 * EditorViewModel.startCreateWorkflowAtFeatureEdit deprecated since 4.23
 * EditorViewModel.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection.
-* Effect.Effect deprecated since version 4.21. Use Effect instead.
 * EventAttachedCallback.EventAttachedCallback deprecated since version 4.24. Use reactiveUtils.ReactiveListenerChangeCallback() instead.
-* FeatureEffect deprecated since version 4.22. Use esri/layers/support/FeatureEffect instead.
-* FeatureFilter deprecated since version 4.22. Use FeatureFilter instead.
-* FeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* FeatureTable.clearHighlights deprecated since version 4.25. Use highlightIds.removeAll() instead.
+* FeatureTable.clearSelection deprecated since version 4.25. Use highlightIds.removeAll() instead.
 * FeatureTable.fieldConfigs deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
+* FeatureTable.highlightOnRowSelectEnabled deprecated since version 4.25. Use highlightEnabled instead.
+* FeatureTableViewModel.clearHighlights deprecated since version 4.25. Use highlightEnabled instead.
+* FeatureTableViewModel.clearSelection deprecated since version 4.25. Use highlightEnabled instead.
 * FeatureTableViewModel.fieldConfigs deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
+* FeatureTableViewModel.highlightOnRowSelectEnabled deprecated since version 4.25. Use highlightEnabled instead.
 * FieldColumn.config deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
 * FieldColumnConfig deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
 * FieldGroupConfig.visibilityExpression deprecated since version 4.23. Set fields via the GroupElement.visibilityExpression
 * FieldGroupConfig deprecated since version 4.23. Set field groupings via the GroupElement.
-* GeoJSONLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * HeatmapRenderer.blurRadius is deprecated since version 4.24. Use radius instead.
 * HeatmapRenderer.maxPixelIntensity is deprecated since version 4.24. Use maxDensity instead.
 * HeatmapRenderer.minPixelIntensity is deprecated since version 4.24. Use minDensity instead.
 * ImageParameters deprecated since version 4.24. Use ImageParameters instead.
 * InputFieldGroup.visibilityExpression deprecated Since 4.23. Use groupElement.visibilityExpression
-* LabelClass.labelExpressionInfo.value deprecated since version 4.5. Use expression instead.
 * Lighting deprecated since version 4.24. Use SunLighting instead.
-* OGCFeatureLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 * PausableWatchHandle.PausableWatchHandle deprecated since version 4.24.
-* PrintViewModel.scaleEnabled deprecated since version 4.22. Instead, use TemplateOptions if using the Print widget, or PrintTemplate if calling print() directly.
 * PromisedWatchHandle.PromisedWatchHandle deprecated since version 4.24. Use Promise instead.
 * promiseUtils.create deprecated since version 4.24. Use Promise instead.
-* SearchViewModel.defaultSymbol deprecated since version 4.22. Use defaultSymbols instead.
 * SlicePlane deprecated This module was moved in 4.23. Use SlicePlane instead.
-* StreamLayerView.effect deprecated since version 4.22. Use featureEffect instead.
+* UtilityNetwork.rulesTableId deprecated since version 4.25. Use networkSystemLayers.rulesTableId instead.
+* UtilityNetwork.rulesTableUrl deprecated since version 4.25. Use networkSystemLayers.rulesTableUrl instead.
+* UtilityNetwork.subnetworksTableId deprecated since version 4.25. Use networkSystemLayers.subnetworksTableId instead.
+* UtilityNetwork.subnetworksTableUrl deprecated since version 4.25. Use networkSystemLayers.subnetworksTableUrl instead.
+* VoxelVariable deprecated This module was moved in 4.25. Use VoxelVariable instead.
+* VoxelVolumeStyle deprecated This module was moved in 4.25. Use VoxelVolumeStyle instead.
 * watchUtils.init deprecated since 4.24. Use reactiveUtils.watch() instead.
 * watchUtils.on deprecated since 4.24. Use reactiveUtils.on() instead.
 * watchUtils.once deprecated since 4.24. Use reactiveUtils.once() instead.
@@ -106,7 +106,6 @@ The following are deprecated and will be removed in a future release. For anythi
 * watchUtils.whenUndefined deprecated since 4.24. Use reactiveUtils.when() instead.
 * watchUtils.whenUndefinedOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
 * watchUtils deprecated since version 4.24. Use reactiveUtils instead.
-* WFSLayerView.effect deprecated since version 4.22. Use featureEffect instead.
 
 </details>
 
