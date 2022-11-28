@@ -1,178 +1,10 @@
 # Change log
 
-The `next` version of 4.25 is now available.  Planned release date is November 2022.
+The `next` version of 4.26 is now available.  Planned release date is February 2023.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
-## No CDN hosting of non-esri packages
-
-As of version 4.25, the CDN on js.arcgis.com will no longer host AMD packages not used by ArcGIS API for JavaScript. For historic reasons, this included dgrid, dijit, dojo, dojox, dstore, and tslib.
-
-## Convert SVG to CIM Symbol
-
-- Added support for `generateSymbol()` on `esri/rest/symbolService`, which connects to the [REST API](https://developers.arcgis.com/rest/services-reference/enterprise/generate-symbol.htm) to convert an SVG to a CIMSymbol.
-
-```js
-const svgString = `
-  <svg xmlns="http://www.w3.org/2000/svg" height="200" width="200">
-    <path d="M150 0 L75 200 L225 200 Z" />
-  </svg>
-`;
-const params = { svgImage: svgString };
-symbolService.generateSymbol(symbolServiceUrl, params).then({symbol} => {
-  // apply the CIMSymbol to a graphic
-  graphicA.symbol = symbol;
-});
-```
-
-## MapImageLayer
-
-We enhanced MapImageLayer to highlight the selected feature when displaying its popup.
-This was a highly requested enhancement.
-
-Additionally, we overhauled how we render MapImageLayer to take advantage of new browser
-APIs and WebGL2 features (where supported). With these changes, maps using multiple
-MapImageLayers will feel more responsive and have higher framerates when panning. Image
-decoding is now threaded and asynchronous. We're also using texture immutability to
-speed uploads, and chunking to partially upload textures over multiple frames without
-blocking the main thread. 
-
-## Widget updates
-
-### BasemapLayerList
-
-- We changed the loading indicator from a blue line to a less distracting blue circle that will display while the layer is loading.
-
-### Editor
-
-- The Editor widget added better support for handling a feature service's operation restrictions. These can include operations such as `create` (add), `read` (query), `update` (update), and `delete` (delete). The Editor UI will update based on the service-level permissions and apply a more intuitive interface to provide or limit what types of edits can be handled within the widget.
-
-- New updates to workflows involving attachment editing. Prior to this release, creating and editing attachments were somewhat limited.
-
-- 2d support was added for `tooltipOptions` in both the Editor widget and its viewModel. Similar to 3d, this feedback allows the visual feedback of line segment and polygon information.
-
-### LayerList
-
-- At this release, we modified the indicators for stream layer connection status.  We also changed the loading indicator from a blue line to a less distracting blue circle that will display while the layer is loading.
-
-### Sketch
-
-- 2d support was added for `tooltipOptions` in both the Sketch widget and its viewModel. Similar to 3d, this feedback allows the visual feedback of line segment and polygon information. 
-
-
-### SnappingControls
-
-It is now possible to toggle visibility for sections of the SnappingControls. This is handled via its visibleElements property.
-
-### FeatureTable
-
-
-- It is now possible to _delete_ records within the FeatureTable widget. 
-
-- Application-level queries can now control sort order better via a new `activeSortOrders` property added to both the FeatureTable widget and its viewModel.
-
-
-### FeatureForm
-
-Asynchronous support has been added to the FeatureForm's field elements. 
-
-### Popups
-
-- `RelationshipContent` has been added as a new [content](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content.html) type for [PopupTemplates](https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html) which allows you to represent a relationship element associated with a feature within a popup. When configuring `RelationshipContent`, the related layer or table must be added to the map. Editing related records is currently not supported and will be added in a later release. See the following example on how to configure `RelationshipContent` within a popup and browse a feature's related records: https://codepen.io/laurenb14/pen/MWGoqRW
-
-- Displaying AttachmentsContent with `displayType.preview` automatically hides the attachment's file name when displaying images..
-
-## Layer updates
-
-- Added support for configurable `maxRecordCount` on OGCFeatureLayer to define maximum paging size. This will override the max record count in the service, if defined.
-- Added extensibility support for WMSLayer popups. You can now use the `fetchFeatureInfoFunction` to override the default popup behavior on WMSLayer, as shown in this [example](https://codepen.io/annefitz/pen/abGbVyv).
-- Added support for `ControlPointsGeoreference` MediaLayer. An image or video can now be positioned, scaled, and rotated with two control points. Additionally, it will be skewed with three control points. With four control points, a perspective transformation is applied to the element.
-
-  ```js
-  // the spatial reference for the MediaLayer, North American Datum 1927
-  const spatialReference = new SpatialReference({ wkid: 4267 });
-
-  // create an array of four control points composed of a sourcePoint, a point
-  // on the image element in pixels, and a mapPoint which is the location of the
-  // sourcePoint in map space
-  const swCorner = {
-      sourcePoint: { x: 80, y: 1732 },
-      mapPoint: new Point({ x: -107.875, y: 37.875, spatialReference })
-  };
-
-  const nwCorner = {
-      sourcePoint: { x: 75, y: 102 },
-      mapPoint: new Point({ x: -107.875, y: 38, spatialReference })
-  };
-
-  const neCorner = {
-      sourcePoint: { x: 1353, y: 99 },
-      mapPoint: new Point({ x: -107.75, y: 38, spatialReference })
-  };
-
-  const seCorner = {
-      sourcePoint: { x: 1361, y: 1721 },
-      mapPoint: new Point({ x: -107.75, y: 37.875, spatialReference })
-  };
-
-  const controlPoints = [swCorner, nwCorner, neCorner, seCorner];
-
-  // georeference for the imageElement using the control points,
-  // image width, and image height
-  const georeference = new ControlPointsGeoreference({ controlPoints, width: 1991, height: 2500 });
-
-  const imageElement = new ImageElement({
-      image: "https://jsapi.maps.arcgis.com/sharing/rest/content/items/1a3df04e7d734535a3a6a09dfec5a6b2/data",
-      georeference
-  });
-
-  // create a MediaLayer using the georeferenced ImageElement
-  const mediaLayer = new MediaLayer({
-      source: [imageElement],
-      title: "Geologic Map of the Telluride Quadrangle, Southwestern Colorado",
-      copyright: "Wilbur S Burbank and Robert G. Luedke, 1966",
-      opacity: 0.5,
-      spatialReference
-  });
-  ```
-  There are also a couple methods on `ControlPointGeoreference` to convert between map coordinates and image coordinates.
-  ```js
-  // A sourcePoint represents a point in terms of pixels relative
-  // to the top-left corner of the element.  A mapPoint represents
-  // a point in map coordinates using a known spatial reference.
-
-  // toMap() - Converts the given sourcePoint to a mapPoint
-  const mapPoint = controlPointGeoreference.toMap({x: 100, y: 250})
-
-  // toSource() - Converts the given mapPoint to a sourcePoint
-  view.on("click", async (event) => {
-    const hits = await view.hitTest(event);
-    const mediaHit = hits.results.find((hit) => hit.type === "media");
-    if (mediaHit) {
-      const mapPoint = mediaHit.mapPoint;
-      const sourcePoint = mediaHit.element.georeference.toSource(mapPoint);
-      console.log("mapPoint:", mapPoint, "sourcePoint:", sourcePoint);
-    }
-  });
-  ```
-
-## Breaking changes
-
-- The default value of MapNotesLayer.listMode changed from show to hide-children.
-- The VectorTileLayer.setSpriteSource() method now accepts either a SpriteSourceUrlInfo or SpriteSourceImageInfo object instead of a URL string to the sprite source.
-- ClosestFacilitySolveResult.facilities changed from type Point[] to type FeatureSet.
-- ClosestFacilitySolveResult.incidents changed from type Point[] to type FeatureSet.
-- ClosestFacilitySolveResult.pointBarriers changed from type Point[] to type FeatureSet.
-- ClosestFacilitySolveResult.polygonBarriers changed from type Polygon[] to type FeatureSet.
-- ClosestFacilitySolveResult.polylineBarriers changed from type Polyline[] to type FeatureSet.
-- ClosestFacilitySolveResult.routes changed from type Graphic[] to type FeatureSet.
-- ServiceAreaSolveResult.facilities changed from type Point[] to type FeatureSet.
-- ServiceAreaSolveResult.pointBarriers changed from type Point[] to type FeatureSet.
-- ServiceAreaSolveResult.polygonBarriers changed from type Polygon[] to type FeatureSet.
-- ServiceAreaSolveResult.polylineBarriers changed from type Polyline[] to type FeatureSet.
-- ServiceAreaSolveResult.serviceAreaPolygons changed from type Graphic[] to type FeatureSet.
-- ServiceAreaSolveResult.serviceAreaPolylines changed from type Graphic[] to type FeatureSet.
-- The PopupTemplate.relatedRecordsInfo property has been removed. Use the RelationshipContent.orderByFields property to control the sorting options when working with related records in a popup.
+## TBD
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
@@ -193,43 +25,11 @@ The following classes, methods, properties and events have been deprecated for a
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4x API.
 
 ## Bug fixes and enhancements
-
-- BUG-000116539: Fixed an issue where the miles unit provided to Geometry Engine operations referred to US survey mile. Now miles refers to the International Mile since the U.S. foot was recently deprecated.
-- BUG-000117009: Fixed an issue where Legend shows multiple entries for grouped UniqueValueRenderer unique value infos.
-- BUG-000128116: Fixed an issue where KMLLayer polygons that crossed the International Date Line were not displayed properly.
-- BUG-000145323: Fixed an issue where numeric custom expressions formatted with a digit separator failed to display in a pie chart configured in a Popup.
-- BUG-000132559: Fixed an issue where loading a MapImageLayer consumed an elevated amount of CPU processor memory.
-- BUG-000136723: Fixed an issue where MapImageLayer popup queries didn't contain time parameters.
-- BUG-000144640: Fixed an issue where very small polygons (smaller than the view resolution in screen space) were not rendered.
-- BUG-000149598: Fixed an issue where popup was not returning all attributes for ImageryLayer's pixel values that equal 0.
-- BUG-000150044: Fixed an issue where the start point of a Measurement widget was not being displayed on mobile devices.
-- BUG-000150976: Fixed an issue where the subtype coded value was displaying in popups for MapImageLayers rather than the subtype description.
-- BUG-000151996: Fixed an issue where blendMode was not being applied to WMSLayer.
-- BUG-000152200: Fixed an issue where ImageryLayer was not refreshing correctly when refreshInterval is set or refresh method is called.
-- BUG-000152279: Fixed an issue where a GraphicsLayer would flash and then disappear when added to the map at a scale less than the layer's `minScale`.
-- Esri Community - 1196642: Fixed an issue where MediaLayer was not displaying 24 and 32 bit PNGs with transparent background correctly.
-- Fixed an issue where the CoordinateConversion.mode property was not honored in the CoordinateConversion widget constructor.
-- Fixed an issue where WMSLayer sublayers were being displayed in reverse order in the LayerList widget.
-- Fixed an issue where PopupTemplate content defined with a function was not able to access the feature's geometry even though returnGeometry was set to true.
-- Fixed an issue where the [Legend](/api-reference/esri-widgets-Legend.html) was missing the field alias for field-based heatmap symbology.
-- Fixed an issue where the MapView.hitTest was failing on individual features configured with feature reduction and a large cluster radius.
-- ENH-000085856: Enhanced KMLLayer so it can now display large extent image overlays properly.
-- ENH-000116507 - Enhanced MapImageLayer to highlight the selected feature when displaying its Popup.
-- ENH-000127792: Enhanced the Directions widget with a unit property to easily support different distance units.
-- ENH-000139599: Enhanced KMLLayer to project raster layers as KML files using GCS WGS84 as appropriate.
-- ENH-000146060: Enhanced FeatureReductionCluster to work in any projection supported in the JS API.
-- ENH-000149214: Enhanced View to throw an error in the console if an invalid ID for the view's HTML element is set in the container property.
-- ArcGIS Ideas - 940733: Attachment content file names are automatically hidden when the displayType is preview in Popups.
-- Enhanced the behavior of MapNotesLayer.listMode to have a default value of hide-children instead of show.
-- Added support for feature collections with type markup using MapNotesLayer.
-- Updated CustomContent documentation to allow an optional `PopupTemplateCreatorEvent` parameter for the `PopupTemplateContentCreator` and the `PopupTemplateContentDesroyer` to reference the graphic used to represent the feature.
-- Updated RouteLayer so the resulting feature collection will use ObjectID as the object ID field when saved in a webmap or to a new or existing portal item. Previously the field was named __OBJECTID.
-- Better handling of errors when a layer fails to load.
-- When embedding a video in a popup using the HTML `<video>` tag, the video will automatically resize to fit inside the popup if it is larger than the popup window.
+- TBD
 
 ## Deprecations
 
-The following are deprecated and will be removed in a future release. For anything deprecated in 4.24 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
+The following are deprecated and will be removed in a future release. For anything deprecated in 4.25 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
 <details>
   <summary>Click to expand!</summary>  
