@@ -6,6 +6,10 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 
 ## TBD
 
+
+# Breaking Changes
+- TBD
+
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
