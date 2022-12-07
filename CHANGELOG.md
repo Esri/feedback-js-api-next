@@ -10,7 +10,7 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 # Breaking Changes
 - TBD
 
-The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
+The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
@@ -109,7 +109,7 @@ The following are deprecated and will be removed in a future release. For anythi
 
 </details>
 
-The following are deprecations to the API's TypeScript type definitions, and will be removed in a future release (expand to read more). 
+The following are deprecations to the SDK's TypeScript type definitions, and will be removed in a future release (expand to read more). 
 
 <details>
 <summary>Click to expand</summary>

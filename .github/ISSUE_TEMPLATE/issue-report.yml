@@ -55,10 +55,10 @@ body:
   - type: textarea
     id: version
     attributes:
-      label: API version (check your console)
+      label: SDK version (check your console)
       description: Provide the full version string from your console.
       placeholder: |
-        e.g. ArcGIS API for JavaScript 4.25-next [Date: 20220725, Revision: 144c0342]
+        e.g. ArcGIS Maps SDK for JavaScript 4.26-next [Date: 20221225, Revision: 144c0342]
     validations: 
       required: true      
   - type: textarea
