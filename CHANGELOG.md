@@ -26,7 +26,7 @@ The following classes, methods, properties and events have been deprecated for a
 | `StreamLayerView.effect` | Use [StreamLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-StreamLayerView.html#featureEffect) instead | 4.22 |
 | `WFSLayerView.effect` | Use [WFSLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-WFSLayerView.html#featureEffect) instead | 4.22 |
 
-Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4x API.
+Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
 - TBD

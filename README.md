@@ -43,7 +43,7 @@ const [Map] = await loadModules(['esri/map'], options);
 
 ## TypeScript typings for ES modules
 
-Typings are included with the npm install of `@arcgis/core@next` ES modules. For most use cases, no special TypeScript configurations are required by the API.
+Typings are included with the npm install of `@arcgis/core@next` ES modules. For most use cases, no special TypeScript configurations are required.
 
 ## TypeScript typings for AMD modules
 
