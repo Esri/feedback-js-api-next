@@ -10,7 +10,7 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 # Breaking Changes
 - TBD
 
-The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
+The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
@@ -26,7 +26,7 @@ The following classes, methods, properties and events have been deprecated for a
 | `StreamLayerView.effect` | Use [StreamLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-StreamLayerView.html#featureEffect) instead | 4.22 |
 | `WFSLayerView.effect` | Use [WFSLayerView.featureEffect](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-WFSLayerView.html#featureEffect) instead | 4.22 |
 
-Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4x API.
+Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
 - TBD
@@ -109,7 +109,7 @@ The following are deprecated and will be removed in a future release. For anythi
 
 </details>
 
-The following are deprecations to the API's TypeScript type definitions, and will be removed in a future release (expand to read more). 
+The following are deprecations to the SDK's TypeScript type definitions, and will be removed in a future release (expand to read more). 
 
 <details>
 <summary>Click to expand</summary>
