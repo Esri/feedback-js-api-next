@@ -29,7 +29,10 @@ The following classes, methods, properties and events have been deprecated for a
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
-- TBD
+- BUG-000146636: Fixed an issue where using the Zoom To action in popups would zoom passed the selected geometry's extent.
+- BUG-000153564: Fixed an issue where VectorTileLayer intermittently stopped drawing some tiles at certain zoom levels.
+- Esri Community - 1241411: Fixed an issue where an AbortError thrown when deleting a layer after changing its definitionExpression.
+- Fixed an issue where two queryAttachments requests were sent to the service when selecting a feature that had AttachmentsContent in it's pop-up.
 
 ## Deprecations
 
