@@ -35,7 +35,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 - BUG-000135050: Fixed an issue where Popups would not display attachments when sublayers on a MapImageLayers had AttachmentsContent configured. This only applies to map services on ArcGIS Enterprise version 10.8.1 and above.
 - BUG-000146636: Fixed an issue where using the Zoom To action in popups would zoom passed the selected geometry's extent.
-- BUG-000153564: Fixed an issue where VectorTileLayer] intermittently stopped drawing some tiles at certain zoom levels.
+- BUG-000153564: Fixed an issue where VectorTileLayer intermittently stopped drawing some tiles at certain zoom levels.
 - BUG-000153928: Fixed an issue where Area Measurement failed if the second point was added via a double-click instead of single click.
 - BUG-000154321: Fixed an issue where LineOfSightViewModel `observer` and `targets` returned z-values in varying elevation modes. Now all z-positions are returned as absolute values.
 - BUG-000154436: Fixed an issue within the FeatureTable widget where hiding a child column contained within a grouped column would not work correctly. This has been fixed and these contained columns can be hidden when programatically setting their visibility to `false`.
