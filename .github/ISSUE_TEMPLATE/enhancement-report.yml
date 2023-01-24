@@ -1,5 +1,5 @@
 name: Enhancement suggestion
-description: Suggest an enhancement related to a new feature in the "next" release. 
+description: Suggest an enhancement related to a new feature in the "next" release.
 labels: ["enhancement"]
 body:
   - type: checkboxes
@@ -58,8 +58,8 @@ body:
       description: Provide the full version string from your console.
       placeholder: |
         e.g. ArcGIS Maps SDK for JavaScript 4.26-next [Date: 20221214, Revision: 144c0342]
-      validations:
-        required: true      
+    validations:
+      required: true
   - type: textarea
     id: additional
     attributes:
