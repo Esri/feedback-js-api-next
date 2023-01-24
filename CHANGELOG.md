@@ -5,12 +5,13 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
 ## Widget Updates
+
 ### Popup
+
 - When opening a [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html) sublayer's popup that has [AttachmentsContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-AttachmentsContent.html) configured, the attachments will now appear in the popup. This only applies to map services on ArcGIS Enterprise version 10.8.1 and above.
 - The new `Select feature` action button within [RelationshipContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-RelationshipContent.html) provides a way to highlight and zoom to the selected related feature while also opening the related feature's popup.
-- 
-# Breaking Changes
-- TBD
+
+## Breaking Changes
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
@@ -31,11 +32,17 @@ The following classes, methods, properties and events have been deprecated for a
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
+
+- BUG-000135050: Fixed an issue where Popups would not display attachments when sublayers on a MapImageLayers had AttachmentsContent configured. This only applies to map services on ArcGIS Enterprise version 10.8.1 and above.
 - BUG-000146636: Fixed an issue where using the Zoom To action in popups would zoom passed the selected geometry's extent.
-- BUG-000153564: Fixed an issue where VectorTileLayer intermittently stopped drawing some tiles at certain zoom levels.
+- BUG-000153564: Fixed an issue where VectorTileLayer] intermittently stopped drawing some tiles at certain zoom levels.
+- BUG-000153928: Fixed an issue where Area Measurement failed if the second point was added via a double-click instead of single click.
+- BUG-000154321: Fixed an issue where LineOfSightViewModel `observer` and `targets` returned z-values in varying elevation modes. Now all z-positions are returned as absolute values.
+- BUG-000154436: Fixed an issue within the FeatureTable widget where hiding a child column contained within a grouped column would not work correctly. This has been fixed and these contained columns can be hidden when programatically setting their visibility to `false`.
 - Esri Community - 1241411: Fixed an issue where an AbortError thrown when deleting a layer after changing its definitionExpression.
-- Fixed an issue where MediaContent charts in a pop-up displaying information from a relationship were only showing one related feature.
-- Fixed an issue where two queryAttachments requests were sent to the service when selecting a feature that had AttachmentsContent in it's pop-up.
+- Fixed an issue where MediaContent charts in a popup displaying information from a relationship were only showing one related feature.
+- Fixed an issue where two `queryAttachments` requests were sent to the service when selecting a feature that had AttachmentsContent in its Popup.
+- ENH-000155208: Enhanced TileLayer to highlight the selected feature when displaying its Popup.
 
 ## Deprecations
 
