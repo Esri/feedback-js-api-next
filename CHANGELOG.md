@@ -4,9 +4,11 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
-## TBD
-
-
+## Widget Updates
+### Popup
+- When opening a [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html) sublayer's popup that has [AttachmentsContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-AttachmentsContent.html) configured, the attachments will now appear in the popup. This only applies to map services on ArcGIS Enterprise version 10.8.1 and above.
+- The new `Select feature` action button within [RelationshipContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-RelationshipContent.html) provides a way to highlight and zoom to the selected related feature while also opening the related feature's popup.
+- 
 # Breaking Changes
 - TBD
 
