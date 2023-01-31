@@ -109,6 +109,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - Esri Community - 1241411: Fixed an issue where an AbortError thrown when deleting a layer after changing its definitionExpression.
 - Fixed an issue where MediaContent charts in a popup displaying information from a relationship were only showing one related feature.
 - Fixed an issue where two `queryAttachments` requests were sent to the service when selecting a feature that had AttachmentsContent in its Popup.
+- ENH-000152699: Added support for [ImageryTileLayer](/api-reference/esri-layers-ImageryTileLayer.html) referencing a tiled image services with LODs that are not power of two.
 - ENH-000155208: Enhanced TileLayer to highlight the selected feature when displaying its Popup.
 
 ## Deprecations
