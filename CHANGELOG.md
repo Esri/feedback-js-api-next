@@ -10,13 +10,13 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 
 - Added an ability to send a message to the server and ability to receive any message from the client to the client
 - The following methods and event were added on StreamLayer.
-  - `sendMessage(message: Object)` - Sends a message over the websocket to the server.
-  - `receiveMessage(message: Object)` - Sends a client-side only messages (to add & remove features from the client). The following messages can be sent and received for StreamLayers with custom websocket and client-side StreamLayers out of the box.
+  - `sendMessageToSocket(message: Object)` - Sends a message over the websocket to the server.
+  - `sendMessageToClient(message: Object)` - Sends a client-side only messages (to add & remove features from the client). The following messages can be sent and received for StreamLayers with custom websocket and client-side StreamLayers out of the box.
     - features message - `{type: "features", features: Feature[]}` //Encoded in esriJSON - Adds features on the client.
 
     ```js
     // add a single feature
-    layer.receiveMessage({
+    layer.sendMessageToClient({
       type: "features",
       features: [
         {
@@ -40,14 +40,14 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
     // delete features by trackId
     const result = await layerView.queryFeatures(query);
     const trackIds = result.features.map(feature => feature.attributes[layer.timeInfo.trackIdField])
-    layer.receiveMessage({
+    layer.sendMessageToClient({
       type: "delete",
       trackIds
     });
 
     // delete features that are visible within the view
     const objectIds = await layerView.queryObjectIds({ geometry: view.extent.clone().expand(.25) });
-    layer.receiveMessage({
+    layer.sendMessageToClient({
       type: "delete",
       objectIds
     });
@@ -56,7 +56,7 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
     - clear message - `{type: "clear}` - Clear all features on the client.
 
     ```js
-    layer.receiveMessage({
+    layer.sendMessageToClient({
       type: "clear"
     });
     ```
