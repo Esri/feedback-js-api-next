@@ -61,8 +61,8 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
     });
     ```
 
-    - `receive-message` - event to get back any arbitrary message sent to the websocket connection.
 - The following methods are added on StreamLayerView.
+  - `message-received` - event to get back any message sent to the websocket connection.
   - `pause()` - Pauses the StreamLayerView from displaying incoming updates from the web socket. The websocket is still open and sending data.
   - `resume()` - Resumes the StreamLayerView. The StreamLayerView will start displaying incoming updates from the web socket.
 - Now you create client-side StreamLayer without any service at all, so that you can have complete control.
