@@ -77,6 +77,7 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 
 - When opening a [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html) sublayer's popup that has [AttachmentsContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-AttachmentsContent.html) configured, the attachments will now appear in the popup. This only applies to map services on ArcGIS Enterprise version 10.8.1 and above.
 - The new `Select feature` action button within [RelationshipContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-RelationshipContent.html) provides a way to highlight and zoom to the selected related feature while also opening the related feature's popup.
+- Popup chart colors now automatically respect feature reduction renderer colors when visualizing data with specific renderers. This is supported for binning with the predominance, dot density, and the pie chart renderers and for clustering with the pie chart renderer.
 
 ## Breaking Changes
 
