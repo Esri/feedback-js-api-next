@@ -71,6 +71,10 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
   - [Client-side StreamLayer - add/remove feature at runtime](https://codepen.io/U_B_U/pen/WNKzgwa?editors=1000) - This codepen shows how to add, delete features or clear all features on the client side by receiving client messages.
   - [Client-side StreamLayer - add/remove 1000 features](https://codepen.io/U_B_U/pen/MWBVqQW?editors=1000) - This codepen shows how you can add 1000 features to the client-side StreamLayer. It also shows how features can be removed if they are no longer relevant.
 
+### MediaLayer updates
+
+- [MediaLayer.source](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html#source) can now be an individual [ImageElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ImageElement.html) or [VideoElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-VideoElement.html).  The source can still be a collection of image and video elements.
+
 ## Widget Updates
 
 ### Popup
