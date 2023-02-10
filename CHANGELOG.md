@@ -75,6 +75,8 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 
 - [MediaLayer.source](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html#source) can now be an individual [ImageElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ImageElement.html) or [VideoElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-VideoElement.html).  The source can still be a collection of image and video elements.
 
+- [MediaLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html) can now be persisted in a [WebMap](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html).
+
 ## Widget Updates
 
 ### Popup
