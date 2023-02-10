@@ -85,6 +85,10 @@ The `next` version of 4.26 is now available.  Planned release date is February 2
 - The new `Select feature` action button within [RelationshipContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-RelationshipContent.html) provides a way to highlight and zoom to the selected related feature while also opening the related feature's popup.
 - Popup chart colors now automatically respect feature reduction renderer colors when visualizing data with specific renderers. This is supported for binning with the predominance, dot density, and the pie chart renderers and for clustering with the pie chart renderer.
 
+### Legend
+
+- Field alias is no longer displayed by default for [UniqueValueRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-UniqueValueRenderer.html).
+
 ## Breaking Changes
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
