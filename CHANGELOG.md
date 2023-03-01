@@ -20,7 +20,7 @@ The following classes, methods, properties and events have been deprecated for a
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
-| `esri/widgets/Slice/SlicePlane` | Use [esri/analysis/SlicePlane](https://developers.arcgis.com/javascript/latest/api-reference/esri-analysis-SlicePlane.html) instead | 4.23 |
+| TBD | TBD | TBD |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
@@ -32,8 +32,15 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.25 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
+### View Popup autocasting deprecation
+In a continuous effort to optimize the performance of the API, more specifically the load time, the decision was made to stop bundling the Popup with the MapView and SceneView. The Popup widget receives new features regularly, such as when browsing related records. Each new feature added to the popup widget increases the amount of built code and size of the widget that is being sent to the web browser. For example, the Popup module, which is bundled with the MapView, represents around 50% of the size of the bundle.
+
+In a future release, the Popup widget loading will be deferred until the view is ready and will only be loaded if there are layers with a popup configured since it is only useful once content is displayed on the view. This will not disturb the user experience and the popup will still show up when the end user clicks on popup enabled content.
+
+If you are interested in testing this optimization, make sure to check back here for the early access release description, where we will provide more details and strategies to upgrade your code as we get closer to the next release.
+
 <details>
-  <summary>Click to expand!</summary>  
+  <summary>Click to expand the complete list</summary>  
 
 - Compatibility with implementations that don't support async/await at runtime, within AMD modules, is deprecated since version 4.25. For example, Angular applications using esri-loader will need to migrate from AMD modules to using @arcgis/core ES modules.
 - CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
