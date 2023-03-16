@@ -68,7 +68,7 @@ body:
       description: Provide the operating system version and device make/model.
       placeholder: |
         - OS:
-            e.g. Apple iOS 16.3.1, Windows 10* 64-bit or MacOS 13.2
+            e.g. Apple iOS 16.3.1, Windows 11 64-bit or MacOS 13.2
         - Device:
             e.g. iPhone 14, Samsung Galaxy S23 or Dell XPS 15
         ...
