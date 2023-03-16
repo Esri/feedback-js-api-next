@@ -1,28 +1,28 @@
-name: Enhancement suggestion
-description: Suggest an enhancement related to a new feature in the "next" release.
+name: Enhancement
+description: Suggest an enhancement to a new feature that was added in the latest "next" release.
 labels: ["enhancement"]
 body:
   - type: checkboxes
     attributes:
       label: Are you in the right place?
-      description: Verify the following requirements have been met before submitting your enhancement or suggestion.
+      description: Verify the following requirements have been met before submitting your issue.
       options:
-        - label: My enhancement is specifically related to a NEW FEATURE in the latest "next" release. If not, please use "General enhancement:" in the issue title. For issues unrelated to the "next" version, open a ticket with [Esri Technical Support](https://support.esri.com/) or post your question in the [community forum](https://community.esri.com/t5/arcgis-api-for-javascript/ct-p/arcgis-api-for-javascript).
+        - label: My issue is specifically related to a NEW FEATURE that was added in the latest `next` release. For issues unrelated to latest `next` release, open a ticket with [Esri Technical Support](https://support.esri.com/), post your question in the [community forum](https://community.esri.com/t5/arcgis-api-for-javascript/ct-p/arcgis-api-for-javascript), or share your idea with the global community on [ArcGIS Ideas](https://community.esri.com/t5/forums/searchpage/tab/message?advanced=false&allow_punctuation=false&q=javascript).
           required: true
-        - label: I have [checked existing issues](https://github.com/Esri/jsapi-resources/issues) to avoid duplicate enhancement requests. If someone has already opened an issue that is related, please add a 👍 reaction and comment as necessary to the existing issue instead of creating a new one.
+        - label: I have [checked for existing issues](https://github.com/Esri/feedback-js-api-next/issues) to avoid duplicates. If someone has already opened an issue for what you are experiencing, please add a 👍 reaction and comment as necessary to the existing issue instead of creating a new one.
           required: true
   - type: textarea
     id: feature
     attributes:
-      label: Enhancement feature
-      description: What new feature is this enhancement related to?
+      label: Feature
+      description: What new feature is this issue related to?
     validations:
       required: true
   - type: textarea
     id: category
     attributes:
-      label: Enhancement category
-      description: Assign the enhancement to a category
+      label: Category
+      description: Assign this issue to a category
       placeholder: |
         Widgets | MapView | SceneView | Layers | Symbology | Other
     validations:
@@ -30,23 +30,23 @@ body:
   - type: textarea
     id: summary
     attributes:
-      label: Enhancement short summary
-      description: 1 - 2 sentences that summarize the enhancement or suggestion.
+      label: Summary
+      description: 1 - 2 sentences summary.
     validations:
       required: true
   - type: textarea
     id: description
     attributes:
-      label: Enhancement description
+      label: Description
       description: |
-        A clear and concise description of the enhancement or suggestion. If applicable, add screenshots to help illustrate the issue.
+        A clear and concise description. If applicable, add screenshots to help illustrate the issue.
     validations:
       required: true
   - type: textarea
     id: severity
     attributes:
-      label: Enhancement severity
-      description: How important is this enhancement and why?
+      label: Severity
+      description: How important is this issue and why?
       placeholder: |
         High | Medium | Low
     validations:
@@ -57,13 +57,13 @@ body:
       label: SDK version (check your console)
       description: Provide the full version string from your console.
       placeholder: |
-        e.g. ArcGIS Maps SDK for JavaScript 4.26-next [Date: 20221214, Revision: 144c0342]
+        e.g. ArcGIS Maps SDK for JavaScript 4.27-next [Date: 20230315, Revision: 144c0342]
     validations:
       required: true
   - type: textarea
     id: additional
     attributes:
       label: Additional context
-      description: Add any other context about the enhancement or suggestion.
+      description: Add any other context that will assist in reviewing this issue.
     validations:
-      required: false
+      required: true
