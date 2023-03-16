@@ -1,5 +1,5 @@
 name: Enhancement suggestion
-description: Suggest an enhancement to a new feature in the "next" release.
+description: Suggest an enhancement related to a new feature in the "next" release.
 labels: ["enhancement"]
 body:
   - type: checkboxes
