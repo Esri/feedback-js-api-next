@@ -75,13 +75,6 @@ For more information on using `tsconfig.json` refer to the [TypeScript documenta
 }
 ```
 
-## Issues
-
-Report issues with next version at https://github.com/Esri/feedback-js-api-next/issues/new/choose
-
-* Bugs: Bug reports should be specific to js.arcgis.com/next and not present in the current API release.
-* Enhancements: For this initiative, enhancement requests should be specific to a feature in js.arcgis.com/next.
-
 ## Licensing
 
 Copyright 2023 Esri
