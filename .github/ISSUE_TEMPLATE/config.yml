@@ -1,7 +1,7 @@
 contact_links:
   - name: Esri Support
-    url: https://support.esri.com/
-    about: Bugs in released versions of the SDK.
-  - name: ArcGIS Ideas
-    url: https://community.esri.com/t5/forums/searchpage/tab/message?advanced=false&allow_punctuation=false&q=javascript
-    about: Share your ideas with the global Esri community.    
+    url: https://support.esri.com/en/contact-tech-support
+    about: Report bugs in released versions of the SDK, and request enhancements.
+  - name: Esri Community
+    url: https://community.esri.com/t5/arcgis-maps-sdk-for-javascript/ct-p/arcgis-api-for-javascript
+    about: Ask questions, share ideas, and collaborate with others on the ArcGIS Maps SDK for JavaScript.
