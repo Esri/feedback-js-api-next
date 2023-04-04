@@ -4,13 +4,20 @@ The `next` version of 4.27 is now available.  Planned release date is June 2023.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
-## Layer Updates
-
-* TBD
-
 ## Widget Updates
 
-* TBD
+### Calcite Icon in the Expand widget
+
+We've added support for [Calcite icons](https://developers.arcgis.com/calcite-design-system/icons/?library=Calcite%20UI&version=3.21.2) in the Expand widget through the new `expandIcon` and `collapseIcon` properties. This gives you access to over 800 icons that can be used out of the box in the Expand widget, simply by referencing the name of the icon.
+
+```js
+const expandWidget = new Expand({
+  view: view,
+  expandIcon: "pie-chart", // calcite icon
+  collapseIcon: "caret-square-right",
+  content: chartDiv // your widget or HTML content
+})
+```
 
 ## Breaking Changes
 
@@ -27,6 +34,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 * BUG-000140665: Fixed an issue in the Bookmarks widget where the bookmark's thumbnail would display in editing mode, even if visibleElements.thumbnail was false.
+* [Esri Community - 1272209](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-not-tiling-correctly/m-p/1272209): Fixed an issue where some CIM symbols with a CIMHatchFill symbol layer were not aligned at tile boundaries at large scales.
 * Fixed an accessibility issue where the Bookmarks widget's drag/reorder tooltip was not displayed when in focus for keyboard-only users.
 * Enhanced the ScaleBar widget to support additional units (centimeters and inches) at larger scales.
 
