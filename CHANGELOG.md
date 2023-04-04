@@ -34,7 +34,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 * BUG-000140665: Fixed an issue in the Bookmarks widget where the bookmark's thumbnail would display in editing mode, even if visibleElements.thumbnail was false.
-* Esri Community - 1272209: Fixed an issue where some CIM symbols with a CIMHatchFill symbol layer were not aligned at tile boundaries at large scales.
+* [Esri Community - 1272209](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-not-tiling-correctly/m-p/1272209): Fixed an issue where some CIM symbols with a CIMHatchFill symbol layer were not aligned at tile boundaries at large scales.
 * Fixed an accessibility issue where the Bookmarks widget's drag/reorder tooltip was not displayed when in focus for keyboard-only users.
 * Enhanced the ScaleBar widget to support additional units (centimeters and inches) at larger scales.
 
