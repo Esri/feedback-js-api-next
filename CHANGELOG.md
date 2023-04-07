@@ -33,7 +33,7 @@ TODO: Add code examples.
 
 If using any of the following scenarios, your application will **not** break:
   
-#### Setting popup options:
+#### Setting popup options
 ```js
 const view = new MapView({
   popup: {
@@ -43,7 +43,7 @@ const view = new MapView({
 view.popup.dockEnabled = true;
 ```
 
-#### Opening & closing the popup:
+#### Opening & closing the popup
 - It is recommended to use the new `View.openPopup()` method instead of `view.popup.open()`, however, it will still work.
 ```js
 // prompts a deprecation warning if popup isn't created
