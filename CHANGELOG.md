@@ -142,24 +142,32 @@ const view = new MapView({
 })
 ```
 
-### Configuring the `Popup`
-
-There are multiple ways to configure the popup:
-
+### Setting the View's `Popup`
+Since the Popup is no longer loaded with the view automatically, there are now different ways to set the view's popup:
+- Set the view's popup to a new `Popup` instance to have the popup created right away. When doing this, the popup will appear for all scenarios such as selecting feartures and displaying Search results:
 ```js
-// popup shows for features and other use such as Search results.
 // view.popup is available immediately
-view.popup = new Popup() 
-        
+view.popup = new Popup();
+```
+- Set the view's popup to an object that contains `Popup` properties such as `dockEnabled` and `dockOptions`. In this case, the view's popup is created on demand when the user clicks the view or when `openPopup()` is called for the first time and not when the application is first loaded.
+```js
 //  popup shows for features and other use such as Search results.
-// view.popup is created on demand when the user clicks on the view, or when `openPopup()` is called the first time.
-view.popup = { /*...*/ };
-
+view.popup = {
+  dockEnabled: true,
+  dockOptions: {
+    ...
+  }
+};
+```
+- Set the view's popup to `null`. This will disable the `Popup` for every scenario for your application. Use this when you never want to show any popups.
+```js
 // popup is completely disabled and won't show on features, Search results, and `openPopup()`.
 view.popup = null;
-
+```
+- Set the view's `popupEnabled` property to false. This will not create a popup until `openPopup()` is called or when Search results need to be displayed.
+```js
 // popup doesn't show for features on click, but will on Search results and `openPopup()`.
-view.popupEnabled = false;
+`view.popupEnabled = false;
 ```
 </details>
 
