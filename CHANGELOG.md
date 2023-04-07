@@ -20,7 +20,7 @@ const expandWidget = new Expand({
 ```
 
 ### View Popup deprecations and changes
-In a continuous effort to optimize the performance of the API, more specifically the load time, the decision was made to stop bundling the Popup with the MapView and SceneView. The Popup widget receives new features regularly, such as when browsing related records. Each new feature added to the popup widget increases the amount of built code and size of the widget that is being sent to the web browser. For example, the Popup module, which is bundled with the MapView, represents around 50% of the size of the bundle.
+In a continuous effort to optimize the performance and load time of the API, the Popup widget will no longer be bundled with the MapView and SceneView. The Popup widget receives new features regularly, such as when browsing related records. Each new feature added to the Popup widget increases the size of the widget and amount of built code that is sent to the web browser. For example, the Popup module, which is bundled with the MapView, represents around 50% of the size of the bundle.
 
 In this release, the Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if View.popupEnabled is true. Please expand the details below for breaking changes and the migration strategy.
 
@@ -31,7 +31,7 @@ TODO: Add code examples.
 
 ### Scenarios that still work
 
-If using any of the following scenarios, your applcation will not break:
+If using any of the following scenarios, your application will **not** break:
   
 #### Setting popup options:
 ```js
