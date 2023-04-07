@@ -24,6 +24,8 @@ In a continuous effort to optimize the performance of the API, more specifically
 
 In this release, the Popup widget loading is deferred until the view is ready and will only be loaded if there are layers with a popup configured since it is only useful once content is displayed on the view. Please expand the details below for breaking changes and the migration strategy.
 
+TODO: Add code examples.
+
 <details>
   <summary>Click to expand the details regarding the migration strategy and breaking changes for the view's popup</summary>  
 
@@ -273,5 +275,3 @@ The following are deprecations to the SDK's TypeScript type definitions, and wil
 - Instances of `*Constructor` deprecated since 4.25. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`.
 
 </details>
-
-
