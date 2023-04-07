@@ -72,7 +72,7 @@ view.popup.autoOpenEnabled = true;
 view.popupEnabled = true;
 ```
 
-### Breaks and require immediate attention
+### Breaks and requires immediate attention
 
 Using functions other than `open` and `close`, like `watch`. Use `reactiveUtils` instead.
 ```js
@@ -165,7 +165,7 @@ view.popupEnabled = false;
 
 ## Breaking Changes
 
-* TBD
+* The Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if View.popupEnabled is true. Expand the details in the [View Popup deprecations and changes](#view-popup-deprecations-and-changes) section above for more details on breaking changes and the migration strategy.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
