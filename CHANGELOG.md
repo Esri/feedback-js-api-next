@@ -20,31 +20,72 @@ const expandWidget = new Expand({
 ```
 
 ### View Popup deprecations and changes
+
 In a continuous effort to optimize the performance and load time of the API, the Popup widget will no longer be bundled with the MapView and SceneView. The Popup widget receives new features regularly, such as when browsing related records. Each new feature added to the Popup widget increases the size of the widget and amount of built code that is sent to the web browser. For example, the Popup module, which is bundled with the MapView, represents around 50% of the size of the bundle.
 
-In this release, the Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if `view.popupEnabled` (previously `view.popup.autoOpenEnabled`) is `true`. The `view.popupEnabled` property is set to `true` by default, so if you aren't modifying any properties of the view's popup within your application, **there is no action needed**. 
-
-If modifying the view's popup properties or calling any of the popup methods, please expand the details below for breaking changes and the migration strategy.
+In this release, the Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if `view.popupEnabled` (previously `view.popup.autoOpenEnabled`) is `true`. The `view.popupEnabled` property is set to `true` by default. **No action needed** if you are not modifying any properties of the view's popup within your application.
 
 TODO: Add code examples.
 
-<details>
-  <summary>Click to expand the details</summary>
+#### View Popup Migration Strategy
 
-### Migration Strategy
+To summarize, the view's popup is now loaded on demand when the user clicks on the view, when `openPopup()` is called, or when some widgets need the popup, such as Search. 
 
-#### When do you have to migrate, and what to do?
-
-No changes are necessary if the application: 
-1. Creates a `Popup` instance on the view. This is also **the fastest migration strategy**, and equivalent to the 4.26 behavior.
+The most simple migration to 4.27 is to create the view with a Popup instance directly. This loads the popup right away and doesn't take advantage of lazy loading. If already doing this, no changes are necessary and the application will not break.
 ```js
 const view = new SceneView({
   popup: new Popup(...)
 });
 ```
-  
-2. Only sets options on the popup.
 
+If wanting to take advantage of the lazy Popup loading, the following updates need to be made:
+- use `view.popupEnabled` instead of `view.popup.autoOpenEnabled`. This disables the popup on user click.
+```js
+// popup doesn't show for features on click, but will on Search results and `openPopup()`.
+view.popupEnabled = false;
+```
+- use `view.openPopup()` instead of `view.popup.open()`.
+```js
+// prompts a deprecation warning if popup isn't created
+// calls view.openPopup() under the hood
+view.popup.open(...);
+
+// new
+view.openPopup(...);
+```
+- use `view.closePopup()` instead of `view.popup.close()`.
+```js
+// prompts a deprecation warning if popup isn't created
+// calls view.closePopup() under the hood
+view.popup.close(...);
+
+// new
+view.closePopup();
+```
+- use `reactiveUtils` to watch properties on popup and its view model, instead of `view.popup.watch()`.
+```js
+// old - this will break
+view.popup.watch("selectedFeature", ...)
+
+// new
+reactiveUtils.watch(() => view.popup?.selectedFeature, ...);
+```
+- use `reactiveUtils.when()` to know when the popup instance is created. Once it's created, then you can access its properties or methods.
+```js
+// old - will break
+view.popup.actions.push(...);
+
+// wait for the popup to load
+reactiveUtils.when(() => view.popup.viewModel);
+view.popup.actions.push(...);
+```
+
+#### View Popup Breaking Changes
+
+If taking advantage of the view's popup being lazy loaded, the section below outlines any breaking changes that may need to be considered.
+
+**No changes necessary** and applications will not break if:
+1. Only options are set on the view's popup.
 ```js
 const view = new MapView({
   popup: {
@@ -53,8 +94,7 @@ const view = new MapView({
   }
 })
 ```
-  
-3. Uses `view.popup.open()` or `close()`, search and replace with `view.openPopup()` and `view.closePopup()`. Note, `view.popup.open()` and `view.popup.close()` will still work but it's recommended to migrate to the new methods.
+2. `view.popup.open()` or `close()` is used. Note, these methods will still work but it's recommended to migrate to the new methods to take advantage of lazy loading the popup.
 ```js
 // prompts a deprecation warning if popup isn't created
 // calls view.openPopup() under the hood
@@ -71,17 +111,15 @@ view.popup.close(...);
 view.closePopup();
 ```
 
-**Changes are necessary** and applications **will break** if the application:
-
-1. Accesses properties of the view model. Update the app to use conditionally access.
+**Changes are necessary** and applications **will break** if they:
+1. Access properties of the view model. Update the app to use conditionally access.
 ```js
 // old way
 view.popup.viewModel.active;
 // new way
 view.popup?.viewModel?.active;
 ```
-  
-5. Uses functions other than `open()` and `close()`, like `watch()`. Use `reactiveUtils` instead.
+2. Use functions other than `open()` and `close()`, like `watch()`. Use `reactiveUtils` instead.
 ```js
 // old - this will break
 view.popup.watch("selectedFeature", ...)
@@ -89,8 +127,7 @@ view.popup.watch("selectedFeature", ...)
 // new
 reactiveUtils.watch(() => view.popup?.selectedFeature, ...);
 ```
-
-6. Modifies properties that don't exist anymore. Use `reactiveUtils` to watch for when these properties are created.
+3. Modifies properties that don't exist anymore. Use `reactiveUtils` to watch for when these properties are created.
 ```js
 // old - will break
 view.popup.actions.push(...)
@@ -102,46 +139,9 @@ reactiveUtils.whenOnce(() => view.popup.actions != null);
 view.popup.actions.push(...)
 ```
 
-### Controlling the View's `Popup`
-
-To summarize, the view's popup is now loaded on demand for the following scenarios:
-1. When the user clicks on the view
-2. When `openPopup()` is called
-3. Or when some widgets need the popup, such as Search. 
-  
-There are several ways you can drive how the view's popup is created and made available to you.
-
-Like in version 4.26, the `view.popup` can be:
-- Set to a new Popup instance to have the popup created right away. When doing this, the popup will appear for all scenarios outlined above.
-```js
-// view.popup is available immediately
-view.popup = new Popup();
-```
-- Completely removed from your application by setting the `view.popup` to null. The popup won't display at all for the scenarios outlined above.
-```js
-view.popup = null;
-```
-- Disabled on user click only by setting `view.popupEnabled` (previously `view.popup.autoOpenEnabled`).
-```js
-// popup doesn't show for features on click, but will on Search results and `openPopup()`.
-view.popupEnabled = false;
-```
-And you can define the options the popup will use by setting `view.popup` with an option object.
-```js
-//  popup shows for features and other use such as Search results.
-view.popup = {
-  dockEnabled: true,
-  dockOptions: {
-    ...
-  }
-};
-```
-
-</details>
-
 ## Breaking Changes
 
-* The Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if View.popupEnabled is true. Expand the details in the [View Popup deprecations and changes](#view-popup-deprecations-and-changes) section above for more details on breaking changes and the migration strategy.
+* The Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if View.popupEnabled is true. See the details in the [View Popup deprecations and changes](#view-popup-deprecations-and-changes) section above for more information on breaking changes and the migration strategy.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
