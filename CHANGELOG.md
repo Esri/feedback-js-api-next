@@ -19,9 +19,129 @@ const expandWidget = new Expand({
 })
 ```
 
+### View Popup deprecations and changes
+
+In a continuous effort to optimize the performance and load time of the API, the Popup widget will no longer be bundled with the MapView and SceneView. The Popup widget receives new features regularly, such as when browsing related records. Each new feature added to the Popup widget increases the size of the widget and amount of built code that is sent to the web browser. For example, the Popup module, which is bundled with the MapView, represents around 50% of the size of the bundle.
+
+In this release, the Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if `view.popupEnabled` (previously `view.popup.autoOpenEnabled`) is `true`. The `view.popupEnabled` property is set to `true` by default. **No action needed** if you are not modifying any properties of the view's popup within your application.
+
+TODO: Add code examples.
+
+#### View Popup Migration Strategy
+
+To summarize, the view's popup is now loaded on demand when the user clicks on the view, when `openPopup()` is called, or when some widgets need the popup, such as Search. 
+
+The most simple migration to 4.27 is to create the view with a Popup instance directly. This loads the popup right away and doesn't take advantage of lazy loading. If already doing this, no changes are necessary and the application will not break.
+```js
+const view = new SceneView({
+  popup: new Popup(...)
+});
+```
+
+If wanting to take advantage of the lazy Popup loading, the following updates need to be made:
+- use `view.popupEnabled` instead of `view.popup.autoOpenEnabled`. This disables the popup on user click.
+```js
+// popup doesn't show for features on click, but will on Search results and `openPopup()`.
+view.popupEnabled = false;
+```
+- use `view.openPopup()` instead of `view.popup.open()`.
+```js
+// prompts a deprecation warning if popup isn't created
+// calls view.openPopup() under the hood
+view.popup.open(...);
+
+// new
+view.openPopup(...);
+```
+- use `view.closePopup()` instead of `view.popup.close()`.
+```js
+// prompts a deprecation warning if popup isn't created
+// calls view.closePopup() under the hood
+view.popup.close(...);
+
+// new
+view.closePopup();
+```
+- use `reactiveUtils` to watch properties on popup and its view model, instead of `view.popup.watch()`.
+```js
+// old - this will break
+view.popup.watch("selectedFeature", ...)
+
+// new
+reactiveUtils.watch(() => view.popup?.selectedFeature, ...);
+```
+- use `reactiveUtils.when()` to know when the popup instance is created. Once it's created, then you can access its properties or methods.
+```js
+// old - will break
+view.popup.actions.push(...);
+
+// wait for the popup to load
+reactiveUtils.when(() => view.popup.viewModel);
+view.popup.actions.push(...);
+```
+
+#### View Popup Breaking Changes
+
+If taking advantage of the view's popup being lazy loaded, the section below outlines any breaking changes that may need to be considered.
+
+**No changes necessary** and applications will not break if:
+1. Only options are set on the view's popup.
+```js
+const view = new MapView({
+  popup: {
+    dockEnabled: true.
+    dockPosition: ....
+  }
+})
+```
+2. `view.popup.open()` or `close()` is used. Note, these methods will still work but it's recommended to migrate to the new methods to take advantage of lazy loading the popup.
+```js
+// prompts a deprecation warning if popup isn't created
+// calls view.openPopup() under the hood
+view.popup.open(...);
+
+// new
+view.openPopup(...);
+// ------
+// prompts a deprecation warning if popup isn't created
+// calls view.closePopup() under the hood
+view.popup.close(...);
+
+// new
+view.closePopup();
+```
+
+**Changes are necessary** and applications **will break** if they:
+1. Access properties of the view model. Update the app to use conditionally access.
+```js
+// old way
+view.popup.viewModel.active;
+// new way
+view.popup?.viewModel?.active;
+```
+2. Use functions other than `open()` and `close()`, like `watch()`. Use `reactiveUtils` instead.
+```js
+// old - this will break
+view.popup.watch("selectedFeature", ...)
+
+// new
+reactiveUtils.watch(() => view.popup?.selectedFeature, ...);
+```
+3. Modifies properties that don't exist anymore. Use `reactiveUtils` to watch for when these properties are created.
+```js
+// old - will break
+view.popup.actions.push(...)
+
+// define the property with the actions
+view.popup.actions = [ ... ]
+// or wait for the popup
+reactiveUtils.whenOnce(() => view.popup.actions != null);
+view.popup.actions.push(...)
+```
+
 ## Breaking Changes
 
-* TBD
+* The Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if View.popupEnabled is true. See the details in the [View Popup deprecations and changes](#view-popup-deprecations-and-changes) section above for more information on breaking changes and the migration strategy.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
@@ -40,14 +160,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 ## Deprecations
 
-The following are deprecated and will be removed in a future release. For anything deprecated in 4.25 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
-
-### View Popup autocasting deprecation
-In a continuous effort to optimize the performance of the API, more specifically the load time, the decision was made to stop bundling the Popup with the MapView and SceneView. The Popup widget receives new features regularly, such as when browsing related records. Each new feature added to the popup widget increases the amount of built code and size of the widget that is being sent to the web browser. For example, the Popup module, which is bundled with the MapView, represents around 50% of the size of the bundle.
-
-In a future release, the Popup widget loading will be deferred until the view is ready and will only be loaded if there are layers with a popup configured since it is only useful once content is displayed on the view. This will not disturb the user experience and the popup will still show up when the end user clicks on popup enabled content.
-
-If you are interested in testing this optimization, make sure to check back here for the early access release description, where we will provide more details and strategies to upgrade your code as we get closer to the next release.
+The following are deprecated and will be removed in a future release. For anything deprecated in 4.26 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
 <details>
   <summary>Click to expand the complete list</summary>  
@@ -96,6 +209,7 @@ If you are interested in testing this optimization, make sure to check back here
 - InputFieldGroup.visibilityExpression deprecated Since 4.23. Use groupElement.visibilityExpression
 Lighting deprecated since version 4.24. Use SunLighting instead.
 - PausableWatchHandle.PausableWatchHandle deprecated since version 4.24.
+- Popup.autoOpenEnabled deprecated since 4.27. Use MapView/SceneView.popupEnabled instead.
 - PromisedWatchHandle.PromisedWatchHandle deprecated since version 4.24. Use Promise instead.
 promiseUtils.create deprecated since version 4.24. Use Promise instead.
 - The allowAttachments property within Editor.layerInfos is deprecated at 4.25. Use either attachmentsOnCreateEnabled or attachmentsOnUpdateEnabled instead.
