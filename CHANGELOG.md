@@ -143,6 +143,8 @@ view.popup.actions.push(...)
 
 * The Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if View.popupEnabled is true. See the details in the [View Popup deprecations and changes](#view-popup-deprecations-and-changes) section above for more information on breaking changes and the migration strategy.
 
+* Compatibility with implementations that don't support [async/await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises#async_and_await) at runtime, within AMD modules, has been removed at 4.27. For example, some SDK applications using Angular with [esri-loader](https://github.com/Esri/esri-loader) may experience runtime errors, and will need to migrate from AMD modules to using [@arcgis/core ES modules](https://next.sites.afd.arcgis.com/javascript/latest/es-modules/).
+
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
