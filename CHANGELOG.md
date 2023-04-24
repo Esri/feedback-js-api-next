@@ -19,6 +19,10 @@ const expandWidget = new Expand({
 })
 ```
 
+### ScaleBar enhancements
+
+At this release, we made many enhancements to the ScaleBar widget. We added support for additional units (centimeters, millimeters, and inches) at larger scales, improved `intl` support, and started using more logical units for enhanced readability and usability (i.e. `300m` instead of `0.3km`).
+
 ### View Popup deprecations and changes
 
 In a continuous effort to optimize the performance and load time of the API, the Popup widget will no longer be bundled with the MapView and SceneView. The Popup widget receives new features regularly, such as when browsing related records. Each new feature added to the Popup widget increases the size of the widget and amount of built code that is sent to the web browser. For example, the Popup module, which is bundled with the MapView, represents around 50% of the size of the bundle.
@@ -160,8 +164,8 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 * [Esri Community - 1275187](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-not-working-in-sceneview-3d/m-p/1275187): Fixed an issue where CIM symbols using icon fonts were not rendering properly in 3D.
 * Fixed an accessibility issue where the Bookmarks widget's drag/reorder tooltip was not displayed when in focus for keyboard-only users.
 * Fixed an issue where the ImageMediaInfo's refreshInterval property was not sending requests to refresh the image when displayed within the Popup and Feature widgets.
-* Enhanced the ScaleBar widget to support additional units (centimeters and inches) at larger scales.
 * [Calcite - 5713](https://github.com/Esri/calcite-components/issues/5713): Placeholder string is not centered horizontally in input search/combobox in Safari/FF
+* ENH-000105370: Enhanced the ScaleBar by using more logical scale values to improve readability and usability.
 
 ## Deprecations
 
