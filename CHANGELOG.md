@@ -222,6 +222,7 @@ Lighting deprecated since version 4.24. Use SunLighting instead.
 - PromisedWatchHandle.PromisedWatchHandle deprecated since version 4.24. Use Promise instead.
 promiseUtils.create deprecated since version 4.24. Use Promise instead.
 - The allowAttachments property within Editor.layerInfos is deprecated at 4.25. Use either attachmentsOnCreateEnabled or attachmentsOnUpdateEnabled instead.
+- The "non-metric" possible value for `ScaleBar.unit` is deprecated at 4.27. Please use "imperial" instead.
 - UtilityNetwork.rulesTableId deprecated since version 4.25. Use networkSystemLayers.rulesTableId instead.
 - UtilityNetwork.rulesTableUrl deprecated since version 4.25. Use networkSystemLayers.rulesTableUrl instead.
 - UtilityNetwork.subnetworksTableId deprecated since version 4.25. Use networkSystemLayers.subnetworksTableId instead.
