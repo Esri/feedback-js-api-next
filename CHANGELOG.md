@@ -164,6 +164,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 * [Esri Community - 1275187](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-not-working-in-sceneview-3d/m-p/1275187): Fixed an issue where CIM symbols using icon fonts were not rendering properly in 3D.
 * Fixed an accessibility issue where the Bookmarks widget's drag/reorder tooltip was not displayed when in focus for keyboard-only users.
 * Fixed an issue where the ImageMediaInfo's refreshInterval property was not sending requests to refresh the image when displayed within the Popup and Feature widgets.
+* Fixed an issue where MapImageLayers were not showing popups for features that do not have a renderer.
 * [Calcite - 5713](https://github.com/Esri/calcite-components/issues/5713): Placeholder string is not centered horizontally in input search/combobox in Safari/FF
 * ENH-000105370: Enhanced the ScaleBar by using more logical scale values to improve readability and usability.
 
