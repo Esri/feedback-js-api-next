@@ -143,6 +143,18 @@ reactiveUtils.whenOnce(() => view.popup.actions != null);
 view.popup.actions.push(...)
 ```
 
+## Fetch components from the View UI
+
+The new `getComponents()` method on `view.ui` allows you to fetch all components in the current view, or only those at a specified position in the view. 
+
+```js
+// returns all widgets and HTML elements in the view UI
+const allComponents = view.ui.getComponents();
+
+// returns widgets and HTML elements in the top-right position of the view UI
+const someComponents = view.ui.getComponents("top-right");
+```
+
 ## Breaking Changes
 
 * The Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if View.popupEnabled is true. See the details in the [View Popup deprecations and changes](#view-popup-deprecations-and-changes) section above for more information on breaking changes and the migration strategy.
