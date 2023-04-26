@@ -29,8 +29,6 @@ In a continuous effort to optimize the performance and load time of the API, the
 
 In this release, the Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if `view.popupEnabled` (previously `view.popup.autoOpenEnabled`) is `true`. The `view.popupEnabled` property is set to `true` by default. **No action needed** if you are not modifying any properties of the view's popup within your application.
 
-TODO: Add code examples.
-
 #### View Popup Migration Strategy
 
 To summarize, the view's popup is now loaded on demand when the user clicks on the view, when `openPopup()` is called, or when some widgets need the popup, such as Search. 
