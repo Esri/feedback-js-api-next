@@ -170,6 +170,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 * BUG-000140665: Fixed an issue in the Bookmarks widget where the bookmark's thumbnail would display in editing mode, even if visibleElements.thumbnail was false.
+* [Esri Community - 1269135](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/bug-textsymbol-background-transparency-value-can-t/m-p/1269135): Fixed an issue where the backgroundColor of a TextSymbol was always slightly transparent.
 * [Esri Community - 1272209](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-not-tiling-correctly/m-p/1272209): Fixed an issue where some CIM symbols with a CIMHatchFill symbol layer were not aligned at tile boundaries at large scales.
 * [Esri Community - 1275187](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-not-working-in-sceneview-3d/m-p/1275187): Fixed an issue where CIM symbols using icon fonts were not rendering properly in 3D.
 * Fixed an accessibility issue where the Bookmarks widget's drag/reorder tooltip was not displayed when in focus for keyboard-only users.
