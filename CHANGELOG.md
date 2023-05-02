@@ -170,12 +170,17 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 * BUG-000140665: Fixed an issue in the Bookmarks widget where the bookmark's thumbnail would display in editing mode, even if visibleElements.thumbnail was false.
+* BUG-000155351: Fixed an issue in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget where the loading indicator would blink continuously when a view's `container` was changed.
 * [Esri Community - 1269135](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/bug-textsymbol-background-transparency-value-can-t/m-p/1269135): Fixed an issue where the backgroundColor of a TextSymbol was always slightly transparent.
 * [Esri Community - 1272209](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-not-tiling-correctly/m-p/1272209): Fixed an issue where some CIM symbols with a CIMHatchFill symbol layer were not aligned at tile boundaries at large scales.
 * [Esri Community - 1275187](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-not-working-in-sceneview-3d/m-p/1275187): Fixed an issue where CIM symbols using icon fonts were not rendering properly in 3D.
+* Fixed an accessibility issue where the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) widget did not have the correct aria-checked status.
 * Fixed an accessibility issue where the Bookmarks widget's drag/reorder tooltip was not displayed when in focus for keyboard-only users.
+* Fixed an accessibility issue where the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget did not have the correct aria-checked status.
 * Fixed an accessibility issue where the first list item would not be in focus when tabbing through the related records list in RelationshipContent.
+* Fixed an issue with the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) widget where the panel button action was left active when a layer was not visible.
 * Fixed an issue where the ImageMediaInfo's refreshInterval property was not sending requests to refresh the image when displayed within the Popup and Feature widgets.
+* Fixed an issue with the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget where the panel button action was left active when a layer was not visible.
 * Fixed an issue where MapImageLayers were not showing popups for features that did not have a renderer.
 * [Calcite - 5713](https://github.com/Esri/calcite-components/issues/5713): Placeholder string is not centered horizontally in input search/combobox in Safari/FF
 * ENH-000105370: Enhanced the ScaleBar by using more logical scale values to improve readability and usability.
