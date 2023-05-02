@@ -179,6 +179,11 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 * Fixed an issue where MapImageLayers were not showing popups for features that did not have a renderer.
 * [Calcite - 5713](https://github.com/Esri/calcite-components/issues/5713): Placeholder string is not centered horizontally in input search/combobox in Safari/FF
 * ENH-000105370: Enhanced the ScaleBar by using more logical scale values to improve readability and usability.
+* BUG-000155351: Fixed an issue in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget where the loading indicator would blink continuously when a view's `container` was changed.
+* Fixed an accessibility issue where the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget did not have the correct aria-checked status.
+* Fixed an accessibility issue where the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) widget did not have the correct aria-checked status.
+* Fixed an issue where the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget where the panel button action was left active when a layer was not visible.
+* Fixed an issue where the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) widget where the panel button action was left active when a layer was not visible.
 
 ## Deprecations
 
