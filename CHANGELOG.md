@@ -177,6 +177,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 * Fixed an accessibility issue where the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) widget did not have the correct aria-checked status.
 * Fixed an accessibility issue where the Bookmarks widget's drag/reorder tooltip was not displayed when in focus for keyboard-only users.
 * Fixed an accessibility issue where the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget did not have the correct aria-checked status.
+* Fixed an accessibility issue where the [Legend](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html) widget did not have the correct alternative text for some SVG images.
 * Fixed an accessibility issue where the first list item would not be in focus when tabbing through the related records list in RelationshipContent.
 * Fixed an issue with the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) widget where the panel button action was left active when a layer was not visible.
 * Fixed an issue where the ImageMediaInfo's refreshInterval property was not sending requests to refresh the image when displayed within the Popup and Feature widgets.
@@ -184,6 +185,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 * Fixed an issue where MapImageLayers were not showing popups for features that did not have a renderer.
 * [Calcite - 5713](https://github.com/Esri/calcite-components/issues/5713): Placeholder string is not centered horizontally in input search/combobox in Safari/FF
 * ENH-000105370: Enhanced the ScaleBar by using more logical scale values to improve readability and usability.
+* [MediaLayer](/api-reference/esri-layers-MediaLayer.html) is out of beta.
 
 ## Deprecations
 
