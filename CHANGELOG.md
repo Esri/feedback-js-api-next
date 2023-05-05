@@ -23,6 +23,10 @@ const expandWidget = new Expand({
 
 At this release, we made many enhancements to the ScaleBar widget. We added support for additional units (centimeters, millimeters, and inches) at larger scales, improved `intl` support, and started using more logical units for enhanced readability and usability (i.e. `300m` instead of `0.3km`).
 
+### Track Widget enhancements
+
+In 2D apps, the Track widget now displays a heading graphic when the device has a speed greater than 0, and the browser provides heading information. The new `positionFilterFunction()` method allows for real-time filtering of the geolocation results. If your function rejects a location, the widget will not draw the graphic showing the users location on the map and will not navigate to that location. This can reduce or eliminate rapid location fluctuations that are often experienced in browser-based geolocation apps.
+
 ### View Popup deprecations and changes
 
 In a continuous effort to optimize the performance and load time of the API, the Popup widget will no longer be bundled with the MapView and SceneView. The Popup widget receives new features regularly, such as when browsing related records. Each new feature added to the Popup widget increases the size of the widget and amount of built code that is sent to the web browser. For example, the Popup module, which is bundled with the MapView, represents around 50% of the size of the bundle.
@@ -152,6 +156,10 @@ const allComponents = view.ui.getComponents();
 // returns widgets and HTML elements in the top-right position of the view UI
 const someComponents = view.ui.getComponents("top-right");
 ```
+
+## Local assets version mismatch warning improvements
+
+For`@arcgis/core` ES modules, we improved the console message that warns when there is a version mismatch between the assets used by your build process and the application itself. When working with locally hosted assets, this situation can introduce unexpected issues or errors. The updated warning provides more intuitive information to help you solve the issue faster and easier. It now includes the modules version, assets version and the assets path. These represent the `@arcgis/core` NPM package version used to build the project, as well as the `@arcgis/core` version of the assets and local path to the assets configured in your application. More information is available in the [Build with ES modules](https://developers.arcgis.com/javascript/latest/es-modules/) guide topic.
 
 ## Breaking Changes
 
