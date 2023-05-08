@@ -28,7 +28,7 @@ At this release, we made many enhancements to the ScaleBar widget. We added supp
 In 2D apps, the Track widget now displays a heading graphic when the device has a speed greater than 0, and the browser provides heading information. The new `positionFilterFunction()` method allows for real-time filtering of the geolocation results. If your function rejects a location, the widget will not draw the graphic showing the users location on the map and will not navigate to that location. This can reduce or eliminate rapid location fluctuations that are often experienced in browser-based geolocation apps.
 
 ### Popup design updates
-We improved the Popup's design by updating the feature pagination experience with an added icon to the feature menu button, along with updating the buttons to page through features. The MediaContent pagination experience was updated providing more space for charts and images. Popup charts now have matching tooltip colors, a different interaction experience, and more.
+We improved the Popup's feature pagination experience with a new icon for the feature menu and updated buttons for paging through features. The MediaContent pagination experience was updated providing more space for charts and images. Popup charts now have matching tooltip colors, a different interaction experience, and more.
 
 ### View Popup deprecations and changes
 
