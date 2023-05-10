@@ -206,7 +206,6 @@ The following are deprecated and will be removed in a future release. For anythi
 <details>
   <summary>Click to expand the complete list</summary>  
 
-- Compatibility with implementations that don't support async/await at runtime, within AMD modules, is deprecated since version 4.25. For example, Angular applications using esri-loader will need to migrate from AMD modules to using @arcgis/core ES modules.
 - CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
 - CreateWorkflowData.edits deprecated since 4.23. Use CreateFeaturesWorkflow.pendingFeatures to access edits made to the workflow data.
 - CreateWorkflowData deprecated since version 4.23. Use CreateFeaturesWorkflowData instead.
