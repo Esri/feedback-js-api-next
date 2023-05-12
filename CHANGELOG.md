@@ -197,7 +197,8 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 * Fixed an issue where MapImageLayers were not showing popups for features that did not have a renderer.
 * [Calcite - 5713](https://github.com/Esri/calcite-components/issues/5713): Placeholder string is not centered horizontally in input search/combobox in Safari/FF
 * ENH-000105370: Enhanced the ScaleBar by using more logical scale values to improve readability and usability.
-* [MediaLayer](/api-reference/esri-layers-MediaLayer.html) is out of beta.
+* [MediaLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html) is out of beta.
+* Added support for an asynchronous `filterFunction` on [PortalBasemapsSource](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery-support-PortalBasemapsSource.html).
 
 ## Deprecations
 
