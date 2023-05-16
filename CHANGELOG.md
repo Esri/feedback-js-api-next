@@ -290,7 +290,7 @@ The following are deprecations to the SDK's TypeScript type definitions, and wil
 <details>
 <summary>Click to expand</summary>
 
-- `IPromise` deprecated since version 4.25. Use native `Promise` instead.
-- Instances of `*Constructor` deprecated since 4.25. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`.
+- `IPromise` deprecated since version 4.25 and will be removed at 4.28. Use native `Promise` instead.
+- Instances of `*Constructor` deprecated since 4.25 and will be removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`.
 
 </details>
