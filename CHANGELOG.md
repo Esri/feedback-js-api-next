@@ -200,6 +200,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 * [Calcite - 5713](https://github.com/Esri/calcite-components/issues/5713): Placeholder string is not centered horizontally in input search/combobox in Safari/FF
 * ENH-000105370: Enhanced the ScaleBar by using more logical scale values to improve readability and usability.
 * ENH-000148333: Users now can zoom outside of the minLOD and maxLOD range when the layer is used as a basemap.
+* Changed the stream layer [connectionStatus](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItem.html#connectionStatus) icon in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) from a calcite [check-circle](https://developers.arcgis.com/calcite-design-system/icons/?icon=check-circle&library=Calcite%20UI&query=check-cir) icon to a calcite [beacon](https://developers.arcgis.com/calcite-design-system/icons/?icon=beacon&library=Calcite%20UI&query=beacon) icon.
 * [MediaLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html) is out of beta.
 * Added support for an asynchronous `filterFunction` on [PortalBasemapsSource](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery-support-PortalBasemapsSource.html).
 
