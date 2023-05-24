@@ -174,7 +174,7 @@ The following classes, methods, properties and events have been deprecated for a
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |----------|-------------|--------------------|
-| TBD | TBD | TBD |
+| `promiseUtils.create()` | [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise) | 4.24 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
@@ -193,16 +193,17 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 * Fixed an accessibility issue where the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget did not have the correct aria-checked status.
 * Fixed an accessibility issue where the [Legend](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html) widget did not have the correct alternative text for some SVG images.
 * Fixed an accessibility issue where the first list item would not be in focus when tabbing through the related records list in RelationshipContent.
-* Fixed an issue with the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) widget where the panel button action was left active when a layer was not visible.
-* Fixed an issue where the ImageMediaInfo's refreshInterval property was not sending requests to refresh the image when displayed within the Popup and Feature widgets.
-* Fixed an issue with the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget where the panel button action was left active when a layer was not visible.
 * Fixed an issue where MapImageLayers were not showing popups for features that did not have a renderer.
+* Fixed an issue where some color primitive overrides on a CIMSymbol would not render in a WebMap published from ArcGIS Pro.
+* Fixed an issue where the ImageMediaInfo's refreshInterval property was not sending requests to refresh the image when displayed within the Popup and Feature widgets.
+* Fixed an issue with the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) widget where the panel button action was left active when a layer was not visible.
+* Fixed an issue with the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget where the panel button action was left active when a layer was not visible.
 * [Calcite - 5713](https://github.com/Esri/calcite-components/issues/5713): Placeholder string is not centered horizontally in input search/combobox in Safari/FF
 * ENH-000105370: Enhanced the ScaleBar by using more logical scale values to improve readability and usability.
 * ENH-000148333: Users now can zoom outside of the minLOD and maxLOD range when the layer is used as a basemap.
+* Added support for an asynchronous `filterFunction` on [PortalBasemapsSource](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery-support-PortalBasemapsSource.html).
 * Changed the stream layer [connectionStatus](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItem.html#connectionStatus) icon in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) from a calcite [check-circle](https://developers.arcgis.com/calcite-design-system/icons/?icon=check-circle&library=Calcite%20UI&query=check-cir) icon to a calcite [beacon](https://developers.arcgis.com/calcite-design-system/icons/?icon=beacon&library=Calcite%20UI&query=beacon) icon.
 * [MediaLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html) is out of beta.
-* Added support for an asynchronous `filterFunction` on [PortalBasemapsSource](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery-support-PortalBasemapsSource.html).
 
 ## Deprecations
 
