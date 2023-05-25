@@ -209,6 +209,8 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.26 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
+- For local builds, [Webpack](https://webpack.js.org/) versions prior to `5.84.0` are deprecated at 4.27. This is related to bug fixes in Webpack.
+
 <details>
   <summary>Click to expand the complete list</summary>  
 
