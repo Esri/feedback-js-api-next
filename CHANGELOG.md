@@ -173,8 +173,17 @@ For`@arcgis/core` ES modules, we improved the console message that warns when th
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
-|----------|-------------|--------------------|
-| `promiseUtils.create()` | [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise) | 4.24 |
+|-----------------------------|------------------|--------------------|
+| `promiseUtils.create()` | Use [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise) instead. | 4.24 |
+| `Directions.routeServiceUrl` | Use [url](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-RouteLayer.html#url) from [layer](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions.html#layer) instead. | 4.24 |
+| `Directions.routeSymbol` | Use [directionLines](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-RouteSymbols.html#directionLines) from [layer](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions.html#layer) instead. | 4.24 |
+| `Directions.stopSymbols` | Use [RouteStopSymbols](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-RouteStopSymbols.html) from [layer](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions.html#layer) instead. | 4.24 |
+| `DirectionsViewModel.highlightSegment` | Use [highlight](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions-DirectionsViewModel.html#highlight) instead. | 4.24 |
+| `DirectionsViewModel.routeServiceUrl` | Use [url](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-RouteLayer.html#url) from [layer](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions-DirectionsViewModel.html#layer) instead. | 4.24 |
+| `DirectionsViewModel.routeSymbol` | Use [directionLines](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-RouteSymbols.html#directionLines) from [layer](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions-DirectionsViewModel.html#layer) instead. | 4.24 |
+| `DirectionsViewModel.stops` | Use [stops](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-RouteLayer.html#stops) from [layer](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions-DirectionsViewModel.html#layer) instead. | 4.24 |
+| `DirectionsViewModel.stopSymbols` | Use [RouteStopSymbols](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-RouteStopSymbols.html) from [layer](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions-DirectionsViewModel.html#layer) instead. | 4.24 |
+| `esri/layers/support/ImageParameters` | Use [ImageParameters](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ImageParameters.html) instead. | 4.24 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
