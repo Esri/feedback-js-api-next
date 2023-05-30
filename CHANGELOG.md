@@ -164,6 +164,19 @@ const someComponents = view.ui.getComponents("top-right");
 
 For`@arcgis/core` ES modules, we improved the console message that warns when there is a version mismatch between the assets used by your build process and the application itself. When working with locally hosted assets, this situation can introduce unexpected issues or errors. The updated warning provides more intuitive information to help you solve the issue faster and easier. It now includes the modules version, assets version and the assets path. These represent the `@arcgis/core` NPM package version used to build the project, as well as the `@arcgis/core` version of the assets and local path to the assets configured in your application. More information is available in the [Build with ES modules](https://developers.arcgis.com/javascript/latest/es-modules/) guide topic.
 
+## Places
+
+We added `esri/rest/places` in `(beta)` to find nearby
+[places](https://developers.arcgis.com/documentation/mapping-apis-and-services/places/) within a search distance of a
+geographic point, and to find more information about specific places. Places, also known as points of interest (POIs), are
+businesses and geographic locations that one can discover around the world. Places also contain attributes such as name,
+category, street address, contact information, and more. With the [places service](https://developers.arcgis.com//rest/places/)
+(authentication required) one can build powerful applications to help people discover, locate, and learn more about places around
+them. The places service can search for businesses, points of interest (POI), and popular geographic features near a location or
+within abounding box. A nearby search finds places within a given radius of a location using the places service. The location typically represents a
+point on a map or the geolocation of a device. To perform a nearby search, use `esri/rest/places`. With the results of the search,
+one can make another request to the service and return place attributes including the name, categories, ratings, and store hours.
+
 ## Breaking Changes
 
 * The Popup widget loading is deferred until the view is ready and finished updating, and will only be loaded if View.popupEnabled is true. See the details in the [View Popup deprecations and changes](#view-popup-deprecations-and-changes) section above for more information on breaking changes and the migration strategy.
