@@ -1,16 +1,16 @@
 # ArcGIS Maps SDK for JavaScript - next
 
-![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
+![Current build version](https://img.shields.io/npm/v/arcgis-js-api/rc?label=Current%20build)
 
 **https://js.arcgis.com/next**
 
-Welcome to the next version of the ArcGIS Maps SDK for JavaScript (4.27). This version of the SDK is currently in development and will be updated frequently until the production release in June 2023. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bugs and enhancement requests are specific to https://js.arcgis.com/next or `@arcgis/core@next` and not applicable to a released version.
+Welcome to the next version of the ArcGIS Maps SDK for JavaScript (4.27). This version of the SDK is currently in development and will be updated frequently until the production release in June 2023. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bugs and enhancement requests are specific to https://js.arcgis.com/next, `@arcgis/core@next` or `@arcgis/core@rc` and not applicable to a released version.
 
 Please note: ArcGIS Maps SDK for JavaScript release management is dynamic. Some new features and updates that appear in js.arcgis.com/next might not be present in the final production release due to a variety of factors (but will likely be present in an upcoming release).
 
 Read about the current version of the SDK at https://developers.arcgis.com/javascript/.
 
-Read the [CHANGELOG.md](CHANGELOG.md) to find about new functionality, bug fixes and any breaking changes in the `next` version.
+Read the [CHANGELOG.md](CHANGELOG.md) to find about new functionality, bug fixes and any breaking changes in the next version.
 
 ## Instructions
 
@@ -18,16 +18,17 @@ Use CDN or npm to try the next version.
 
 ### CDN
 
-To test the 'next' version using the hosted version, simply reference the SDK and CSS from our CDN to start using them in your app.
+To test the next version using the hosted version, simply reference the SDK and CSS from our CDN to start using them in your app.
 
     <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/next/"></script>
 
-The `next` version of the CDN is not available for download.
+The CDN builds are not available for download until it is released.
 
 ### npm
 
-To test the `next` version with npm, use `npm install @arcgis/core@next`. More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
+To test the next version with npm, use `npm install @arcgis/core@next` or `npm install @arcgis/core@rc`. 
+More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
 
 ### esri-loader 
 
@@ -43,11 +44,11 @@ const [Map] = await loadModules(['esri/map'], options);
 
 ## TypeScript typings for ES modules
 
-Typings are included with the npm install of `@arcgis/core@next` ES modules. For most use cases, no special TypeScript configurations are required.
+Typings are included with the npm install of ES modules. For most use cases, no special TypeScript configurations are required.
 
 ## TypeScript typings for AMD modules
 
-The typings are also included with `arcgis-js-api@next` AMD modules, and they can be used in two ways.
+The typings are also included for AMD modules, and they can be used in two ways.
 
 ### Include a `///` directive in your main TypeScript file.
 
