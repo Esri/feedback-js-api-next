@@ -23,7 +23,7 @@ To test the next version using the hosted version, simply reference the SDK and 
     <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/next/"></script>
 
-The CDN builds are not available for download until it is released.
+Only production CDN builds are available for download.
 
 ### npm
 
@@ -48,7 +48,7 @@ Typings are included with the npm install of ES modules. For most use cases, no 
 
 ## TypeScript typings for AMD modules
 
-The typings are also included for AMD modules, and they can be used in two ways.
+The typings are also included with the npm install of AMD modules, and they can be used in two ways.
 
 ### Include a `///` directive in your main TypeScript file.
 
