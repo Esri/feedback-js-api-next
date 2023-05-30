@@ -166,7 +166,7 @@ For`@arcgis/core` ES modules, we improved the console message that warns when th
 
 ## Places
 
-We added `esri/rest/places` in `(beta)` to find nearby
+We added `esri/rest/places` in `beta` to find nearby
 [places](https://developers.arcgis.com/documentation/mapping-apis-and-services/places/) within a search distance of a
 geographic point, and to find more information about specific places. Places, also known as points of interest (POIs), are
 businesses and geographic locations that one can discover around the world. Places also contain attributes such as name,
