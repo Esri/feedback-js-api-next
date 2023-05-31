@@ -6,6 +6,14 @@ As preparation for the upcoming release, we stopped the daily "next" deployments
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/rc?label=Current%20build)
 
+## 4.27.0-rc.1
+
+* Update Calcite Components to 1.4.2
+
+## 4.27.0-rc.0
+
+* Initial release candidate
+
 ## Widget Updates
 
 ### Features widget
