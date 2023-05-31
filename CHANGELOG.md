@@ -8,6 +8,14 @@ As preparation for the upcoming release, we stopped the daily "next" deployments
 
 ## Widget Updates
 
+### Features widget
+
+The new Features widget allows users to interact with a feature's [PopupTemplate](https://developers.arcgis.com/javascript/latest/api-reference/esri-PopupTemplate.html) content such as attributes, actions, related records, etc., without having to be tied to the [View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html). This widget looks and behaves similarly to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget, however unlike Popup, the Features widget can be placed outside of the view. For example, when features are selected in the View, the Popup widget opens within the View whether it is docked or anchored to the selected feature. With the Features widget, the same information that popup provides is shown in a separate container from the view, such as a HTML div within a Calcite Design System [Shell Panel](https://developers.arcgis.com/calcite-design-system/components/shell-panel/).
+
+The Features widget should be used if needing to use the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) functionality outside of the [View](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html). If wanting to show a single feature's content without actions, related records, feature reduction popup templates, etc., then use the [Feature](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature.html) widget.
+
+See the widget in action on [Codepen](https://codepen.io/laurenb14/pen/KKGLLqG?editors=1000).
+
 ### Calcite Icon in the Expand widget
 
 We've added support for [Calcite icons](https://developers.arcgis.com/calcite-design-system/icons/?library=Calcite%20UI&version=3.21.2) in the Expand widget through the new `expandIcon` and `collapseIcon` properties. This gives you access to over 800 icons that can be used out of the box in the Expand widget, simply by referencing the name of the icon.
