@@ -6,6 +6,11 @@ As preparation for the upcoming release, we stopped the daily "next" deployments
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/rc?label=Current%20build)
 
+## 4.27.0-rc.3
+
+* Support for adding related records.
+* Typing updates
+
 ## 4.27.0-rc.2
 
 * Fixes related to updating related records.
