@@ -340,6 +340,7 @@ promiseUtils.create deprecated since version 4.24. Use Promise instead.
 - watchUtils.whenUndefined deprecated since 4.24. Use reactiveUtils.when() instead.
 - watchUtils.whenUndefinedOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
 - watchUtils deprecated since version 4.24. Use reactiveUtils instead.
+- SunLighting.ambientOcclusionEnabled, SunLighting.waterReflectionEnabled, VirtualLighting.ambientOcclusionEnabled, VirtualLighting.waterReflectionEnabled and SceneView.atmosphere are deprecated since 4.27. Adaptive rendering now automatically choses the best visual quality possible and these properties no longer have an effect.
 
 </details>
 
