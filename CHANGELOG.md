@@ -6,6 +6,11 @@ As preparation for the upcoming release, we stopped the daily "next" deployments
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/rc?label=Current%20build)
 
+## 4.27.0-rc.5
+
+* Final non-English localized strings
+* Various bug fixes
+
 ## 4.27.0-rc.4
 
 * [a11y] focus color shows even if map width or height is 100%
