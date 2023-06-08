@@ -8,7 +8,8 @@ As preparation for the upcoming release, we stopped the daily "next" deployments
 
 ## 4.27.0-rc.4
 
-* TBD 
+* [a11y] focus color shows even if map width or height is 100%
+* Various bug fixes
 
 ## 4.27.0-rc.3
 
