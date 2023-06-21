@@ -1,6 +1,6 @@
 # ArcGIS Maps SDK for JavaScript - next
 
-![Current build version](https://img.shields.io/npm/v/arcgis-js-api/rc?label=Current%20build)
+![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
 **https://js.arcgis.com/next**
 
