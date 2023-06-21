@@ -2,7 +2,7 @@
 
 The `next` version of 4.28 is now available.  Planned release date is October 2023.
 
-![Current build version](https://img.shields.io/npm/v/arcgis-js-api/rc?label=Current%20build)
+![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
 ## Widget Updates
 
