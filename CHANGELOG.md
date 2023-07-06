@@ -8,7 +8,21 @@ The `next` version of 4.28 is now available.  Planned release date is October 20
 
 ## Breaking Changes
 
-* TBD
+* `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
+* `*Constructor` TypeScript definition instances were removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`, for example:
+```js
+// Type definitions at 4.27 and earlier
+type IEsriDeps = [
+  __esri.MapConstructor,
+  __esri.MapViewConstructor
+];
+
+// Type definitions at 4.28 and later
+type IEsriDeps = [
+  typeof __esri.Map,
+  typeof __esri.MapView
+];
+```
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
@@ -141,15 +155,5 @@ externalRenderers.forceWebGLContext deprecated since 4.27.
 - watchUtils deprecated since version 4.24. Use reactiveUtils instead.
 - Weather.iconClass deprecated since 4.27. Use icon instead.
 - Zoom.iconClass deprecated since 4.27. Use icon instead.
-
-</details>
-
-The following are deprecations to the SDK's TypeScript type definitions, and will be removed in a future release (expand to read more).
-
-<details>
-<summary>Click to expand</summary>
-
-- `IPromise` deprecated since version 4.25 and will be removed at 4.28. Use native `Promise` instead.
-- Instances of `*Constructor` deprecated since 4.25 and will be removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`.
 
 </details>
