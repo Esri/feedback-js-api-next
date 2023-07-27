@@ -1,40 +1,68 @@
 # Change log
 
-The `next` version of 4.28 is now available.  Planned release date is October 2023.
+The `next` version of 4.28 is now available. Planned release date is October 2023.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
+
+## Layer updates
+
+### MediaLayer
+
+Added support for animated GIF and APNG images in the [MediaLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html).
+A new `animationOptions` property on [ImageElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ImageElement.html) controls the animation playback options.
+
+```js
+imageElement.animationOptions = {
+  // Indicates whether the animated image should play its animation.
+  playAnimation: true,
+  // Indicates whether the animated image should play back in reverse.
+  reverseAnimation: false,
+  // Indicates whether to generate a randomized start offset in seconds
+  // to apply to the image animation.
+  randomizeStartTime: false,
+  // Represents the starting value for generating a random number and is
+  // used by the randomizeStartTime property to determine the time offset for each feature.
+  randomizeStartSeed: 1,
+  // The time offset (in seconds) to use as the starting point of the layer
+  // animation if randomizeStartTime is false.
+  startTimeOffset: 0,
+  // The time (in seconds) it takes to play through the layer's animation once.
+  duration: 4,
+  // Determines how to repeat the animation of a layer when the animation cycle ends.
+  // Possible Values:"None"|"Loop"|"Oscillate"
+  repeatType: "Oscillate",
+  // Represents the number of seconds to delay before repeating an animation cycle.
+  repeatDelay: 0,
+};
+```
 
 ## Widget Updates
 
 ## Breaking Changes
 
-* `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
-* `*Constructor` TypeScript definition instances were removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`, for example:
+- `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
+- `*Constructor` TypeScript definition instances were removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`, for example:
+
 ```js
 // Type definitions at 4.27 and earlier
-type IEsriDeps = [
-  __esri.MapConstructor,
-  __esri.MapViewConstructor
-];
+type IEsriDeps = [__esri.MapConstructor, __esri.MapViewConstructor];
 
 // Type definitions at 4.28 and later
-type IEsriDeps = [
-  typeof __esri.Map,
-  typeof __esri.MapView
-];
+type IEsriDeps = [typeof __esri.Map, typeof __esri.MapView];
 ```
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
-|----------|-------------|--------------------|
-| TBD | TBD | TBD |
+| --------------------------- | ---------------- | ------------------ |
+| TBD                         | TBD              | TBD                |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
-* [Esri Community - 1043965](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/querying-geojson-failed-in-4-18/m-p/1043965): Fixed an issue where the [GeoJSONLayer.queryFeatures()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoJSONLayer.html#queryFeatures) not returning results when geometry's extent is used for query.
-* [Esri Community - 1307834](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/attachments-widget-bug/m-p/1307834): Fixed an issue where the [Attachments](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Attachments.html) widget throws an error saying `cannot set properties of null even though graphic valid`.
+
+- [Esri Community - 1043965](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/querying-geojson-failed-in-4-18/m-p/1043965): Fixed an issue where the [GeoJSONLayer.queryFeatures()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoJSONLayer.html#queryFeatures) not returning results when geometry's extent is used for query.
+- [Esri Community - 1307834](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/attachments-widget-bug/m-p/1307834): Fixed an issue where the [Attachments](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Attachments.html) widget throws an error saying `cannot set properties of null even though graphic valid`.
 
 ## Deprecations
 
@@ -43,7 +71,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - For local builds, [Webpack](https://webpack.js.org/) versions prior to `5.84.0` are deprecated at 4.27. This is related to bug fixes in Webpack.
 
 <details>
-  <summary>Click to expand the complete list</summary>  
+  <summary>Click to expand the complete list</summary>
 
 - AreaMeasurement2D.iconClass deprecated since 4.27. Use icon instead.
 - AreaMeasurement3D.iconClass deprecated since 4.27. Use icon instead.
@@ -73,7 +101,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - EventAttachedCallback.EventAttachedCallback deprecated since version 4.24. Use reactiveUtils.ReactiveListenerChangeCallback() instead.
 - Expand.collapseIconClass deprecated since 4.27. Use collapseIcon instead.
 - Expand.expandIconClass deprecated since 4.27. Use expandIcon instead.
-externalRenderers.forceWebGLContext deprecated since 4.27.
+  externalRenderers.forceWebGLContext deprecated since 4.27.
 - FeatureForm.view deprecated since 4.27. Use map instead.
 - FeatureFormViewModel.inputFields deprecated since version 4.27. Instead use inputs.
 - FeatureTable.clearHighlights deprecated since version 4.25. Use highlightIds.removeAll() instead.
