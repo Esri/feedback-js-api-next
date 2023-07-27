@@ -32,7 +32,7 @@ imageElement.animationOptions = {
   // Possible Values:"None"|"Loop"|"Oscillate"
   repeatType: "Oscillate",
   // Represents the number of seconds to delay before repeating an animation cycle.
-  repeatDelay: 0,
+  repeatDelay: 0
 };
 ```
 
@@ -101,7 +101,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - EventAttachedCallback.EventAttachedCallback deprecated since version 4.24. Use reactiveUtils.ReactiveListenerChangeCallback() instead.
 - Expand.collapseIconClass deprecated since 4.27. Use collapseIcon instead.
 - Expand.expandIconClass deprecated since 4.27. Use expandIcon instead.
-  externalRenderers.forceWebGLContext deprecated since 4.27.
+- externalRenderers.forceWebGLContext deprecated since 4.27.
 - FeatureForm.view deprecated since 4.27. Use map instead.
 - FeatureFormViewModel.inputFields deprecated since version 4.27. Instead use inputs.
 - FeatureTable.clearHighlights deprecated since version 4.25. Use highlightIds.removeAll() instead.
