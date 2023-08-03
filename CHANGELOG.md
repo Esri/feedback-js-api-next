@@ -38,10 +38,10 @@ imageElement.animationOptions = {
 
 ## Widget Updates
 
-### LayerList
+### LayerList, BasemapLayerList
 
-Have you ever wanted the look and feel of the MapViewer LayerList in your app?
-We've added a new `style` property to the LayerList widget to do just that.
+Have you ever wanted the look and feel of the MapViewer LayerList or BasemapLayerList in your app?
+We've added a new `style` property to the LayerList and BasemapLayerList widgets to do just that.
 The `style` property currently has two possible values, `classic` and `default.`
 The `classic` style represents the user interface as it has been in previous releases.
 The `default` style brings the styling of the LayerList in MapViewer into the JavaScript SDK.
@@ -103,6 +103,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - Attribution.iconClass deprecated since 4.27. Use icon instead.
 - BasemapGallery.iconClass deprecated since 4.27. Use icon instead.
 - BasemapLayerList.iconClass deprecated since 4.27. Use icon instead.
+- The "classic" possible value for BasemapLayerList.style is depricated at 4.28. Use "default" instead.
 - Bookmarks.iconClass deprecated since 4.27. Use icon instead.
 - BookmarksViewModel.abilities deprecated since 4.27. Use capabilities instead.
 - BuildingExplorer.iconClass deprecated since 4.27. Use icon instead.
