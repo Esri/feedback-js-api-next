@@ -57,9 +57,9 @@ At version 4.31, we will remove the `classic` style, and the `default` style wil
 
 ```js
 const layerList = new LayerList({
-  style: "default"
+  style: "default",
   view
-})
+});
 ```
 
 ## Breaking Changes
