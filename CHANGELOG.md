@@ -38,9 +38,9 @@ imageElement.animationOptions = {
 
 ## Widget Updates
 
-### LayerList, BasemapLayerList
+### LayerList and BasemapLayerList styles
 
-Have you ever wanted the look and feel of the MapViewer LayerList or BasemapLayerList in your app?
+Have you ever wanted to update the look and feel of the LayerList or BasemapLayerList in your app?
 We've added a new `style` property to the LayerList and BasemapLayerList widgets to do just that.
 The `style` property currently has two possible values, `classic` and `default.`
 The `classic` style represents the user interface as it has been in previous releases.
