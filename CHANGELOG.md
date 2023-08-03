@@ -40,11 +40,15 @@ imageElement.animationOptions = {
 
 ### LayerList and BasemapLayerList styles
 
-Have you ever wanted to update the look and feel of the LayerList or BasemapLayerList in your app?
+Have you ever wanted to update the look and feel of the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) or [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) in your app?
 We've added a new `style` property to the LayerList and BasemapLayerList widgets to do just that.
 The `style` property currently has two possible values, `classic` and `default.`
 The `classic` style represents the user interface as it has been in previous releases.
-The `default` style brings the styling of the LayerList in MapViewer into the JavaScript SDK.
+The new `default` style slightly modifies the original `classic` style in several ways.
+We moved the visibility icons (eyeballs) to the right-hand side of the layers title.
+When a layer is not visible, the non-visible icon will appear to the right of the layer's title.
+If the layer is visible, the eyeball icon indicating visibility will be hidden until the list item is hovered over or tapped on.
+We did this to reduce the number of repeating icons in layer lists and feel it provides a cleaner user interface.
 
 At this release, version 4.28, the default value for style will be `classic`.
 At the next release, version 4.29, we are switching the default style to `default`.
