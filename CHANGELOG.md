@@ -38,6 +38,30 @@ imageElement.animationOptions = {
 
 ## Widget Updates
 
+### LayerList and BasemapLayerList styles
+
+Have you ever wanted to update the look and feel of the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) or [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) in your app?
+We've added a new `style` property to the LayerList and BasemapLayerList widgets to do just that.
+The `style` property currently has two possible values, `classic` and `default.`
+The `classic` style represents the user interface as it has been in previous releases.
+The new `default` style slightly modifies the original `classic` style in several ways.
+We moved the visibility icons (eyeballs) to the right-hand side of the layers title.
+When a layer is not visible, the non-visible icon will appear to the right of the layer's title.
+If the layer is visible, the eyeball icon indicating visibility will be hidden until the list item is hovered over or tapped on.
+We did this to reduce the number of repeating icons in layer lists and feel it provides a cleaner user interface.
+
+At this release, version 4.28, the default value for style will be `classic`.
+At the next release, version 4.29, we are switching the default style to `default`.
+The `classic` style will still be available until version 4.31.
+At version 4.31, we will remove the `classic` style, and the `default` style will be the only option available.
+
+```js
+const layerList = new LayerList({
+  style: "default",
+  view
+});
+```
+
 ## Breaking Changes
 
 - `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
@@ -83,6 +107,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - Attribution.iconClass deprecated since 4.27. Use icon instead.
 - BasemapGallery.iconClass deprecated since 4.27. Use icon instead.
 - BasemapLayerList.iconClass deprecated since 4.27. Use icon instead.
+- The "classic" possible value for BasemapLayerList.style is depricated at 4.28. Use "default" instead.
 - Bookmarks.iconClass deprecated since 4.27. Use icon instead.
 - BookmarksViewModel.abilities deprecated since 4.27. Use capabilities instead.
 - BuildingExplorer.iconClass deprecated since 4.27. Use icon instead.
@@ -133,6 +158,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - InputField deprecated since 4.27. Use FieldInput instead.
 - InputFieldGroup deprecated since 4.27. Use GroupInput instead.
 - LayerList.iconClass deprecated since 4.27. Use icon instead.
+- The "classic" possible value for LayerList.style is depricated at 4.28. Use "default" instead.
 - Legend.iconClass deprecated since 4.27. Use icon instead.
 - Lighting deprecated since version 4.24. Use SunLighting instead.
 - LineOfSight.iconClass deprecated since 4.27. Use icon instead.
