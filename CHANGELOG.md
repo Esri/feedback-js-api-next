@@ -38,6 +38,26 @@ imageElement.animationOptions = {
 
 ## Widget Updates
 
+### LayerList
+
+Have you ever wanted the look and feel of the MapViewer LayerList in your app?
+We've added a new `style` property to the LayerList widget to do just that.
+The `style` property currently has two possible values, `classic` and `default.`
+The `classic` style represents the user interface as it has been in previous releases.
+The `default` style brings the styling of the LayerList in MapViewer into the JavaScript SDK.
+
+At this release, version 4.28, the default value for style will be `classic`.
+At the next release, version 4.29, we are switching the default style to `default`.
+The `classic` style will still be available until version 4.31.
+At version 4.31, we will remove the `classic` style, and the `default` style will be the only option available.
+
+```js
+const layerList = new LayerList({
+  style: "default"
+  view
+})
+```
+
 ## Breaking Changes
 
 - `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
@@ -133,6 +153,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - InputField deprecated since 4.27. Use FieldInput instead.
 - InputFieldGroup deprecated since 4.27. Use GroupInput instead.
 - LayerList.iconClass deprecated since 4.27. Use icon instead.
+- The "classic" possible value for LayerList.style is depricated at 4.28. Use "default" instead.
 - Legend.iconClass deprecated since 4.27. Use icon instead.
 - Lighting deprecated since version 4.24. Use SunLighting instead.
 - LineOfSight.iconClass deprecated since 4.27. Use icon instead.
