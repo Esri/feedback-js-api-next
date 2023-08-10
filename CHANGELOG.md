@@ -15,24 +15,13 @@ A new `animationOptions` property on [ImageElement](https://developers.arcgis.co
 imageElement.animationOptions = {
   // Indicates whether the animated image should play its animation.
   playAnimation: true,
-  // Indicates whether the animated image should play back in reverse.
-  reverseAnimation: false,
-  // Indicates whether to generate a randomized start offset in seconds
-  // to apply to the image animation.
-  randomizeStartTime: false,
-  // Represents the starting value for generating a random number and is
-  // used by the randomizeStartTime property to determine the time offset for each feature.
-  randomizeStartSeed: 1,
-  // The time offset (in seconds) to use as the starting point of the layer
-  // animation if randomizeStartTime is false.
-  startTimeOffset: 0,
   // The time (in seconds) it takes to play through the layer's animation once.
   duration: 4,
   // Determines how to repeat the animation of a layer when the animation cycle ends.
-  // Possible Values:"None"|"Loop"|"Oscillate"
-  repeatType: "Oscillate",
+  // Possible Values:"none"|"loop"|"oscillate"
+  repeatType: "oscillate",
   // Represents the number of seconds to delay before repeating an animation cycle.
-  repeatDelay: 0
+  repeatDelay: 0,
 };
 ```
 
@@ -58,7 +47,7 @@ At version 4.31, we will remove the `classic` style, and the `default` style wil
 ```js
 const layerList = new LayerList({
   style: "default",
-  view
+  view,
 });
 ```
 
