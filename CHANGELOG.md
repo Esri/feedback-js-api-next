@@ -21,7 +21,7 @@ imageElement.animationOptions = {
   // Possible Values:"none"|"loop"|"oscillate"
   repeatType: "oscillate",
   // Represents the number of seconds to delay before repeating an animation cycle.
-  repeatDelay: 0,
+  repeatDelay: 0
 };
 ```
 
@@ -47,7 +47,7 @@ At version 4.31, we will remove the `classic` style, and the `default` style wil
 ```js
 const layerList = new LayerList({
   style: "default",
-  view,
+  view
 });
 ```
 
