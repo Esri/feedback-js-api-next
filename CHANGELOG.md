@@ -82,6 +82,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - Fixed an issue where setting the `featureMenuOpen` option to true in [Features.open()](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html#open) and [Popup.open()](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#open) was not opening a list of selected features.
 - Fixed an issue where setting the `heading` [VisibleElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html#VisibleElements) on the Features widget to `false` was not hiding the heading in the UI.
 - [ArcGIS Ideas - 1310879](https://community.esri.com/t5/arcgis-javascript-maps-sdk-ideas/improve-media-pagination-experience-in-popup/idi-p/1310879) - Enhanced [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) to only show pagination when there are multiple media elements added to the [mediaInfos](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html#mediaInfos) array.
+- Enhanced the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) to always be expanded by default regardless of the view's size.
 
 ## Deprecations
 
