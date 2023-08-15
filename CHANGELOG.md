@@ -4,6 +4,27 @@ The `next` version of 4.28 is now available. Planned release date is October 202
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## Basemap styles service (v2)
+
+We've added support for the [Basemap styles service (v2)](https://developers.arcgis.com/rest/basemap-styles/), which brings support for a variety of basemaps with localized place labels. These basemaps can be created from a string in the form of `{provider}/{style}`, where provider is "arcgis" or "osm".  See [ArcGIS basemap styles](https://developers.arcgis.com/rest/basemap-styles/#arcgis-styles) and [OSM basemap styles](https://developers.arcgis.com/rest/basemap-styles/#osm-styles) for the full list of available styles.
+
+The new `Basemap.style` property allows you to specify both the basemap ID and the language. If no language is specified, the app's current [locale](https://developers.arcgis.com/javascript/latest/api-reference/esri-intl.html#getLocale) will be used to determine the language of the place labels. See the full list of [supported languages](https://developers.arcgis.com/rest/basemap-styles/#languages).
+
+```js
+const map = new Map({
+  basemap: "osm/standard-relief" // string representing a basemap id from the styles service
+  // place label language will be determined based on the app's locale
+});
+
+const basemap = new Basemap({
+  style: {
+    id: "arcgis/outdoor",
+    language: "es" // place labels will be displayed in spanish
+  }
+});
+```
+> Use of the basemap style service requires authentication via an API key or user login.
+
 ## Layer updates
 
 ### MediaLayer
