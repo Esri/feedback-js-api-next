@@ -52,22 +52,22 @@ imageElement.animationOptions = {
 
 Have you ever wanted to update the look and feel of the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) or [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) in your app?
 We've added a new `style` property to the LayerList and BasemapLayerList widgets to do just that.
-The `style` property currently has two possible values, `classic` and `default.`
+The `style` property currently has two possible values, `classic` and `modern.`
 The `classic` style represents the user interface as it has been in previous releases.
-The new `default` style slightly modifies the original `classic` style in several ways.
+The new `modern` style slightly modifies the original `classic` style in several ways.
 We moved the visibility icons (eyeballs) to the right-hand side of the layers title.
 When a layer is not visible, the non-visible icon will appear to the right of the layer's title.
 If the layer is visible, the eyeball icon indicating visibility will be hidden until the list item is hovered over or tapped on.
 We did this to reduce the number of repeating icons in layer lists and feel it provides a cleaner user interface.
 
 At this release, version 4.28, the default value for style will be `classic`.
-At the next release, version 4.29, we are switching the default style to `default`.
+At the next release, version 4.29, we are switching the default style to `modern`.
 The `classic` style will still be available until version 4.31.
-At version 4.31, we will remove the `classic` style, and the `default` style will be the only option available.
+At version 4.28 the `style` property is deprecated and will be removed at version 4.31.
 
 ```js
 const layerList = new LayerList({
-  style: "default",
+  style: "modern",
   view
 });
 ```
@@ -103,6 +103,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - Fixed an issue where setting the `featureMenuOpen` option to true in [Features.open()](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html#open) and [Popup.open()](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#open) was not opening a list of selected features.
 - Fixed an issue where setting the `heading` [VisibleElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html#VisibleElements) on the Features widget to `false` was not hiding the heading in the UI.
 - [ArcGIS Ideas - 1310879](https://community.esri.com/t5/arcgis-javascript-maps-sdk-ideas/improve-media-pagination-experience-in-popup/idi-p/1310879) - Enhanced [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) to only show pagination when there are multiple media elements added to the [mediaInfos](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html#mediaInfos) array.
+- Enhanced the styling of empty [GroupLayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html) in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) by adding a dashed outline and the text "There are currently no items to display."
 - Enhanced the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) to always be expanded by default regardless of the view's size.
 
 ## Deprecations
@@ -119,7 +120,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - Attribution.iconClass deprecated since 4.27. Use icon instead.
 - BasemapGallery.iconClass deprecated since 4.27. Use icon instead.
 - BasemapLayerList.iconClass deprecated since 4.27. Use icon instead.
-- The "classic" possible value for BasemapLayerList.style is depricated at 4.28. Use "default" instead.
+- BasemapLayerList.style is deprecated since 4.28.
 - Bookmarks.iconClass deprecated since 4.27. Use icon instead.
 - BookmarksViewModel.abilities deprecated since 4.27. Use capabilities instead.
 - BuildingExplorer.iconClass deprecated since 4.27. Use icon instead.
@@ -170,7 +171,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - InputField deprecated since 4.27. Use FieldInput instead.
 - InputFieldGroup deprecated since 4.27. Use GroupInput instead.
 - LayerList.iconClass deprecated since 4.27. Use icon instead.
-- The "classic" possible value for LayerList.style is depricated at 4.28. Use "default" instead.
+- LayerList.style is deprecated since 4.28.
 - Legend.iconClass deprecated since 4.27. Use icon instead.
 - Lighting deprecated since version 4.24. Use SunLighting instead.
 - LineOfSight.iconClass deprecated since 4.27. Use icon instead.
