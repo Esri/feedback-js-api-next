@@ -108,6 +108,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - [ArcGIS Ideas - 1310879](https://community.esri.com/t5/arcgis-javascript-maps-sdk-ideas/improve-media-pagination-experience-in-popup/idi-p/1310879) - Enhanced [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) to only show pagination when there are multiple media elements added to the [mediaInfos](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html#mediaInfos) array.
 - Enhanced the styling of empty [GroupLayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html) in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) by adding a dashed outline and the text "There are currently no items to display."
 - Enhanced the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) to always be expanded by default regardless of the view's size.
+- Enhanced the [ScaleRangeSlider](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) with a UI indicating unavailable scale ranges when used with [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html).
 
 ## Deprecations
 
