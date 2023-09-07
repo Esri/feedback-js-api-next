@@ -72,6 +72,29 @@ const layerList = new LayerList({
 });
 ```
 
+### Custom chart colors for Popup, Features, and Feature widget
+
+At this release, chart colors can be customized using the new `colors` property on the [ChartMediaInfoValue](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-support-ChartMediaInfoValue.html) class. These colors are respected when displaying charts in the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html), [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html), and [Feature](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature.html) widgets. Customizing chart colors is as simple as creating an array of [color](https://developers.arcgis.com/javascript/latest/api-reference/esri-Color.html) objects that is equal to the length of the [fields](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-support-ChartMediaInfoValue.html#fields) property.
+
+```js
+const chartMediaInfoValue = new ChartMediaInfoValue({
+  colors: [new Color("red"), new Color("yellow"), new Color("green"), new Color("blue")],
+  // colors will be applied to each field in their respective order
+  fields: ["field1", "field2", "field3", "field4"]
+});
+```
+
+The default colors used in charts were updated to meet the [WCAG contrast ratio](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html) accessibility standards for both light and dark theme. Symbology can be set with these colors by using the new "Olympic Sunset" color ramp.
+
+### Popup design updates
+#### Refactor to use Calcite Design System
+
+The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget has been refactored to utilize [Calcite Design System](https://developers.arcgis.com/calcite-design-system/) components. This update results in the action bar being anchored below the Popup header and the pagination buttons being moved to the opposite side of the Popup from the feature menu button.
+
+#### Feature menu layer grouping
+
+The feature menu for viewing a list of features selected in the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) or [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widget now groups the features by layer. Now you can easily distinguish which layer the feature resides in with the list view. This change is also applied when browsing clustered features.
+
 ## Breaking Changes
 
 - `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
