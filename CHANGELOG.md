@@ -95,6 +95,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 ## Bug fixes and enhancements
 
+- BUG-000145275: Fixed an issue where some [SimpleMarkerSymbols](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-SimpleMarkerSymbol.html) created from an SVG `path` were only partially rendered.
 - BUG-000156080: Fixed an issue where requests for features not visible or displayed would still fire when [snapping using the Editor](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-interactive-snapping-SnappingOptions.html).
 - BUG-000158754: Fixed an issue where the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget was displaying features in reverse order with [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html) [sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers).
 - BUG-000159808: The [Editor](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html) widget no longer expands upwards when working with numerous values within a [ComboBoxInput](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-inputs-ComboBoxInput.html).
