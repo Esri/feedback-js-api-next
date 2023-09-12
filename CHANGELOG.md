@@ -101,14 +101,13 @@ The feature menu for viewing a list of features selected in the [Popup](https://
 - The legacy basemap `national-geographic` named basemap was removed at 4.28.
 - Four of the legacy basemaps have been redefined to their vector equivalents because they were based on no longer updated services that are in Mature Support: `topo`, `streets`, `gray` and `dark-gray`.
 - `*Constructor` TypeScript definition instances were removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`, for example:
+  ```js
+  // Type definitions at 4.27 and earlier
+  type IEsriDeps = [__esri.MapConstructor, __esri.MapViewConstructor];
 
-```js
-// Type definitions at 4.27 and earlier
-type IEsriDeps = [__esri.MapConstructor, __esri.MapViewConstructor];
-
-// Type definitions at 4.28 and later
-type IEsriDeps = [typeof __esri.Map, typeof __esri.MapView];
-```
+  // Type definitions at 4.28 and later
+  type IEsriDeps = [typeof __esri.Map, typeof __esri.MapView];
+  ```
 
 - The default value of [`VoxelLayer.popupEnabled`](https://developers.arcgis.com/api-reference/esri-layers-VoxelLayer.html#popupEnabled) changed from `true` to `false`.
 - The [`MapView.goTo()`](https://developers.arcgis.com/api-reference/esri-views-MapView.html#goTo) default behavior has been changed to automatically be normalized based on the [`center`](https://developers.arcgis.com/api-reference/esri-views-MapView.html#center) of the view. Set `pickClosestTarget` in the [GoToOptions2D](https://developers.arcgis.com/api-reference/esri-views-MapView.html#GoToOptions2D) to `false` to disable this behavior. For example, to disable the default `goTo()` behavior for the [Popup](https://developers.arcgis.com/api-reference/esri-widgets-Popup.html), use [`goToOverride`](https://developers.arcgis.com/api-reference/esri-widgets-Popup.html#goToOverride) and set `pickClosestTarget` to `false`:
