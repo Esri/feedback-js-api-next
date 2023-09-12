@@ -98,6 +98,8 @@ The feature menu for viewing a list of features selected in the [Popup](https://
 ## Breaking Changes
 
 - `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
+- The legacy basemap `national-geographic` named basemap was removed at 4.28.
+- Four of the legacy basemaps have been redefined to their vector equivalents because they were based on no longer updated services that are in Mature Support: `topo`, `streets`, `gray` and `dark-gray`.
 - `*Constructor` TypeScript definition instances were removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`, for example:
 
 ```js
@@ -107,6 +109,16 @@ type IEsriDeps = [__esri.MapConstructor, __esri.MapViewConstructor];
 // Type definitions at 4.28 and later
 type IEsriDeps = [typeof __esri.Map, typeof __esri.MapView];
 ```
+
+- The default value of [`VoxelLayer.popupEnabled`](https://developers.arcgis.com/api-reference/esri-layers-VoxelLayer.html#popupEnabled) changed from `true` to `false`.
+- The [`MapView.goTo()`](https://developers.arcgis.com/api-reference/esri-views-MapView.html#goTo) default behavior has been changed to automatically be normalized based on the [`center`](https://developers.arcgis.com/api-reference/esri-views-MapView.html#center) of the view. Set `pickClosestTarget` in the [GoToOptions2D](https://developers.arcgis.com/api-reference/esri-views-MapView.html#GoToOptions2D) to `false` to disable this behavior. For example, to disable the default `goTo()` behavior for the [Popup](https://developers.arcgis.com/api-reference/esri-widgets-Popup.html), use [`goToOverride`](https://developers.arcgis.com/api-reference/esri-widgets-Popup.html#goToOverride) and set `pickClosestTarget` to `false`:
+
+  ```js
+  view.popup.goToOverride = (view, goToParams) => {
+    goToParams.options.pickClosestTarget = false;
+    return view.goTo(goToParams.target, goToParams.options);
+  };
+  ```
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
@@ -119,9 +131,13 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000145275: Fixed an issue where some [SimpleMarkerSymbols](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-SimpleMarkerSymbol.html) created from an SVG `path` were only partially rendered.
+- BUG-000156019: Fixed an issue where the [minScale](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html#minScale) and [maxScale](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html#maxScale) values of labels were not being honored consistently.
 - BUG-000156080: Fixed an issue where requests for features not visible or displayed would still fire when [snapping using the Editor](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-interactive-snapping-SnappingOptions.html).
 - BUG-000158754: Fixed an issue where the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget was displaying features in reverse order with [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html) [sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers).
 - BUG-000159808: The [Editor](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html) widget no longer expands upwards when working with numerous values within a [ComboBoxInput](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-inputs-ComboBoxInput.html).
+- BUG-000160035: Fixed an accessibility issue where tabbing options within the [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget did not work as expected.
+- BUG-000160198: Updated the documentation for the curbApproach property of the PointBarrier class.
+- BUG-000160794: Fixed an issue where zooming to a polygon that crossed the date line would zoom to the entire world extent.
 - BUG-000161208, [Esri Community - 1323058](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/layer-list-item-panel-expand-collapse-button-has/m-p/1323058): Fixed an accessibility issue in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) where the button to open the [ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html) was missing a tabindex.
 - [Esri Community - 1043965](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/querying-geojson-failed-in-4-18/m-p/1043965): Fixed an issue where the [GeoJSONLayer.queryFeatures()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoJSONLayer.html#queryFeatures) not returning results when geometry's extent is used for query.
 - [Esri Community - 1221477](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/medialayer-hittest-not-returning-source-pixel/m-p/1221477): Enhanced [MediaHit](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#MediaHit) to include the [sourcePoint](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ControlPointsGeoreference.html#SourcePoint), an object representing a point on the element. The origin (0, 0) corresponds to the top-left corner of the element.
@@ -131,10 +147,14 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - Fixed an issue where setting the `featureMenuOpen` option to true in [Features.open()](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html#open) and [Popup.open()](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#open) was not opening a list of selected features.
 - Fixed an issue where setting the `heading` [VisibleElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html#VisibleElements) on the Features widget to `false` was not hiding the heading in the UI.
 - Fixed an issue where the [ScaleRangeSlider](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) was mirrored incorrectly when `dir="rtl"`.
+- Fixed an issue with inconsistent [labeling](https://developers.arcgis.com/javascript/latest/labeling/) of features without symbols.
+- Fixed an issue with the `barrierType` documentation for [PointBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PointBarrier.html#barrierType), [PolygonBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PolygonBarrier.html#barrierType), and [PolylineBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PolylineBarrier.html#barrierType).
 - [ArcGIS Ideas - 1310879](https://community.esri.com/t5/arcgis-javascript-maps-sdk-ideas/improve-media-pagination-experience-in-popup/idi-p/1310879) - Enhanced [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) to only show pagination when there are multiple media elements added to the [mediaInfos](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html#mediaInfos) array.
+- [Esri Community - 1221477](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/medialayer-hittest-not-returning-source-pixel/m-p/1221477): Enhanced [MediaHit](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#MediaHit) to include the [sourcePoint](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ControlPointsGeoreference.html#SourcePoint), an object representing a point on the element. The origin (0, 0) corresponds to the top-left corner of the element.
 - Enhanced the styling of empty [GroupLayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html) in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) by adding a dashed outline and the text "There are currently no items to display."
 - Enhanced the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) to always be expanded by default regardless of the view's size.
 - Enhanced the [ScaleRangeSlider](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) with a UI indicating unavailable scale ranges when used with [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html).
+- Enhanced the [ParameterValue](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ParameterValue.html) by adding a new [paramName](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ParameterValue.html#paramName) property.
 
 ## Deprecations
 
