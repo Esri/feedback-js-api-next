@@ -23,7 +23,7 @@ const basemap = new Basemap({
   }
 });
 ```
-> Use of the basemap style service requires authentication via an API key or user login.
+> Use of the basemap style service requires authentication via an API key or user authentication.
 
 ## Layer updates
 
@@ -148,6 +148,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - Fixed an issue where the [ScaleRangeSlider](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) was mirrored incorrectly when `dir="rtl"`.
 - Fixed an issue with inconsistent [labeling](https://developers.arcgis.com/javascript/latest/labeling/) of features without symbols.
 - Fixed an issue with the `barrierType` documentation for [PointBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PointBarrier.html#barrierType), [PolygonBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PolygonBarrier.html#barrierType), and [PolylineBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PolylineBarrier.html#barrierType).
+- ENH-000137147: Added the ability to customize [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html), [Feature](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature.html), and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) chart colors with the new `colors` property on [ChartMediaInfoValue](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-support-ChartMediaInfoValue.html).
 - [ArcGIS Ideas - 1310879](https://community.esri.com/t5/arcgis-javascript-maps-sdk-ideas/improve-media-pagination-experience-in-popup/idi-p/1310879) - Enhanced [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) to only show pagination when there are multiple media elements added to the [mediaInfos](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html#mediaInfos) array.
 - [Esri Community - 1221477](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/medialayer-hittest-not-returning-source-pixel/m-p/1221477): Enhanced [MediaHit](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#MediaHit) to include the [sourcePoint](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ControlPointsGeoreference.html#SourcePoint), an object representing a point on the element. The origin (0, 0) corresponds to the top-left corner of the element.
 - Enhanced the styling of empty [GroupLayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html) in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) by adding a dashed outline and the text "There are currently no items to display."
