@@ -97,9 +97,10 @@ The feature menu for viewing a list of features selected in the [Popup](https://
 
 ## Breaking Changes
 
-- `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
 - The legacy basemap `national-geographic` named basemap was removed at 4.28.
 - Four of the legacy basemaps have been redefined to their vector equivalents because they were based on no longer updated services that are in Mature Support: `topo`, `streets`, `gray` and `dark-gray`.
+- The [`@types/arcgis-js-api`](https://www.npmjs.com/package/@types/arcgis-js-api) package was deprecated in NPM at 4.28. This package was for use in AMD-based applications. Download the latest definition files from the [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/typescript/archive) archive, or NPM install `arcgis-js-api`. These changes do not affect applications using ES modules with `@arcgis/core`.
+- `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
 - `*Constructor` TypeScript definition instances were removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`, for example:
   ```js
   // Type definitions at 4.27 and earlier
