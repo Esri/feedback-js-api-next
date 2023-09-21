@@ -110,8 +110,8 @@ The feature menu for viewing a list of features selected in the [Popup](https://
   type IEsriDeps = [typeof __esri.Map, typeof __esri.MapView];
   ```
 
-- The default value of [`VoxelLayer.popupEnabled`](https://developers.arcgis.com/api-reference/esri-layers-VoxelLayer.html#popupEnabled) changed from `true` to `false`.
-- The [`MapView.goTo()`](https://developers.arcgis.com/api-reference/esri-views-MapView.html#goTo) default behavior has been changed to automatically be normalized based on the [`center`](https://developers.arcgis.com/api-reference/esri-views-MapView.html#center) of the view. Set `pickClosestTarget` in the [GoToOptions2D](https://developers.arcgis.com/api-reference/esri-views-MapView.html#GoToOptions2D) to `false` to disable this behavior. For example, to disable the default `goTo()` behavior for the [Popup](https://developers.arcgis.com/api-reference/esri-widgets-Popup.html), use [`goToOverride`](https://developers.arcgis.com/api-reference/esri-widgets-Popup.html#goToOverride) and set `pickClosestTarget` to `false`:
+- The default value of [`VoxelLayer.popupEnabled`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VoxelLayer.html#popupEnabled) changed from `true` to `false`.
+- The [`MapView.goTo()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#goTo) default behavior has been changed to automatically be normalized based on the [`center`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#center) of the view. Set `pickClosestTarget` in the [GoToOptions2D](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#GoToOptions2D) to `false` to disable this behavior. For example, to disable the default `goTo()` behavior for the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html), use [`goToOverride`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#goToOverride) and set `pickClosestTarget` to `false`:
 
   ```js
   view.popup.goToOverride = (view, goToParams) => {
@@ -119,16 +119,35 @@ The feature menu for viewing a list of features selected in the [Popup](https://
     return view.goTo(goToParams.target, goToParams.options);
   };
   ```
-- The `auto` and `authorization-code` values for [OAuthInfo.flowtype](https://developers.arcgis.com/api-reference/esri-identity-OAuthInfo.html#flowtype) no longer check if the [`popup`](https://developers.arcgis.com/api-reference/esri-identity-OAuthInfo.html#popup) property is set to `true` or `false`.
-This change affects applications that use the `auto` [flowtype](https://developers.arcgis.com/api-reference/esri-identity-OAuthInfo.html#flowtype) and set the [`popup`](https://developers.arcgis.com/api-reference/esri-identity-OAuthInfo.html#popup) property to `true`.
-The [callback page](https://developers.arcgis.com/api-reference/esri-identity-OAuthInfo.html#popupCallbackUrl) being used needs to be updated to support two-factor authentication.
+- The `auto` and `authorization-code` values for [OAuthInfo.flowtype](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#flowtype) no longer check if the [`popup`](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popup) property is set to `true` or `false`.
+This change affects applications that use the `auto` [flowtype](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#flowtype) and set the [`popup`](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popup) property to `true`.
+The [callback page](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popupCallbackUrl) being used needs to be updated to support two-factor authentication.
 To aid in this, the [default oauth-callback.html](https://github.com/Esri/jsapi-resources/blob/main/oauth/oauth-callback.html) has been updated to allow for the two-step approach and will still work if using the one-step flow.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
-| --------------------------- | ---------------- | ------------------ |
-| TBD                         | TBD              | TBD                |
+|-----------------------------|------------------|--------------------|
+| `esri/core/watchUtils`      | Use [esri/core/reactiveUtils](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html) instead | 4.24 |
+| `watchUtils.init()`         | Use [reactiveUtils.watch()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#watch) with the [ReactiveWatchOptions](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#ReactiveWatchOptions) `initial` property set to `true` | 4.24 |
+| `watchUtils.on()`           | Use [reactiveUtils.on](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#on) instead | 4.24 |
+| `watchUtils.once()`         | Use [reactiveUtils.once()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#once) instead | 4.24 |
+| `watchUtils.pausable()`     | none | 4.24 | 
+| `watchUtils.watch()`        | Use [reactiveUtils.watch()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#watch) instead | 4.24 |
+| `watchUtils.when()`         | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
+| `watchUtils.whenDefined()`  | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
+| `watchUtils.whenDefinedOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
+| `watchUtils.whenEqual()`    | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
+| `watchUtils.whenEqualOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
+| `watchUtils.whenFalse()`    | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
+| `watchUtils.whenFalseOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
+| `watchUtils.whenNot()`      | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
+| `watchUtils.whenNotOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
+| `watchUtils.whenOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
+| `watchUtils.whenTrue()` | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
+| `watchUtils.whenTrueOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
+| `watchUtils.whenUndefined()` | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
+| `watchUtils.whenUndefinedOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
