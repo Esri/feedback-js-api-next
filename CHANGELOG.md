@@ -148,6 +148,11 @@ The following classes, methods, properties and events have been deprecated for a
 | `watchUtils.whenTrueOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
 | `watchUtils.whenUndefined()` | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
 | `watchUtils.whenUndefinedOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
+| `FeatureTable.fieldConfigs[]` | Set the field columns using the FeatureTable's [tableTemplate](/api-reference/esri-widgets-FeatureTable.html#tableTemplate) property. This provides access to the [columnTemplates](/api-reference/esri-widgets-FeatureTable.html#columnTemplates). | 4.24 |
+| `FeatureTableViewModel.fieldConfigs[]` | Set the field columns using the FeatureTable's [tableTemplate](/api-reference/esri-widgets-FeatureTable.html#tableTemplate) property. This provides access to the [columnTemplates](/api-reference/esri-widgets-FeatureTable.html#columnTemplates). | 4.24 |
+| `FieldGroup` class | Use [FieldElement](/api-reference/esri-form-elements-FieldElement.html) instead | 4.23 |
+| `FieldGroupConfig` class | Use [GroupElement](/api-reference/esri-form-elements-GroupElement.html) if working with the [FeatureForm](/api-reference/esri-widgets-FeatureForm.html) widget or [GroupColumnTemplate](/api-reference/esri-widgets-FeatureTable-support-GroupColumnTemplate.html) if working with the [FeatureTable](/api-reference/esri-widgets-FeatureTable.html) widget.  | 4.23 |
+| `FieldColumnConfig` class | Use [FieldColumnTemplate](/api-reference/esri-widgets-FeatureTable-support-FieldColumnTemplate.html) instead | 4.23 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
