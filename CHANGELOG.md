@@ -35,7 +35,7 @@ A new `animationOptions` property on [ImageElement](https://developers.arcgis.co
 ```js
 imageElement.animationOptions = {
   // Indicates whether the animated image should play its animation.
-  playAnimation: true,
+  playing: true,
   // The time (in seconds) it takes to play through the layer's animation once.
   duration: 4,
   // Determines how to repeat the animation of a layer when the animation cycle ends.
