@@ -1,289 +1,221 @@
 # Change log
 
-The `next` version of 4.28 is now available. Planned release date is October 2023.
+The `next` version of 4.29 is now available. Planned release date is February 2024.
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
-## Basemap styles service (v2)
-
-We've added support for the [Basemap styles service (v2)](https://developers.arcgis.com/rest/basemap-styles/), which brings support for a variety of basemaps with localized place labels. These basemaps can be created from a string in the form of `{provider}/{style}`, where provider is "arcgis" or "osm".  See [ArcGIS basemap styles](https://developers.arcgis.com/rest/basemap-styles/#arcgis-styles) and [OSM basemap styles](https://developers.arcgis.com/rest/basemap-styles/#osm-styles) for the full list of available styles.
-
-The new `Basemap.style` property allows you to specify both the basemap ID and the language. If no language is specified, the app's current [locale](https://developers.arcgis.com/javascript/latest/api-reference/esri-intl.html#getLocale) will be used to determine the language of the place labels. See the full list of [supported languages](https://developers.arcgis.com/rest/basemap-styles/#languages).
-
-```js
-const map = new Map({
-  basemap: "osm/standard-relief" // string representing a basemap id from the styles service
-  // place label language will be determined based on the app's locale
-});
-
-const basemap = new Basemap({
-  style: {
-    id: "arcgis/outdoor",
-    language: "es" // place labels will be displayed in spanish
-  }
-});
-```
-> Use of the basemap style service requires authentication via an API key or user authentication.
-
 ## Layer updates
-
-### MediaLayer
-
-Added support for animated GIF and APNG images in the [MediaLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html).
-A new `animationOptions` property on [ImageElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ImageElement.html) controls the animation playback options.
-
-```js
-imageElement.animationOptions = {
-  // Indicates whether the animated image should play its animation.
-  playing: true,
-  // The time (in seconds) it takes to play through the layer's animation once.
-  duration: 4,
-  // Determines how to repeat the animation of a layer when the animation cycle ends.
-  // Possible Values:"none"|"loop"|"oscillate"
-  repeatType: "oscillate",
-  // Represents the number of seconds to delay before repeating an animation cycle.
-  repeatDelay: 0
-};
-```
 
 ## Widget Updates
 
-### Custom chart colors for Popup, Features, and Feature widget
-
-At this release, chart colors can be customized using the new `colors` property on the [ChartMediaInfoValue](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-support-ChartMediaInfoValue.html) class. These colors are respected when displaying charts in the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html), [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html), and [Feature](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature.html) widgets. Customizing chart colors is as simple as creating an array of [color](https://developers.arcgis.com/javascript/latest/api-reference/esri-Color.html) objects that is equal to the length of the [fields](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-support-ChartMediaInfoValue.html#fields) property.
-
-```js
-const chartMediaInfoValue = new ChartMediaInfoValue({
-  colors: [new Color("red"), new Color("yellow"), new Color("green"), new Color("blue")],
-  // colors will be applied to each field in their respective order
-  fields: ["field1", "field2", "field3", "field4"]
-});
-```
-
-The default colors used in charts were updated to meet the [WCAG contrast ratio](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html) accessibility standards for both light and dark theme. Symbology can be set with these colors by using the new "Olympic Sunset" color ramp.
-
-### Popup design updates
-#### Refactor to use Calcite Design System
-
-The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget has been refactored to utilize [Calcite Design System](https://developers.arcgis.com/calcite-design-system/) components. This update results in the action bar being anchored below the Popup header and the pagination buttons being moved to the opposite side of the Popup from the feature menu button.
-
-#### Feature menu layer grouping
-
-The feature menu for viewing a list of features selected in the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) or [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widget now groups the features by layer. Now you can easily distinguish which layer the feature resides in with the list view. This change is also applied when browsing clustered features.
-
 ## Breaking Changes
 
-- The legacy basemap `national-geographic` named basemap was removed at 4.28.
-- Four of the legacy basemaps have been redefined to their vector equivalents because they were based on no longer updated services that are in Mature Support: `topo`, `streets`, `gray` and `dark-gray`.
-- The [`@types/arcgis-js-api`](https://www.npmjs.com/package/@types/arcgis-js-api) package was deprecated in NPM at 4.28. This package was for use in AMD-based applications. Download the latest definition files from the [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/typescript/archive) archive, or NPM install `arcgis-js-api`. These changes do not affect applications using ES modules with `@arcgis/core`.
-- `IPromise` TypeScript definition was removed at 4.28. Use native `Promise` instead.
-- `*Constructor` TypeScript definition instances were removed at 4.28. Update usage of `__esri.ModuleConstructor` to `typeof __esri.Module`, or `import` the module from typings and change the type assignment to `typeof Module`, for example:
-  ```js
-  // Type definitions at 4.27 and earlier
-  type IEsriDeps = [__esri.MapConstructor, __esri.MapViewConstructor];
-
-  // Type definitions at 4.28 and later
-  type IEsriDeps = [typeof __esri.Map, typeof __esri.MapView];
-  ```
-
-- The default value of [`VoxelLayer.popupEnabled`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VoxelLayer.html#popupEnabled) changed from `true` to `false`.
-- The [`MapView.goTo()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#goTo) default behavior has been changed to automatically be normalized based on the [`center`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#center) of the view. Set `pickClosestTarget` in the [GoToOptions2D](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#GoToOptions2D) to `false` to disable this behavior. For example, to disable the default `goTo()` behavior for the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html), use [`goToOverride`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#goToOverride) and set `pickClosestTarget` to `false`:
-
-  ```js
-  view.popup.goToOverride = (view, goToParams) => {
-    goToParams.options.pickClosestTarget = false;
-    return view.goTo(goToParams.target, goToParams.options);
-  };
-  ```
-- The `auto` and `authorization-code` values for [OAuthInfo.flowtype](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#flowtype) no longer check if the [`popup`](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popup) property is set to `true` or `false`.
-This change affects applications that use the `auto` [flowtype](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#flowtype) and set the [`popup`](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popup) property to `true`.
-The [callback page](https://developers.arcgis.com/javascript/latest/api-reference/esri-identity-OAuthInfo.html#popupCallbackUrl) being used needs to be updated to support two-factor authentication.
-To aid in this, the [default oauth-callback.html](https://github.com/Esri/jsapi-resources/blob/main/oauth/oauth-callback.html) has been updated to allow for the two-step approach and will still work if using the one-step flow.
+- For local builds, [Webpack](https://webpack.js.org/) versions prior to `5.84.0` have been removed at 4.29. This is related to bug fixes in Webpack.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |-----------------------------|------------------|--------------------|
-| `esri/core/watchUtils`      | Use [esri/core/reactiveUtils](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html) instead | 4.24 |
-| `watchUtils.init()`         | Use [reactiveUtils.watch()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#watch) with the [ReactiveWatchOptions](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#ReactiveWatchOptions) `initial` property set to `true` | 4.24 |
-| `watchUtils.on()`           | Use [reactiveUtils.on](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#on) instead | 4.24 |
-| `watchUtils.once()`         | Use [reactiveUtils.once()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#once) instead | 4.24 |
-| `watchUtils.pausable()`     | none | 4.24 | 
-| `watchUtils.watch()`        | Use [reactiveUtils.watch()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#watch) instead | 4.24 |
-| `watchUtils.when()`         | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
-| `watchUtils.whenDefined()`  | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
-| `watchUtils.whenDefinedOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
-| `watchUtils.whenEqual()`    | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
-| `watchUtils.whenEqualOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
-| `watchUtils.whenFalse()`    | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
-| `watchUtils.whenFalseOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
-| `watchUtils.whenNot()`      | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
-| `watchUtils.whenNotOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
-| `watchUtils.whenOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
-| `watchUtils.whenTrue()` | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
-| `watchUtils.whenTrueOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
-| `watchUtils.whenUndefined()` | Use [reactiveUtils.when()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#when) instead | 4.24 |
-| `watchUtils.whenUndefinedOnce()` | Use [reactiveUtils.whenOnce()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-reactiveUtils.html#whenOnce) instead | 4.24 |
-| `FeatureTable.fieldConfigs[]` | Set the field columns using the FeatureTable's [tableTemplate](/api-reference/esri-widgets-FeatureTable.html#tableTemplate) property. This provides access to the [columnTemplates](/api-reference/esri-widgets-FeatureTable.html#columnTemplates). | 4.24 |
-| `FeatureTableViewModel.fieldConfigs[]` | Set the field columns using the FeatureTable's [tableTemplate](/api-reference/esri-widgets-FeatureTable.html#tableTemplate) property. This provides access to the [columnTemplates](/api-reference/esri-widgets-FeatureTable.html#columnTemplates). | 4.24 |
-| `FieldGroup` class | Use [FieldElement](/api-reference/esri-form-elements-FieldElement.html) instead | 4.23 |
-| `FieldGroupConfig` class | Use [GroupElement](/api-reference/esri-form-elements-GroupElement.html) if working with the [FeatureForm](/api-reference/esri-widgets-FeatureForm.html) widget or [GroupColumnTemplate](/api-reference/esri-widgets-FeatureTable-support-GroupColumnTemplate.html) if working with the [FeatureTable](/api-reference/esri-widgets-FeatureTable.html) widget.  | 4.23 |
-| `FieldColumnConfig` class | Use [FieldColumnTemplate](/api-reference/esri-widgets-FeatureTable-support-FieldColumnTemplate.html) instead | 4.23 |
+| TBD | TBD | TBD |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
 
-- BUG-000145275: Fixed an issue where some [SimpleMarkerSymbols](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-SimpleMarkerSymbol.html) created from an SVG `path` were only partially rendered.
-- BUG-000156019: Fixed an issue where the [minScale](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html#minScale) and [maxScale](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html#maxScale) values of labels were not being honored consistently.
-- BUG-000156080: Fixed an issue where requests for features not visible or displayed would still fire when [snapping using the Editor](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-interactive-snapping-SnappingOptions.html).
-- BUG-000158754: Fixed an issue where the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget was displaying features in reverse order with [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html) [sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers).
-- BUG-000159808: The [Editor](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html) widget no longer expands upwards when working with numerous values within a [ComboBoxInput](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-inputs-ComboBoxInput.html).
-- BUG-000160035: Fixed an accessibility issue where tabbing options within the [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget did not work as expected.
-- BUG-000160198: Updated the documentation for the curbApproach property of the PointBarrier class.
-- BUG-000160794: Fixed an issue where zooming to a polygon that crossed the date line would zoom to the entire world extent.
-- BUG-000161208, [Esri Community - 1323058](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/layer-list-item-panel-expand-collapse-button-has/m-p/1323058): Fixed an accessibility issue in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) where the button to open the [ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html) was missing a tabindex.
-- [Esri Community - 1043965](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/querying-geojson-failed-in-4-18/m-p/1043965): Fixed an issue where the [GeoJSONLayer.queryFeatures()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoJSONLayer.html#queryFeatures) not returning results when geometry's extent is used for query.
-- [Esri Community - 1221477](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/medialayer-hittest-not-returning-source-pixel/m-p/1221477): Enhanced [MediaHit](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#MediaHit) to include the [sourcePoint](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ControlPointsGeoreference.html#SourcePoint), an object representing a point on the element. The origin (0, 0) corresponds to the top-left corner of the element.
-- [Esri Community - 1237167](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cog-imagerytilelayer-in-sceneview-doesn-t-load/m-p/1237167): Fixed an issue where an [ImageryTileLayer](/api-reference/esri-layers-ImageryTileLayer.html) created from a COG was displayed incorrectly in [SceneView](/api-reference/esri-views-SceneView.html) because of the layer's [tileInfo.lods](/api-reference/esri-layers-support-TileInfo.html#lods) were inversely ordered.
-- [Esri Community - 1307834](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/attachments-widget-bug/m-p/1307834): Fixed an issue where the [Attachments](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Attachments.html) widget throws an error saying `cannot set properties of null even though graphic valid`.
-- [Esri Community - 1308220](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/searchwidget-with-view-no-layerview-for-layer/m-p/1308220): Fixed an issue with displaying an error message in the browser console when creating a [FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html) on-the-fly to use as a [LayerSearchSource](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search-LayerSearchSource.html) with the [Search](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html) widget.
-- Fixed an accessibility issue in the [Legend](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html) widget to avoid placing inactive elements in the focus order.
-- Fixed an issue where setting the `featureMenuOpen` option to true in [Features.open()](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html#open) and [Popup.open()](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#open) was not opening a list of selected features.
-- Fixed an issue where setting the `heading` [VisibleElement](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html#VisibleElements) on the Features widget to `false` was not hiding the heading in the UI.
-- Fixed an issue where some special characters were not displayed correctly in the [Legend](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html) widget.
-- Fixed an issue where the [ScaleRangeSlider](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) was mirrored incorrectly when `dir="rtl"`.
-- Fixed an issue with inconsistent [labeling](https://developers.arcgis.com/javascript/latest/labeling/) of features without symbols.
-- Fixed an issue with the `barrierType` documentation for [PointBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PointBarrier.html#barrierType), [PolygonBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PolygonBarrier.html#barrierType), and [PolylineBarrier](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-PolylineBarrier.html#barrierType).
-- ENH-000137147: Added the ability to customize [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html), [Feature](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Feature.html), and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) chart colors with the new `colors` property on [ChartMediaInfoValue](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-support-ChartMediaInfoValue.html).
-- [ArcGIS Ideas - 1310879](https://community.esri.com/t5/arcgis-javascript-maps-sdk-ideas/improve-media-pagination-experience-in-popup/idi-p/1310879) - Enhanced [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) to only show pagination when there are multiple media elements added to the [mediaInfos](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html#mediaInfos) array.
-- [Esri Community - 1221477](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/medialayer-hittest-not-returning-source-pixel/m-p/1221477): Enhanced [MediaHit](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#MediaHit) to include the [sourcePoint](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-ControlPointsGeoreference.html#SourcePoint), an object representing a point on the element. The origin (0, 0) corresponds to the top-left corner of the element.
-- Enhanced the [BasemapGallery](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery.html) and [BasemapToggle](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapToggle) widgets by providing a better default title and thumbnail for basemaps coming from a portal item.
-- Enhanced the [Directions](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Directions.html) widget to not display an arrival time when `Time Unspecified` is selected.
-- Enhanced the [ParameterValue](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ParameterValue.html) by adding a new [paramName](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-support-ParameterValue.html#paramName) property.
-- Enhanced the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) to always be expanded by default regardless of the view's size.
-- Enhanced the [ScaleRangeSlider](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) with a UI indicating unavailable scale ranges when used with [MapImageLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html).
-- Enhanced the styling of empty [GroupLayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GroupLayer.html) in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) by adding a dashed outline and the text "There are currently no items to display."
+- TBD
 
 ## Deprecations
 
-The following are deprecated and will be removed in a future release. For anything deprecated in 4.26 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
+The following are deprecated and will be removed in a future release. For anything deprecated in 4.27 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
-- For local builds, [Webpack](https://webpack.js.org/) versions prior to `5.84.0` are deprecated at 4.27. This is related to bug fixes in Webpack.
+- The allowAttachments property within Editor.layerInfos is deprecated at 4.25. Use either attachmentsOnCreateEnabled or attachmentsOnUpdateEnabled instead.
+- The "non-metric" possible value for ScaleBar.unit is deprecated at 4.27. Please use "imperial" instead.
+- As of 4.27, when building new custom widgets it is no longer recommended to subclass or extend esri/widgets/Widget. Instead, use DOM elements such as DIVs, web components or JavaScript framework components in combination with the Calcite Design System. More information about creating a custom UI is available in the [Custom UI basics](https://developers.arcgis.com/javascript/latest/custom-ui/) Guide topic.
 
 <details>
   <summary>Click to expand the complete list</summary>
 
-- AreaMeasurement2D.iconClass deprecated since 4.27. Use icon instead.
-- AreaMeasurement3D.iconClass deprecated since 4.27. Use icon instead.
-- Attribution.iconClass deprecated since 4.27. Use icon instead.
-- BasemapGallery.iconClass deprecated since 4.27. Use icon instead.
-- BasemapLayerList.iconClass deprecated since 4.27. Use icon instead.
-- Bookmarks.iconClass deprecated since 4.27. Use icon instead.
-- BookmarksViewModel.abilities deprecated since 4.27. Use capabilities instead.
-- BuildingExplorer.iconClass deprecated since 4.27. Use icon instead.
-- Compass.iconClass deprecated since 4.27. Use icon instead.
-- CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
-- CreateWorkflowData.edits deprecated since 4.23. Use CreateFeaturesWorkflow.pendingFeatures to access edits made to the workflow data.
-- CreateWorkflowData deprecated since version 4.23. Use CreateFeaturesWorkflowData instead.
-- Daylight.iconClass deprecated since 4.27. Use icon instead.
-- Directions.iconClass deprecated since 4.27. Use icon instead.
-- DirectLineMeasurement3D.iconClass deprecated since 4.27. Use icon instead.
-- DistanceMeasurement2D.iconClass deprecated since 4.27. Use icon instead.
-- Editor.iconClass deprecated since 4.27. Use icon instead.
-- Editor.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use - startCreateFeaturesWorkflowAtFeatureCreation
-- Editor.startCreateWorkflowAtFeatureEdit deprecated since 4.23.
-- Editor.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection instead.
-- Editor.useDeprecatedCreateWorkflow deprecated since version 4.23. Although new at 4.23, this property was introduced to help migrate from the legacy CreateWorkflow to the updated CreateFeaturesWorkflow. Once CreateWorkflow is fully removed, this property will no longer be necessary.
-- EditorViewModel.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureCreation.
-- EditorViewModel.startCreateWorkflowAtFeatureEdit deprecated since 4.23.
-- EditorViewModel.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection.
-- ElevationProfile.iconClass deprecated since 4.27. Use icon instead.
-- EventAttachedCallback.EventAttachedCallback deprecated since version 4.24. Use reactiveUtils.ReactiveListenerChangeCallback() instead.
-- Expand.collapseIconClass deprecated since 4.27. Use collapseIcon instead.
-- Expand.expandIconClass deprecated since 4.27. Use expandIcon instead.
-- externalRenderers.forceWebGLContext deprecated since 4.27.
-- FeatureForm.view deprecated since 4.27. Use map instead.
-- FeatureFormViewModel.inputFields deprecated since version 4.27. Instead use inputs.
-- FeatureTable.clearHighlights deprecated since version 4.25. Use highlightIds.removeAll() instead.
-- FeatureTable.clearSelection deprecated since version 4.25. Use highlightIds.removeAll() instead.
-- FeatureTable.deselectRows deprecated since 4.25. Use highlightIds.remove() instead.
-- FeatureTable.fieldConfigs deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
-- FeatureTable.highlightOnRowSelectEnabled deprecated since version 4.25. Use highlightEnabled instead.
-- FeatureTable.selection-change deprecated since version 4.25. Listen for changes on highlightIds instead.
-- FeatureTable.selectRows deprecated since 4.25. Use highlightIds.add() instead.
-- FeatureTableViewModel.clearHighlights deprecated since version 4.25. Use highlightIds.removeAll() instead.
-- FeatureTableViewModel.clearSelection deprecated since version 4.25. Use highlightIds.removeAll() instead.
-- FeatureTableViewModel.fieldConfigs deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
-- FeatureTableViewModel.highlightOnRowSelectEnabled deprecated since version 4.25. Use highlightEnabled instead.
-- FeatureTableViewModel.selectRows deprecated since 4.25. Use highlightIds.add() instead.
-- FieldColumn.config deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
-- FieldColumnConfig deprecated since version 4.24. Use FieldColumnTemplate via the FeatureTable's tableTemplate.
+- Accessor.get deprecated since version 4.28. Use optional chaining
+- HandleOwner deprecated since version 4.28. Use addHandles() and removeHandles() from Accessor instead.
 - FieldElement.editable deprecated since version 4.26. Use editableExpression instead. Assigning editableExpression values of "true" and "false" will have the same effect as assigning true and false to editable.
-- FieldGroupConfig.visibilityExpression deprecated since version 4.23. Set fields via the GroupElement.visibilityExpression
-- FieldGroupConfig deprecated since version 4.23. Set field groupings via the GroupElement.
+- ImageryLayer.renderingRule deprecated since 4.27. Use rasterFunction instead.
+- MosaicRule.itemRenderingRule deprecated since version 4.27. Use itemRasterFunction instead.
+- VoxelVariable deprecated This module was moved in 4.25. Use VoxelVariable instead.
+- VoxelVolumeStyle deprecated This module was moved in 4.25. Use VoxelVolumeStyle instead.
+- ValidateNetworkTopologyResult.dirtyAreaCount deprecated since version 4.28. Dirty area count was implemented in the original version of utility network, but as of schema version 4 of the utility network, this is no longer supported.
 - ImageHistogramParameters.renderingRule deprecated since version 4.27. Use rasterFunction instead.
 - ImageIdentifyParameters.renderingRule deprecated since version 4.27. Use rasterFunctions instead.
 - ImageIdentifyParameters.renderingRules deprecated since version 4.27. Use rasterFunctions instead.
-- ImageryLayer.renderingRule deprecated since 4.27. Use rasterFunction instead.
-- InputField deprecated since 4.27. Use FieldInput instead.
-- InputFieldGroup deprecated since 4.27. Use GroupInput instead.
-- LayerList.iconClass deprecated since 4.27. Use icon instead.
-- Legend.iconClass deprecated since 4.27. Use icon instead.
-- Lighting deprecated since version 4.24. Use SunLighting instead.
-- LineOfSight.iconClass deprecated since 4.27. Use icon instead.
-- Locate.useHeadingEnabled deprecated since 4.27. Use rotationEnabled instead.
-- Measurement.iconClass deprecated since 4.27. Use icon instead.
-- MosaicRule.itemRenderingRule deprecated since version 4.27. Use itemRasterFunction instead.
-- PausableWatchHandle.PausableWatchHandle deprecated since version 4.24.
-- Popup.autoOpenEnabled deprecated since 4.27. Use MapView/SceneView.popupEnabled instead.
-- PopupViewModel.autoOpenEnabled deprecated since 4.27. Use MapView/SceneView.popupEnabled instead.
-- Print.iconClass deprecated since 4.27. Use icon instead.
-- PromisedWatchHandle.PromisedWatchHandle deprecated since version 4.24. Use Promise instead.
-- Search.iconClass deprecated since 4.27. Use icon instead.
-- ShadowCast.iconClass deprecated since 4.27. Use icon instead.
-- Sketch.iconClass deprecated since 4.27. Use icon instead.
-- Slice.iconClass deprecated since 4.27. Use icon instead.
-- SnappingControls.iconClass deprecated since 4.27. Use icon instead.
-- Subclassing and extending esri/widgets/Widget when building custom widgets is deprecated at 4.27. Use the JavaScript framework of your choice to create an HTMLElement and use View.ui to add it to the MapView or SceneView.
 - SunLighting.ambientOcclusionEnabled deprecated since version 4.27. Ambient occlusion is automatically shown and this property has no effect.
 - SunLighting.waterReflectionEnabled deprecated since version 4.27. Reflections are automatically shown and this property has no effect.
-- Swipe.iconClass deprecated since 4.27. Use icon instead.
-- TableList.iconClass deprecated since 4.27. Use icon instead.
-- The allowAttachments property within Editor.layerInfos is deprecated at 4.25. Use either attachmentsOnCreateEnabled or attachmentsOnUpdateEnabled instead.
-- The "non-metric" possible value for ScaleBar.unit is deprecated at 4.27. Please use "imperial" instead.
-- TimeSlider.iconClass deprecated since 4.27. Use icon instead.
-- Track.useHeadingEnabled deprecated since 4.27. Use rotationEnabled instead.
-- UtilityNetwork.rulesTableId deprecated since version 4.25. Use networkSystemLayers.rulesTableId instead.
-- UtilityNetwork.rulesTableUrl deprecated since version 4.25. Use networkSystemLayers.rulesTableUrl instead.
-- UtilityNetwork.subnetworksTableId deprecated since version 4.25. Use networkSystemLayers.subnetworksTableId instead.
-- UtilityNetwork.subnetworksTableUrl deprecated since version 4.25. Use networkSystemLayers.subnetworksTableUrl instead.
-- UtilityNetworkTrace.iconClass deprecated since 4.27. Use icon instead.
 - VirtualLighting.ambientOcclusionEnabled deprecated since version 4.27. Ambient occlusion is automatically shown and this property has no effect.
-- VirtualLighting.waterReflectionEnabled deprecated since version 4.27. Reflections are automatically shown and this property has no effect.
-- VoxelVariable deprecated This module was moved in 4.25. Use VoxelVariable instead.
-- VoxelVolumeStyle deprecated This module was moved in 4.25. Use VoxelVolumeStyle instead.
-- watchUtils.init deprecated since 4.24. Use reactiveUtils.watch() instead.
-- watchUtils.on deprecated since 4.24. Use reactiveUtils.on() instead.
-- watchUtils.once deprecated since 4.24. Use reactiveUtils.once() instead.
-- watchUtils.pausable deprecated Since 4.24.
-- watchUtils.watch deprecated since 4.24. Use reactiveUtils.watch() instead.
-- watchUtils.when deprecated since 4.24. Use reactiveUtils.when() instead.
-- watchUtils.whenDefined deprecated since 4.24. Use reactiveUtils.when() instead.
-- watchUtils.whenDefinedOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
-- watchUtils.whenEqual deprecated since 4.24. Use reactiveUtils.when() instead
-- watchUtils.whenEqualOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
-- watchUtils.whenFalse deprecated since 4.24. Use reactiveUtils.when() instead.
-- watchUtils.whenFalseOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
-- watchUtils.whenNot deprecated since 4.24. Use reactiveUtils.when() instead.
-- watchUtils.whenNotOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
-- watchUtils.whenOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
-- watchUtils.whenTrue deprecated since 4.24. Use reactiveUtils.when() instead.
-- watchUtils.whenTrueOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
-- watchUtils.whenUndefined deprecated since 4.24. Use reactiveUtils.when() instead.
-- watchUtils.whenUndefinedOnce deprecated since 4.24. Use reactiveUtils.whenOnce() instead.
-- watchUtils deprecated since version 4.24. Use reactiveUtils instead.
-- Weather.iconClass deprecated since 4.27. Use icon instead.
-- Zoom.iconClass deprecated since 4.27. Use icon instead.
+-	VirtualLighting.waterReflectionEnabled deprecated since version 4.27. Reflections are automatically shown and this property has no effect.
+-	externalRenderers.forceWebGLContext deprecated since 4.27.
+-	Lighting deprecated since version 4.24. Use SunLighting instead.
+-	Lighting deprecated since version 4.24
+-	Lighting.clone deprecated since version 4.24
+-	AreaMeasurement2D.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	AreaMeasurement3D.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Attribution.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	BasemapGallery.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	BasemapLayerList.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Bookmarks.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	BookmarksViewModel.abilities deprecated since 4.27. Use capabilities instead.
+-	BuildingExplorer.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Compass.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Daylight.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	DirectionalPad.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Directions.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	DirectLineMeasurement3D.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	DistanceMeasurement2D.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Editor.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Editor.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureCreation
+-	Editor.startCreateWorkflowAtFeatureEdit deprecated since 4.23
+-	Editor.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection instead.
+-	Editor.useDeprecatedCreateWorkflow deprecated since version 4.23. Although new at 4.23, this property was introduced to help migrate from the legacy CreateWorkflow to the updated CreateFeaturesWorkflow. Once CreateWorkflow is fully removed, this property will no longer be necessary.
+-	CreateWorkflow deprecated since version 4.23. Use CreateFeaturesWorkflow instead.
+-	CreateWorkflowData deprecated since version 4.23. Use CreateFeaturesWorkflowData instead.
+-	CreateWorkflowData.edits deprecated since 4.23. Use CreateFeaturesWorkflow.pendingFeatures to access edits made to the workflow data.
+-	EditorViewModel.startCreateWorkflowAtFeatureCreation deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureCreation.
+-	EditorViewModel.startCreateWorkflowAtFeatureEdit deprecated since 4.23
+-	EditorViewModel.startCreateWorkflowAtFeatureTypeSelection deprecated since version 4.23. Instead use startCreateFeaturesWorkflowAtFeatureTypeSelection.
+-	ElevationProfile.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Expand.collapseIconClass deprecated since 4.27. Use collapseIcon instead.
+-	Expand.expandIconClass deprecated since 4.27. Use expandIcon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	FeatureForm.view deprecated since 4.27. Use map instead.
+-	FeatureFormViewModel.inputFields deprecated since version 4.27. Instead use inputs.
+-	GroupInput.state deprecated since version 4.28. Instead use open.
+-	InputField deprecated since 4.27. Use FieldInput instead.
+-	InputField.description deprecated since 4.27. Use FieldInput.description instead.
+-	InputField.domain deprecated since 4.27. Use FieldInput.domain instead.
+-	InputField.editable deprecated since 4.27. Use FieldInput.editable instead.
+-	InputField.editorType deprecated since 4.27. Use FieldInput.inputType instead.
+-	InputField.error deprecated since 4.27. Use FieldInput.error instead.
+-	InputField.errorMessage deprecated since 4.27. Use FieldInput.error instead.
+-	InputField.group deprecated since 4.27. Use FieldInput.group instead.
+-	InputField.hint deprecated since 4.27. Use FieldInput.hint instead.
+-	InputField.includeTime deprecated since 4.27. Use FieldInput.includeTime instead.
+-	InputField.label deprecated since 4.27. Use FieldInput.label instead.
+-	InputField.maxLength deprecated since 4.27. Use FieldInput.maxLength instead.
+-	InputField.minLength deprecated since 4.27. Use FieldInput.minLength instead.
+-	InputField.name deprecated since 4.27. Use FieldInput.name instead.
+-	InputField.required deprecated since 4.27. Use FieldInput.required instead.
+-	InputField.submittable deprecated since 4.27. Use FieldInput.submittable instead.
+-	InputField.type deprecated since 4.27. Use FieldInput.dataType instead.
+-	InputField.updating deprecated since 4.27. Use FieldInput.updating instead.
+-	InputField.valid deprecated since 4.27. Use FieldInput.valid instead.
+-	InputField.value deprecated since 4.27. Use FieldInput.value instead.
+-	InputField.visible deprecated since 4.27. Use FieldInput.visible instead.
+-	InputFieldGroup deprecated since 4.27. Use GroupInput instead.
+-	InputFieldGroup.description deprecated since 4.27. Use GroupInput.description instead.
+-	InputFieldGroup.evaluatedVisibilityExpression deprecated since 4.27. Use GroupInput.visible instead.
+-	InputFieldGroup.inputFields deprecated since 4.27. Use GroupInput.inputs instead.
+-	InputFieldGroup.label deprecated since 4.27. Use GroupInput.label
+-	InputFieldGroup.state deprecated since 4.27. Use GroupInput.state
+-	InputFieldGroup.visibilityExpression deprecated since 4.27. Use Element.visibilityExpression
+-	InputFieldGroup.visible deprecated since 4.27. Use GroupInput.visible
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	FeatureTable.clearHighlights deprecated since version 4.25. Use highlightIds.removeAll() instead.
+-	FeatureTable.clearSelection deprecated since version 4.25. Use highlightIds.removeAll() instead.
+-	FeatureTable.deselectRows deprecated since 4.25. Use highlightIds.remove() instead.
+-	FeatureTable.selection-change deprecated since version 4.25. Listen for changes on highlightIds instead.
+-	FeatureTable.highlightOnRowSelectEnabled deprecated since version 4.25. Use highlightEnabled instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	FeatureTable.selectRows deprecated since 4.25. Use highlightIds.add() instead.
+-	FeatureTableViewModel.clearHighlights deprecated since version 4.25. Use highlightIds.removeAll() instead.
+-	FeatureTableViewModel.clearSelection deprecated since version 4.25. Use highlightIds.removeAll() instead.
+-	FeatureTableViewModel.highlightOnRowSelectEnabled deprecated since version 4.25. Use highlightEnabled instead.
+-	FeatureTableViewModel.selectRows deprecated since 4.25. Use highlightIds.add() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	LayerList.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Legend.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	LineOfSight.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Locate.useHeadingEnabled deprecated since 4.27. Use rotationEnabled instead.
+-	Measurement.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Popup.autoOpenEnabled deprecated since 4.27. Use MapView/SceneView.popupEnabled instead.
+-	Popup.maxInlineActions deprecated TODO: DOCUMENT
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	PopupViewModel.autoOpenEnabled deprecated since 4.27. Use MapView/SceneView.popupEnabled instead.
+-	Print.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Search.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	ShadowCast.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Sketch.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Slice.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	SnappingControls.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Swipe.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	iconClass.iconClass deprecated since 4.27. Use icon instead.
+-	TimeSlider.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Track.useHeadingEnabled deprecated since 4.27. Use rotationEnabled instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	UtilityNetworkTrace.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Weather.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
+-	Widget.iconClass deprecated since 4.27. Use icon instead.
+-	Zoom.iconClass deprecated since 4.27. Use icon instead.
+-	Widget.own deprecated since 4.28 Use addHandles() instead.
 
 </details>
