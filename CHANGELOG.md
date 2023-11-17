@@ -16,13 +16,49 @@ The following classes, methods, properties and events have been deprecated for a
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |-----------------------------|------------------|--------------------|
-| TBD | TBD | TBD |
+| `InputField` class       | [FieldInput](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html) class  | 4.27 | 
+| `InputField.description`  | [FieldInput.description](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#description) | 4.27 |  
+| `InputField.domain`       | [FieldInput.domain](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#domain) | 4.27 | 
+| `InputField.editable`     | [FieldInput.editable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#editable) | 4.27 | 
+| `InputField.editorType`   | [FieldInput.inputType](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#inputType) | 4.27 | 
+| `InputField.error`        | [FieldInput.error](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#error) | 4.27 | 
+| `InputField.errorMessage` | [FieldInput.error](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#error) | 4.27 | 
+| `InputField.group`        | [FieldInput.group](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#group) | 4.27 | 
+| `InputField.hint`         | [FieldInput.hint](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#hint) | 4.27 | 
+| `InputField.includeTime`  | [FieldInput.includeTime](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#includeTime) | 4.27 | 
+| `InputField.label`        | [FieldInput.label](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#label) | 4.27 | 
+| `InputField.maxLength`    | [FieldInput.maxLength](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#maxLength) | 4.27 | 
+| `InputField.minLength`    | [FieldInput.minLength](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#minLength) | 4.27 | 
+| `InputField.name`         | [FieldInput.name](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#name) | 4.27 | 
+| `InputField.label`        | [FieldInput.label](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#label) | 4.27 | 
+| `InputField.required`     | [FieldInput.required](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#required) | 4.27 | 
+| `InputField.submittable`  | [FieldInput.submittable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#submittable) | 4.27 | 
+| `InputField.type`         | [FieldInput.dataType](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#dataType) | 4.27 | 
+| `InputField.updating`     | [FieldInput.updating](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#updating) | 4.27 | 
+| `InputField.valid`        | [FieldInput.valid](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#valid) | 4.27 | 
+| `InputField.value`        | [FieldInput.value](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#value) | 4.27 | 
+| `InputField.visible`      | [FieldInput.visible](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FieldInput.html#visible) | 4.27 |
+| `InputFieldGroup` class  | [GroupInput](api-reference/esri-widgets-FeatureForm-GroupInput.html) class  | 4.27 |
+| `InputFieldGroup.description`  | [GroupInput.description](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#description) | 4.27 |
+| `InputFieldGroup.evaluatedVisibilityExpression`  | [GroupInput.visible](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#visible) | 4.27 |
+| `InputFieldGroup.inputFields`  | [GroupInput.inputs](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#inputs) | 4.27 |
+| `InputFieldGroup.label`  | [GroupInput.label](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#label) | 4.27 |
+| `InputFieldGroup.description`  | [GroupInput.description](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#description) |
+| `InputFieldGroup.state`  | [GroupInput.state](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#state) | 4.27 |
+| `InputFieldGroup.visibilityExpression`  | [GroupElement.visibilityExpression](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-GroupElement.html#visibilityExpression) |
+| `InputFieldGroup.visible`  | [GroupInput.visible](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#visible) | 4.27 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
 
-- TBD
+- BUG-000160409: Fixed an issue where [OGCFeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-OGCFeatureLayer.html) popups were not appearing when displaying a field name that contains a `.` (period).
+- [Esri Community - 1043965](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/querying-geojson-failed-in-4-18/m-p/1043965): Fixed an issue where the [GeoJSONLayer.queryFeatures()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoJSONLayer.html#queryFeatures) not returning results when geometry's extent is used for query.
+- Fixed an issue where the dropdown for grouped actions was not anchored to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) when zooming in/out of the view.
+- ENH-000137147: Added the ability to customize [Popup](/api-reference/esri-widgets-Popup.html), [Feature](/api-reference/esri-widgets-Feature.html), and [Features](/api-reference/esri-widgets-Features.html) chart colors with the new [ChartMediaInfoValue.colors](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-support-ChartMediaInfoValue.html#colors) property.
+- [ArcGIS Ideas - 1310879](https://community.esri.com/t5/arcgis-javascript-maps-sdk-ideas/improve-media-pagination-experience-in-popup/idi-p/1310879) - Enhanced [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) to only show pagination when there are multiple media elements added to the [mediaInfos](/api-reference/esri-popup-content-MediaContent.html#mediaInfos) array.
+- Enhanced [FeatureForm](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html) to display a dropdown of subtype names for the [subtypeField](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#subtypeField) of a [FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html).
+
 
 ## Deprecations
 
