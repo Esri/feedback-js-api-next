@@ -53,14 +53,10 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000160409: Fixed an issue where [OGCFeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-OGCFeatureLayer.html) popups were not appearing when displaying a field name that contains a `.` (period).
-- [Esri Community - 1043965](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/querying-geojson-failed-in-4-18/m-p/1043965): Fixed an issue where the [GeoJSONLayer.queryFeatures()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GeoJSONLayer.html#queryFeatures) not returning results when geometry's extent is used for query.
 - [Esri Community - 1339508](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-marker-placement-relativeto-quot/m-p/1339508): Fixed an issue where a CIMSymbol with the marker placement type `CIMMarkerPlacementOnLine` was not rendering when `relativeTo` was set to `"SegmentMidpoint"`.
 - [Esri Community - 1351209](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/elevationprofile-widget-in-dark-theme/m-p/1351209): Fixed an issue with the ElevationProfile widget where the chart tooltip text was not legible in the dark theme.
 - Fixed an issue where the dropdown for grouped actions was not anchored to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) when zooming in/out of the view.
-- ENH-000137147: Added the ability to customize [Popup](/api-reference/esri-widgets-Popup.html), [Feature](/api-reference/esri-widgets-Feature.html), and [Features](/api-reference/esri-widgets-Features.html) chart colors with the new [ChartMediaInfoValue.colors](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-support-ChartMediaInfoValue.html#colors) property.
-- [ArcGIS Ideas - 1310879](https://community.esri.com/t5/arcgis-javascript-maps-sdk-ideas/improve-media-pagination-experience-in-popup/idi-p/1310879) - Enhanced [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) to only show pagination when there are multiple media elements added to the [mediaInfos](/api-reference/esri-popup-content-MediaContent.html#mediaInfos) array.
-- Enhanced [FeatureForm](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html) to display a dropdown of subtype names for the [subtypeField](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#subtypeField) of a [FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html).
-
+- Added new [VisibleElements](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#VisibleElements) to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html): `actionBar`, `collapseButton`, `heading`, `spinner`
 
 ## Deprecations
 
@@ -156,6 +152,8 @@ The following are deprecated and will be removed in a future release. For anythi
 - Measurement.iconClass deprecated since 4.27. Use icon instead.
 - MosaicRule.itemRenderingRule deprecated since version 4.27. Use itemRasterFunction instead.
 - Popup.autoOpenEnabled deprecated since 4.27. Use MapView/SceneView.popupEnabled instead.
+- Popup.collapseEnabled deprecated since 4.29. Use PopupVisibleElements.collapseButton instead.
+- Popup.spinnerEnabled deprecated since 4.29. Use PopupVisibleElements.spinner instead.
 - PopupViewModel.autoOpenEnabled deprecated since 4.27. Use MapView/SceneView.popupEnabled instead.
 - Print.iconClass deprecated since 4.27. Use icon instead.
 - Search.iconClass deprecated since 4.27. Use icon instead.
