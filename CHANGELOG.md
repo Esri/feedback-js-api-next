@@ -8,7 +8,7 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 
 ## Widget Updates
 
-### LayerList redesigned to use Calcite Design System
+### LayerList, BasemapLayerList and TableList widgets redesigned to use Calcite Design System
 
 We have redesigned the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html), [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) and [TableList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TableList.html) widgets to use the [Calcite Design System](https://developers.arcgis.com/calcite-design-system/). The refactor also allowed us to implement filtering the layers and tables. 
 
