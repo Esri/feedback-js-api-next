@@ -10,7 +10,7 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 
 ### LayerList, BasemapLayerList and TableList widgets redesigned to use Calcite Design System
 
-We have redesigned the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html), [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) and [TableList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TableList.html) widgets to use the [Calcite Design System](https://developers.arcgis.com/calcite-design-system/). The refactor also allowed us to implement filtering the layers and tables. 
+We have redesigned the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html), [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) and [TableList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TableList.html) widgets to use the [Calcite Design System](https://developers.arcgis.com/calcite-design-system/). The refactor also allowed us to implement filtering the layers and tables. We have also added a ListItemPanel to table list items.
 
 There are two breaking changes. The first is it's no longer possible to open multiple [ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html)s simultaneously, as they now open in a calcite flow element. The second is ListItemPanel now does not include any padding by default. We want to leave the spacing inside the ListItemPanel, and it's content to the application developer.
 
