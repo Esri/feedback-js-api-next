@@ -10,7 +10,7 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 
 ## Breaking Changes
 
-- For local builds, using [Webpack](https://webpack.js.org/) versions prior to `5.84.0` is not recommended 4.29. This is related to bug fixes in Webpack.
+- For local builds, using [Webpack](https://webpack.js.org/) versions prior to `5.84.0` is not recommended for 4.29. This is related to bug fixes in Webpack.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
