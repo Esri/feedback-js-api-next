@@ -59,6 +59,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - [Esri Community - 1351209](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/elevationprofile-widget-in-dark-theme/m-p/1351209): Fixed an issue with the ElevationProfile widget where the chart tooltip text was not legible in the dark theme.
 - Fixed an issue where the dropdown for grouped actions was not anchored to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) when zooming in/out of the view.
 - Added new [VisibleElements](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#VisibleElements) to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html): `actionBar`, `collapseButton`, `heading`, `spinner`
+- When loading an IWA authenticated [portal](https://developers.arcgis.com/javascript/latest/api-reference/esri-portal-Portal.html), the [request](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#request) `trustedServers` property no longer needs to be set with the portal url to prompt for credentials.
 
 ## Deprecations
 
