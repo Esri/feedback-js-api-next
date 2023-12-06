@@ -46,8 +46,8 @@ const layerList = new LayerList({
 
 ## Breaking Changes
 
-- For local builds, [Webpack](https://webpack.js.org/) versions prior to `5.84.0` have been removed at 4.29. This is related to bug fixes in Webpack.
-- [ListItemPanel.content](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html#content) now does not include any padding by default. We want to leave the spacing inside the ListItemPanel, and it's content to the application developer.
+- At version 4.29, only WebGL2-enabled browsers are supported for both 2D and 3D. See the [System Requirements](https://developers.arcgis.com/javascript/latest/system-requirements/) for more information.
+- For local builds, using [Webpack](https://webpack.js.org/) versions prior to `5.84.0` is not recommended for 4.29. This is related to bug fixes in Webpack.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
@@ -91,9 +91,11 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 - BUG-000160409: Fixed an issue where [OGCFeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-OGCFeatureLayer.html) popups were not appearing when displaying a field name that contains a `.` (period).
 - [Esri Community - 1339508](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-marker-placement-relativeto-quot/m-p/1339508): Fixed an issue where a CIMSymbol with the marker placement type `CIMMarkerPlacementOnLine` was not rendering when `relativeTo` was set to `"SegmentMidpoint"`.
+- [Esri community - 1350675](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/changing-compass-widget-icon-in-arcgis-maps-sdk/m-p/1350675): Fixed an issue with the Compass widget and FullScreen widget that wasn't allowing the icon to be customized.
 - [Esri Community - 1351209](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/elevationprofile-widget-in-dark-theme/m-p/1351209): Fixed an issue with the ElevationProfile widget where the chart tooltip text was not legible in the dark theme.
 - Fixed an issue where the dropdown for grouped actions was not anchored to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) when zooming in/out of the view.
 - Added new [VisibleElements](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#VisibleElements) to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html): `actionBar`, `collapseButton`, `heading`, `spinner`
+- When loading a web-tier authenticated [portal](https://developers.arcgis.com/javascript/latest/api-reference/esri-portal-Portal.html), the [request](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#request) `trustedServers` property no longer needs to be set with the portal url to prompt for credentials.
 
 ## Deprecations
 
