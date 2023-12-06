@@ -12,7 +12,7 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 
 We have redesigned the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html), [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) and [TableList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TableList.html) widgets to use the [Calcite Design System](https://developers.arcgis.com/calcite-design-system/). The refactor also allowed us to implement filtering the layers and tables. We have also added a ListItemPanel to table list items.
 
-There are two breaking changes. The first is it's no longer possible to open multiple [ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html)s simultaneously, as they now open in a calcite flow element. The second is ListItemPanel now does not include any padding by default. We want to leave the spacing inside the ListItemPanel, and it's content to the application developer.
+[ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html)s now do not include any padding by default. We want to leave the spacing inside the ListItemPanel, and it's content to the application developer. We have also added a `flowEnabled` property to the ListItemPanels to control if the panel opens in a slot at the bottom of the ListItem or in a [Calcite Flow](https://developers.arcgis.com/calcite-design-system/components/flow/) that allows for drilling in and out of panels.
 
 #### This is a quick summary of the changes.
 - Adds `collapsed` property that indicates whether the widget is collapsed with the `visibleElements.collapseButton`
@@ -23,6 +23,7 @@ There are two breaking changes. The first is it's no longer possible to open mul
   - `closeButton`:  Indicates whether to display a close button in the widget's heading.
   - `collapseButton`: Indicates whether to display a collapse button in the widget's heading.
   - `filter`: Adds a filter input that allows filtering the layers or tables
+  - `flow`: Determines whether the widget should be shown within its built-in [flow component](https://developers.arcgis.com/calcite-design-system/components/flow/) or if the flow component should be excluded.
   - `heading`: Indicates whether to display the widget heading.
 
 ```js
@@ -36,6 +37,7 @@ const layerList = new LayerList({
     collapseButton: true,
     errors: true,
     filter: true,
+    flow: true,
     heading: true,
     statusIndicators: true
   }
@@ -45,7 +47,6 @@ const layerList = new LayerList({
 ## Breaking Changes
 
 - For local builds, [Webpack](https://webpack.js.org/) versions prior to `5.84.0` have been removed at 4.29. This is related to bug fixes in Webpack.
-- It's no longer possible to open multiple [ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html)s simultaneously in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget, as they now open in a calcite flow element.
 - [ListItemPanel.content](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html#content) now does not include any padding by default. We want to leave the spacing inside the ListItemPanel, and it's content to the application developer.
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
