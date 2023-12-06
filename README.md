@@ -92,4 +92,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-A copy of the license is available in the repository's [license.txt](https://raw.github.com/Esri/feedback-js-api-next/blob/master/LICENSE) file.
+A copy of the license is available in the repository's [license.txt](https://github.com/Esri/feedback-js-api-next/blob/main/License.txt) file.
