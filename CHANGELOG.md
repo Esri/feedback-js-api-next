@@ -12,12 +12,12 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 
 We have redesigned the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html), [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) and [TableList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TableList.html) widgets to use the [Calcite Design System](https://developers.arcgis.com/calcite-design-system/). The refactor also allowed us to implement filtering the layers and tables. We have also added a ListItemPanel to table list items.
 
-[ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html)s now do not include any padding by default. We want to leave the spacing inside the ListItemPanel, and it's content to the application developer. We have also added a `flowEnabled` property to the ListItemPanels to control if the panel opens in a slot at the bottom of the ListItem or in a [Calcite Flow](https://developers.arcgis.com/calcite-design-system/components/flow/) that allows for drilling in and out of panels.
+[ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html)s now do not include any padding by default. We want to leave the spacing inside the ListItemPanel, and its content to the application developer. We have also added a `flowEnabled` property to the ListItemPanels to control if the panel opens in a slot at the bottom of the ListItem or in a [Calcite Flow](https://developers.arcgis.com/calcite-design-system/components/flow/) that allows for drilling in and out of panels.
 
 #### This is a quick summary of the changes.
 - Adds `collapsed` property that indicates whether the widget is collapsed with the `visibleElements.collapseButton`
 - Adds `filterPlaceholder` property for placeholder text used in the filter input if visibleElements.filter is true.
-- Adds `filterText` property for The value of the filter input text string if visibleElements.filter is true.
+- Adds `filterText` property for the value of the filter input text string if visibleElements.filter is true.
 - Adds `headingLevel` property that indicates the heading level to use for the heading of the widget.
 - Adds `visibleElement` properties:
   - `closeButton`:  Indicates whether to display a close button in the widget's heading.
