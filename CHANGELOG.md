@@ -101,6 +101,8 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.28 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
+- The [`esri-loader`](https://github.com/Esri/esri-loader/blob/master/README.md) library is deprecated at version 4.29. Use [components](https://developers.arcgis.com/javascript/latest/components/) or the [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules instead.
+
 <details>
   <summary>Click to expand the complete list</summary>
 
