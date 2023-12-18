@@ -18,7 +18,7 @@ Use CDN or npm to try the next version.
 
 ### CDN
 
-To test the next version using the hosted version, simply reference the SDK and CSS from our CDN to start using them in your app.
+To test the next version using the ArcGIS CDN, simply reference the SDK and CSS to start using them in your app.
 
     <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/next/"></script>
@@ -27,20 +27,11 @@ Only production CDN builds are available for download.
 
 ### npm
 
-To test the next version with npm, use `npm install @arcgis/core@next` or `npm install @arcgis/core@rc`. 
-More information is available in the SDK's [Introduction to tooling](https://developers.arcgis.com/javascript/latest/tooling-intro/) guide topic.
+To test the next version with npm, use `npm install @arcgis/core@next` or `npm install @arcgis/core@rc`. For npm, [jsDelivr](https://www.jsdelivr.com/package/npm/@arcgis/core?tab=files) is used to host the `next` CSS:
 
-### esri-loader 
+    @import "https://cdn.jsdelivr.net/npm/@arcgis/core@next/assets/esri/themes/light/main.css";
 
-If you are using [esri-loader](https://github.com/Esri/esri-loader) to load AMD modules, use [options.version](https://github.com/Esri/esri-loader#from-a-specific-version) and specify `next` as the value. You can also lazy-load [js.arcgis.com/next/esri/themes/light/main.css](js.arcgis.com/next/esri/themes/light/main.css) by adding the `css: true` option, or you can use [any of the other methods supported by esri-loader](https://github.com/Esri/esri-loader#loading-styles) instead.
-
-```javascript
-const options = {
-  version: 'next',
-  css: true
-};
-const [Map] = await loadModules(['esri/map'], options);
-```
+More information is available in the SDK's [Build with ES modules](https://next.sites.afd.arcgis.com/javascript/latest/es-modules/) guide topic.
 
 ## TypeScript typings for ES modules
 
@@ -74,6 +65,20 @@ For more information on using `tsconfig.json` refer to the [TypeScript documenta
     "src/**/*.tsx"
   ]
 }
+```
+
+### esri-loader - **(Deprecated)**
+
+[esri-loader](https://github.com/Esri/esri-loader) is deprecated since 4.29. 
+
+Use [options.version](https://github.com/Esri/esri-loader#from-a-specific-version) and specify `next` as the value. You can also lazy-load [js.arcgis.com/next/esri/themes/light/main.css](js.arcgis.com/next/esri/themes/light/main.css) by adding the `css: true` option, or you can use [any of the other methods supported by esri-loader](https://github.com/Esri/esri-loader#loading-styles) instead.
+
+```javascript
+const options = {
+  version: 'next',
+  css: true
+};
+const [Map] = await loadModules(['esri/map'], options);
 ```
 
 ## Licensing
