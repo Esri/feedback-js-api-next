@@ -27,7 +27,7 @@ Only production CDN builds are available for download.
 
 ### npm
 
-To test the next version with npm, use `npm install @arcgis/core@next` or `npm install @arcgis/core@rc`. For npm, [jsDelivr](https://www.jsdelivr.com/package/npm/@arcgis/core?tab=files) is used to host the `next` CSS:
+To test the next version with npm, use `npm install @arcgis/core@next`. For npm, [jsDelivr](https://www.jsdelivr.com/package/npm/@arcgis/core?tab=files) is used to host the `next` CSS:
 
     @import "https://cdn.jsdelivr.net/npm/@arcgis/core@next/assets/esri/themes/light/main.css";
 
