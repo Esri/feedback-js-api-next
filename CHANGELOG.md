@@ -12,13 +12,29 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 
 We have redesigned the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html), [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html) and [TableList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TableList.html) widgets to use the [Calcite Design System](https://developers.arcgis.com/calcite-design-system/). The refactor also allowed us to implement filtering the layers and tables. We have also added a ListItemPanel to table list items.
 
+We've updated the properties that control selection and reordering in list widgets. The now deprecated `selectionEnabled` property, which controlled both selection and reordering, has been replaced with `dragEnabled` and `selectionMode`. `dragEnabled` controls reordering, while `selectionMode` manages selection.
+
+`selectionMode` can be set to:
+| Value | Description |
+| ----- | ----------- |
+| multiple | Allows any number of items to be selected at once. This is useful when you want to apply an operation to multiple items at the same time. |
+| none | Disables selection. Use this when you want to prevent selecting items. |
+| single | Allows only one item to be selected at a time. If another item is selected, the previous selection is cleared. This is useful when you want to ensure that maximum of one item is selected at a time. |
+| single-persist | Allows only one item to be selected at a time and prevents de-selection. Once an item is selected, it remains selected until another item is selected. This is useful when you want to ensure that there is always exactly one selected item. |
+
+By adding `selectionMode`, `multipleSelectionEnabled` is no longer nessessary and it has been depricated and will be removed in a future release.
+
 [ListItemPanel](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html)s now do not include any padding by default. We want to leave the spacing inside the ListItemPanel, and its content to the application developer. We have also added a `flowEnabled` property to the ListItemPanels to control if the panel opens in a slot at the bottom of the ListItem or in a [Calcite Flow](https://developers.arcgis.com/calcite-design-system/components/flow/) that allows for drilling in and out of panels.
 
 #### This is a quick summary of the changes.
+- Depricates the `multipleSelectionEnabled` property. Use `selectionMode` instead.
+- Depricates the `selectionEnabled` property. Use `selectionMode` and `dragEnabled` as appropriate.
 - Adds `collapsed` property that indicates whether the widget is collapsed with the `visibleElements.collapseButton`
-- Adds `filterPlaceholder` property for placeholder text used in the filter input if visibleElements.filter is true.
-- Adds `filterText` property for the value of the filter input text string if visibleElements.filter is true.
+- Adds `dragEnabled` property that enables ListItems to be sortable via a draggable button.
+- Adds `filterPlaceholder` property for placeholder text used in the filter input if `visibleElements.filter` is true.
+- Adds `filterText` property for the value of the filter input text string if `visibleElements.filter` is true.
 - Adds `headingLevel` property that indicates the heading level to use for the heading of the widget.
+- Adds `selectionMode` property that specifies the selection mode - "multiple" (allow any number of selected items), "single" (allow one selected item), "single-persist" (allow one selected item and prevent de-selection), or "none" (no selected items). Selected items are available in the selectedItems property.
 - Adds `visibleElement` properties:
   - `closeButton`:  Indicates whether to display a close button in the widget's heading.
   - `collapseButton`: Indicates whether to display a collapse button in the widget's heading.
@@ -29,8 +45,10 @@ We have redesigned the [LayerList](https://developers.arcgis.com/javascript/late
 ```js
 const layerList = new LayerList({
   collapsed: false,
+  dragEnabled: true,
   filterPlaceholder: "Filter layers",
   headingLevel: 3,
+  selectionMode: "multiple",
   view,
   visibleElements: {
     closeButton: true,
@@ -127,6 +145,8 @@ The following are deprecated and will be removed in a future release. For anythi
 - Attribution.iconClass deprecated since 4.27. Use icon instead.
 - BasemapGallery.iconClass deprecated since 4.27. Use icon instead.
 - BasemapLayerList.iconClass deprecated since 4.27. Use icon instead.
+- BasemapLayerList.multipleSelectionEnabled depricated since 4.29. Use selectionMode instead.
+- BasemapLayerList.editingEnabled depricated since 4.29. Use dragEnabled, selectionMode, and visibleElements.editButton instead.
 - Bookmarks.iconClass deprecated since 4.27. Use icon instead.
 - BookmarksViewModel.abilities deprecated since 4.27. Use capabilities instead.
 - BuildingExplorer.iconClass deprecated since 4.27. Use icon instead.
@@ -201,6 +221,8 @@ The following are deprecated and will be removed in a future release. For anythi
 - InputFieldGroup.visible deprecated since 4.27. Use GroupInput.visible instead.
 - InputFieldGroup deprecated since 4.27. Use GroupInput instead.
 - LayerList.iconClass deprecated since 4.27. Use icon instead.
+- LayerList.multipleSelectionEnabled depricated since 4.29. Use selectionMode instead.
+- LayerList.selectionEnabled depricated since 4.29. Use dragEnabled and selectionMode instead.
 - Legend.iconClass deprecated since 4.27. Use icon instead.
 - Lighting deprecated since version 4.24. Use SunLighting instead.
 - LineOfSight.iconClass deprecated since 4.27. Use icon instead.
@@ -221,6 +243,8 @@ The following are deprecated and will be removed in a future release. For anythi
 - SunLighting.ambientOcclusionEnabled deprecated since version 4.27. Ambient occlusion is automatically shown and this property has no effect.
 - SunLighting.waterReflectionEnabled deprecated since version 4.27. Reflections are automatically shown and this property has no effect.
 - Swipe.iconClass deprecated since 4.27. Use icon instead.
+- TableList.multipleSelectionEnabled depricated since 4.29. Use selectionMode instead.
+- TableList.selectionEnabled depricated since 4.29. Use dragEnabled and selectionMode instead.
 - The allowAttachments property within Editor.layerInfos is deprecated at 4.25. Use either attachmentsOnCreateEnabled or attachmentsOnUpdateEnabled instead.
 - The "non-metric" possible value for ScaleBar.unit is deprecated at 4.27. Please use "imperial" instead.
 - TimeSlider.iconClass deprecated since 4.27. Use icon instead.
