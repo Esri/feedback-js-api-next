@@ -35,11 +35,11 @@ More information is available in the SDK's [Build with ES modules](https://next.
 
 ## TypeScript typings for ES modules
 
-Typings are included with the npm install of ES modules. For most use cases, no special TypeScript configurations are required.
+Typings are included with the npm install of `@arcgis/core`. For most use cases, no special TypeScript configurations are required.
 
-## TypeScript typings for AMD modules
+## TypeScript typings for AMD modules (deprecated)
 
-The typings are also included with the npm install of AMD modules, and they can be used in two ways.
+The typings for use with AMD modules in local builds are deprecated since 4.29. They are included with the install of the npm package [`arcgis-js-api`](https://www.npmjs.com/package/arcgis-js-api), and can be used in two ways.
 
 ### Include a `///` directive in your main TypeScript file.
 
@@ -83,7 +83,7 @@ const [Map] = await loadModules(['esri/map'], options);
 
 ## Licensing
 
-Copyright 2023 Esri
+Copyright 2024 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
