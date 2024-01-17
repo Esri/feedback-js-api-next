@@ -69,6 +69,10 @@ const layerList = new LayerList({
 ### Feature order in the Popup and Features widget
 The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets now display features from multiple layers in the order they are displayed in the map. This means that the features of the topmost layer in the map will appear first, followed by the features of the next layer, and so on. In previous versions, the features were displayed in the order they were returned from the server.
 
+### Configure ScaleRangeSlider mode
+
+The `mode` property on [ScaleRangeSlider](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) allows you to configure which of the slider thumbs are adjustable. Possible values are `range` (both thumbs adjustable), `max-scale-only`, and `min-scale-only`.
+
 ## Breaking Changes
 
 - At version 4.29, only WebGL2-enabled browsers are supported for both 2D and 3D. See the [System Requirements](https://developers.arcgis.com/javascript/latest/system-requirements/) for more information.
