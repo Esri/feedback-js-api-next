@@ -6,6 +6,10 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 
 ## Layer updates
 
+### Pagination on WFSLayer
+
+WFSLayer now uses pagination on requests to the service instead of requesting the features all at once, which should lead to better performance and load time of large WFSLayers. Use the `maxRecordCount` property to set the maximum number of features that can be returned in a single request.
+
 ## Widget Updates
 
 ### LayerList, BasemapLayerList and TableList widgets redesigned to use Calcite Design System
