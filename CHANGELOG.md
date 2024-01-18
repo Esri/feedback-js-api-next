@@ -152,7 +152,8 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.28 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
-- The [`esri-loader`](https://github.com/Esri/esri-loader/blob/master/README.md) library is deprecated at version 4.29. Use [components](https://developers.arcgis.com/javascript/latest/components/) or the [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules instead.
+- The AMD npm package [`arcgis-js-api`](https://www.npmjs.com/package/arcgis-js-api) is deprecated at version 4.29. This is related to dropping local build support for legacy Dojo 1 and RequireJS. Use [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules or plan on moving to [components (beta)](https://developers.arcgis.com/javascript/latest/components/) instead.
+- The [`esri-loader`](https://github.com/Esri/esri-loader/blob/master/README.md) library is deprecated at version 4.29. Use [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules or plan on moving to [components (beta)](https://developers.arcgis.com/javascript/latest/components/) instead.
 
 <details>
   <summary>Click to expand the complete list</summary>
