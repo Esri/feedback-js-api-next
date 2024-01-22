@@ -121,6 +121,14 @@ The following classes, methods, properties and events have been deprecated for a
 | `InputFieldGroup.state`  | [GroupInput.state](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#state) | 4.27 |
 | `InputFieldGroup.visibilityExpression`  | [GroupElement.visibilityExpression](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-GroupElement.html#visibilityExpression) |
 | `InputFieldGroup.visible`  | [GroupInput.visible](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-GroupInput.html#visible) | 4.27 |
+| `CreateWorkflow` | [CreateFeaturesWorkflow](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor-CreateFeaturesWorkflow.html)  | 4.23 |
+| `CreateWorkflowData` | [CreateFeaturesWorkflowData](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor-CreateFeaturesWorkflowData.html)  | 4.23 |
+| `Editor.startCreateWorkflowAtFeatureCreation`  | [Editor.startCreateFeaturesWorkflowAtFeatureCreation](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html#startCreateFeaturesWorkflowAtFeatureCreation)  | 4.23 |
+| `EditorViewModel.startCreateWorkflowAtFeatureCreation`  | [EditorViewModel.startCreateFeaturesWorkflowAtFeatureCreation](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor-EditorViewModel.html#startCreateFeaturesWorkflowAtFeatureCreation)  | 4.23 |
+| `Editor.startCreateWorkflowAtFeatureTypeSelection`  | [Editor.startCreateFeaturesWorkflowAtFeatureTypeSelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html#startCreateFeaturesWorkflowAtFeatureTypeSelection)  | 4.23 |
+| `EditorViewModel.startCreateWorkflowAtFeatureTypeSelection`  | [EditorViewModel.startCreateFeaturesWorkflowAtFeatureTypeSelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor-EditorViewModel.html#startCreateFeaturesWorkflowAtFeatureTypeSelection)  | 4.23 |
+| `Editor.startCreateWorkflowAtFeatureEdit`  | [Editor.startCreateFeaturesWorkflowAtFeatureEdit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html#startCreateFeaturesWorkflowAtFeatureEdit)  | 4.23 |
+| `EditorViewModel.startCreateWorkflowAtFeatureEdit`  | [EditorViewModel.startCreateFeaturesWorkflowAtFeatureEdit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor-EditorViewModel.html#startCreateFeaturesWorkflowAtFeatureEdit)  | 4.23 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
