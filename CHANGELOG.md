@@ -5,6 +5,7 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
 ## Performance updates
+
 The [heatmapRendererCreator.createRenderer()](https://developers.arcgis.com/javascript/latest/api-reference/esri-smartMapping-renderers-heatmap.html#createRenderer) method for generating a [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html) is 100x faster than it was in version 4.28.
 
 ## Layer updates
