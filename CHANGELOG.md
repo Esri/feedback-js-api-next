@@ -4,11 +4,24 @@ The `next` version of 4.29 is now available. Planned release date is February 20
 
 ![Current build version](https://img.shields.io/npm/v/arcgis-js-api/next?label=Current%20build)
 
+## Performance updates
+The [heatmapRendererCreator.createRenderer()](https://developers.arcgis.com/javascript/latest/api-reference/esri-smartMapping-renderers-heatmap.html#createRenderer) method for generating a [HeatmapRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-HeatmapRenderer.html) is 100x faster than it was in version 4.28.
+
 ## Layer updates
 
 ### Pagination on WFSLayer
 
 WFSLayer now uses pagination on requests to the service instead of requesting the features all at once, which should lead to better performance and load time of large WFSLayers. Use the `maxRecordCount` property to set the maximum number of features that can be returned in a single request.
+
+## MapView hitTest improvements
+
+### VectorTileLayer hitTest
+
+The [hitTest()](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#hitTest) method on the MapView now returns features belonging to a [VectorTileLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VectorTileLayer.html) that intersect the hitTest point. This provides access to the attributes of those features, which can be useful for various purposes such as displaying additional information or performing further analysis.
+
+### MapView hitTest respects drawing order
+
+When performing a [`hitTest()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#hitTest) on the MapView, the drawing order of the features in the layer is now respected. The returned features will adhere to the default drawing order of the data or a specific order if [`orderBy`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#orderBy) is specified on the layer. This is a significant improvement from previous versions where the features were displayed based on the order they were returned from the server.
 
 ## Widget Updates
 
@@ -68,6 +81,8 @@ const layerList = new LayerList({
 
 ### Feature order in the Popup and Features widget
 The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets now display features from multiple layers in the order they are displayed in the map. This means that the features of the topmost layer in the map will appear first, followed by the features of the next layer, and so on. In previous versions, the features were displayed in the order they were returned from the server.
+
+With the MapView [`hitTest()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#hitTest) updates, the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets also respect the drawing order for individual layers. See the [MapView hitTest updates](#mapview-hittest-respects-drawing-order) section for more details.
 
 ### Configure ScaleRangeSlider mode
 
@@ -142,15 +157,22 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000156355: Fixed an issue where a [WFSLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WFSLayer.html) was not loading when the service's `outputFormat` was defined as `geo+json`.
 - BUG-000163592: Fixed an issue with typings where the [FeatureService.applyEdits](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-featureService-FeatureService.html#applyEdits) method parameters were not included in the TypeScript definitions.
 - BUG-000160409: Fixed an issue where [OGCFeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-OGCFeatureLayer.html) popups were not appearing when displaying a field name that contains a `.` (period).
+- BUG-000162717: Fixed an issue where [VectorTileLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VectorTileLayer.html) was not displaying labels past their data max LOD.
+- BUG-000164240: Fixed an issue where the [HeatmapColorStop.clone()](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-support-HeatmapColorStop.html#clone) method did not create a deep clone.
 - ENH-000120327: Added support for creating a client-side [ImageryTileLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-ImageryTileLayer.html) from [pixelData](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-ImageryLayer.html#PixelData) by setting the `source` property.
+- ENH-000129194: Enhanced the MapView [hitTest()](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#hitTest), [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget, and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widget to respect layer drawing order. See the [MapView hitTest updates](#mapview-hittest-respects-drawing-order) section for more details.
+- ENH-000129411: Added [hitTest](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#hitTest) support to return feature attributes for [VectorTileLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VectorTileLayer.html). See the [VectorTileLayer hitTest improvements](#vectortilelayer-hittest) section for more info.
 - ENH-000156986: Added support for using the `$view.scale` profile variable in primitive override expressions for graphics in with GraphicLayer.
 - ENH-000157271: Updated the default ordering of features in the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widget to show features in layer order starting with the topmost layer in the map.
+- ENH-000163021: Added a code snippet that shows how to instantiate a [UtilityNetwork](https://developers.arcgis.com/javascript/latest/api-reference/esri-networks-UtilityNetwork.html) instance using the [`layerUrl`](https://developers.arcgis.com/javascript/latest/api-reference/esri-networks-UtilityNetwork.html#layerUrl) property.
+- ENH-000163229: When creating a layer using the [`fromPortalItem`()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-Layer.html#fromPortalItem) method, custom parameters set up with the portal item are now respected.
 - [Esri Community - 1339508](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/cimsymbol-marker-placement-relativeto-quot/m-p/1339508): Fixed an issue where a [CIMSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-CIMSymbol.html) with the marker placement type `CIMMarkerPlacementOnLine` was not rendering when `relativeTo` was set to `"SegmentMidpoint"`.
 - [Esri community - 1350675](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/changing-compass-widget-icon-in-arcgis-maps-sdk/m-p/1350675): Fixed an issue with the Compass widget and FullScreen widget that wasn't allowing the icon to be customized.
 - [Esri Community - 1351209](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/elevationprofile-widget-in-dark-theme/m-p/1351209): Fixed an issue with the [ElevationProfile](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ElevationProfile.html) widget where the chart tooltip text was not legible in the dark theme.
 - [GitHub - 268](https://github.com/Esri/feedback-js-api-next/issues/268): Fixed an issue where [MapView.goTo](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#goTo) was not honoring its abort signal.
 - Fixed an issue where the dropdown for grouped actions was not anchored to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) when zooming in/out of the view.
 - Fixed an issue where [MapView.hitTest()](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html) was returning an empty [graphic](https://developers.arcgis.com/javascript/latest/api-reference/esri-Graphic.html) for [ImageryLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-ImageryLayer.html). No result is returned now.
+- Fixed an issue where some vector tile layer requests were being incorrectly cancelled when using Angular 16 and 17.
 - Added a new [`getAllHeaders()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-request.html#getAllHeaders) method to [`esri/request`](https://developers.arcgis.com/javascript/latest/api-reference/esri-request.html) to retrieve all headers sent from the server.
 - Added a new `no-prompt` [Portal.authMode](https://developers.arcgis.com/javascript/latest/api-reference/esri-portal-Portal.html#authMode) to control whether to display a sign-in prompt after checking if the user is already signed in.
 - Added new [VisibleElements](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#VisibleElements) to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html): `actionBar`, `collapseButton`, `heading`, `spinner`
