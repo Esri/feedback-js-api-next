@@ -129,6 +129,8 @@ The following classes, methods, properties and events have been deprecated for a
 | `EditorViewModel.startCreateWorkflowAtFeatureTypeSelection`  | [EditorViewModel.startCreateFeaturesWorkflowAtFeatureTypeSelection](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor-EditorViewModel.html#startCreateFeaturesWorkflowAtFeatureTypeSelection)  | 4.23 |
 | `Editor.startCreateWorkflowAtFeatureEdit`  | [Editor.startCreateFeaturesWorkflowAtFeatureEdit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html#startCreateFeaturesWorkflowAtFeatureEdit)  | 4.23 |
 | `EditorViewModel.startCreateWorkflowAtFeatureEdit`  | [EditorViewModel.startCreateFeaturesWorkflowAtFeatureEdit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor-EditorViewModel.html#startCreateFeaturesWorkflowAtFeatureEdit)  | 4.23 |
+| `FeatureTable.clearHighlights()`  | call [removeAll](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#removeAll) from [FeatureTable.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#highlightIds)  | 4.25 |
+| `FeatureTableViewModel.clearHighlights()`  | call [removeAll](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#removeAll) from [FeatureTableViewModel.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)  | 4.25 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
