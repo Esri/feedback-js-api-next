@@ -89,6 +89,10 @@ With the MapView [`hitTest()`](https://developers.arcgis.com/javascript/latest/a
 
 The `mode` property on [ScaleRangeSlider](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleRangeSlider.html) allows you to configure which of the slider thumbs are adjustable. Possible values are `range` (both thumbs adjustable), `max-scale-only`, and `min-scale-only`.
 
+### FeatureTable widget
+
+Support was added for editing `date-only`, `time-only`, and `timestamp-offset` field [types](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-Field#type) within the [FeatureTable](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html) widget. In addition to this update, these field types, in addition to `date`, have been updated to work with Calcite Components' [Date Picker](https://developers.arcgis.com/calcite-design-system/components/date-picker/), [Time Picker](https://developers.arcgis.com/calcite-design-system/components/time-picker/), and [Input Time Zone](https://developers.arcgis.com/calcite-design-system/components/input-time-zone/).
+
 ## Breaking Changes
 
 - At version 4.29, only WebGL2-enabled browsers are supported for both 2D and 3D. See the [System Requirements](https://developers.arcgis.com/javascript/latest/system-requirements/) for more information.
@@ -146,8 +150,10 @@ The following classes, methods, properties and events have been deprecated for a
 | `Editor.startCreateWorkflowAtFeatureEdit`  | [Editor.startCreateFeaturesWorkflowAtFeatureEdit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html#startCreateFeaturesWorkflowAtFeatureEdit)  | 4.23 |
 | `EditorViewModel.startCreateWorkflowAtFeatureEdit`  | [EditorViewModel.startCreateFeaturesWorkflowAtFeatureEdit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor-EditorViewModel.html#startCreateFeaturesWorkflowAtFeatureEdit)  | 4.23 |
 | `Editor.useDeprecatedCreateWorkflow` | no longer applicable | 4.23 |
+| `FeatureFormViewModel.inputFields`  | [FeatureFormViewModel.inputs](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm-FeatureFormViewModel.html#inputs)  | 4.27 |
 | `FeatureTable.clearHighlights()`  | call [removeAll](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#removeAll) from [FeatureTable.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#highlightIds)  | 4.25 |
 | `FeatureTableViewModel.clearHighlights()`  | call [removeAll](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#removeAll) from [FeatureTableViewModel.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)  | 4.25 |
+| `FieldElement.editable`  | [FieldElement.editableExpression](https://developers.arcgis.com/javascript/latest/api-reference/esri-form-elements-FieldElement.html#editableExpression)  | 4.26 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
