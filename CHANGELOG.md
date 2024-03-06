@@ -6,7 +6,11 @@ The `next` version of 4.30 is now available. Planned release date is June 2024.
 
 ## Layer updates
 
+TBD
+
 ## Widget Updates
+
+TBD
 
 ## Breaking Changes
 
