@@ -14,17 +14,21 @@ TBD
 
 ## Breaking Changes
 
+- The DatePicker and TimePicker have been removed. Use the [Input Date Picker](https://developers.arcgis.com/calcite-design-system/components/input-date-picker/) and [Input Time Picker](https://developers.arcgis.com/calcite-design-system/components/input-time-picker/) Calcite components instead.
+
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the SDK:
 
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |-----------------------------|------------------|--------------------|
-| TBD | TBD | TBD |
+| `Popup.autoOpenEnabled` | [`View.popupEnabled`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html#popupEnabled) | 4.27 |
+| `PopupViewModel.autoOpenEnabled` | [`View.popupEnabled`](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html#popupEnabled) | 4.27 |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
 
-- TBD
+- BUG-000165858: Fixed an issue where the `collapsed` property value on the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widget was not changing when expanding/collapsing the widget.
+- The [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widget is out of beta.
 
 ## Deprecations
 
