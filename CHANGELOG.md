@@ -10,7 +10,8 @@ TBD
 
 ## Widget Updates
 
-TBD
+#### Legend
+Legend now supports definition expressions for layers with unique value renderers when `respectLayerDefinitionExpression` is set to `true`. The default is `false`.
 
 ## Breaking Changes
 
