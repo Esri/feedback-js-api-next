@@ -34,6 +34,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000144377: All content elements now allow rendering supported HTML for their title and description properties.
+- BUG-000153181: Fixed an issue where SceneView didn't properly load an imagery layer with predefined renderer.
 - BUG-000163544: Fixed an issue where a SimpleMarkerSymbol was rendered with poor quality when using certain SVG paths.
 - BUG-000165858: Fixed an issue where the collapsed property value on the Popup and Features widget was not changing when expanding/collapsing the widget.
 - [Esri Community - 1403039](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/4-29-breaking-change-mapview-goto-w-rotation/m-p/1403039): Fixed an issue where MapView.goTo would zoom out when only the rotation was set in the target.
