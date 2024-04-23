@@ -4,6 +4,10 @@ The `next` version of 4.30 is now available. Planned release date is June 2024.
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
+## Components updates
+
+- Map and coding components are coming out of beta at 4.30.
+
 ## Layer updates
 
 TBD
