@@ -6,7 +6,7 @@ The `next` version of 4.30 is now available. Planned release date is June 2024.
 
 ## Components updates
 
-- Map components are coming out of beta at 4.30.
+- Map and coding components are coming out of beta at 4.30.
 
 ## Layer updates
 
