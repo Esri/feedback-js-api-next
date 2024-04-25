@@ -41,6 +41,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000153181: Fixed an issue where SceneView didn't properly load an imagery layer with predefined renderer.
 - BUG-000163544: Fixed an issue where a SimpleMarkerSymbol was rendered with poor quality when using certain SVG paths.
 - BUG-000165858: Fixed an issue where the collapsed property value on the Popup and Features widget was not changing when expanding/collapsing the widget.
+- BUG-000166831: Fixed an issue where the `MapView.hitTest()` does not return a hit for a `GraphicsLayer` when the graphics have `TextSymbol` with `lineWidth`.
 - [Esri Community - 1403039](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/4-29-breaking-change-mapview-goto-w-rotation/m-p/1403039): Fixed an issue where MapView.goTo would zoom out when only the rotation was set in the target.
 - [Esri Community - 1407481](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/first-calls-to-sendmessagetoclient-not-used/m-p/1407481): Fixed an issue where the first call to StreamLayer.sendMessageToSocket is not applied on initial load.
 - The Features widget is out of beta.
