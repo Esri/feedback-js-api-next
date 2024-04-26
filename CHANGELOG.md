@@ -17,6 +17,10 @@ TBD
 ### Legend
 Legend now supports definition expressions for layers with unique value renderers when `respectLayerDefinitionExpression` is set to `true`. The default is `false`.
 
+### Expand
+
+The Expand widget was updated to use calcite components internally, providing an improved experience on mobile devices.
+
 ## Breaking Changes
 
 - The DatePicker and TimePicker have been removed. Use the Input Date Picker and Input Time Picker Calcite components instead.
