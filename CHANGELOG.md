@@ -8,6 +8,17 @@ The `next` version of 4.30 is now available. Planned release date is June 2024.
 
 - Map and coding components are coming out of beta at 4.30.
 
+### Components breaking changes
+
+- In `@arcgis/map-components@next`, `Zoom` and other navigation components have been removed as defaults in the `arcgis-map` and `arcgis-scene` components. The only default component will be `Attribution`. All others need to be added manually, for example:
+
+```html
+  <arcgis-map basemap="dark-gray-vector" center="-90.1994,38.6270" zoom="4.5">
+      <arcgis-zoom position="top-left"></arcgis-zoom>
+      <arcgis-home position="top-right"></arcgis-home>
+  </arcgis-map>
+```
+
 ## Layer updates
 
 TBD
