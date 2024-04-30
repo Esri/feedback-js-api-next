@@ -44,8 +44,13 @@ The following classes, methods, properties and events have been deprecated for a
 | `BookmarksViewModel.abilities`         | [BookmarksViewModel.capabilities](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks-BookmarksViewModel.html#capabilities) | 4.27 |
 | `Expand.expandIconClass`               | [Expand.expandIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#expandIcon)    | 4.27 | 
 | `Expand.collapseIconClass`               | [Expand.collapseIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#collapseIcon) | 4.27 |
-| `FeatureTable.clearSelection()`  |  [Collection.removeAll()](/api-reference/esri-core-Collection.html#removeAll)  | 4.25  |
 | `"non-metric"` value of [ScaleBar.unit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html#unit) |`"imperial"`               | 4.27 |
+| `FeatureTable.clearSelection()`  |  Call [removeAll()](/api-reference/esri-core-Collection.html#removeAll) on [FeatureTable.highlightIds](/api-reference/esri-widgets-FeatureTable.html#highlightIds)  | 4.25  |
+| `FeatureTableViewModel.clearSelection()`  |  Call [removeAll()](/api-reference/esri-core-Collection.html#removeAll) on [FeatureTableViewModel.highlightIds](/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)   | 4.25  |
+| `FeatureTable.deselectRows()`  |  Call [remove()](/api-reference/esri-core-Collection.html#remove) on [FeatureTable.highlightIds](/api-reference/esri-widgets-FeatureTable.html#highlightIds)  |  4.25  |
+| `FeatureTableViewModel.deselectRows()`  |  Call [remove()](/api-reference/esri-core-Collection.html#remove) on [FeatureTableViewModel.highlightIds](/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)  |  4.25  |
+| `FeatureTable.highlightOnRowSelectEnabled`  |  [highlightEnabled](api-reference/esri-widgets-FeatureTable.html#highlightEnabled)  |  4.25  |
+| `FeatureTableViewModel.highlightOnRowSelectEnabled`  |  [highlightEnabled](api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightEnabled) |  4.25  |
 | `Popup.autoOpenEnabled`                | [View.popupEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html#popupEnabled)    | 4.27 |
 | `PopupViewModel.autoOpenEnabled`       | [View.popupEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html#popupEnabled)    | 4.27 |
 | `Widget.iconClass`                     | [Widget.icon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html#icon)                | 4.27 | 
