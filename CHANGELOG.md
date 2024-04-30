@@ -10,6 +10,7 @@ The `next` version of 4.30 is now available. Planned release date is June 2024.
 
 ### Components breaking changes
 
+- In `@arcgis/map-components@next`, for non-view based components the `arcgis<nameOfComponent><nameofEvent>` event naming pattern has been removed. Use the `arcgis<nameOfEvent>` naming pattern instead. For example, this change affects `arcgis-basemap-gallery` and `arcgis-bookmarks`. It does not affect `arcgis-map` or `arcgis-scene`. 
 - In `@arcgis/map-components@next`, `Zoom` and other navigation components have been removed as defaults in the `arcgis-map` and `arcgis-scene` components. The only default component will be `Attribution`. All others need to be added manually, for example:
 
 ```html
