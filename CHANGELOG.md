@@ -43,7 +43,8 @@ The following classes, methods, properties and events have been deprecated for a
 |-----------------------------|------------------|--------------------|
 | `BookmarksViewModel.abilities`         | [BookmarksViewModel.capabilities](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks-BookmarksViewModel.html#capabilities) | 4.27 |
 | `Expand.expandIconClass`               | [Expand.expandIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#expandIcon)    | 4.27 | 
-| `Expand.collapseIconClass`               | [Expand.collapseIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#collapseIcon) | 4.27 | 
+| `Expand.collapseIconClass`               | [Expand.collapseIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#collapseIcon) | 4.27 |
+| `FeatureTable.clearSelection()`  |  [Collection.removeAll()](/api-reference/esri-core-Collection.html#removeAll)  | 4.25  |
 | `"non-metric"` value of [ScaleBar.unit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html#unit) |`"imperial"`               | 4.27 |
 | `Popup.autoOpenEnabled`                | [View.popupEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html#popupEnabled)    | 4.27 |
 | `PopupViewModel.autoOpenEnabled`       | [View.popupEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html#popupEnabled)    | 4.27 |
