@@ -54,7 +54,7 @@ Typings are included with the npm installs. For most use cases, no special TypeS
 
 ## TypeScript typings for AMD modules (deprecated)
 
-The typings for use with AMD modules in local builds are deprecated since 4.29 and will be retired at 4.31. They are included with the install of the npm package [`arcgis-js-api`](https://www.npmjs.com/package/arcgis-js-api), and can be used in two ways.
+The typings for use with AMD modules in local builds are deprecated since 4.29. They are included with the install of the npm package [`arcgis-js-api`](https://www.npmjs.com/package/arcgis-js-api), and can be used in two ways.
 
 ### Include a `///` directive in your main TypeScript file.
 
