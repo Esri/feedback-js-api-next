@@ -38,6 +38,11 @@ Run `npm install @arcgis/map-components@next`. For CSS use [jsDelivr](https://ww
 
     @import "https://cdn.jsdelivr.net/npm/@arcgis/core@next/assets/esri/themes/light/main.css";
 
+To register the components with the custom elements registry and configure the SDK assets:
+
+    import { defineCustomElements as defineMapElements } from "@arcgis/map-components/dist/loader";
+    defineMapElements(window, { resourcesUrl: "https://cdn.jsdelivr.net/npm/@arcgis/map-components@next/dist/arcgis-map-components/assets" }); 
+
 For additional information see the SDK's [guide topic](https://developers.arcgis.com/javascript/latest/components-get-started-npm/).
 
 #### Core API
