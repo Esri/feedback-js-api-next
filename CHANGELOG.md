@@ -26,7 +26,12 @@ TBD
 
 ## Widget Updates
 
+### LayerList
+
+The LayerList widget now has improved support for [KnowledgeGraphLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-KnowledgeGraphLayer.html). When a KnowledgeGraphLayer is present in the map, the LayerList widget will display the knowledge graph layer's tables as an expandable list item. Clicking on the tables list item will open a new flow panel to show the tables associated with the knowledge graph layer.
+
 ### Legend
+
 Legend now supports definition expressions for layers with unique value renderers when `respectLayerDefinitionExpression` is set to `true`. The default is `false`.
 
 ### Expand
