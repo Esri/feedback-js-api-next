@@ -20,6 +20,24 @@ The `next` version of 4.30 is now available. Planned release date is June 2024.
   </arcgis-map>
 ```
 
+## MapView.goTo animation
+
+We have significantly improved the animation behavior of [MapView.goTo()](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#goTo) to enhance the geographic context during transitions between locations on the map. These enhancements also provide developers with greater control over the animation settings.
+
+These improvements include changes to the [GoToOptions2D](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#GoToOptions2D) properties:
+- The `duration` property no longer has a default value. Instead, our algorithm calculates the ideal animation duration based on the distance between the origin and destination, as well as the `maxDuration`. You can override this by explicitly setting the `duration`.
+- The `maxDuration` and `speedFactor` properties offer greater control over the duration and speed of the animation.
+- Certain animations, particularly if they run over a large area or for a long time, have the potential to be disruptive. The `animationMode` property determines the policy for potentially disruptive animations. The default value is `"auto"`, which intelligently decides how to animate based on factors such as time, distance, and `maxDuration`. If the proposed animation time exceeds the `maxDuration`, the map will navigate to the destination instantly. Setting `animationMode` to `"always"` ensures that the animation always occurs, even if, for example, it needs to speed up to fit within the `maxDuration`.
+
+Additionally, we have introduced a new animation style that zooms out and in, creating an arc-like motion. This style provides more geographic context when transitioning between two locations on the map.
+
+These enhancements are also noticeable when navigating to points of interest using the [Bookmarks](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html) or [Search](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Search.html) widget.
+
+> [!NOTE]
+> Animations may not be suitable for everyone, as some animations can cause discomfort for individuals with vestibular motion disorders. To disable 2D MapView navigation animations in the JavaScript SDK, users can set the [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) option in their device or browser settings.
+
+
+
 ## Layer updates
 
 TBD
