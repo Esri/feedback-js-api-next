@@ -22,7 +22,7 @@ The `next` version of 4.30 is now available. Planned release date is June 2024.
 
 ## MapView.goTo animation
 
-We have made significant improvements to the animation behavior of [MapView.goTo()](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#goTo) to enhance the geographic context during transitions between locations on the map. These enhancements also provide developers with greater control over the animation settings.
+We have significantly improved the animation behavior of [MapView.goTo()](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#goTo) to enhance the geographic context during transitions between locations on the map. These enhancements also provide developers with greater control over the animation settings.
 
 These improvements include changes to the [GoToOptions2D](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#GoToOptions2D) properties:
 - The `duration` property no longer has a default value. Instead, our algorithm calculates the ideal animation duration based on the distance between the origin and destination, as well as the `maxDuration`. You can override this by explicitly setting the `duration`.
