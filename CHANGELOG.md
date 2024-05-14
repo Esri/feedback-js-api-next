@@ -65,6 +65,7 @@ The following classes, methods, properties and events have been deprecated for a
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |-----------------------------|------------------|--------------------|
 | `BookmarksViewModel.abilities`         | [BookmarksViewModel.capabilities](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks-BookmarksViewModel.html#capabilities) | 4.27 |
+| `Editor.layerInfo.allowAttachments` | Set `attachmentsOnUpdateEnabled` or `attachmentsOnCreateEnabled` on [Editor.LayerInfo](/api-reference/esri-widgets-Editor.html#LayerInfo) | 4.26 |
 | `Expand.expandIconClass`               | [Expand.expandIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#expandIcon)    | 4.27 | 
 | `Expand.collapseIconClass`               | [Expand.collapseIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#collapseIcon) | 4.27 |
 | `"non-metric"` value of [ScaleBar.unit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html#unit) |`"imperial"`               | 4.27 |
