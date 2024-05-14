@@ -68,6 +68,7 @@ The following classes, methods, properties and events have been deprecated for a
 | `Expand.expandIconClass`               | [Expand.expandIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#expandIcon)    | 4.27 | 
 | `Expand.collapseIconClass`               | [Expand.collapseIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#collapseIcon) | 4.27 |
 | `"non-metric"` value of [ScaleBar.unit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html#unit) |`"imperial"`               | 4.27 |
+| `FeatureForm.view` | Set [FeatureForm.map](/api-reference/esri-widgets-FeatureForm.html#map) instead | 4.27 |
 | `FeatureTable.clearSelection()`  |  Call [removeAll()](/api-reference/esri-core-Collection.html#removeAll) on [FeatureTable.highlightIds](/api-reference/esri-widgets-FeatureTable.html#highlightIds)  | 4.25  |
 | `FeatureTableViewModel.clearSelection()`  |  Call [removeAll()](/api-reference/esri-core-Collection.html#removeAll) on [FeatureTableViewModel.highlightIds](/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)   | 4.25  |
 | `FeatureTable.deselectRows()`  |  Call [remove()](/api-reference/esri-core-Collection.html#remove) or [removeMany()](/api-reference/esri-core-Collection.html#removeMany) on [FeatureTable.highlightIds](/api-reference/esri-widgets-FeatureTable.html#highlightIds)  |  4.25  |
