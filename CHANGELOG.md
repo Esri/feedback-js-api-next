@@ -65,22 +65,27 @@ The following classes, methods, properties and events have been deprecated for a
 | Class/Property/Method/Event | Alternate option | Version deprecated |
 |-----------------------------|------------------|--------------------|
 | `BookmarksViewModel.abilities`         | [BookmarksViewModel.capabilities](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks-BookmarksViewModel.html#capabilities) | 4.27 |
-| `Editor.layerInfo.allowAttachments` | Set `attachmentsOnUpdateEnabled` or `attachmentsOnCreateEnabled` on [Editor.LayerInfo](/api-reference/esri-widgets-Editor.html#LayerInfo) | 4.26 |
+| `Editor.layerInfo.allowAttachments` | Set `attachmentsOnUpdateEnabled` or `attachmentsOnCreateEnabled` on [Editor.LayerInfo](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Editor.html#LayerInfo) | 4.26 |
 | `Expand.expandIconClass`               | [Expand.expandIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#expandIcon)    | 4.27 | 
 | `Expand.collapseIconClass`               | [Expand.collapseIcon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html#collapseIcon) | 4.27 |
 | `"non-metric"` value of [ScaleBar.unit](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-ScaleBar.html#unit) |`"imperial"`               | 4.27 |
-| `FeatureForm.view` | Set [FeatureForm.map](/api-reference/esri-widgets-FeatureForm.html#map) instead | 4.27 |
-| `FeatureTable.clearSelection()`  |  Call [removeAll()](/api-reference/esri-core-Collection.html#removeAll) on [FeatureTable.highlightIds](/api-reference/esri-widgets-FeatureTable.html#highlightIds)  | 4.25  |
-| `FeatureTableViewModel.clearSelection()`  |  Call [removeAll()](/api-reference/esri-core-Collection.html#removeAll) on [FeatureTableViewModel.highlightIds](/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)   | 4.25  |
-| `FeatureTable.deselectRows()`  |  Call [remove()](/api-reference/esri-core-Collection.html#remove) or [removeMany()](/api-reference/esri-core-Collection.html#removeMany) on [FeatureTable.highlightIds](/api-reference/esri-widgets-FeatureTable.html#highlightIds)  |  4.25  |
-| `FeatureTableViewModel.deselectRows()`  |  Call [remove()](/api-reference/esri-core-Collection.html#remove) or [removeMany()](/api-reference/esri-core-Collection.html#removeMany) on [FeatureTableViewModel.highlightIds](/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)  |  4.25  |
+| `FeatureForm.view` | Set [FeatureForm.map](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureForm.html#map) instead | 4.27 |
+| `FeatureTable.clearSelection()`  |  Call [removeAll()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#removeAll) on [FeatureTable.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#highlightIds)  | 4.25  |
+| `FeatureTableViewModel.clearSelection()`  |  Call [removeAll()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#removeAll) on [FeatureTableViewModel.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)   | 4.25  |
+| `FeatureTable.deselectRows()`  |  Call [remove()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#remove) or [removeMany()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#removeMany) on [FeatureTable.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#highlightIds)  |  4.25  |
+| `FeatureTableViewModel.deselectRows()`  |  Call [remove()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#remove) or [removeMany()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#removeMany) on [FeatureTableViewModel.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightIds)  |  4.25  |
 | `FeatureTable.highlightOnRowSelectEnabled`  |  [highlightEnabled](api-reference/esri-widgets-FeatureTable.html#highlightEnabled)  |  4.25  |
 | `FeatureTableViewModel.highlightOnRowSelectEnabled`  |  [highlightEnabled](api-reference/esri-widgets-FeatureTable-FeatureTableViewModel.html#highlightEnabled) |  4.25  |
 | `FeatureTable.selection-change` event | Listen for [FeatureTable.highlightIds](api-reference/esri-widgets-FeatureTable.html#highlightIds) | 4.25 |
-| `FeatureTable.selectRows()` | Call [add()](/api-reference/esri-core-Collection.html#add) or [addMany()](/api-reference/esri-core-Collection.html#addMany) on [FeatureTable.highlightIds](/api-reference/esri-widgets-FeatureTable.html#highlightIds) | 4.25 |
-| `FeatureTableViewModel.selectRows()` | Call [add()](/api-reference/esri-core-Collection.html#add) or [addMany()](/api-reference/esri-core-Collection.html#addMany) on [FeatureTableViewModel.highlightIds](/api-reference/esri-widgets-FeatureTable/FeatureTableViewModel.html#highlightIds) | 4.25 |
+| `FeatureTable.selectRows()` | Call [add()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#add) or [addMany()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#addMany) on [FeatureTable.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable.html#highlightIds) | 4.25 |
+| `FeatureTableViewModel.selectRows()` | Call [add()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#add) or [addMany()](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-Collection.html#addMany) on [FeatureTableViewModel.highlightIds](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-FeatureTable/FeatureTableViewModel.html#highlightIds) | 4.25 |
+| `Lighting`                             | [SunLighting](https://developers.arcgis.com/javascript/latest/api-reference/esri-webscene-SunLighting.html)             | 4.24 |
 | `Popup.autoOpenEnabled`                | [View.popupEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html#popupEnabled)    | 4.27 |
 | `PopupViewModel.autoOpenEnabled`       | [View.popupEnabled](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-View.html#popupEnabled)    | 4.27 |
+| `SunLighting.ambientOcclusionEnabled`  | Ambient occlusion is automatically shown and this property has no effect   | 4.27 | 
+| `SunLighting.waterReflectionEnabled`   | Reflections are automatically shown and this property has no effect        | 4.27 | 
+| `VirtualLighting.ambientOcclusionEnabled`  | Ambient occlusion is automatically shown and this property has no effect  | 4.27 | 
+| `VirtualLighting.waterReflectionEnabled`   | Reflections are automatically shown and this property has no effect       | 4.27 |
 | `Widget.iconClass`                     | [Widget.icon](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html#icon)                | 4.27 | 
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
@@ -91,10 +96,15 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000153181: Fixed an issue where SceneView didn't properly load an imagery layer with predefined renderer.
 - BUG-000163544: Fixed an issue where a SimpleMarkerSymbol was rendered with poor quality when using certain SVG paths.
 - BUG-000165858: Fixed an issue where the collapsed property value on the Popup and Features widget was not changing when expanding/collapsing the widget.
+- BUG-000165913: Fixed an issue where the stationary property on the MapView does not change value when zooming using a double tap and drag gesture on a mobile device.
 - BUG-000166831: Fixed an issue where the `MapView.hitTest()` does not return a hit for a `GraphicsLayer` when the graphics have `TextSymbol` with `lineWidth`.
+- BUG-000166346: Fixed an issue where polygon features with newlines in the label expression did not display correctly.
+- BUG-000167231: Fixed an issue where a CIMSymbol with CIMGeometricEffectDashes was having performance issues at higher scales.
 - [Esri Community - 1403039](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/4-29-breaking-change-mapview-goto-w-rotation/m-p/1403039): Fixed an issue where MapView.goTo would zoom out when only the rotation was set in the target.
 - [Esri Community - 1407481](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/first-calls-to-sendmessagetoclient-not-used/m-p/1407481): Fixed an issue where the first call to StreamLayer.sendMessageToSocket is not applied on initial load.
+- Fixed an issue where setting popupEnabled to false was not properly honored for LayerSearchSource.
 - The Features widget is out of beta.
+- VideoElement is now supported on iPhones.
 
 ## Deprecations
 
@@ -103,7 +113,7 @@ The following are deprecated and will be removed in a future release. For anythi
 - The AMD npm package [`arcgis-js-api`](https://www.npmjs.com/package/arcgis-js-api) is deprecated at version 4.29. This is related to dropping local build support for legacy Dojo 1 and RequireJS. Use [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules or plan on moving to [components (beta)](https://developers.arcgis.com/javascript/latest/components/) instead.
 - The npm package [`@arcgis/cli`](https://www.npmjs.com/package/@arcgis/cli) is deprecated at version 4.29. Plan on moving to [components (beta)](https://developers.arcgis.com/javascript/latest/components/) and Calcite.
 - The [`esri-loader`](https://github.com/Esri/esri-loader/blob/master/README.md) library is deprecated at version 4.29. Use [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules or plan on moving to [components (beta)](https://developers.arcgis.com/javascript/latest/components/) instead.
-- Support for [printing](/api-reference/esri-rest-print.html) with a Printing service published from ArcMap is deprecated at version 4.29. We recommend using ArcGIS Pro to publish Printing services.
+- Support for [printing](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-print.html) with a Printing service published from ArcMap is deprecated at version 4.29. We recommend using ArcGIS Pro to publish Printing services.
 
 <details>
   <summary>Click to expand the complete list</summary>
