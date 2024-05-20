@@ -92,7 +92,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000163544: Fixed an issue where a SimpleMarkerSymbol was rendered with poor quality when using certain SVG paths.
 - BUG-000165858: Fixed an issue where the collapsed property value on the Popup and Features widget was not changing when expanding/collapsing the widget.
 - BUG-000165913: Fixed an issue where the stationary property on the MapView does not change value when zooming using a double tap and drag gesture on a mobile device.
-- BUG-000166831: Fixed an issue where the MapView.hitTest does not return a hit for GraphicsLayer when the graphics have TextSymbol with lineWidth.
+- BUG-000166831: Fixed an issue where the `MapView.hitTest()` does not return a hit for a `GraphicsLayer` when the graphics have `TextSymbol` with `lineWidth`.
 - BUG-000166346: Fixed an issue where polygon features with newlines in the label expression did not display correctly.
 - BUG-000167231: Fixed an issue where a CIMSymbol with CIMGeometricEffectDashes was having performance issues at higher scales.
 - [Esri Community - 1403039](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/4-29-breaking-change-mapview-goto-w-rotation/m-p/1403039): Fixed an issue where MapView.goTo would zoom out when only the rotation was set in the target.
