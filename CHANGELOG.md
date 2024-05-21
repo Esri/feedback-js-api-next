@@ -105,6 +105,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000167231: Fixed an issue where a CIMSymbol with CIMGeometricEffectDashes was having performance issues at higher scales.
 - [Esri Community - 1403039](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/4-29-breaking-change-mapview-goto-w-rotation/m-p/1403039): Fixed an issue where MapView.goTo would zoom out when only the rotation was set in the target.
 - [Esri Community - 1407481](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/first-calls-to-sendmessagetoclient-not-used/m-p/1407481): Fixed an issue where the first call to StreamLayer.sendMessageToSocket is not applied on initial load.
+- [Esri Community - 1413086](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/4-29-memory-leak-on-streamlayer/m-p/1413086): Fixed an issue where the client-side `StreamLayer` was causing a memory leak.
 - Fixed an issue where setting popupEnabled to false was not properly honored for LayerSearchSource.
 - The Features widget is out of beta.
 - VideoElement is now supported on iPhones.
