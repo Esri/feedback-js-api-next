@@ -107,6 +107,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000144377: All content elements now allow rendering supported HTML for their title and description properties.
+- BUG-000151648: Fixed an issue where the Legend was not correctly rendered for the Antarctic DEM from ArcGIS Living Atlas.
 - BUG-000153181: Fixed an issue where SceneView didn't properly load an imagery layer with predefined renderer.
 - BUG-000163544: Fixed an issue where a SimpleMarkerSymbol was rendered with poor quality when using certain SVG paths.
 - BUG-000165132: Fixed an issue where the APP-6(D) DictionaryRenderer displayed an incorrect graphic for the Counterattack by Fire symbol.
@@ -114,6 +115,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000165321: Fixed an issue where some polyline symbols rendered by the DictionaryRenderer with the APP-6(D) dictionary had extra arrows and dashes.
 - BUG-000165858: Fixed an issue where the collapsed property value on the Popup and Features widget was not changing when expanding/collapsing the widget.
 - BUG-000165913: Fixed an issue where the stationary property on the MapView does not change value when zooming using a double tap and drag gesture on a mobile device.
+- BUG-000166439: Fixed an issue where the icon thumbnail for `ListItemPanel.image` had no size.
 - BUG-000166831: Fixed an issue where the `MapView.hitTest()` does not return a hit for a `GraphicsLayer` when the graphics have `TextSymbol` with `lineWidth`.
 - BUG-000166346: Fixed an issue where polygon features with newlines in the label expression did not display correctly.
 - BUG-000167231: Fixed an issue where a CIMSymbol with CIMGeometricEffectDashes was having performance issues at higher scales.
