@@ -36,13 +36,27 @@ These enhancements are also noticeable when navigating to points of interest usi
 > [!NOTE]
 > Animations may not be suitable for everyone, as some animations can cause discomfort for individuals with vestibular motion disorders. To disable 2D MapView navigation animations in the JavaScript SDK, users can set the [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) option in their device or browser settings.
 
+## Full motion video support with VideoLayer and VideoPlayer
 
+The new VideoLayer displays prerecorded or live-streamed video feeds from a [VideoServer](https://enterprise.arcgis.com/en/video/). Application developers using VideoLayer can display the video georeferenced on a map and control the playback with the new VideoPlayer widget. Both are in [beta](https://developers.arcgis.com/javascript/latest/faq/#what-does-the-beta-tag-mean) for this release.
+
+The VideoPlayer widget provides the following capabilities:
+- Control operations (play, pause, seek)
+- Time and duration display
+- Customizable graphics colors
+- Following options (sensor, frame, video)
+- Adjustable speed and quality
+- Access to frame metadata
 
 ## Layer updates
 
 TBD
 
 ## Widget Updates
+
+### CatalogLayerList
+
+The new CatalogLayerList widget provides a way to display and interact with CatalogLayers. The widget displays a list of layers in the `dynamicGroupLayer` and allows you to toggle their visibility. The CatalogLayerList has been integrated into the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) to display catalog layers with minimal configuration needed. The CatalogLayerList inside of the LayerList can be configured with the `catalogOptions` and accessed with the new `catalogLayerList` properties.  The CatalogLayerList can also be used independently of the LayerList if that fits the application's needs.
 
 ### LayerList
 
@@ -93,6 +107,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000144377: All content elements now allow rendering supported HTML for their title and description properties.
+- BUG-000151648: Fixed an issue where the Legend was not correctly rendered for the Antarctic DEM from ArcGIS Living Atlas.
 - BUG-000153181: Fixed an issue where SceneView didn't properly load an imagery layer with predefined renderer.
 - BUG-000163544: Fixed an issue where a SimpleMarkerSymbol was rendered with poor quality when using certain SVG paths.
 - BUG-000165132: Fixed an issue where the APP-6(D) DictionaryRenderer displayed an incorrect graphic for the Counterattack by Fire symbol.
@@ -100,6 +115,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000165321: Fixed an issue where some polyline symbols rendered by the DictionaryRenderer with the APP-6(D) dictionary had extra arrows and dashes.
 - BUG-000165858: Fixed an issue where the collapsed property value on the Popup and Features widget was not changing when expanding/collapsing the widget.
 - BUG-000165913: Fixed an issue where the stationary property on the MapView does not change value when zooming using a double tap and drag gesture on a mobile device.
+- BUG-000166439: Fixed an issue where the icon thumbnail for `ListItemPanel.image` had no size.
 - BUG-000166831: Fixed an issue where the `MapView.hitTest()` does not return a hit for a `GraphicsLayer` when the graphics have `TextSymbol` with `lineWidth`.
 - BUG-000166346: Fixed an issue where polygon features with newlines in the label expression did not display correctly.
 - BUG-000167231: Fixed an issue where a CIMSymbol with CIMGeometricEffectDashes was having performance issues at higher scales.
