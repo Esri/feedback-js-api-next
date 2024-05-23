@@ -36,13 +36,27 @@ These enhancements are also noticeable when navigating to points of interest usi
 > [!NOTE]
 > Animations may not be suitable for everyone, as some animations can cause discomfort for individuals with vestibular motion disorders. To disable 2D MapView navigation animations in the JavaScript SDK, users can set the [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) option in their device or browser settings.
 
+## Full motion video support with VideoLayer and VideoPlayer
 
+The new VideoLayer displays prerecorded or live-streamed video feeds from a [VideoServer](https://enterprise.arcgis.com/en/video/). Application developers using VideoLayer can display the video georeferenced on a map and control the playback with the new VideoPlayer widget. Both are in [beta](https://developers.arcgis.com/javascript/latest/faq/#what-does-the-beta-tag-mean) for this release.
+
+The VideoPlayer widget provides the following capabilities:
+- Control operations (play, pause, seek)
+- Time and duration display
+- Customizable graphics colors
+- Following options (sensor, frame, video)
+- Adjustable speed and quality
+- Access to frame metadata
 
 ## Layer updates
 
 TBD
 
 ## Widget Updates
+
+### CatalogLayerList
+
+The new CatalogLayerList widget provides a way to display and interact with CatalogLayers. The widget displays a list of layers in the `dynamicGroupLayer` and allows you to toggle their visibility. The CatalogLayerList has been integrated into the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) to display catalog layers with minimal configuration needed. The CatalogLayerList inside of the LayerList can be configured with the `catalogOptions` and accessed with the new `catalogLayerList` properties.  The CatalogLayerList can also be used independently of the LayerList if that fits the application's needs.
 
 ### LayerList
 
