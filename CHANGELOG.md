@@ -4,7 +4,9 @@ The `next` version of 4.31 is now available. Planned release date is October 202
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
-## Components updates
+## Component packages
+
+- Chart Components might come out of beta at 4.31.
 
 ## Layer updates
 
