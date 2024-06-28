@@ -12,6 +12,10 @@ The `next` version of 4.31 is now available. Planned release date is October 202
 
 ## Component and widget updates
 
+# Breaking Changes
+
+Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
+
 ## Deprecations
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.30 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
