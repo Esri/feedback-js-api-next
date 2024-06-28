@@ -10,7 +10,7 @@ The `next` version of 4.31 is now available. Planned release date is October 202
 
 ## Layer updates
 
-## Widget Updates
+## Component and widget updates
 
 ## Deprecations
 
