@@ -16,6 +16,12 @@ The `next` version of 4.31 is now available. Planned release date is October 202
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
+## Breaking Changes
+
+- The AMD npm package [`arcgis-js-api`](https://www.npmjs.com/package/arcgis-js-api) will be retired at 4.31. This is related to dropping local build support for legacy Dojo 1 and RequireJS. Use [components](https://developers.arcgis.com/javascript/latest/components/) or [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules instead.
+- The npm package [`@arcgis/cli`](https://www.npmjs.com/package/@arcgis/cli) will be retired at 4.31. Use [components](https://developers.arcgis.com/javascript/latest/components/) and Calcite.
+- The [`esri-loader`](https://github.com/Esri/esri-loader/blob/master/README.md) library will be retired at 4.31. Use [components](https://developers.arcgis.com/javascript/latest/components/) or [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules instead.
+
 ## Deprecations
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.30 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
@@ -62,7 +68,6 @@ The following are deprecated and will be removed in a future release. For anythi
 - ImageryTileLayer.rasterInfo deprecated since 4.29. Use serviceRasterInfo instead.
 - LayerList.multipleSelectionEnabled deprecated since 4.29. Use selectionMode instead.
 - LayerList.selectionEnabled deprecated since 4.29. Use selectionMode and dragEnabled instead.
-- ListItemPanel.className deprecated since version 4.30. Use icon
 - ListItemPanel.className deprecated since version 4.30. Use icon
 - Locate.rotationEnabled deprecated since 4.29. Use Track widget instead
 - Mesh.createFromFiles deprecated Use convertMesh instead.
