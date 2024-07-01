@@ -14,13 +14,11 @@ The `next` version of 4.31 is now available. Planned release date is October 202
 
 # Breaking Changes
 
-Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
-
-## Breaking Changes
-
 - The AMD npm package [`arcgis-js-api`](https://www.npmjs.com/package/arcgis-js-api) will be retired at 4.31. This is related to dropping local build support for legacy Dojo 1 and RequireJS. Use [components](https://developers.arcgis.com/javascript/latest/components/) or [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules instead.
 - The npm package [`@arcgis/cli`](https://www.npmjs.com/package/@arcgis/cli) will be retired at 4.31. Use [components](https://developers.arcgis.com/javascript/latest/components/) and Calcite.
 - The [`esri-loader`](https://github.com/Esri/esri-loader/blob/master/README.md) library will be retired at 4.31. Use [components](https://developers.arcgis.com/javascript/latest/components/) or [@arcgis/core](https://developers.arcgis.com/javascript/latest/es-modules/) ES modules instead.
+
+Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Deprecations
 
