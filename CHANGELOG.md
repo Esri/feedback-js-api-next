@@ -20,6 +20,13 @@ The `next` version of 4.31 is now available. Planned release date is October 202
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
+## Bug fixes and enhancements
+
+- BUG-000169035: Fixed an issue where the MapView's [hitTest()](/api-reference/esri-views-MapView.html#hitTest) does not return results when the layer's renderer has [rotation visual variables](/api-reference/esri-renderers-visualVariables-RotationVariable.html).
+- Fixed an issue when the token of a signed-in user would unexpectedly get revoked wen using the request option `authMode: "no-prompt"`. 
+
+
+
 ## Deprecations
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.30 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
