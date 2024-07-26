@@ -23,6 +23,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000169035: Fixed an issue where the MapView's [hitTest()](/api-reference/esri-views-MapView.html#hitTest) does not return results when the layer's renderer has [rotation visual variables](/api-reference/esri-renderers-visualVariables-RotationVariable.html).
+- BUG-000169076: Fixed an issue where errors would arise when trying to add a related record using the [Editor](/api-reference/esri-widgets-Editor.html) or [FeatureTable](/api-reference/esri-widgets-FeatureTable.html) widgets, (if using Map Viewer). This was due to case of the of the relationship key not matching.
 - Fixed an issue when the token of a signed-in user would unexpectedly get revoked wen using the request option `authMode: "no-prompt"`. 
 
 
