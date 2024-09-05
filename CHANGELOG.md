@@ -23,6 +23,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000166013: Fixed an issue with [WMTSLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WMTSLayer.html) where the `tileMatrixSetId` property was not properly honored.
+- BUG-000167187: Fixed an issue where it was necessary to click the `Browse features` button twice after backing out of a cluster pop-up feature list.
 - BUG-000169035: Fixed an issue where the MapView's [hitTest()](https://developers.arcgis.com/javascript/latest//api-reference/esri-views-MapView.html#hitTest) does not return results when the layer's renderer has [rotation visual variables](https://developers.arcgis.com/javascript/latest//api-reference/esri-renderers-visualVariables-RotationVariable.html).
 - BUG-000169076: Fixed an issue where errors would arise when trying to add a related record using the [Editor](https://developers.arcgis.com/javascript/latest//api-reference/esri-widgets-Editor.html) or [FeatureTable](https://developers.arcgis.com/javascript/latest//api-reference/esri-widgets-FeatureTable.html) widgets, (if using Map Viewer). This was due to case of the of the relationship key not matching.
 - BUG-000169299: Fixed an issue with [OGCFeatureLayer.queryFeatures()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-OGCFeatureLayer.html#queryFeatures) where non-editable fields were returning undefined values.
