@@ -32,6 +32,7 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 ## Bug fixes and enhancements
 
+- BUG-000146325: Fixed an issue where point symbols were getting cut off at tile boundaries in spatial reference 4528.
 - BUG-000151524: More consistent highlight and hitTest behavior with unified Symbol3D material opacity threshold at >=1/255.
 - BUG-000159558: Fixed an issue where the features in a client-side feature layer disappear from the map when placed at a longitude of 180.
 - BUG-000161361: Fixed an issue where [TextSymbol](https://developers.arcgis.com/javascript/latest//api-reference/esri-symbols-TextSymbol.html) would cut-off very long text.
