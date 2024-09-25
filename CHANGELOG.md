@@ -10,6 +10,10 @@ The `next` version of 4.31 is now available. Planned release date is October 202
 
 ## Layer updates
 
+### MediaLayer
+
+With this release, [VideoElements](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-VideoElement.html) can now be saved to an existing or new portal item using the [`save()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html#save) and [`saveAs()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html#saveAs) methods.
+
 ## Component and widget updates
 
 # Breaking Changes
