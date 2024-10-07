@@ -30,6 +30,13 @@ The following classes, methods, properties and events have been deprecated for a
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
+Charts components/Charts model breaking changes
+- Removed deprecated props in charts components and charts model packages (`getColorType()`, `setColorType()`, `DeprecatedxxxModelParams` and `showDuplicatedLabelsOnContinuousAxis`).
+- Event name refactored (For example `arcgisChartsDataProcessError` is refactored as `arcgisDataProcessError`).
+- Removed inline data source support.
+- WebChartLabelBehavior: rename the `none` mode into `hide`.
+- Additional typings are available from charts components.
+
 ## Bug fixes and enhancements
 
 - BUG-000146325: Fixed an issue where point symbols were getting cut off at tile boundaries in spatial reference 4528.
