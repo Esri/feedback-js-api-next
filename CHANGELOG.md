@@ -12,7 +12,7 @@ The `next` version of 4.31 is now available. Planned release date is October 202
 
 ### MediaLayer
 
-With this release, [VideoElements](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-VideoElement.html) can now be saved to an existing or new portal item using the [`save()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html#save) and [`saveAs()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html#saveAs) methods.
+With this release, [VideoElements](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-VideoElement.html) can now be saved to an existing or new portal item using the [`save()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html#save) and [`saveAs()`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MediaLayer.html#saveAs) methods. We have also added support for [interactive](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-MediaLayerView.html#interactive) placement of media layers in 2D [MapViews](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html).
 
 ## Component and widget updates
 
@@ -24,13 +24,13 @@ With this release, [VideoElements](https://developers.arcgis.com/javascript/late
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
-| Class/Property/Method/Event            | Alternate option                                                           | Version deprecated |
-|----------------------------------------|----------------------------------------------------------------------------|-------|
-| `ImageryLayer.renderingRule`           | [ImageryLayer.rasterFunction](https://developers.arcgis.com/javascript/latest//api-reference/esri-layers-ImageryLayer.html#rasterFunction) | 4.27 |
-| `MosaicRule.itemRenderingRule`         | [MosaicRule.itemRasterFunction](https://developers.arcgis.com/javascript/latest//api-reference/esri-layers-support-MosaicRule.html#itemRasterFunction) | 4.27 |
-| `ImageIdentifyParameters.renderingRule`| [ImageIdentifyParameters.rasterFunction](https://developers.arcgis.com/javascript/latest//api-reference/esri-rest-support-ImageIdentifyParameters.html#rasterFunction) | 4.27 |
-| `ImageIdentifyParameters.renderingRules`| [ImageIdentifyParameters.rasterFunctions](https://developers.arcgis.com/javascript/latest//api-reference/esri-rest-support-ImageIdentifyParameters.html#rasterFunctions) | 4.27 |
-| `ImageHistogramParameters.renderingRule`| [ImageHistogramParameters.rasterFunction](https://developers.arcgis.com/javascript/latest//api-reference/esri-rest-support-ImageHistogramParameters.html#rasterFunction) | 4.27 |
+| Class/Property/Method/Event              | Alternate option                                                                                                                                                         | Version deprecated |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| `ImageryLayer.renderingRule`             | [ImageryLayer.rasterFunction](https://developers.arcgis.com/javascript/latest//api-reference/esri-layers-ImageryLayer.html#rasterFunction)                               | 4.27               |
+| `MosaicRule.itemRenderingRule`           | [MosaicRule.itemRasterFunction](https://developers.arcgis.com/javascript/latest//api-reference/esri-layers-support-MosaicRule.html#itemRasterFunction)                   | 4.27               |
+| `ImageIdentifyParameters.renderingRule`  | [ImageIdentifyParameters.rasterFunction](https://developers.arcgis.com/javascript/latest//api-reference/esri-rest-support-ImageIdentifyParameters.html#rasterFunction)   | 4.27               |
+| `ImageIdentifyParameters.renderingRules` | [ImageIdentifyParameters.rasterFunctions](https://developers.arcgis.com/javascript/latest//api-reference/esri-rest-support-ImageIdentifyParameters.html#rasterFunctions) | 4.27               |
+| `ImageHistogramParameters.renderingRule` | [ImageHistogramParameters.rasterFunction](https://developers.arcgis.com/javascript/latest//api-reference/esri-rest-support-ImageHistogramParameters.html#rasterFunction) | 4.27               |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
@@ -56,10 +56,14 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 - BUG-000169721: Fixed an issue where [VectorTileLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VectorTileLayer.html) with a sparse cache was throwing 404 errors.
 - BUG-000171015: Fixed an issue where calling [VectorTileLayer.setStyleLayer()](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-VectorTileLayer.html#setStyleLayer) from the [MapView.hitTest()](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#hitTest) resulted in an error.
 - ENH-000163796: Enhanced the [MapView.hitTest](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#hitTest) method to return more accurate results when interacting with features that have [SimpleMarkerSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-SimpleMarkerSymbol.html) with SVG paths in a [GraphicsLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-GraphicsLayer.html).
+- [Esri Community - 1507126](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/legend-flickering-with-svelte/m-p/1507126/thread-id/85066): Fixed an issue where the [Legend](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html) was flickering when adding new layers to a map.
 - [Esri Community - 1517408](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/toggle-3d-to-2d-ko-since-v4-30/m-p/1517408/): Fixed an issue where setting a [SceneView](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html)'s container to `null` did not work if a measurement widget was present.
 - [Esri Community - 1520927](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/sketch-widget-and-expand-widget-not-playing-nice/m-p/1520927): Fixed an issue where the [Sketch component](https://developers.arcgis.com/javascript/latest/references/map-components/?path=/docs/component-reference-sketch--docs) within the [Expand component](https://developers.arcgis.com/javascript/latest/references/map-components/?path=/docs/component-reference-expand--docs) was not rendering graphics in the view after a sketch was completed.
 - Fixed an issue when the token of a signed-in user would unexpectedly get revoked when using the request option `authMode: "no-prompt"`.
 - Fixed an issue where routes were not being solved when using the [arcgis-directions](https://developers.arcgis.com/javascript/latest/references/map-components/?path=/docs/component-reference-directions--docs) component.
+- Fixed an issue in the [BasemapLayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html), [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) and [TableList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TableList.html) where drag and drop wasn't working correctly on some mobile devices.
+- Fixed an issue in the [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) where the filter wouldn't always work properly.
+- Fixed an issue in the [Legend](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Legend.html) where [KnowledgeGraphLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-KnowledgeGraphLayer.html) titles were not displayed properly.
 - Fixed an issue where tables saved in [web maps](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebMap.html) were not being displayed in the [arcgis-table-list](https://developers.arcgis.com/javascript/latest/references/map-components/?path=/docs/component-reference-table-list--docs) component.
 - Added support for a fine-grained `apiKey` on the [BasemapStyle](https://developers.arcgis.com/javascript/latest/api-reference/esri-support-BasemapStyle.html#apiKey) class.
 
