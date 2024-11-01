@@ -34,10 +34,28 @@ The following classes, methods, properties and events have been deprecated for a
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
+## Editing
+
+### Tooltip advancements and edge offset inputs
+
+For more control over the positioning of the [tooltips](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch-SketchViewModel.html#tooltipOptions), this release adds the ability to **drag tooltips** while in input mode.
+
+Additionally, in SceneView, a **new
+distance field for the edge [offset operation](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Sketch-SketchViewModel.html#defaultUpdateOptions)** can be used for creating exact building
+setbacks or for adjusting property easements. Press Tab to enter the input mode while hovering over the edge offset arrows or when dragging it.
+
+## Viewshed layers in web scenes
+
+Share and present your viewshed analyses by persisting them on the ViewshedLayer in a [web scene](https://developers.arcgis.com/javascript/latest/api-reference/esri-WebScene.html). You can use it as any other layer: include it in slides or toggle its
+visibility through the layer list.
+
+By enabling the `interactive` property on `ViewshedLayerView`, you can adjust the shape of an existing analysis or create new [viewsheds](https://developers.arcgis.com/javascript/latest/api-reference/esri-analysis-Viewshed.html).
+
 ## Bug fixes and enhancements
 
 - BUG-000146325: Fixed an issue where point symbols were getting cut off at tile boundaries in spatial reference 4528.
 - BUG-000151524: More consistent highlight and hitTest behavior with unified Symbol3D material opacity threshold at >=1/255.
+- ENH-000157272: Added support for client-side viewshed analysis and its serialization as viewshed layer in the SceneView.
 - BUG-000159558: Fixed an issue where the features in a client-side feature layer disappear from the map when placed at a longitude of 180.
 - BUG-000161361: Fixed an issue where [TextSymbol](https://developers.arcgis.com/javascript/latest//api-reference/esri-symbols-TextSymbol.html) would cut-off very long text.
 - BUG-000164130: Fixed an issue where a [CIMSymbol](https://developers.arcgis.com/javascript/latest//api-reference/esri-symbols-CIMSymbol.html) with dashes was not returning [hitTest](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#hitTest) results in the space between the dashes in a [GraphicsLayer](https://developers.arcgis.com/javascript/latest//api-reference/esri-layers-GraphicsLayer.html).
