@@ -28,7 +28,7 @@ The following are deprecated and will be removed in a future release:
 - AreaMeasurement3D.own deprecated since 4.28 Use addHandles() instead.
 - Attachments.own deprecated since 4.28 Use addHandles() instead.
 - Attribution.own deprecated since 4.28 Use addHandles() instead.
--[BasemapGallery.own deprecated since 4.28 Use addHandles() instead.
+- BasemapGallery.own deprecated since 4.28 Use addHandles() instead.
 -	BasemapLayerList.editingEnabled deprecated since 4.29. Use selectionMode, visibleElements.editTitleButton, and dragEnabled instead.
 -	BasemapLayerList.multipleSelectionEnabled deprecated since 4.29. Use selectionMode instead.
 -	BasemapLayerList.own deprecated since 4.28 Use addHandles() instead.
