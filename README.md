@@ -4,7 +4,7 @@
 
 **https://js.arcgis.com/next**
 
-Welcome to the next version of the ArcGIS Maps SDK for JavaScript (4.31). This version of the SDK is currently in development and will be updated frequently until the production release in October 2024. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bugs and enhancement requests are specific to `next` or `rc` release candidate versions, and not applicable to a released version.
+Welcome to the next version of the ArcGIS Maps SDK for JavaScript (4.32). This version of the SDK is currently in development and will be updated frequently until the production release in February 2025. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bugs and enhancement requests are specific to `next` or `rc` release candidate versions, and not applicable to a released version.
 
 Please note: ArcGIS Maps SDK for JavaScript release management is dynamic. Some new features and updates that appear in next builds might not be present in the final production release due to a variety of factors (but will likely be present in an upcoming release).
 
@@ -38,12 +38,11 @@ Run `npm install @arcgis/map-components@next`. For CSS use [jsDelivr](https://ww
 
     @import "https://cdn.jsdelivr.net/npm/@arcgis/core@next/assets/esri/themes/light/main.css";
 
-To register the components with the custom elements registry and configure the SDK assets:
+Then you can start importing components, for example:
 
-    import { defineCustomElements as defineMapElements } from "@arcgis/map-components/dist/loader";
-    defineMapElements(window, { resourcesUrl: "https://cdn.jsdelivr.net/npm/@arcgis/map-components@next/dist/arcgis-map-components/assets" }); 
+    import "@arcgis/map-components/dist/components/arcgis-map";
 
-For additional information see the SDK's [guide topic](https://developers.arcgis.com/javascript/latest/components-get-started-npm/).
+For additional information see the SDK's [guide topic](https://developers.arcgis.com/javascript/latest/get-started-npm/).
 
 #### Core API
 
@@ -51,7 +50,11 @@ Run `npm install @arcgis/core@next`. For CSS use [jsDelivr](https://www.jsdelivr
 
     @import "https://cdn.jsdelivr.net/npm/@arcgis/core@next/assets/esri/themes/light/main.css";
 
-For additional information see the SDK's [guide topic](https://developers.arcgis.com/javascript/latest/es-modules/).
+Then you can start importing modules, for example:
+
+    import Map from "@arcgis/core/Map";
+
+For additional information see the SDK's guide topic for the [core API](https://developers.arcgis.com/javascript/latest/get-started-npm/#core-api).
 
 ## TypeScript typings
 
