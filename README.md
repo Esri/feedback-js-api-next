@@ -28,6 +28,8 @@ To test the next version using the ArcGIS CDN, simply reference the SDK and CSS 
 
 Only production CDN builds are available for download.
 
+For additional information see the SDK's [Get started with CDN](https://developers.arcgis.com/javascript/latest/get-started-cdn/) guide topic.
+
 ### npm
 
 The next version is available for testing using npm with local builds.
@@ -42,7 +44,7 @@ Then you can start importing components, for example:
 
     import "@arcgis/map-components/dist/components/arcgis-map";
 
-For additional information see the SDK's [Get started with npm]](https://developers.arcgis.com/javascript/latest/get-started-npm/) guide topic.
+For additional information see the SDK's [Get started with npm](https://developers.arcgis.com/javascript/latest/get-started-npm/) guide topic.
 
 #### Core API
 
