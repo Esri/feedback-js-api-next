@@ -42,7 +42,7 @@ Then you can start importing components, for example:
 
     import "@arcgis/map-components/dist/components/arcgis-map";
 
-For additional information see the SDK's [guide topic](https://developers.arcgis.com/javascript/latest/get-started-npm/).
+For additional information see the SDK's [Get started with npm]](https://developers.arcgis.com/javascript/latest/get-started-npm/) guide topic.
 
 #### Core API
 
@@ -54,7 +54,7 @@ Then you can start importing modules, for example:
 
     import Map from "@arcgis/core/Map";
 
-For additional information see the SDK's guide topic for the [core API](https://developers.arcgis.com/javascript/latest/get-started-npm/#core-api).
+For additional information see the SDK's guide topic for the [Get started with npm](https://developers.arcgis.com/javascript/latest/get-started-npm/#core-api) guide topic for using the core API.
 
 ## TypeScript typings
 
