@@ -31,13 +31,13 @@ The following are deprecated and will be removed in a future release:
 - BasemapGallery.own deprecated since 4.28 Use addHandles() instead.
 -	BasemapLayerList.editingEnabled deprecated since 4.29. Use selectionMode, visibleElements.editTitleButton, and dragEnabled instead.
 -	BasemapLayerList.multipleSelectionEnabled deprecated since 4.29. Use selectionMode instead.
--	BasemapLayerList.own deprecated since 4.28 Use addHandles() instead.
--	BasemapToggle.own deprecated since 4.28 Use addHandles() instead.
--	BatchAttributeForm.own deprecated since 4.28 Use addHandles() instead.
--	BinaryColorSizeSlider.own deprecated since 4.28 Use addHandles() instead.
--	Bookmarks.editingEnabled deprecated since 4.29. Use visibleElements.editBookmarkButton, visibleElements.addBookmarkButton, and dragEnabled instead.
--	Bookmarks.own deprecated since 4.28 Use addHandles() instead.
--	BuildingExplorer.own deprecated since 4.28 Use addHandles() instead.
+- BasemapLayerList.own deprecated since 4.28 Use addHandles() instead.
+- BasemapToggle.own deprecated since 4.28 Use addHandles() instead.
+- BatchAttributeForm.own deprecated since 4.28 Use addHandles() instead.
+- BinaryColorSizeSlider.own deprecated since 4.28 Use addHandles() instead.
+- Bookmarks.editingEnabled deprecated since 4.29. Use visibleElements.editBookmarkButton, visibleElements.addBookmarkButton, and dragEnabled instead.
+- Bookmarks.own deprecated since 4.28 Use addHandles() instead.
+- BuildingExplorer.own deprecated since 4.28 Use addHandles() instead.
 -	ButtonMenu.iconClass deprecated since 4.27. Use icon instead.
 -	ButtonMenu.own deprecated since 4.28 Use addHandles() instead.
 -	ButtonMenu deprecated since 4.30, use TableMenuConfig, Calcite components - Dropdown, Calcite components - List, or Calcite components - Menu web components instead.
