@@ -4,11 +4,18 @@ The `next` version of 4.32 is now available. Planned release date is Feb 2025.
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
-## Layer updates
-
-## Component and widget updates
+> **Note:** The `next` version of 4.32 has been updated to use Calcite components version 3.0. This Calcite version introduced some breaking changes, so there may be some instabilities over the next few days as we work through the remaining issues.
 
 # Breaking Changes
+
+The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
+
+| Class/Property/Method/Event            | Alternate option                                                           | Version deprecated |
+|----------------------------------------|----------------------------------------------------------------------------|-------|
+| `Bookmarks.editingEnabled`             | Use [`visibleElements.editBookmarkButton`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html#VisibleElements), [`visibleElements.addBookmarkButton`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html#VisibleElements), and [`dragEnabled`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html#dragEnabled) instead | 4.29 | 
+| `Bookmarks.visibleElements.addBookmark` | Use [`visibleElements.addBookmarkButton`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html#VisibleElements) instead | 4.29 |
+| `Popup.collapseEnabled`                | Use [`VisibleElements.collapseButton`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#VisibleElements) instead | 4.29  |
+| `Popup.spinnerEnabled`                 | Use [`VisibleElements.spinner`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html#VisibleElements) instead        | 4.29  |
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
