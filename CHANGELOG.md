@@ -10,7 +10,7 @@ The `next` version of 4.32 is now available. Planned release date is Feb 2025.
 
 ### Feature order in the Popup and Features widgets
 
-The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets now display features residing in [MapImageLayer sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#subtables) in the order they are displayed on the map.
+The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets now display features residing in [MapImageLayer sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers) in the order they are displayed on the map.
 The returned features will adhere to the default drawing order of the data. In previous versions, the features were displayed in the order they were returned from the server.
 
 # Breaking Changes
