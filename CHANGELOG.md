@@ -6,6 +6,13 @@ The `next` version of 4.32 is now available. Planned release date is Feb 2025.
 
 > **Note:** The `next` version of 4.32 has been updated to use Calcite components version 3.0. This Calcite version introduced some breaking changes, so there may be some instabilities over the next few days as we work through the remaining issues.
 
+## Widget updates
+
+### Feature order in the Popup and Features widgets
+
+The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets now display features residing in [MapImageLayer sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers) in the order they are displayed on the map.
+The returned features will adhere to the default drawing order of the data. In previous versions, the features were displayed in the order they were returned from the server.
+
 # Breaking Changes
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
@@ -16,6 +23,7 @@ The following classes, methods, properties and events have been deprecated for a
 | `BasemapLayerList.multipleSelectionEnabled` | Use [`selectionMode`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapLayerList.html#selectionMode) instead                                                                                                                                                                                                                                                                                               | 4.29               |
 | `Bookmarks.editingEnabled`                  | Use [`visibleElements.editBookmarkButton`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html#VisibleElements), [`visibleElements.addBookmarkButton`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html#VisibleElements), and [`dragEnabled`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html#dragEnabled) instead | 4.29               |
 | `Bookmarks.visibleElements.addBookmark`     | Use [`visibleElements.addBookmarkButton`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Bookmarks.html#VisibleElements) instead                                                                                                                                                                                                                                                                                | 4.29               |
+| `ImageryTileLayer.rasterInfo`               | Use [`serviceRasterInfo`](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-ImageryTileLayer.html#serviceRasterInfo) instead                                                                                                                                                                                                                                                                                        | 4.29               |
 | `LayerList.multipleSelectionEnabled`        | Use [`selectionMode`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html#selectionMode) instead                                                                                                                                                                                                                                                                                                      | 4.29               |
 | `LayerList.selectionEnabled`                | Use [`dragEnabled`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html#dragEnabled) and [`selectionMode`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html#selectionMode) instead                                                                                                                                                                           | 4.29               |
 | `Locate.rotationEnabled`                    | Use [`Track.rotationEnabled`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Track.html#rotationEnabled) instead                                                                                                                                                                                                                                                                                                | 4.29               |
@@ -27,6 +35,14 @@ The following classes, methods, properties and events have been deprecated for a
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
+
+- BUG-000110267: Fixed an issue where the Legend widget displayed graduated colors and sizes in descending order instead of the specified ascending order.
+- BUG-000172950: Added a new data-action-id attribute to style Popup and Features widget actions.
+- BUG-000172607: Fixed an issue where TileLayer was not resampling correctly in version 4.31.
+- BUG-000173088: Fixed an issue where calling MapView.hitTest() on an SVG graphic resulted an error.
+- ENH-000169598: Enhanced MapImageLayer sublayer popups to honor the order that features are drawn. If orderBy is set on the service, the popups will be ordered accordingly.
+- Fixed an issue where active action styles were not correctly applied in the LayerList.
+- The createFromGLTF and toBinaryGLTF methods on the Mesh class now correctly convert vertex colors between linear (glTF) and sRGB (Mesh) color spaces. Previously, imported glTF models using vertex colors would appear darker than in other viewers.
 
 ## Deprecations
 
