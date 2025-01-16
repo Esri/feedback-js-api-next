@@ -8,10 +8,17 @@ The `next` version of 4.32 is now available. Planned release date is Feb 2025.
 
 ## Widget updates
 
-### Feature order in the Popup and Features widgets
+### Features and Popup
 
-The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets now display features residing in [MapImageLayer sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers) in the order they are displayed on the map.
+#### Feature order in MapImageLayer sublayers
+
+The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) now display features residing in [MapImageLayer sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers) in the order they are displayed on the map.
 The returned features will adhere to the default drawing order of the data. In previous versions, the features were displayed in the order they were returned from the server.
+
+#### Display features in a list
+
+An `initialDisplayMode` property has been introduced to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) to allow control of the initial display of features. The `initialDisplayMode` property can be set to "list" to showcase features in a list view, or "feature" to directly display the popup content of the first feature.
+
 
 # Breaking Changes
 
@@ -37,12 +44,13 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000110267: Fixed an issue where the Legend widget displayed graduated colors and sizes in descending order instead of the specified ascending order.
-- BUG-000172950: Added a new data-action-id attribute to style Popup and Features widget actions.
+- BUG-000172950: Added a new `data-action-id` attribute to style Popup and Features widget actions.
 - BUG-000172607: Fixed an issue where TileLayer was not resampling correctly in version 4.31.
 - BUG-000173088: Fixed an issue where calling MapView.hitTest() on an SVG graphic resulted an error.
-- ENH-000169598: Enhanced MapImageLayer sublayer popups to honor the order that features are drawn. If orderBy is set on the service, the popups will be ordered accordingly.
+- ENH-000169598: Enhanced MapImageLayer sublayer popups to honor the order that features are drawn. If `orderBy` is set on the service, the popups will be ordered accordingly.
 - Fixed an issue where active action styles were not correctly applied in the LayerList.
-- The createFromGLTF and toBinaryGLTF methods on the Mesh class now correctly convert vertex colors between linear (glTF) and sRGB (Mesh) color spaces. Previously, imported glTF models using vertex colors would appear darker than in other viewers.
+- The `createFromGLTF` and `toBinaryGLTF` methods on the Mesh class now correctly convert vertex colors between linear (glTF) and sRGB (Mesh) color spaces. Previously, imported glTF models using vertex colors would appear darker than in other viewers.
+- Enhanced validation in WebScene.save() and WebScene.saveAs() to be more compliant with the Web Scene Specification standards.
 
 ## Deprecations
 
