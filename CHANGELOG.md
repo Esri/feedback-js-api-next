@@ -8,16 +8,16 @@ The `next` version of 4.32 is now available. Planned release date is Feb 2025.
 
 ## Widget updates
 
-### Features and Popup widgets
+### Features and Popup
 
 #### Feature order in MapImageLayer sublayers
 
-The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets now display features residing in [MapImageLayer sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers) in the order they are displayed on the map.
+The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) now display features residing in [MapImageLayer sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers) in the order they are displayed on the map.
 The returned features will adhere to the default drawing order of the data. In previous versions, the features were displayed in the order they were returned from the server.
 
 #### Display features in a list
 
-An `initialDisplayMode` property has been introduced to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) widgets to allow control of the initial display of features. The `initialDisplayMode` property can be set to "list" to showcase features in a list view, or "feature" to directly display the popup content of the first feature.
+An `initialDisplayMode` property has been introduced to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) to allow control of the initial display of features. The `initialDisplayMode` property can be set to "list" to showcase features in a list view, or "feature" to directly display the popup content of the first feature.
 
 
 # Breaking Changes
