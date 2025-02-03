@@ -19,6 +19,87 @@ The returned features will adhere to the default drawing order of the data. In p
 
 An `initialDisplayMode` property has been introduced to the [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) and [Features](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html) to allow control of the initial display of features. The `initialDisplayMode` property can be set to "list" to showcase features in a list view, or "feature" to directly display the popup content of the first feature.
 
+## Typings updates
+
+In this release there are many TypeScript enhancements and bug fixes that went into the SDK types and documentation. We also introduced tooling in our build process that makes sure the types closely match the implementation.
+
+### New union types
+
+We have enhanced the TypeScript experience when working with geometries, symbols and renderers. The convenience modules [esri/geometry](https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry.html), [esri/symbols](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols.html) and [esri/renderers](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers.html) have been deprecated and replaced with a single module called `esri/unionTypes`. The `unionTypes` module provides type definitions that combine all related subclasses of a base class into a union type. It is recommended to use the union types instead of base class types, like `esri/geometry/Geometry`. Using these union types helps maintain consistency in both the API and application development. 
+
+Here’s an example of how to use the new union types:
+
+```ts
+import type { GeometryUnion } from "@arcgis/core/unionTypes.js".
+
+const geometries: GeometryUnion[] = [polygon1, extent1, point1];
+const union = unionOperator.executeMany(geometries);
+```
+
+The unions can also be [discriminated](https://dev.to/darkmavis1980/what-are-typescript-discriminated-unions-5hbb) to avoid having to cast or use `instanceof`. In the code snippet below, the geometry type for polygon is correctly inferred:
+
+```ts
+const geometries: GeometryUnion[] = [polygon1, extent1, point1];
+for (const geometry of geometries) {
+  switch (geometry.type) {
+    case "polygon":
+      // Typescript correctly infers the geometry type is a polygon
+      const firstRing = geometry.rings.at(0);  
+      // work with first ring
+      break;
+    default:
+      // Handle the rest
+  }
+}
+```
+
+The SDK now consistently uses the union types instead of the base classes. All the new union types are suffixed with "Union", such as `GeometryUnion`, to clearly differentiate them from the base class names.  
+
+### Improved type safety
+
+By default, the typings now include `null` and `undefined` where appropriate. This enhances type safety and makes them compatible with projects where [`strict`](https://www.typescriptlang.org/tsconfig/#strict) or [`strictNullChecks`](https://www.typescriptlang.org/tsconfig/#strictNullChecks) are enabled. Without strict null checks, `null` or `undefined` can be assigned to any TypeScript type, potentially leading to runtime errors if your code tries to access a `null` or `undefined` variable.
+
+### Autocasting enhancements
+
+Support for using TypeScript property setters was added to [autocasting](../autocasting/). Types now work in constructors, parameters and setters. Autocasting allows JavaScript objects to be automatically cast to SDK class types without the need for explicit imports. In the following example, the types are correctly [narrowed](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) when the renderer is set after the FeatureLayer is created:
+
+```ts
+let citiesLayer = new FeatureLayer({
+  url: "http://url.to.service",
+});
+
+// At 4.32 this works in TypeScript
+citiesLayer.renderer = {
+  type: "simple",  
+  symbol: {
+    type: "simple-marker", 
+    size: 6,
+    color: "black",
+    outline: { 
+      width: 0.5,
+      color: "white"
+    }
+  }
+};
+```
+
+### TypeScript migration recommendations
+
+When introducing these TypeScript changes into your applications there are a number of recommendations.
+
+When working with strict null:
+- Temporarily disable strict null to unblock the TypeScript upgrade, then gradually work on re-enabling it.
+- Use of `!` non-null assertion operator to quickly make your build pass and then gradually work on removing them.
+- Use of `?` operator to mark properties as optional.
+
+When working with unions:
+- Replace uses of base class types with `esri/unionTypes`.
+- Use [type guards](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#typeof-type-guards) to narrow the types when needed.
+
+When working with autocasting:
+- In many cases, it can be beneficial to use the actual class constructors. Then there is no need to specify `type`, or use `const` assertions, and the classes are auto-imported by Visual Studio Code and other code editors.
+- For more information refer to the Autocasting in TypeScript guide topic.
+
 
 # Breaking Changes
 
