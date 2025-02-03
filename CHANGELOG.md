@@ -61,7 +61,7 @@ By default, the typings now include `null` and `undefined` where appropriate. Th
 
 ### Autocasting enhancements
 
-Support for using TypeScript property setters was added to [autocasting](../autocasting/). Types now work in constructors, parameters and setters. Autocasting allows JavaScript objects to be automatically cast to SDK class types without the need for explicit imports. In the following example, the types are correctly [narrowed](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) when the renderer is set after the FeatureLayer is created:
+Support for using TypeScript property setters was added to autocasting. Types now work in constructors, parameters and setters. Autocasting allows JavaScript objects to be automatically cast to SDK class types without the need for explicit imports. In the following example, the types are correctly [narrowed](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) when the renderer is set after the FeatureLayer is created:
 
 ```ts
 let citiesLayer = new FeatureLayer({
