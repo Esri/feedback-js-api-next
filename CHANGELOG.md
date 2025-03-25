@@ -4,17 +4,11 @@ The `next` version of 4.33 is now available. Planned release date is June 2025.
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
-## Component and widget updates
-
-## Layer updates
-
 # Breaking Changes
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
-
-## Bug fixes and enhancements
 
 ## Deprecations
 
