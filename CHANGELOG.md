@@ -4,11 +4,18 @@ The `next` version of 4.33 is now available. Planned release date is June 2025.
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
-# Breaking Changes
+## Breaking Changes
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
 
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
+
+## Bug fixes and enhancements
+- BUG-000173550: Fixed an issue where the visibility toggle buttons in the [Layer List](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/) component did not properly announce the associated layer to assistive technologies, such as screen readers.
+- BUG-000175392: Fixed an issue where some polyline [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) with more than one line were duplicated.
+- Fixed an issue where charts displayed in [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) weren't rendering when configured with raster fields.
+- Fixed an issue where some fields did not display in [RouteLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-RouteLayer.html) popups.
+- [Esri Community - 1594685](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/possibility-to-disable-paging-for-wfs-layer/m-p/1594685): Enhanced [WFSLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WFSLayer.html) to disable paging when the `maxPageCount` is set to `0` or `1`.
 
 ## Deprecations
 
