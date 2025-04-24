@@ -11,6 +11,7 @@ The following classes, methods, properties and events have been deprecated for a
 Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
 
 ## Bug fixes and enhancements
+
 - BUG-000172156: Fixed an issue with performance at large scales when zooming and panning around a CIMSymbol with marker placements and geometric effects.
 - BUG-000173550: Fixed an issue where the visibility toggle buttons in the [Layer List](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/) component did not properly announce the associated layer to assistive technologies, such as screen readers.
 - BUG-000175384: Fixed an issue where the Popup was initially opening outside the map extent when calling view.openPopup().
@@ -79,6 +80,7 @@ The following are deprecated and will be removed in a future release:
 - VersionManagementViewModel.versionIdentifierLookup deprecated since version 4.30. Use VersioningState instead.
 - VersionManagementViewModel.versionInfoLookup deprecated since version 4.30. Use VersioningState instead.
 - VersionManagementViewModel.versionManagementServiceLookup deprecated since version 4.30. Use VersioningState instead.
+- VideoPlayer deprecated since version 4.33. Use the Video Player component instead.
 - View2D.highlightOptions deprecated since version 4.32. Use the highlights property instead.
 - Zoom deprecated since 4.32. Use the Zoom component instead. For information on widget deprecation, read about Esri's move to web components.
 
