@@ -4,6 +4,14 @@ The `next` version of 4.33 is now available. Planned release date is June 2025.
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
+## Component and widget updates
+
+### Popup and Features
+
+The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget and [Features](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-features/) component (and [widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html)) now support configuring [relationship elements](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-RelationshipContent.html) for nested MapImageLayer [sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers).
+Previously, this was only supported for relationships between layers in the same level of the service hierarchy.
+Now, you can add [RelationshipContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-RelationshipContent.html) to a [sublayer's popup template](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-Sublayer.html#popupTemplate) that has a relationship with any layer within the MapImageLayer. 
+
 ## Breaking Changes
 
 The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
@@ -13,13 +21,18 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 ## Bug fixes and enhancements
 
 - BUG-000172156: Fixed an issue with performance at large scales when zooming and panning around a CIMSymbol with marker placements and geometric effects.
+- BUG-000170778: Fixed an issue where some webmap [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) would flicker or blink when opening the webmap.
+- BUG-000172156: Fixed an issue with performance at large scales when zooming and panning around a [CIMSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-CIMSymbol.html) with marker placements and geometric effects.
 - BUG-000173550: Fixed an issue where the visibility toggle buttons in the [Layer List](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/) component did not properly announce the associated layer to assistive technologies, such as screen readers.
-- BUG-000175384: Fixed an issue where the Popup was initially opening outside the map extent when calling view.openPopup().
+- BUG-000173556: Fixed an issue where attempting to access a secured layer in an IWA environment was causing a request loop with a 403 response.
+BUG-000175384: Fixed an issue where the Popup was initially opening outside the map extent when calling view.openPopup().
 - BUG-000175392: Fixed an issue where some polyline [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) with more than one line were duplicated.
+- BUG-000175505: Fixed an issue where a non-public [SubtypeGroupLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-SubtypeGroupLayer.html) would fail to [print](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-print.html).
 - BUG-000175584: Fixed an issue where the extent of a WMSLayer was sometimes incorrectly parsed from the service.
 - BUG-000175667: Fixed an issue where Search widget with a polyline LayerSearchSource sometimes did not zoom to the correct feature.
 - Fixed an issue where charts displayed in [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) weren't rendering when configured with raster fields.
 - Fixed an issue where some fields did not display in [RouteLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-RouteLayer.html) popups.
+- Fixed as issue where some [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) did not display if the spatial reference was changed at runtime. 
 - Enhanced printing to now support printing TrackInfo and trackLines.
 - [Esri Community - 1594685](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/possibility-to-disable-paging-for-wfs-layer/m-p/1594685): Enhanced [WFSLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WFSLayer.html) to disable paging when the `maxPageCount` is set to `0` or `1`.
 
@@ -95,3 +108,5 @@ The following are deprecated and will be removed in a future release:
 - In HTML, the presence of a boolean attribute means it is true, and its absence means it is false. The properties related to visible elements have been replaced with clearer and more concise names on the following components:
   - `arcgis-table-list` - For example, replaced `visibleElementsCloseButton` with `showCollapseButton`
   - `arcgis-utility-network-associations` - For example, replaced `visibleElementsConnectivityAssociationsSettingsArrowsToggle` with `showConnectivityAssociationsSettingsArrowsToggle`
+- The [`focusTrapEnabled`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/#focusTrapEnabled) property on the [Expand](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/) component is deprecated since 4.33. Use [`focusTrapDisabled`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/#focusTrapDisabled) instead.
+- The [`hideLastEditInfo`](/references/map-components/arcgis-feature/#hideLastEditInfo) property on the [Feature](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-feature/) component is deprecated since 4.33. Use [`hideLastEditedInfo`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-feature/#hideLastEditedInfo) instead.
