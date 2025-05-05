@@ -22,10 +22,9 @@ Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/
 
 - BUG-000172156: Fixed an issue with performance at large scales when zooming and panning around a CIMSymbol with marker placements and geometric effects.
 - BUG-000170778: Fixed an issue where some webmap [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) would flicker or blink when opening the webmap.
-- BUG-000172156: Fixed an issue with performance at large scales when zooming and panning around a [CIMSymbol](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-CIMSymbol.html) with marker placements and geometric effects.
 - BUG-000173550: Fixed an issue where the visibility toggle buttons in the [Layer List](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/) component did not properly announce the associated layer to assistive technologies, such as screen readers.
 - BUG-000173556: Fixed an issue where attempting to access a secured layer in an IWA environment was causing a request loop with a 403 response.
-BUG-000175384: Fixed an issue where the Popup was initially opening outside the map extent when calling view.openPopup().
+- BUG-000175384: Fixed an issue where the Popup was initially opening outside the map extent when calling view.openPopup().
 - BUG-000175392: Fixed an issue where some polyline [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) with more than one line were duplicated.
 - BUG-000175505: Fixed an issue where a non-public [SubtypeGroupLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-SubtypeGroupLayer.html) would fail to [print](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-print.html).
 - BUG-000175584: Fixed an issue where the extent of a WMSLayer was sometimes incorrectly parsed from the service.
