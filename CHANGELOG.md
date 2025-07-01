@@ -263,6 +263,6 @@ The following are deprecated and will be removed in a future release:
 -	WebMapWebGaugeChart interface is deprecated, use WebGaugeChart instead.
 -	WebMapWebRadarChart interface is deprecated, use WebRadarChart instead.
 -	RESTStatisticType interface is deprecated, use WebChartStatisticType instead.
-  -	percentile_cont statistic type is deprecated, use percentile-continuous instead.
-  -	percentile_dist statistic type is deprecated, use percentile-discrete instead.
+   -	percentile_cont statistic type is deprecated, use percentile-continuous instead.
+   -	percentile_dist statistic type is deprecated, use percentile-discrete instead.
 
