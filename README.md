@@ -28,7 +28,7 @@ For applications that require being built locally, see the SDK's [Get started wi
 
 ## TypeScript typings
 
-npm installs include the SDK's TypeScript definition files. For more information, see the SDK's [Get started  with TypeScript](https://developers.arcgis.com/javascript/latest/get-started/#typescript) guide topic. For more information on configuring React typings, see the SDK's [Get started with React](https://developers.arcgis.com/javascript/latest/get-started/*react) guide topic.
+npm installs include the SDK's TypeScript definition files. For more information, see the SDK's [Get started  with TypeScript](https://developers.arcgis.com/javascript/latest/get-started/#typescript) guide topic. For more information on configuring React typings, see the SDK's [Get started with React](https://developers.arcgis.com/javascript/latest/get-started/#react) guide topic.
 
 ## Licensing
 
