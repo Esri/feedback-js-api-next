@@ -242,7 +242,6 @@ The following are deprecated and will be removed in a future release:
 -	WeatherViewModel deprecated since 4.33. Use the Weather component instead. For information on widget deprecation, read about Esri's move to web components.
 -	Zoom deprecated since 4.32. Use the Zoom component instead. For information on widget deprecation, read about Esri's move to web components.
 
-BELOW ARE THE MANUALLY ADDED DEPRECATED CLASSES, PROPERTIES, METHODS, EVENTS
 
 -	The "connectivity" possible value for QueryAssociationsParameters.types is deprecated at 4.29. Please use "junction-junction-connectivity" instead.
 -	The following named easing presets on GoToOptions3D presets are deprecated at 4.33: in-cubic, out-cubic, in-out-cubic, in-expo, out-expo, in-out-expo, and in-out-coast-quad. Please use cubic-in, cubic-out, cubic-in-out, expo-in, expo-out, expo-in-out, and quad-in-out-coast instead.
