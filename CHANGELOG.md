@@ -14,8 +14,10 @@ The `next` version of 4.34 is now available. Planned release date is October 202
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.32 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
 
+### core API deprecations
+
 <details>
-  <summary>Click to expand the complete list for the core API</summary>
+  <summary>Click to expand the complete list</summary>
 
 The following are deprecated and will be removed in a future release:
 
@@ -133,4 +135,3 @@ The following are deprecated and will be removed in a future release:
 - RESTStatisticType interface is deprecated, use WebChartStatisticType instead.
   - percentile_cont statistic type is deprecated, use percentile-continuous instead.
   - percentile_dist statistic type is deprecated, use percentile-discrete instead.
-
