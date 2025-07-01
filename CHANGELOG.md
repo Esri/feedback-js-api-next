@@ -124,13 +124,13 @@ The following are deprecated and will be removed in a future release:
 
 ### Charts components deprecations
 
--	The exportImage method on the Chart component is deprecated since 4.33. Use exportAsImage instead.
--	All subTitle references on the Chart component are renamed to subtitle.
--	WebMapWebChart interface is deprecated, use WebChart instead.
--	WebMapWebBoxPlot interface is deprecated, use WebBoxPlot instead.
--	WebMapWebGaugeChart interface is deprecated, use WebGaugeChart instead.
--	WebMapWebRadarChart interface is deprecated, use WebRadarChart instead.
--	RESTStatisticType interface is deprecated, use WebChartStatisticType instead.
-   - percentile_cont statistic type is deprecated, use percentile-continuous instead.
-   - percentile_dist statistic type is deprecated, use percentile-discrete instead.
+- The exportImage method on the Chart component is deprecated since 4.33. Use exportAsImage instead.
+- All subTitle references on the Chart component are renamed to subtitle.
+- WebMapWebChart interface is deprecated, use WebChart instead.
+- WebMapWebBoxPlot interface is deprecated, use WebBoxPlot instead.
+- WebMapWebGaugeChart interface is deprecated, use WebGaugeChart instead.
+- WebMapWebRadarChart interface is deprecated, use WebRadarChart instead.
+- RESTStatisticType interface is deprecated, use WebChartStatisticType instead.
+  - percentile_cont statistic type is deprecated, use percentile-continuous instead.
+  - percentile_dist statistic type is deprecated, use percentile-discrete instead.
 
