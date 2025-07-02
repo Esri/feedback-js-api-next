@@ -1,111 +1,137 @@
 # Change log
 
-The `next` version of 4.33 is now available. Planned release date is June 2025.
+The `next` version of 4.34 is now available. Planned release date is October 2025.
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
 ## Component and widget updates
 
-### Popup and Features
-
-The [Popup](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Popup.html) widget and [Features](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-features/) component (and [widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Features.html)) now support configuring [relationship elements](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-RelationshipContent.html) for nested MapImageLayer [sublayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-MapImageLayer.html#sublayers).
-Previously, this was only supported for relationships between layers in the same level of the service hierarchy.
-Now, you can add [RelationshipContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-RelationshipContent.html) to a [sublayer's popup template](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-Sublayer.html#popupTemplate) that has a relationship with any layer within the MapImageLayer. 
-
 ## Breaking Changes
 
-The following classes, methods, properties and events have been deprecated for at least 2 releases and have now been removed from the API:
-
-Please refer to the [Breaking changes](https://developers.arcgis.com/javascript/latest/breaking-changes/) guide topic for a complete list of breaking changes across all releases of the 4.x.
-
 ## Bug fixes and enhancements
-
-- BUG-000172156: Fixed an issue with performance at large scales when zooming and panning around a CIMSymbol with marker placements and geometric effects.
-- BUG-000170778: Fixed an issue where some webmap [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) would flicker or blink when opening the webmap.
-- BUG-000173550: Fixed an issue where the visibility toggle buttons in the [Layer List](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-layer-list/) component did not properly announce the associated layer to assistive technologies, such as screen readers.
-- BUG-000173556: Fixed an issue where attempting to access a secured layer in an IWA environment was causing a request loop with a 403 response.
-- BUG-000175384: Fixed an issue where the Popup was initially opening outside the map extent when calling view.openPopup().
-- BUG-000175392: Fixed an issue where some polyline [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) with more than one line were duplicated.
-- BUG-000175505: Fixed an issue where a non-public [SubtypeGroupLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-SubtypeGroupLayer.html) would fail to [print](https://developers.arcgis.com/javascript/latest/api-reference/esri-rest-print.html).
-- BUG-000175584: Fixed an issue where the extent of a WMSLayer was sometimes incorrectly parsed from the service.
-- BUG-000175667: Fixed an issue where Search widget with a polyline LayerSearchSource sometimes did not zoom to the correct feature.
-- Fixed an issue where charts displayed in [MediaContent](https://developers.arcgis.com/javascript/latest/api-reference/esri-popup-content-MediaContent.html) weren't rendering when configured with raster fields.
-- Fixed an issue where some fields did not display in [RouteLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-RouteLayer.html) popups.
-- Fixed as issue where some [labels](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-support-LabelClass.html) did not display if the spatial reference was changed at runtime. 
-- Enhanced printing to now support printing TrackInfo and trackLines.
-- [Esri Community - 1594685](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/possibility-to-disable-paging-for-wfs-layer/m-p/1594685): Enhanced [WFSLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-WFSLayer.html) to disable paging when the `maxPageCount` is set to `0` or `1`.
 
 ## Deprecations
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.32 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
+
+### core API deprecations
 
 <details>
   <summary>Click to expand the complete list</summary>
 
 The following are deprecated and will be removed in a future release:
 
-- Accessor.watch deprecated since version 4.32. Use reactiveUtils instead.
+- Accessor.watch deprecated since version 4.32. Use reactiveUtils.watch instead.
+- AreaMeasurement3D deprecated since 4.33. Use the Area Measurement 3D component instead. For information on widget deprecation, read about Esri's move to web components.
+- AreaMeasurement3DViewModel deprecated since 4.33. Use the Area Measurement 3D component or AreaMeasurementAnalysis instead. For information on widget deprecation, read about Esri's move to web components.
 - BasemapGallery deprecated since 4.32. Use the Basemap Gallery component instead. For information on widget deprecation, read about Esri's move to web components.
 - BasemapToggle deprecated since 4.32. Use the Basemap Toggle component instead. For information on widget deprecation, read about Esri's move to web components.
+- BingMapsLayer deprecated since version 4.33.
 - ButtonMenu deprecated since version 4.30, use TableMenuConfig, Calcite components - Dropdown, Calcite components - List, or Calcite components - Menu web components instead.
 - ButtonMenuItem deprecated since version 4.30, use TableMenuItemConfig instead.
 - ButtonMenuViewModel deprecated since version 4.30, use TableMenuConfig, Calcite components - Dropdown, Calcite components - List, or Calcite components - Menu web components instead.
+- Circle.isSelfIntersecting deprecated since 4.33. Please use simplifyOperator.isSimple() instead.
 - Compass deprecated since 4.32. Use the Compass component instead. For information on widget deprecation, read about Esri's move to web components.
 - DirectionalPad deprecated since 4.32. Use the Directional Pad component instead. For information on widget deprecation, read about Esri's move to web components.
+- DirectLineMeasurement3D deprecated since 4.33. Use the Direct Line Measurement 3D component instead. For information on widget deprecation, read about Esri's move to web components.
+- DirectLineMeasurement3DViewModel deprecated since 4.33. Use the Direct Line Measurement 3D component or DirectLineMeasurementAnalysis instead. For information on widget deprecation, read about Esri's move to web components.
+- Editor.deleteFeatureFromWorkflow deprecated since version 4.33. Use `deleteFeatures` instead.
+- EditorViewModel.deleteFeatureFromWorkflow deprecated since version 4.33. Use `deleteFeatures` instead.
 - FeatureTable.clearSelectionFilter deprecated since version 4.30. Use `filterBySelectionEnabled` or `objectIds` instead.
 - FeatureTable.filterBySelection deprecated since version 4.30. Use `filterBySelectionEnabled` or `objectIds` instead.
 - FeatureTableViewModel.clearSelectionFilter deprecated since version 4.30. Use `filterBySelectionEnabled` or `objectIds()` instead.
 - FeatureTableViewModel.filterBySelection deprecated since version 4.30. Use `filterBySelectionEnabled` or `objectIds` instead.
 - FieldColumn.name deprecated since version 4.30, use FieldColumn.fieldName instead.
 - Fullscreen deprecated since 4.32. Use the Fullscreen component instead. For information on widget deprecation, read about Esri's move to web components.
+- FullscreenViewModel deprecated since 4.33. Use the JavaScript Fullscreen API directly instead.
+- geodesicUtils deprecated since version 4.33. Use geometry operators instead.
 - GeographicTransformation deprecated since version 4.32. Use GeographicTransformation instead.
 - GeographicTransformationStep deprecated since version 4.32. Use GeographicTransformationStep instead.
 - geometry deprecated since version 4.32. Use unionTypes to import union types, or individual modules to import classes.
-- geometryEngine deprecated since version 4.32. Use [geometry
-  operators](../spatial-analysis/intro-geometry-operators/) instead.
+- geometryEngine deprecated since version 4.32. Use geometry operators instead.
 - geometryEngineAsync deprecated since version 4.32. Use geometry operators instead. You can use the web workers to perform geometry operations in a separate thread, which can improve the performance. Options include using the SDK's worker utility, creating a custom worker, or using a helper library such as Comlink.
 - Home deprecated since 4.32. Use the Home component instead. For information on widget deprecation, read about Esri's move to web components.
+- ImageryLayer.fetchImage deprecated since version 4.33. Use ImageryLayer.fetchPixels instead.
+- LineOfSight deprecated since 4.33. Use the Line Of Sight component instead. For information on widget deprecation, read about Esri's move to web components.
+- LineOfSightViewModel deprecated since 4.33. Use the Line Of Sight component or LineOfSightAnalysis instead. For information on widget deprecation, read about Esri's move to web components.
+- LineOfSightTarget deprecated since 4.33. Use the LineOfSightAnalysisTarget on LineOfSightAnalysis instead.
 - LinkChartView.highlightOptions deprecated since version 4.32. Use the highlights property instead.
-- ListItemPanel.className deprecated since version 4.30. Use icon
-- ListItemPanel.className deprecated since version 4.30. Use icon
 - Locate deprecated since 4.32. Use the Locate component instead. For information on widget deprecation, read about Esri's move to web components.
 - MapView.highlightOptions deprecated since version 4.32. Use the highlights property instead.
 - meshUtils.georeference deprecated since version 4.30. Use `convertVertexSpace` instead.
 - meshUtils.ungeoreference deprecated since version 4.30. Use `convertVertexSpace` instead.
 - Navigation.mouseWheelZoomEnabled deprecated since version 4.32. Use actionMap.mouseWheel instead.
 - NavigationToggle deprecated since 4.32. Use the Navigation Toggle component instead. For information on widget deprecation, read about Esri's move to web components.
+- NavigationToggleViewModel deprecated since 4.33. Use the Navigation Toggle component instead. For information on widget deprecation, read about Esri's move to web components.
 - pointCloudRenderers deprecated since version 4.32. Use unionTypes to import union types, or individual modules to import classes.
+- Polygon.isSelfIntersecting deprecated since 4.33. Please use simplifyOperator.isSimple() instead.
+- Print deprecated since 4.33. Use the Print component instead. For information on widget deprecation, read about Esri's move to web components.
 - projection deprecated since version 4.32. Use the projectOperator instead.
 - rasterRenderers deprecated since version 4.32. Use unionTypes to import union types, or individual modules to import classes.
 - RasterStretchRenderer.statistics deprecated since version 4.31. Use customStatistics instead.
 - renderers deprecated since version 4.32. Use unionTypes to import union types, or individual modules to import classes.
 - ScaleBar deprecated since 4.32. Use the Scale Bar component instead. For information on widget deprecation, read about Esri's move to web components.
 - SceneView.highlightOptions deprecated since version 4.32. Use the highlights property instead.
+- Search deprecated since 4.33. Use the Search component instead. For information on widget deprecation, read about Esri's move to web components.
+- Slice deprecated since 4.33. Use the Slice component instead. For information on widget deprecation, read about Esri's move to web components.
+- SliceViewModel deprecated since 4.33. Use the Slice component or SliceAnalysis instead. For information on widget deprecation, read about Esri's move to web components.
 - Swipe deprecated since 4.32. Use the Swipe component instead. For information on widget deprecation, read about Esri's move to web components.
 - symbols deprecated since version 4.32. Use unionTypes to import union types, or individual modules to import classes.
 - The `"connectivity"` possible value for QueryAssociationsParameters.types is deprecated at 4.29. Please use `"junction-junction-connectivity"` instead.
+- The following named `easing` presets on GoToOptions3D presets are deprecated at 4.33: `in-cubic`, `out-cubic`, `in-out-cubic`, `in-expo`, `out-expo`, `in-out-expo`, and `in-out-coast-quad`. Please use `cubic-in`, `cubic-out`, `cubic-in-out`, `expo-in`, `expo-out`, `expo-in-out`, and `quad-in-out-coast` instead.
 - TimeExtent deprecated since version 4.31. Use TimeExtent instead.
 - TimeInterval deprecated since version 4.31. Use TimeInterval instead.
+- TimeZoneLabel deprecated since 4.33. Use the Time Zone Label component instead. For information on widget deprecation, read about Esri's move to web components.
 - Track deprecated since 4.32. Use the Track component instead. For information on widget deprecation, read about Esri's move to web components.
 - UtilityNetworkTrace.gdbVersion deprecated since version 4.31, gdbVersion will be removed and the gdbVersion of the UtilityNetwork will be consumed directly.
 - UtilityNetworkTraceViewModel.gdbVersion deprecated since version 4.31, gdbVersion will be removed and the gdbVersion of the UtilityNetwork will be consumed directly.
 - VersionManagementViewModel.versionIdentifierLookup deprecated since version 4.30. Use VersioningState instead.
 - VersionManagementViewModel.versionInfoLookup deprecated since version 4.30. Use VersioningState instead.
 - VersionManagementViewModel.versionManagementServiceLookup deprecated since version 4.30. Use VersioningState instead.
-- VideoPlayer deprecated since version 4.33. Use the Video Player component instead.
+- VideoPlayer deprecated since 4.33. Use the Video Player component instead. For information on widget deprecation, read about Esri's move to web components.
 - View2D.highlightOptions deprecated since version 4.32. Use the highlights property instead.
+- Weather deprecated since 4.33. Use the Weather component instead. For information on widget deprecation, read about Esri's move to web components.
+- WeatherViewModel deprecated since 4.33. Use the Weather component instead. For information on widget deprecation, read about Esri's move to web components.
+- WebStyleSymbol.fetchCIMSymbol deprecated since version 4.33. Use `fetchSymbol` instead. Pass `{ acceptedFormats: "cim"] }` as options to [`fetchSymbol` to retrieve only CIM symbols.
 - Zoom deprecated since 4.32. Use the Zoom component instead. For information on widget deprecation, read about Esri's move to web components.
 
 </details>
 
 ### Map components deprecations
 
-- The function `setArcgisAssetPath` is deprecated and will be removed in version 4.34.
-  To set the asset path for `@arcgis/map-components` and `@arcgis/coding-components`, use `setAssetPath` instead.
-  For example, import `setAssetPath` from `"@arcgis/map-components"` instead of `"@arcgis/map-components/dist/components"`.
-  Refer to the Get started with npm page for more information.
-- In HTML, the presence of a boolean attribute means it is true, and its absence means it is false. The properties related to visible elements have been replaced with clearer and more concise names on the following components:
-  - `arcgis-table-list` - For example, replaced `visibleElementsCloseButton` with `showCollapseButton`
-  - `arcgis-utility-network-associations` - For example, replaced `visibleElementsConnectivityAssociationsSettingsArrowsToggle` with `showConnectivityAssociationsSettingsArrowsToggle`
-- The [`focusTrapEnabled`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/#focusTrapEnabled) property on the [Expand](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/) component is deprecated since 4.33. Use [`focusTrapDisabled`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/#focusTrapDisabled) instead.
-- The [`hideLastEditInfo`](/references/map-components/arcgis-feature/#hideLastEditInfo) property on the [Feature](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-feature/) component is deprecated since 4.33. Use [`hideLastEditedInfo`](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-feature/#hideLastEditedInfo) instead.
+<details>
+  <summary>Click to expand the complete list</summary>
+
+- The `focusTrapEnabled` property on the Expand component is deprecated since 4.33. Use `focusTrapDisabled` instead.
+- The `hideLastEditInfo` property on the Feature component is deprecated since 4.33. Use `hideLastEditedInfo` instead.
+- The `addLayer` method on the Link Chart, Map, and Scene components is deprecated since 4.33. Use `element.map.add(layer)` instead.
+- The `addLayers` method on the Link Chart, Map, and Scene components is deprecated since 4.33. Use `element.map.addMany([layer])` instead.
+- The `addTable` method on the Map and Scene is deprecated since 4.33. Use `element.map.tables.add(table)` instead.
+- The `addTables` method on the Map and Scene is deprecated since 4.33. Use `element.map.tables.addMany([table])` instead.
+- The `arcgis-directline-measurement-3d` component is deprecated since 4.33. Use `arcgis-direct-line-measurement-3d` instead.
+- The `highlightOptions` property on the Map and Scene is deprecated since 4.33. Use `highlights` instead.
+- The `visibleElementsConnectivityAssociationsSettingsArrowsToggle` property on the Utility Network Associations component is deprecated since 4.32, use showConnectivityAssociationsSettingsArrowsToggle instead.
+- The `visibleElementsConnectivityAssociationsSettingsCapSelect` property on the Utility Network Associations component is deprecated since 4.32, use showConnectivityAssociationsSettingsCapSelect instead.
+- The `visibleElementsConnectivityAssociationsSettingsColorPicker` property on the Utility Network Associations component is deprecated since 4.32, use hideConnectivityAssociationsSettingsColorPicker instead.
+- The `visibleElementsConnectivityAssociationsSettingsStylePicker` property on the Utility Network Associations component is deprecated since 4.32, use hideConnectivityAssociationsSettingsStylePicker instead.
+- The `visibleElementsConnectivityAssociationsSettingsWidthInput` property on the Utility Network Associations component is deprecated since 4.32, use hideConnectivityAssociationsSettingsWidthInput instead.
+- The `visibleElementsMaxAllowableAssociationsSlider` property on the Utility Network Associations component is deprecated since 4.32, use showMaxAllowableAssociationsSlider instead.
+- The `visibleElementsStructuralAttachmentAssociationsSettingsArrowsToggle` property on the Utility Network Associations component is deprecated since 4.32, use showStructuralAttachmentAssociationsSettingsArrowsToggle instead.
+- The `visibleElementsStructuralAttachmentAssociationsSettingsCapSelect` property on the Utility Network Associations component is deprecated since 4.32, use showStructuralAttachmentAssociationsSettingsCapSelect instead.
+- The `visibleElementsStructuralAttachmentAssociationsSettingsColorPicker` property on the Utility Network Associations component is deprecated since 4.32, use hideStructuralAttachmentAssociationsSettingsColorPicker instead.
+- The `visibleElementsStructuralAttachmentAssociationsSettingsStylePicker` property on the Utility Network Associations component is deprecated since 4.32, use hideStructuralAttachmentAssociationsSettingsStylePicker instead.
+- The `visibleElementsStructuralAttachmentAssociationsSettingsWidthInput` property on the Utility Network Associations component is deprecated since 4.32, use hideStructuralAttachmentAssociationsSettingsWidthInput instead.
+
+</details>
+
+### Charts components deprecations
+
+- The exportImage method on the Chart component is deprecated since 4.33. Use exportAsImage instead.
+- All subTitle references on the Chart component are renamed to subtitle.
+- WebMapWebChart interface is deprecated, use WebChart instead.
+- WebMapWebBoxPlot interface is deprecated, use WebBoxPlot instead.
+- WebMapWebGaugeChart interface is deprecated, use WebGaugeChart instead.
+- WebMapWebRadarChart interface is deprecated, use WebRadarChart instead.
+- RESTStatisticType interface is deprecated, use WebChartStatisticType instead.
+  - percentile_cont statistic type is deprecated, use percentile-continuous instead.
+  - percentile_dist statistic type is deprecated, use percentile-discrete instead.
