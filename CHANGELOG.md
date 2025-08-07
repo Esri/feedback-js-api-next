@@ -9,7 +9,7 @@ The `next` version of 4.34 is now available. Planned release date is October 202
 We have implemented Shadow DOM and Slots in our Map components for improved encapsulation and flexibility. This enhancement allows for better isolation of styles and functionality within the components, leading to more robust and maintainable applications.
 
 With this change, there are a few **key updates** to be a aware of:
-- When using Map components, there is **no longer a dependency on the core CSS**.
+- When using Map components, there is **no longer a need to include a link to the core CSS**.
 - Light and dark themes can be implemented via [Calcite modes](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes) set directly on the `body` element.
   ```html
   <body class="calcite-mode-dark">
