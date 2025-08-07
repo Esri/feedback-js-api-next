@@ -4,6 +4,34 @@ The `next` version of 4.34 is now available. Planned release date is October 202
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
+## Map components - Shadow DOM and Slots integration
+
+We have implemented Shadow DOM and Slots in our Map components for improved encapsulation and flexibility. This enhancement allows for better isolation of styles and functionality within the components, leading to more robust and maintainable applications.
+
+With this change, there are a few **key updates** to be a aware of:
+- When using Map components, there is **no longer a need to include a link to the core CSS**.
+- Light and dark themes can be implemented via [Calcite modes](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes) set directly on the `body` element.
+  ```html
+  <body class="calcite-mode-dark">
+  ```
+- **Slot attribute:** Instead of using `position` for placing components and other UI elements in your map/scene, we now recommend utilizing the `slot` attribute. Possible values are "top-right", "top-left", "bottom-right", and "bottom-left".
+  - If you would like to manually position a component or UI element in the view, no slot is needed and you can just use CSS directly.
+- **Placement component is no longer needed.** Instead, you can directly add the slot attribute on the element you wish to place in the map.
+
+```html
+<!-- use the calcite themes for light/dark mode -->
+<body class="calcite-mode-dark">
+  <arcgis-map item-id="237b9584339446a0b56317b5962a4971">
+    <!-- use slot instead of position for UI positioning within the map or scene components -->
+    <arcgis-zoom slot="top-left"></arcgis-zoom>
+    <arcgis-legend slot="bottom-right"></arcgis-legend>
+    <!-- previously this button had to be wrapped in a arcgis-placement component
+      now, the slot can be added directly to the component -->
+    <calcite-button slot="top-right">Click me!</calcite-button>
+  </arcgis-map>
+</body>
+```
+
 ## Component and widget updates
 
 ## Breaking Changes
