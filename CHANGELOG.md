@@ -10,7 +10,7 @@ We have implemented Shadow DOM and Slots in our Map components for improved enca
 
 With this change, there are a few **key updates** to be a aware of:
 - When using Map components, there is **no longer a dependency on the core CSS**.
-- Light and dark themes can be implemented via **Calcite themes** set directly on the `body` element.
+- Light and dark themes can be implemented via [Calcite modes](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes) set directly on the `body` element.
   ```html
   <body class="calcite-mode-dark">
   ```
