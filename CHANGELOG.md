@@ -38,6 +38,8 @@ With this change, there are a few **key updates** to be a aware of:
 
 ## Bug fixes and enhancements
 
+BUG-000173527: Fixed an issue where sketching a polygon graphic would not display the trajectory line following the mouse cursor after the first click.
+
 ## Deprecations
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.32 and earlier, additional information and links are in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecated-classes-properties-methods-events).
