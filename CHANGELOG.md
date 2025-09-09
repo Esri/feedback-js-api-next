@@ -9,10 +9,11 @@ The `next` version of 4.34 is now available. Planned release date is October 202
 We have implemented Shadow DOM and Slots in our Map components for improved encapsulation and flexibility. This enhancement allows for better isolation of styles and functionality within the components, leading to more robust and maintainable applications.
 
 With this change, there are a few **key updates** to be a aware of:
+
 - When using Map components, there is **no longer a need to include a link to the core CSS**.
 - Light and dark themes can be implemented via [Calcite modes](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes) set directly on the `body` element.
   ```html
-  <body class="calcite-mode-dark">
+  <body class="calcite-mode-dark"></body>
   ```
 - **Slot attribute:** Instead of using `position` for placing components and other UI elements in your map/scene, we now recommend utilizing the `slot` attribute. Possible values are "top-right", "top-left", "bottom-right", and "bottom-left".
   - If you would like to manually position a component or UI element in the view, no slot is needed and you can just use CSS directly.
@@ -32,13 +33,39 @@ With this change, there are a few **key updates** to be a aware of:
 </body>
 ```
 
+### Refactoring web components
+
+The following components in `map-components` have been updated under the hood to no longer wrap widget code in their implementation for this release:
+
+- [Bookmarks](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-bookmarks/)
+- [Expand](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/)
+- [Feature](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-feature/)
+- [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/)
+
+By making components consistent across the SDK, their behavior will also more closely mimic what is expected from a standard web component.
+We will continue to work on the remaining components in `@arcgis/map-components` that are currently wrapping widget code in their implementation.
+See [Esri's move to web components](https://developers.arcgis.com/javascript/latest/components-transition-plan/) for more information about the widget transition period and future.
+
 ## Component and widget updates
 
 ## Breaking Changes
 
 ## Bug fixes and enhancements
 
-BUG-000173527: Fixed an issue where sketching a polygon graphic would not display the trajectory line following the mouse cursor after the first click.
+- BUG-000147785: Fixed an issue where the size of the "Other" symbol in the legend was inconsistent with the sizes of the unique symbols when using a [UniqueValueRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-UniqueValueRenderer.html).
+- BUG-000173527: Fixed an issue where sketching a polygon graphic would not display the trajectory line following the mouse cursor after the first click.
+- BUG-000175498: Fixed an issue where deleted features remained on the map when the [client-side FeatureLayer](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#source) was not visible at the time of deletion.
+- BUG-000178706: Fixed an issue where the Expand [component](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-expand/) and [widget](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Expand.html) were exceeding the screen height on mobile devices.
+- BUG-000171234: Remove limitations on creating and updating geometries with active `featureExpressionInfo` on [elevationInfo](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#elevationInfo) when editing features in a scene with Editor component.
+- Fixed an issue where the [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/) did not correctly display [UniqueValueRenderer's](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-UniqueValueRenderer.html) when using size visual variables and definition expressions.
+- ENH-000124805: Added an `order` property to the `legendOptions` of the [ClassBreaksRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-ClassBreaksRenderer.html#legendOptions), [FlowRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-FlowRenderer.html#legendOptions), [PieChartRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-PieChartRenderer.html#legendOptions), [PointCloudClassBreaksRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-PointCloudClassBreaksRenderer.html#legendOptions), [PointCloudStretchRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-PointCloudStretchRenderer.html#legendOptions), [PointCloudUniqueValueRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-PointCloudUniqueValueRenderer.html#legendOptions), and [UniqueValueRenderer](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-UniqueValueRenderer.html#legendOptions) to specify whether individual legend item values are displayed in ascending or descending order..
+- Enhanced the [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/) to improve performance when rendering legends with many layers and sublayers.
+- Enhanced the [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/) to support feature reduction when [respectLayerDefinitionExpression](/references/map-components/arcgis-legend/#respectLayerDefinitionExpression) is true.
+- Enhanced the [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/) to support [SubtypeGroupLayers](/api-reference/esri-layers-SubtypeGroupLayer.html) when using [hideLayersNotInCurrentView](/references/map-components/arcgis-legend/#hideLayersNotInCurrentView).
+- Enhanced the [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/) to improve the alt text for legend item symbols.
+- Enhanced the [Legend](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-legend/) and [LegendViewModel](<[LegendViewModel](api-reference/esri-widgets-Legend-LegendViewModel.html)>) by adding the [loading](api-reference/esri-widgets-Legend-LegendViewModel.html#loading) property to indicate when the legend is loading or updating.
+- [Esri Community - 1582608](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/4-31-labelinginfo-issue-with-cim-renderers/m-p/1582608): Fixed an issue where labels were not displayed when real world [size visual variables](https://developers.arcgis.com/javascript/latest/api-reference/esri-renderers-visualVariables-SizeVariable.html#valueUnit) were used.
+- [Esri Community - 1579003](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/client-side-streamlayer-perfomance-problems-and/m-p/1579003): Fixed an issue where on SceneView the [StreamLayerView3D](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-layers-StreamLayerView.html#updating) property `updating` was always set to `true`.
 
 ## Deprecations
 
@@ -82,6 +109,7 @@ The following are deprecated and will be removed in a future release:
 - geometryEngineAsync deprecated since version 4.32. Use geometry operators instead. You can use the web workers to perform geometry operations in a separate thread, which can improve the performance. Options include using the SDK's worker utility, creating a custom worker, or using a helper library such as Comlink.
 - Home deprecated since 4.32. Use the Home component instead. For information on widget deprecation, read about Esri's move to web components.
 - ImageryLayer.fetchImage deprecated since version 4.33. Use ImageryLayer.fetchPixels instead.
+- Legend deprecated since 4.34. Use the Legend component instead. For information on widget deprecation, read about Esri's move to web components.
 - LineOfSight deprecated since 4.33. Use the Line Of Sight component instead. For information on widget deprecation, read about Esri's move to web components.
 - LineOfSightViewModel deprecated since 4.33. Use the Line Of Sight component or LineOfSightAnalysis instead. For information on widget deprecation, read about Esri's move to web components.
 - LineOfSightTarget deprecated since 4.33. Use the LineOfSightAnalysisTarget on LineOfSightAnalysis instead.
