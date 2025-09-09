@@ -2,7 +2,7 @@
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
-**https://js.arcgis.com/map-components/next/** and **https://js.arcgis.com/next**
+**https://js.arcgis.com/next/map-components/** and **https://js.arcgis.com/next**
 
 Welcome to the next version of the ArcGIS Maps SDK for JavaScript (4.34). This version of the SDK is currently in development and will be updated frequently until the production release in October 2025. Try out new features, perform regression testing, and get a feel for the next release - then share your feedback with the development team. Please make sure that bug reports and enhancement requests are specific to `next` or `rc` (release candidate) versions, and not applicable to a released version. It is best to ask questions about released versions on the [Esri Community](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/bd-p/arcgis-api-for-javascript-questions) site.
 
