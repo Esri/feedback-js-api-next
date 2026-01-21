@@ -12,7 +12,7 @@ The `next` version of 5.0 is now available. Planned release date is Feburary 202
 
 ### Core API breaking changes
 
-- The following named `easing` presets on [GoToOptions3D](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html#GoToOptions3D) presets were deprecated at 4.33 and have now been removed: `in-cubic`, `out-cubic`, `in-out-cubic`, `in-expo`, `out-expo`, `in-out-expo`, and `in-out-coast-quad`. Please use a supported [EasingName](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-animation-types.html#EasingName) instead.
+- The following named `easing` presets on [GoToOptions3D](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-SceneView.html#GoToOptions3D) were deprecated at 4.33 and have now been removed: `in-cubic`, `out-cubic`, `in-out-cubic`, `in-expo`, `out-expo`, `in-out-expo`, and `in-out-coast-quad`. Please use a supported [EasingName](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-animation-types.html#EasingName) instead.
 - The [IPSInfo.SmoothingProperties](https://developers.arcgis.com/javascript/latest/api-reference/esri-webdoc-ips-SmoothingProperties.html#enabled) are no longer enabled by default. To enable smoothing, set the `enabled` property to `true`.
 
 The following classes, methods, properties and events were previously deprecated and have now been removed from the API:
