@@ -92,11 +92,12 @@ The following components, methods, properties and events were previously depreca
 - Fixed an issue in the [Locate component](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-locate/) where the `goToOverride` function was not being returned.
 - Fixed an issue in the [Video Player component](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-video-player/) where the "Settings" string was not being localized.
 - Fixed a memory leak in the [geodeticAreaOperator](https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-operators-geodeticAreaOperator.html).
+- BUG-000105331: Resolved an issue where SimpleMarkerSymbol point graphic where not visible when positioned behind a transparent polygon graphic.
 - BUG-000174729: Fixed an issue where the [Shadow Cast component](https://developers.arcgis.com/javascript/latest/references/map-components/arcgis-shadow-cast/) displays shadows for zero time range in "Area above threshold" visualization.
 - BUG-000176880: Fixed the loading order of the [IntegratedMeshLayer](/api-reference/esri-layers-IntegratedMeshLayer.html) when its elevation differs from terrain elevation.
 - BUG-000173701: Fixed an issue where rendering large features in client-side [FeatureLayers](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#source) resulted in poor performance.
 - BUG-000182193: Fixed an issue when enabling geometry editing in the [Editor](/references/map-components/arcgis-editor/) canceled the active selection operation. This did not occur in attribute-only mode.
-- 
+
 ## Deprecations
 
 The following are deprecated and will be removed in a future release. For anything deprecated in 4.34 and earlier, additional information is available in the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#deprecations).
