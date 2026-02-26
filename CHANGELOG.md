@@ -6,7 +6,7 @@ The `next` version of 5.1 is now available. Planned release date is June 2026.
 
 ## Map components
 
-## Component and widget updates
+## Component updates
 
 ## Bug fixes and enhancements
 
