@@ -17,7 +17,7 @@ The following are deprecated and will be removed in a future release. For functi
 ### core API deprecations
 
 - Importing JavaScript Maps SDK modules using `require()` is deprecated since version 5.0 and may be removed at version 6.0. `$arcgis.import()` is the preferred way to import modules in your HTML applications.
-- The `__esri` namespace is deprecated since version 5.0 and will be removed at 6.0. Use individual ESM imports to directly import types from their respective module files instead. See the [Release Notes](https://developers.arcgis.com/javascript/latest/release-notes/#typescript-import-changes) for more information.
+- The `__esri` namespace is no longer supported and will be removed at 6.0. Use individual ESM imports to directly import types from their respective module files instead. See the [Release Notes](https://developers.arcgis.com/javascript/latest/release-notes/#typescript-import-changes) for more information.
 
 ### Map components deprecations
 

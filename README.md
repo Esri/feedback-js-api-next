@@ -2,7 +2,7 @@
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
-**https://js.arcgis.com/5.1.0-next/map-components/** and **https://js.arcgis.com/5.1.0-next/**
+**https://js.arcgis.com/5.1.0-next/**
 
 Welcome to the next version of the ArcGIS Maps SDK for JavaScript (version 5). 
 
