@@ -12,7 +12,7 @@ The `next` version of 5.1 is now available. Planned release date is June 2026.
 
 ## Deprecations
 
-The following are deprecated and will be removed in a future release. For functionality deprecated in earlier supported versions, see the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/). See the [FAQ](https://developers.arcgis.com/javascript/latest/faq/#what-does-it-mean-when-an-aspect-of-the-sdk-is-deprecated) for more information.
+The following are deprecated and will be removed in a future release. For functionality deprecated in earlier supported versions, see the [release notes](https://developers.arcgis.com/javascript/latest/release-notes/#map-components-changes). See the [FAQ](https://developers.arcgis.com/javascript/latest/faq/#what-does-it-mean-when-an-aspect-of-the-sdk-is-deprecated) for more information.
 
 ### core API deprecations
 
