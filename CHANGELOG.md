@@ -30,8 +30,6 @@ arcgis-map {
 
 - BUG-000173133: Fixed an issue where grouped unique value renderer labels were displaying in the Popup, FeatureTable, and FeatureForm instead of the unique values.
 - [Esri Community - 1688881](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/image-media-not-displaying-in-arcgis-popup/m-p/1688881): Fixed an issue where image media referencing a URL attribute value was not displaying in the [Popup](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/).
-- ENH-000XXXXX: Support enhancements are listed after bugs.
-- [Esri Community - #######](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/): Then Esri Community enhancements.
 - Enhanced the [Bookmarks component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-bookmarks/) so the heading stays fixed while scrolling, and the Add bookmark button remains accessible by floating above the list when visible.
 - Enhanced the Legend's [ActiveLayerInfo](https://developers.arcgis.com/javascript/latest/references/core/widgets/Legend/support/ActiveLayerInfo/) to prevent duplicate legend requests by sharing pending requests across legend instances.
 - Enhanced the [Popup](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/) so you no longer need to call [`clear()`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/#clear) before opening it with a new set of features; the popup now automatically clears previous content when features are updated.
