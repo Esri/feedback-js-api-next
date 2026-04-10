@@ -21,7 +21,6 @@ arcgis-map {
   --arcgis-table-row-background-color: #e6f4ea;
   --arcgis-table-row-alt-background-color: #f5eedc;
 }
-
 ```
 
 ## Component updates
