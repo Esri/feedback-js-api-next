@@ -14,7 +14,7 @@ The following CSS variables were added to the Map components package:
   - `--arcgis-table-row-background-color`: adjusts the background color for table rows.
   - `--arcgis-table-row-alt-background-color`: adjusts the background color for alternating table rows.
 
-Example: 
+Example:
 
 ```css
 arcgis-map {
@@ -32,7 +32,7 @@ arcgis-map {
 - Enhanced the [Bookmarks component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-bookmarks/) so the heading stays fixed while scrolling, and the Add bookmark button remains accessible by floating above the list when visible.
 - Enhanced the Legend's [ActiveLayerInfo](https://developers.arcgis.com/javascript/latest/references/core/widgets/Legend/support/ActiveLayerInfo/) to prevent duplicate legend requests by sharing pending requests across legend instances.
 - Enhanced the [Popup](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/) so you no longer need to call [`clear()`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/#clear) before opening it with a new set of features; the popup now automatically clears previous content when features are updated.
-- When [`features`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/#features) is set to a polyline graphic and the popup is opened via the [`open`](/https://developers.arcgis.com/javascript/latestreferences/map-components/components/arcgis-popup/#open) property, the [Popup](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/) is now anchored to the middle of the polyline feature's geometry.
+- When [`features`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/#features) is set to a polyline graphic and the popup is opened via the [`open`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/#open) property, the [Popup](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup/) is now anchored to the middle of the polyline feature's geometry.
 
 ## Deprecations
 
