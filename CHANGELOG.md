@@ -1,6 +1,6 @@
 # Change log
 
-The `next` version of 5.2.0 is now available. Planned release date is November 2026.
+The `next` version of 5.2 is now available. Planned release date is November 2026.
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
