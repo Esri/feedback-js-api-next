@@ -2,27 +2,28 @@
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
-**https://js.arcgis.com/5.1.0-next/**
+**https://js.arcgis.com/5.2.0-next/**
 
-Welcome to the next version of the ArcGIS Maps SDK for JavaScript (version 5). 
+This prerelease of the ArcGIS Maps SDK for JavaScript version 5.2 is intended for developers who want to evaluate upcoming features or test their applications before the November 2026 release.
+
+**This version is not recommended for production deployments.**
 
 > [!NOTE]
-> There are several important changes at version 5. The SDK has [moved to semantic versioning](https://www.esri.com/arcgis-blog/products/js-api-arcgis/announcements/arcgis-maps-sdk-for-javascript-is-moving-to-semantic-versioning), and the next CDN URLs now use the full version (e.g. `5.1.0-next`) in place of `next`.
+> Beginning with version 5.0, the SDK uses [semantic versioning](https://www.esri.com/arcgis-blog/products/js-api-arcgis/announcements/arcgis-maps-sdk-for-javascript-is-moving-to-semantic-versioning). Prerelease CDN URLs now include the full version number (for example, `5.2.0-next`) instead of `next`.
 
-This version of the SDK is currently in development and will be updated frequently until the production release in June 2026. Try out new features, perform regression testing, and get a feel for the next release. Please make sure that bug reports and enhancement requests are specific to `next` or `rc` (release candidate) versions, and not applicable to a released version. It is best to ask questions about released versions on the [Esri Community](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/bd-p/arcgis-api-for-javascript-questions) site.
+Some features available in `next` builds may be deferred and not appear in the final release. Report issues only if they are reproducible in a `next` or `rc` (release candidate) build and are not already present in the current production release. For all other questions about released versions we recommend posting on the [Esri Community](https://community.esri.com/t5/arcgis-javascript-maps-sdk-questions/bd-p/arcgis-api-for-javascript-questions) site.
 
-ArcGIS Maps SDK for JavaScript release management is dynamic. Some new features and updates that appear in next builds might not be present in the final production release due to a variety of factors (but will likely be present in an upcoming release).
 
-See the FAQ on [Versioning and change management](https://developers.arcgis.com/javascript/latest/faq/#versioning-and-change-management) for more information. 
+For more information, see the [Versioning and change management FAQ](https://developers.arcgis.com/javascript/latest/faq/#versioning-and-change-management).
 
 ## Instructions
 
-Read the release notes for the current version of the SDK at https://developers.arcgis.com/javascript/latest/release-notes/.
+Read the release notes for the current production version of the SDK at https://developers.arcgis.com/javascript/latest/release-notes/.
 
-Read the [CHANGELOG.md](CHANGELOG.md) to find about new functionality, bug fixes and any breaking changes in the next version.
+Review the [CHANGELOG.md](CHANGELOG.md) to learn about new functionality, bug fixes and any breaking changes in the next version.
 
 See the SDK's [Get started](https://developers.arcgis.com/javascript/latest/get-started/) guide topic.
 
 ## Licensing
 
-Use of the ArcGIS Maps SDK for JavaScript is subject to the terms and conditions described in SDK's Licensing & Attribution guide page: https://developers.arcgis.com/javascript/latest/licensing/.
+Use of the ArcGIS Maps SDK for JavaScript is subject to the terms and conditions described in the SDK's Licensing & Attribution guide page: https://developers.arcgis.com/javascript/latest/licensing/.
