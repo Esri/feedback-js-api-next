@@ -23,7 +23,7 @@ A new `attributionMode` value of `auto` has been added to the [`arcgis-map`](htt
 - BUG-000186824: Fixed an issue that caused the map to crash when quantization produced `NaN` values in feature geometries.
 - Fixed an issue where `dragEnabled` was not functioning correctly within group layers in the Layer List (Next) component.
 - Fixed an issue in the Layer List (Next) component where unnamed layers were labeled “Untitled table” instead of “Untitled layer”.
--Fixed an issue where custom HTML panel content in the Layer List (Next) component disappeared after closing and reopening a panel.
+- Fixed an issue where custom HTML panel content in the Layer List (Next) component disappeared after closing and reopening a panel.
 - Fixed an issue where triggering catalog-layer actions in the Layer List (Next) component threw an exception.
 - Fixed an issue where nested group layers were duplicated after being moved to another level in the Layer List (Next) and Basemap Layer List (Next) components.
 - Fixed an issue in the Layer List (Next) component where the Legend icon was not displayed when panel content included `"legend"` in an array.
