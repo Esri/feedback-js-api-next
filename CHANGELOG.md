@@ -34,7 +34,7 @@ A new `attributionMode` value of `auto` has been added to the [`arcgis-map`](htt
 - Added support for `messageOverrides` in the Area Measurement 2D, Distance Measurement 2D, Area Measurement 3D, Direct Line Measurement 3D, and Volume Measurement components, allowing default localized strings to be overridden.
 - Enhanced the 2D MediaLayerView to support interactively moving source points. See the MediaLayer with control points sample for more information.
 - Improved the color contrast of attachment icons in the Popup, Features (Next), and Feature (Next) components for greater visual clarity.
-- When the Popup and Features (Next) components are open in “list” initial-display-mode, the focus is automatically set back to the selected feature in the feature list after going back from viewing an individual feature.
+- When the Popup and Features (Next) components are open in `list` `initial-display-mode`, the focus is automatically set back to the selected feature in the feature list after going back from viewing an individual feature.
 
 ## Deprecations
 
