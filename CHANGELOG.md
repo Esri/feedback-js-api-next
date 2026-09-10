@@ -21,7 +21,7 @@ A new `attributionMode` value of `auto` has been added to the [`arcgis-map`](htt
 - BUG-000179364: Fixed an issue where the Search component within an Expand component did not display search suggestions on iOS.
 - BUG-000181719: Fixed an issue that prevented the Popup from displaying when a feature had a null attribute value referenced by a unique value renderer group.
 - BUG-000186824: Fixed an issue that caused the map to crash when quantization produced `NaN` values in feature geometries.
-- Fixed an issue where dragEnabled was not functioning correctly within group layers in the Layer List (Next) component.
+- Fixed an issue where `dragEnabled` was not functioning correctly within group layers in the Layer List (Next) component.
 - Fixed an issue in the Layer List (Next) component where unnamed layers were labeled “Untitled table” instead of “Untitled layer”.
 -Fixed an issue where custom HTML panel content in the Layer List (Next) component disappeared after closing and reopening a panel.
 - Fixed an issue where triggering catalog-layer actions in the Layer List (Next) component threw an exception.
