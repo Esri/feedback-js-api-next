@@ -26,7 +26,7 @@ A new `attributionMode` value of `auto` has been added to the [`arcgis-map`](htt
 -Fixed an issue where custom HTML panel content in the Layer List (Next) component disappeared after closing and reopening a panel.
 - Fixed an issue where triggering catalog-layer actions in the Layer List (Next) component threw an exception.
 - Fixed an issue where nested group layers were duplicated after being moved to another level in the Layer List (Next) and Basemap Layer List (Next) components.
--Fixed an issue in the Layer List (Next) component where the Legend icon was not displayed when panel content included `"legend"` in an array.
+- Fixed an issue in the Layer List (Next) component where the Legend icon was not displayed when panel content included `"legend"` in an array.
 - Fixed an issue in the Legend where role attributes were not being correctly applied for accessibility.
 - Fixed an issue where relationship elements were not being displayed when browsing aggregate features in the Popup and Features (Next) components.
 - ENH-000173879: Improved ARIA support for buttons in the Popup and Features (Next) components to enhance accessibility for screen reader users.
