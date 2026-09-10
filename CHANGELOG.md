@@ -12,7 +12,7 @@ The contrast of attribution text has been enhanced to improve readability and ac
 
 ### Auto theming
 
-A new `attributionMode` value of `auto` has been added to the [`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/#attributionMode), [`arcgis-scene`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/#attributionMode) and [`arcgis-link-chart`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/#attributionMode) components. Using auto will sync the attribution theme with the rest of your page based on the [Calcite mode](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes). The `light` and `dark` modes can still explicitly be used to set the attribution to a different theme than the rest of the application.
+A new `attributionMode` value of `auto` has been added to the [`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/#attributionMode), [`arcgis-scene`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/#attributionMode) and [`arcgis-link-chart`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/#attributionMode) components. Using `auto` will sync the attribution theme with the rest of your page based on the [Calcite mode](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes). The `light` and `dark` modes can still be used explicitly to set the attribution to a different theme than the rest of the application.
 
 ## Bug fixes and enhancements
 
