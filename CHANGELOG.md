@@ -4,6 +4,27 @@ The `next` version of 5.2 is now available. Planned release date is November 202
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
+## Focus region for keyboard navigation
+
+A new `focusRegion` property has been added to the [Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/), [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/), and [Link Chart](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/) components to improve keyboard navigation and accessibility. It defines the portion of the map or chart that receives focus, enabling keyboard users to quickly navigate to, inspect, and interact with specific areas of the view.
+
+The focus region is built into the Map, Scene, and Link Chart components and can be toggled using the `Shift` + `Alt`/`Option` + `O` keyboard shortcut while the view component is in focus. By default, the shortcut is enabled only when a popup component is slotted into the view component, or `popupComponentEnabled` is set, and when the `popupDisabled` property is `false`. Use `focusRegionShortcutEnabled` to explicitly enable or disable the keyboard shortcut for custom selection handling. 
+
+Below is a summary of the available actions and their corresponding keyboard shortcuts or properties:
+
+| Action | Keyboard Shortcut / Property |
+|--------|----------------------------|
+| Enable or disable focus region | Use the `Shift` + `Alt`/`Opt` + `O` keyboard shortcut while the view component is in focus or set the `focusRegionVisible` property to `true` or `false`. |
+| Resize focus region | Use the `Shift` + `Alt`/`Opt` + Up/Down arrow keys while the focus region is active. |
+| Open the [popup](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup) for features in the focus region | Press `Enter` or `Spacebar` while the focus region is active. |
+| Enable or disable the `Shift` + `Alt`/`Opt` + `O` keyboard shortcut | Set `focusRegionShortcutEnabled`. |
+
+Explore this new feature in the [Select features with a focus region](https://codepen.io/laurenb14/pen/QwpmJLO?editors=1000) example.
+
+## More precise keyboard navigation
+
+[Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/) and [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/) components, along with MapView and SceneView, now support more precise keyboard panning. Hold `Alt` while pressing an arrow key to move in smaller increments, or hold `Shift` to move in larger increments. Press multiple arrow keys at once to pan diagonally.
+
 ## Attribution enhancements
 
 ### Improved contrast
@@ -12,7 +33,17 @@ The contrast of attribution text has been enhanced to improve readability and ac
 
 ### Auto theming
 
-A new `attributionMode` value of `auto` has been added to the [`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/#attributionMode), [`arcgis-scene`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/#attributionMode) and [`arcgis-link-chart`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/#attributionMode) components. Using `auto` will sync the attribution theme with the rest of your page based on the [Calcite mode](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes). The `light` and `dark` modes can still be used explicitly to set the attribution to a different theme than the rest of the application.
+A new `attributionMode` value of `auto` has been added to the [Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/#attributionMode), [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/#attributionMode) and [Link Chart](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/#attributionMode) components. Using `auto` will sync the attribution theme with the rest of your page based on the [Calcite mode](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes). The `light` and `dark` modes can still be used explicitly to set the attribution to a different theme than the rest of the application.
+
+## CSS variables for Map, Scene, and Link Chart
+
+The following CSS variables are now available for customizing the appearance of the [Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map), [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene), and [Link Chart](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart) components.
+
+- `--arcgis-view-corner-radius`: Sets the corner radius for the Map, Scene, and Link Chart components.
+- `--arcgis-focus-region-outer-border-color`: Sets the color of the focus region’s outer border.
+- `--arcgis-focus-region-inner-border-color`: Sets the color of the focus region’s inner border.
+- `--arcgis-focus-region-border-width`: Sets the width of the focus region’s border.
+
 
 ## Bug fixes and enhancements
 
