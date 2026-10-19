@@ -39,7 +39,6 @@ A new `attributionMode` value of `auto` has been added to the [Map](https://deve
 
 The following CSS variables are now available for customizing the appearance of the [Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map), [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene), and [Link Chart](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart) components.
 
-- `--arcgis-view-corner-radius`: Sets the corner radius for the Map, Scene, and Link Chart components.
 - `--arcgis-focus-region-outer-border-color`: Sets the color of the focus region’s outer border.
 - `--arcgis-focus-region-inner-border-color`: Sets the color of the focus region’s inner border.
 - `--arcgis-focus-region-border-width`: Sets the width of the focus region’s border.
