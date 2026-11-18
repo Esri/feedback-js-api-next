@@ -1,96 +1,141 @@
 # Change log
 
-The `next` version of 5.2 is now available. Planned release date is November 2026.
+The `next` version of 6.0 is now available. Planned release date is February 2027.
 
 ![Current build version](https://img.shields.io/npm/v/@arcgis/core/next?label=Current%20build)
 
-## Focus region for keyboard navigation
-
-A new `focusRegion` property has been added to the [Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/), [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/), and [Link Chart](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/) components to improve keyboard navigation and accessibility. It defines the portion of the map or chart that receives focus, enabling keyboard users to quickly navigate to, inspect, and interact with specific areas of the view.
-
-The focus region is built into the Map, Scene, and Link Chart components and can be toggled using the `Shift` + `Alt`/`Option` + `O` keyboard shortcut while the view component is in focus. By default, the shortcut is enabled only when a popup component is slotted into the view component, or `popupComponentEnabled` is set, and when the `popupDisabled` property is `false`. Use `focusRegionShortcutEnabled` to explicitly enable or disable the keyboard shortcut for custom selection handling. 
-
-Below is a summary of the available actions and their corresponding keyboard shortcuts or properties:
-
-| Action | Keyboard Shortcut / Property |
-|--------|----------------------------|
-| Enable or disable focus region | Use the `Shift` + `Alt`/`Opt` + `O` keyboard shortcut while the view component is in focus or set the `focusRegionVisible` property to `true` or `false`. |
-| Resize focus region | Use the `Shift` + `Alt`/`Opt` + Up/Down arrow keys while the focus region is active. |
-| Open the [popup](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-popup) for features in the focus region | Press `Enter` or `Spacebar` while the focus region is active. |
-| Enable or disable the `Shift` + `Alt`/`Opt` + `O` keyboard shortcut | Set `focusRegionShortcutEnabled`. |
-
-Explore this new feature in the [Select features with a focus region](https://codepen.io/laurenb14/pen/QwpmJLO?editors=1000) example.
-
-## More precise keyboard navigation
-
-[Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/) and [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/) components, along with MapView and SceneView, now support more precise keyboard panning. Hold `Alt` while pressing an arrow key to move in smaller increments, or hold `Shift` to move in larger increments. Press multiple arrow keys at once to pan diagonally.
-
-## Attribution enhancements
-
-### Improved contrast
-
-The contrast of attribution text has been enhanced to improve readability and accessibility across different map backgrounds. By default, a blur has been added and the background, opacity, and text colors have been adjusted for improved contrast in both light and dark modes.
-
-### Auto theming
-
-A new `attributionMode` value of `auto` has been added to the [Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/#attributionMode), [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/#attributionMode) and [Link Chart](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/#attributionMode) components. Using `auto` will sync the attribution theme with the rest of your page based on the [Calcite mode](https://developers.arcgis.com/calcite-design-system/core-concepts/#modes). The `light` and `dark` modes can still be used explicitly to set the attribution to a different theme than the rest of the application.
-
-## CSS variables for Map, Scene, and Link Chart
-
-The following CSS variables are now available for customizing the appearance of the [Map](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map), [Scene](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene), and [Link Chart](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart) components.
-
-- `--arcgis-focus-region-outer-border-color`: Sets the color of the focus region’s outer border.
-- `--arcgis-focus-region-inner-border-color`: Sets the color of the focus region’s inner border.
-- `--arcgis-focus-region-border-width`: Sets the width of the focus region’s border.
-
-
 ## Bug fixes and enhancements
 
-- BUG-000152775: Fixed an issue where MapImageLayer did not include the map scale in the export request.
-- BUG-000169782: Fixed an issue where MapImageLayer was not rendering properly when the browser scale changed.
-- BUG-000179364: Fixed an issue where the Search component within an Expand component did not display search suggestions on iOS.
-- BUG-000181719: Fixed an issue that prevented the Popup from displaying when a feature had a null attribute value referenced by a unique value renderer group.
-- BUG-000186824: Fixed an issue that caused the map to crash when quantization produced `NaN` values in feature geometries.
-- Fixed an issue where `dragEnabled` was not functioning correctly within group layers in the Layer List (Next) component.
-- Fixed an issue in the Layer List (Next) component where unnamed layers were labeled “Untitled table” instead of “Untitled layer”.
-- Fixed an issue where custom HTML panel content in the Layer List (Next) component disappeared after closing and reopening a panel.
-- Fixed an issue where triggering catalog-layer actions in the Layer List (Next) component threw an exception.
-- Fixed an issue where nested group layers were duplicated after being moved to another level in the Layer List (Next) and Basemap Layer List (Next) components.
-- Fixed an issue in the Layer List (Next) component where the Legend icon was not displayed when panel content included `"legend"` in an array.
-- Fixed an issue in the Legend where role attributes were not being correctly applied for accessibility.
-- Fixed an issue where relationship elements were not being displayed when browsing aggregate features in the Popup and Features (Next) components.
-- ENH-000173879: Improved ARIA support for buttons in the Popup and Features (Next) components to enhance accessibility for screen reader users.
-- ENH-000180289: Enhanced the Basemap Toggle component to provide context to assistive technologies when the activeBasemap is changed.
-- Added support for `messageOverrides` in the Area Measurement 2D, Distance Measurement 2D, Area Measurement 3D, Direct Line Measurement 3D, and Volume Measurement components, allowing default localized strings to be overridden.
-- Enhanced the 2D MediaLayerView to support interactively moving source points. See the MediaLayer with control points sample for more information.
-- Improved the color contrast of attachment icons in the Popup, Features (Next), and Feature (Next) components for greater visual clarity.
-- When the Popup and Features (Next) components are open in `list` `initial-display-mode`, the focus is automatically set back to the selected feature in the feature list after going back from viewing an individual feature.
+TBD
+
+## Breaking Changes
+
+With semantic versioning, 6.0 is a major release and includes breaking changes. Before upgrading to a new major version of the SDK, we recommend thoroughly reviewing the breaking changes in this section. For more information, see the [FAQ on how breaking changes are managed](https://developers.arcgis.com/javascript/latest/faq/#how-are-breaking-changes-managed).
+
+### Map components breaking changes
+
+The following components, methods, properties and events have been removed from the API:
+
+| Component/Property/Method/Event | Alternate option | Version deprecated |
+| --- | --- | --- |
+| `arcgis-scale-range-slider` component | Use [`arcgis-slider-scale-range`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-slider-scale-range/) instead.                                                          | 5.1 |
+| `arcgis-slider-scale-range` `LowerCaseRegion` type | Use [`Region`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-slider-scale-range/#Region) instead. | 5.2 |
+| `arcgis-slider-scale-range` `UpperCaseRegion` type | Use [`Uppercase<Region>`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-slider-scale-range/#Region) instead. | 5.2 |
+| `arcgis-slider-scale-range` `SupportedRegion` type | Use [`Region \| Uppercase<Region>`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-slider-scale-range/#Region) instead. | 5.2 |
+| `arcgis-swipe` `leadingLayers` property | Use [`startLayers`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-swipe/#startLayers) instead.                                                                       | 5.0 |
+| `arcgis-swipe` `trailingLayers` property | Use [`endLayers`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-swipe/#endLayers) instead.                                                                          | 5.0 |
+| `arcgis-swipe` `swipePosition` property | Use [`position`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-swipe/#position) instead.                                                                             | 5.0 |
+| `arcgis-utility-network-validate-topology` component | Use the [Utility Network Validate Network Topology component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-utility-network-validate-network-topology/) instead. See [migration guidance](https://developers.arcgis.com/javascript/latest/utility-network/editing-utility-networks/#migrate-from-the-legacy-topology-validation-apis). | 5.1 |
+| `arcgis-value-picker-legacy` component | Use the [Value Picker component](https://developers.arcgis.com/javascript/latest/references/common-components/components/arcgis-value-picker/) and its label, slider, combobox, or collection sub-components instead. | 5.1 |
+
+### Charts components breaking changes
+
+- List out any breaking changes in Charts components
+
+The following components, methods, properties and events have been removed from the API:
+
+| Component/Property/Method/Event | Alternate option | Version deprecated |
+| --- | --- | --- |
+| `SupportedLayer` interface | Use [`ChartLayer`](https://developers.arcgis.com/javascript/latest/references/charts-components/interfaces/#ChartLayer) or [`ChartLayerInput`](https://developers.arcgis.com/javascript/latest/references/charts-components/interfaces/#ChartLayerInput) instead. | 5.2 |
+| `SupportedRasterLayer` interface | Use [`ChartLayerInput`](https://developers.arcgis.com/javascript/latest/references/charts-components/interfaces/#ChartLayerInput) instead. | 5.2 |
+| `RESTFontDecoration` variable | No alternate option available. | 5.1 |
+| `RESTFontStyle` variable | No alternate option available. | 5.1 |
+| `RESTFontWeight` variable | No alternate option available. | 5.1 |
+| `RESTHorizontalAlignment` variable | No alternate option available. | 5.1 |
+| `RESTUnits` variable | No alternate option available. | 5.1 |
+| `RESTVerticalAlignment` variable | No alternate option available. | 5.1 |
+| `ChartOptions.hideLoaderAnimation` property | No alternate option available. | 5.2 |
+| `ChartOptions.hideZeroCountCategories` property | No alternate option available. | 5.2 |
+| `filterByExtent` property | Use [`filterByViewExtent`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-chart/#filterByViewExtent) instead. | 5.1 |
+| `layerFieldsChangePolicy` property | No alternate option available. | 5.1 |
+| `layerFilterChangePolicy` property | No alternate option available. | 5.1 |
+| `layerRendererChangePolicy` property | No alternate option available. | 5.1 |
+| `legendPosition` property | Use [`legendPosition`](https://developers.arcgis.com/javascript/latest/references/charts-components/model/bar-chart-model/bar-chart-model/#legendPosition) property on the charts model instead. | 5.0 |
+| `rotation` property| Use [`rotated`](https://developers.arcgis.com/javascript/latest/references/charts-components/model/bar-chart-model/bar-chart-model/#rotated) property on the charts model or [`rotated`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-chart/#rotated) property instead. | 5.0 |
+
+##### From `arcgis-charts-action-bar` component
+
+| Component/Property/Method/Event | Alternate option | Version deprecated |
+| --- | --- | --- |
+| `clearSelectionToggle` property | Use [`clearSelectionActive`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#clearSelectionActive) instead. | 5.2 |
+| `disableCSVExportForChartTypes` property | Use [`csvExportExclusionList`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#csvExportExclusionList) instead. | 5.2 |
+| `editChartState` property |  Use [`editChartEnabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#editChartEnabled) instead. | 5.2 |
+| `exportActionState` property | Use [`exportActionDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#exportActionDisabled) instead. | 5.2 |
+| `exportAsCSVState` property | Use [`exportAsCSVDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#exportAsCSVDisabled) instead. | 5.2 |
+| `exportAsImageState` property | Use [`exportAsImageDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#exportAsImageDisabled) instead. | 5.2 |
+| `filterByExtentState` property | Use [`filterByViewExtentDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#filterByViewExtentDisabled) instead. | 5.2 |
+| `filterByExtentTitle` property | Use [`filterByViewExtentTitle`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#filterByViewExtentTitle) instead. | 5.2 |
+| `filterByExtentToggle` property | Use [`filterByViewExtentActive`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#filterByViewExtentActive) instead. | 5.2 |
+| `filterBySelectionState` property | Use [`filterBySelectionDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#filterBySelectionDisabled) instead. | 5.2 |
+| `filterBySelectionToggle` property | Use [`filterBySelectionActive`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#filterBySelectionActive) instead. | 5.2 |
+| `fullExtentState` property | Use [`fullExtentDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#fullExtentDisabled) instead. | 5.2 |
+| `fullExtentToggle` property | Use [`fullExtentActive`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#fullExtentActive) instead. | 5.2 |
+| `legendState` property | Use [`legendDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#legendDisabled) instead. | 5.2 |
+| `legendToggle` property | Use [`legendActive`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#legendActive) instead. | 5.2 |
+| `rotateChartState` property | Use [`rotateChartDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#rotateChartDisabled) instead. | 5.2 |
+| `rotateChartToggle` property | Use [`rotateChartActive`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#rotateChartActive) instead. | 5.2 |
+| `selectionState` property | Use [`selectionDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#selectionDisabled) instead. | 5.2 |
+| `switchSelectionState` property | Use [`switchSelectionDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#switchSelectionDisabled) instead. | 5.2 |
+| `switchSelectionToggle` property | Use [`switchSelectionActive`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#switchSelectionActive) instead. | 5.2 |
+| `zoomState` property | Use [`zoomDisabled`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#zoomDisabled) instead. | 5.2 |
+| `zoomToggle` property | Use [`zoomActive`](https://developers.arcgis.com/javascript/latest/references/charts-components/components/arcgis-charts-action-bar/#zoomActive) instead. | 5.2 |
+
+### Common components breaking changes
+
+TBD
+
+
+### Coding components breaking changes
+
+TBD
+
+### AI components breaking changes
+
+TBD
+
+
+### Core API breaking changes
+
+The following classes, methods, properties and events were previously deprecated and have now been removed from the API:
+
+| Class/Property/Method/Event                              | Alternate option                                                                                                                                                                                                                                         | Version deprecated |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `DirectionalPad` widget and its `VisibleElements` support class | Use the [Directional Pad component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-directional-pad/) instead. | 4.32      |
+| `DirectionalPadViewModel` and associated public types (`DirectionalPadProperties`, `DirectionalPadViewModelProperties`, `DirectionalPadViewModelState`, `DirectionalPadAngle`, and `Vector`) | Use the [Directional Pad component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-directional-pad/) instead. | 5.2 |
+| `esri/widgets/Track` and `TrackEvents`                   | Use the [Track component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-track/) instead.                                                                                                                                                | 4.32               |
+| `esri/widgets/Track/TrackViewModel` and `TrackViewModelEvents` | Use the [Track component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-track/) instead.                                                                                                                                        | 5.1                |
+| `TrackViewModelProperties`, `TrackViewModelState`, `TrackViewModelTrackEvent`, `TrackViewModelTrackErrorEvent`, and `PositionFilterFunction` | Use the [Track component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-track/) and its corresponding properties, state, and events instead. | 5.2 |
+| `UtilityNetworkValidateTopology` widget and its associated public types | Use the [Utility Network Validate Network Topology component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-utility-network-validate-network-topology/) instead. See [migration guidance](https://developers.arcgis.com/javascript/latest/utility-network/editing-utility-networks/#migrate-from-the-legacy-topology-validation-apis). | 5.0 |
+| `UtilityNetworkValidateTopologyViewModel` and its associated public types | Use [UtilityNetwork.validateTopology()](https://developers.arcgis.com/javascript/latest/references/core/networks/UtilityNetwork/#validateTopology) for workflows without a component UI. See [programmatic validation](https://developers.arcgis.com/javascript/latest/utility-network/editing-utility-networks/#validate-network-topology-using-the-utility-network-class). | 5.0 |
+| `esri/widgets/VideoPlayer` and `VideoPlayerProperties` | Use the [Video Player component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-video-player/) instead. | 4.33 |
+| `esri/widgets/VideoPlayer/VideoPlayerViewModel` and `VideoPlayerViewModelProperties` | Use the [Video Player component](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-video-player/) instead. | 5.2 |
+| `Mesh.createBox`, `Mesh.createSphere`, `Mesh.createCylinder`, `Mesh.createPlane`, `Mesh.createFromPolygon`, `Mesh.createFromGLTF`, and `CreateFromPolygonParameters` | Use the corresponding functions in [meshUtils](https://developers.arcgis.com/javascript/latest/references/core/geometry/support/meshUtils/) and update imports and parameter types accordingly. Unlike `Mesh.createFromPolygon()`, `meshUtils.createFromPolygon()` is asynchronous and returns a promise, update callers to await the result. | 5.1 |
 
 ## Deprecations
 
-New deprecations for version 5.2 are documented on this page.
+New deprecations for version 6.0 are documented on this page.
 
 See the [FAQ](https://developers.arcgis.com/javascript/latest/faq/#what-does-it-mean-when-an-aspect-of-the-sdk-is-deprecated) for more information about the deprecation process and removal timelines.
 
 ### Core API deprecations
 
-#### New in 5.2
+#### New in 6.0
 
-New deprecations for 5.2 are TBD.
+New deprecations for 6.0 are TBD.
 
 #### Previously announced deprecations
 
-- As of 5.0, all widgets are deprecated, and components are the recommended path forward. Existing widget-based applications will continue to work as expected. Deprecation does not mean immediate removal, but widgets will no longer receive new features, and will begin to be removed in Q1 2027 (version 6.0). The recommended approach is to use the [`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/), [`arcgis-scene`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/) and [`arcgis-link-chart`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/) components instead of the MapView, SceneView, and LinkChartView. To help with the transition, review the [migration guide](https://developers.arcgis.com/javascript/latest/migrating-to-components/), updated [programming patterns](https://developers.arcgis.com/javascript/latest/programming-patterns/), [tutorials](https://developers.arcgis.com/javascript/latest/tutorials/), and [samples built with components](https://developers.arcgis.com/javascript/latest/sample-code/?tagged=map-components).
-- Importing JavaScript Maps SDK modules using `require()` has been deprecated since version 5.0 and may be removed in version 6.0. [`$arcgis.import()`](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/future-proof-your-arcgis-javascript-app) is the preferred way to import modules in your HTML applications.
+- The version 6.0 (Q1 2027) release is a major release and will *remove* many deprecated APIs, including widgets and UI aspects of `MapView`, `SceneView`, and `LinkChartView`, such as popup and the view UI (which managed default widgets in the view). **Developers should migrate now:** replace widgets with components, and migrate from `MapView`, `SceneView`, and `LinkChartView` to the recommended [`arcgis-map`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-map/), [`arcgis-scene`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-scene/), and [`arcgis-link-chart`](https://developers.arcgis.com/javascript/latest/references/map-components/components/arcgis-link-chart/) components. To prepare for 6.0, review the [migration guide](https://developers.arcgis.com/javascript/latest/migrating-to-components/), updated [programming patterns](https://developers.arcgis.com/javascript/latest/programming-patterns/), [tutorials](https://developers.arcgis.com/javascript/latest/tutorials/), and [samples built with components](https://developers.arcgis.com/javascript/latest/sample-code/?tagged=map-components).
+- Importing JS Maps SDK modules using `require()` is deprecated since version 5.0 and may be removed at version 6.0. [`$arcgis.import()`](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/future-proof-your-arcgis-javascript-app) is the preferred way to import modules in your HTML applications.
 - The `__esri` namespace used in TypeScript is no longer supported and will be removed at 6.0. Use individual ESM imports to directly import types from their respective module files instead. See the [TypeScript import changes](https://developers.arcgis.com/javascript/latest/release-notes/#typescript-import-changes) section of the Release notes for more information.
 
 For all other previously announced core API deprecations, see the [Release notes](https://developers.arcgis.com/javascript/latest/release-notes/#core-api-changes).
 
 ### Map components deprecations
 
-#### New in 5.2
+#### New in 
 
-New deprecations for 5.2 are TBD.
+New deprecations for 6.0 are TBD.
 
 #### Previously announced deprecations
 
@@ -98,9 +143,9 @@ For previously announced map component deprecations, see the [Release notes](htt
 
 ### Charts components deprecations
 
-#### New in 5.2
+#### New in 6.0
 
-New deprecations for 5.2 are TBD.
+New deprecations for 6.0 are TBD.
 
 #### Previously announced deprecations
 
