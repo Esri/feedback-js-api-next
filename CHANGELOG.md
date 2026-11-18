@@ -133,7 +133,7 @@ For all other previously announced core API deprecations, see the [Release notes
 
 ### Map components deprecations
 
-#### New in 
+#### New in 6.0
 
 New deprecations for 6.0 are TBD.
 
